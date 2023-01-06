@@ -1,0 +1,3 @@
+class GlobalRequestSupplier {
+  String token = '';
+}
