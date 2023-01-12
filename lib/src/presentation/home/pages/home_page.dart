@@ -1,8 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 import 'package:jahadgaran_festival/src/injection/injectable.dart';
+import 'package:jahadgaran_festival/src/presentation/core/components/container_with_title_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/header_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/page_decorator.dart';
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
@@ -44,11 +46,78 @@ class _HomeBody extends StatelessWidget {
         Image.asset(
           PngAssets.headerAsset,
           width: double.infinity,
-          height: 200,
+          height: 160,
           fit: BoxFit.fill,
         ),
         const HeaderCustomWidget(),
+        const SizedBox(height: 20),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const <Widget>[
+            SizedBox(width: 15),
+            _RightSectionWidget(),
+            SizedBox(width: 15),
+            _MiddleSectionWidget(),
+            SizedBox(width: 15),
+            _LeftSectionWidget(),
+            SizedBox(width: 15),
+          ],
+        ),
       ],
+    );
+  }
+}
+
+class _RightSectionWidget extends StatelessWidget {
+  const _RightSectionWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: 3,
+      child: Column(
+        children: <Widget>[
+          ContainerWithTitleCustomWidget(
+            title: context.l10n.login,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _MiddleSectionWidget extends StatelessWidget {
+  const _MiddleSectionWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: 10,
+      child: Column(
+        children: <Widget>[
+          ContainerWithTitleCustomWidget(
+            title: context.l10n.login,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _LeftSectionWidget extends StatelessWidget {
+  const _LeftSectionWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: 3,
+      child: Column(
+        children: <Widget>[
+          ContainerWithTitleCustomWidget(
+            title: 'Left',
+          ),
+        ],
+      ),
     );
   }
 }

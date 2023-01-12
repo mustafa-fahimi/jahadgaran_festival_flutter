@@ -10,7 +10,7 @@ class HeaderCustomWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 45,
+      height: 35,
       width: double.infinity,
       child: ColoredBox(
         color: context.theme.colorScheme.primary,
@@ -19,11 +19,12 @@ class HeaderCustomWidget extends StatelessWidget {
             HeaderMenu.values.length * 2,
             (index) {
               if (index.isEven) {
-                return _MenuItem(
+                return _HeaderItem(
                   title: HeaderMenu.values[index ~/ 2].getMenuTitle(context),
                   onTap: () {},
                 );
-              } else if (index == (HeaderMenu.values.length * 2) - 1) {
+              } else if (index.isOdd &&
+                  index != (HeaderMenu.values.length * 2) - 1) {
                 return const VerticalDivider(
                   color: Colors.white38,
                   width: 2,
@@ -39,8 +40,8 @@ class HeaderCustomWidget extends StatelessWidget {
   }
 }
 
-class _MenuItem extends StatelessWidget {
-  const _MenuItem({
+class _HeaderItem extends StatelessWidget {
+  const _HeaderItem({
     Key? key,
     required this.title,
     this.onTap,
