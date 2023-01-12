@@ -4,8 +4,8 @@ import 'package:jahadgaran_festival/src/core/core.dart';
 
 typedef Validator = String? Function(String? value);
 
-class FilledTextFieldCW extends StatelessWidget {
-  const FilledTextFieldCW({
+class FilledTextFieldCustomWidget extends StatelessWidget {
+  const FilledTextFieldCustomWidget({
     super.key,
     this.maxLength,
     this.controller,

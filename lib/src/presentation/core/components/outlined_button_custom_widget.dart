@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 
-class OutlinedButtonCW extends StatelessWidget {
-  const OutlinedButtonCW({
+class OutlinedButtonCustomWidget extends StatelessWidget {
+  const OutlinedButtonCustomWidget({
     super.key,
     required this.btnText,
     this.width,

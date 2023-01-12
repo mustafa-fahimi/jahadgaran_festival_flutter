@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 
-class PopupMenuCW extends StatelessWidget {
-  const PopupMenuCW({
+class PopupMenuCustomWidget extends StatelessWidget {
+  const PopupMenuCustomWidget({
     super.key,
     this.buttonColor,
     required this.menuTexts,

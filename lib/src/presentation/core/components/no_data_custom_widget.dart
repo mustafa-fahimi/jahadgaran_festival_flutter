@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:jahadgaran_festival/src/presentation/core/components/elevated_button_c_w.dart';
+import 'package:jahadgaran_festival/src/presentation/core/components/elevated_button_custom_widget.dart';
 
-class NoDataCW extends StatelessWidget {
-  const NoDataCW({
+class NoDataCustomWidget extends StatelessWidget {
+  const NoDataCustomWidget({
     super.key,
     this.height = 140,
     this.onTapRetry,
@@ -23,7 +23,7 @@ class NoDataCW extends StatelessWidget {
           ),
           if (onTapRetry != null) ...[
             const SizedBox(height: 8),
-            ElevatedButtonCW(
+            ElevatedButtonCustomWidget(
               btnText: 'retry',
               onTap: onTapRetry,
               height: 30,

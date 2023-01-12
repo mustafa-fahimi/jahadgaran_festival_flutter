@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class FailureCW extends StatelessWidget {
-  const FailureCW({
+class FailureCustomWidget extends StatelessWidget {
+  const FailureCustomWidget({
     super.key,
     this.height = 130,
   });

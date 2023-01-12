@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 
-class ElevatedButtonCW extends StatelessWidget {
-  const ElevatedButtonCW({
+class ElevatedButtonCustomWidget extends StatelessWidget {
+  const ElevatedButtonCustomWidget({
     super.key,
     required this.btnText,
     this.onTap,

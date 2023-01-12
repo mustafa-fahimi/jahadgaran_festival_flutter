@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
-import 'package:jahadgaran_festival/src/presentation/core/components/elevated_button_c_w.dart';
-import 'package:jahadgaran_festival/src/presentation/core/components/outlined_button_c_w.dart';
+import 'package:jahadgaran_festival/src/presentation/core/components/elevated_button_custom_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/core/components/outlined_button_custom_widget.dart';
 
 class BottomSheetDecorator extends StatelessWidget {
   const BottomSheetDecorator({
@@ -62,7 +62,7 @@ class BottomSheetDecorator extends StatelessWidget {
               children: [
                 if (hasSecondaryButton) ...[
                   /// Secondary button
-                  OutlinedButtonCW(
+                  OutlinedButtonCustomWidget(
                     btnText: secondaryBtnText ?? 'cancel',
                     width: context.deviceWidthFactor(0.3),
                     height: 45,
@@ -72,7 +72,7 @@ class BottomSheetDecorator extends StatelessWidget {
                 ],
 
                 /// Confirm button
-                ElevatedButtonCW(
+                ElevatedButtonCustomWidget(
                   btnText: 'confirm',
                   width: context.deviceWidthFactor(0.3),
                   height: 45,

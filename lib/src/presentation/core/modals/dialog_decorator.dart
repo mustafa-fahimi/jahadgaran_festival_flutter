@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
-import 'package:jahadgaran_festival/src/presentation/core/components/elevated_button_c_w.dart';
+import 'package:jahadgaran_festival/src/presentation/core/components/elevated_button_custom_widget.dart';
 
 class DialogDecorator extends StatelessWidget {
   const DialogDecorator({
@@ -53,7 +53,7 @@ class DialogDecorator extends StatelessWidget {
       ),
       actions: [
         /// Confirm button
-        ElevatedButtonCW(
+        ElevatedButtonCustomWidget(
           btnText: 'confirm',
           width: 100,
           height: 40,

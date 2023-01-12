@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:jahadgaran_festival/src/config/themes/font_sizes.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 
-part './colors.dart';
-part 'text_styles.dart';
+part './custom_text_styles.dart';
+part 'colors.dart';
 
 class AppThemes {
   ///Light theme
@@ -12,6 +13,7 @@ class AppThemes {
       highlightColor: Colors.black12,
       fontFamily: kDefaultFont,
       colorScheme: mobileColorScheme,
+      splashColor: kSecondaryColor,
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           elevation: 0,

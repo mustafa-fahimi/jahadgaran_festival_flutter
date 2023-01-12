@@ -41,7 +41,7 @@ class AppHelper {
       content: Text(
         message.isNotEmpty ? message : 'Empty',
         textAlign: TextAlign.center,
-        style: p2,
+        style: body1,
       ),
       backgroundColor:
           isFailureMessage ? kErrorColor : context.theme.colorScheme.primary,

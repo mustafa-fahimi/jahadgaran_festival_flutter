@@ -4,8 +4,8 @@ import 'package:jahadgaran_festival/src/core/core.dart';
 
 typedef Validator = String? Function(String? value);
 
-class OutlinedTextFieldCW extends StatelessWidget {
-  const OutlinedTextFieldCW({
+class OutlinedTextFieldCustomWidget extends StatelessWidget {
+  const OutlinedTextFieldCustomWidget({
     super.key,
     this.maxLength = 50,
     this.controller,

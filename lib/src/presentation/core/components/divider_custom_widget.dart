@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class DividerCW extends StatelessWidget {
-  const DividerCW({
+class DividerCustomWidget extends StatelessWidget {
+  const DividerCustomWidget({
     super.key,
     this.verticalMargin = 30,
     this.horizontalMargin = 10,

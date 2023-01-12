@@ -1,7 +1,8 @@
 {
     "@@locale": "fa",
-    "counterAppBarTitle": "رفرنس",
-    "@counterAppBarTitle": {
-        "description": "توضیحات"
-    }
+    "main_page": "صفحه اصلی",
+    "festival_information": "اطلاعات رویداد",
+    "festival_news": "اخبار رویداد",
+    "in_media": "در رسانه",
+    "contacts_us": "تماس با ما"
 }
