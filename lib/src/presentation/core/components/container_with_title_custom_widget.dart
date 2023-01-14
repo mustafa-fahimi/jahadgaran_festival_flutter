@@ -20,8 +20,10 @@ class ContainerWithTitleCustomWidget extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(kDefaultBorderRadius),
           border: Border.all(color: context.theme.colorScheme.primary),
+          color: Colors.white,
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(
               width: double.infinity,
@@ -31,12 +33,11 @@ class ContainerWithTitleCustomWidget extends StatelessWidget {
                 child: Center(
                   child: Text(
                     title,
-                    style: body1.copyWith(color: Colors.white),
+                    style: subtitle1Bold.copyWith(color: Colors.white),
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 5),
             if (content != null) content!,
           ],
         ),

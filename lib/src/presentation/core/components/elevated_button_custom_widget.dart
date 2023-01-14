@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 
 class ElevatedButtonCustomWidget extends StatelessWidget {
@@ -7,6 +8,7 @@ class ElevatedButtonCustomWidget extends StatelessWidget {
     required this.btnText,
     this.onTap,
     this.isLoading = false,
+    this.color,
     this.width,
     this.height,
     this.iconWidget,
@@ -14,6 +16,7 @@ class ElevatedButtonCustomWidget extends StatelessWidget {
 
   final String btnText;
   final dynamic Function()? onTap;
+  final Color? color;
   final bool isLoading;
   final double? width;
   final double? height;
@@ -28,10 +31,11 @@ class ElevatedButtonCustomWidget extends StatelessWidget {
         child: Container(
           width: width ?? double.infinity,
           height: height ?? 75,
-          padding: const EdgeInsets.all(6),
+          padding: const EdgeInsets.all(4),
           alignment: Alignment.center,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(kDefaultBorderRadius),
+            color: color,
           ),
           child: FittedBox(
             child: isLoading
@@ -46,6 +50,7 @@ class ElevatedButtonCustomWidget extends StatelessWidget {
                         const SizedBox(width: 4),
                       Text(
                         btnText,
+                        style: subtitle2Bold.copyWith(color: Colors.white),
                       ),
                     ],
                   ),

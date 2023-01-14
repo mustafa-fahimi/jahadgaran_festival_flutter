@@ -36,16 +36,34 @@ const TextStyle subtitle1 = TextStyle(
   fontWeight: FontWeight.w400,
 );
 
+const TextStyle subtitle1Bold = TextStyle(
+  fontSize: kTextSize5,
+  color: kTextPrimaryColor,
+  fontWeight: FontWeight.w700,
+);
+
 const TextStyle subtitle2 = TextStyle(
   fontSize: kTextSize4,
   color: kTextPrimaryColor,
   fontWeight: FontWeight.w400,
 );
 
+const TextStyle subtitle2Bold = TextStyle(
+  fontSize: kTextSize4,
+  color: kTextPrimaryColor,
+  fontWeight: FontWeight.w700,
+);
+
 const TextStyle body1 = TextStyle(
   fontSize: kTextSize3,
   color: kTextPrimaryColor,
   fontWeight: FontWeight.w400,
+);
+
+const TextStyle body1Bold = TextStyle(
+  fontSize: kTextSize3,
+  color: kTextPrimaryColor,
+  fontWeight: FontWeight.w700,
 );
 
 const TextStyle body2 = TextStyle(

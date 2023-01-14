@@ -5,5 +5,10 @@
     "festival_news": "اخبار رویداد",
     "in_media": "در رسانه",
     "contacts_us": "تماس با ما",
-    "login": "ورود به سامانه"
+    "login_to_system": "ورود به سامانه",
+    "phone_number": "شماره همراه",
+    "verify_code": "کد تایید",
+    "login": "ورود",
+    "register": "ثبت نام",
+    "register_guid": "راهنمای ثبت نام"
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 
 class OutlinedButtonCustomWidget extends StatelessWidget {
@@ -24,6 +25,7 @@ class OutlinedButtonCustomWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final Widget textWidget = Text(
       btnText,
+      style: subtitle2Bold.copyWith(color: buttonColor),
     );
 
     return MouseRegion(
@@ -33,13 +35,14 @@ class OutlinedButtonCustomWidget extends StatelessWidget {
         child: Container(
           width: width ?? double.infinity,
           height: height ?? 75,
-          padding: const EdgeInsets.all(6),
+          padding: const EdgeInsets.all(4),
           alignment: Alignment.center,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(kDefaultBorderRadius),
             color: backgroundColor ?? Colors.white,
             border: Border.all(
               color: buttonColor ?? context.theme.colorScheme.primary,
+              width: 2,
             ),
           ),
           child: FittedBox(

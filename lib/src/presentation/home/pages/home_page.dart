@@ -8,6 +8,7 @@ import 'package:jahadgaran_festival/src/presentation/core/components/container_w
 import 'package:jahadgaran_festival/src/presentation/core/components/header_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/page_decorator.dart';
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/login_widget.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 class HomePage extends StatelessWidget {
@@ -78,7 +79,8 @@ class _RightSectionWidget extends StatelessWidget {
       child: Column(
         children: <Widget>[
           ContainerWithTitleCustomWidget(
-            title: context.l10n.login,
+            title: context.l10n.login_to_system,
+            content: const LoginWidget(),
           ),
         ],
       ),
@@ -93,13 +95,7 @@ class _MiddleSectionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       flex: 10,
-      child: Column(
-        children: <Widget>[
-          ContainerWithTitleCustomWidget(
-            title: context.l10n.login,
-          ),
-        ],
-      ),
+      child: Column(),
     );
   }
 }
@@ -111,13 +107,7 @@ class _LeftSectionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       flex: 3,
-      child: Column(
-        children: <Widget>[
-          ContainerWithTitleCustomWidget(
-            title: 'Left',
-          ),
-        ],
-      ),
+      child: Column(),
     );
   }
 }

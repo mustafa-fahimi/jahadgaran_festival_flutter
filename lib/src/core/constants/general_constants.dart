@@ -1,4 +1,4 @@
-const double kDefaultBorderRadius = 10;
+const double kDefaultBorderRadius = 8;
 const String kDefaultFont = 'iranYekanWeb';
 const Duration kDefaultAnimationDuration = Duration(milliseconds: 800);
 const Duration kShortAnimationDuration = Duration(milliseconds: 400);

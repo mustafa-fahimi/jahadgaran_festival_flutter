@@ -8,6 +8,7 @@ class OutlinedTextFieldCustomWidget extends StatelessWidget {
   const OutlinedTextFieldCustomWidget({
     super.key,
     this.maxLength = 50,
+    this.height = 35,
     this.controller,
     this.obscureText = false,
     this.floatingText = '',
@@ -21,7 +22,9 @@ class OutlinedTextFieldCustomWidget extends StatelessWidget {
     this.inputFormatters,
     this.textDirection,
   });
+
   final int maxLength;
+  final double height;
   final TextEditingController? controller;
   final FocusNode? focusNode;
   final bool obscureText;
@@ -45,37 +48,39 @@ class OutlinedTextFieldCustomWidget extends StatelessWidget {
       ),
     );
 
-    return TextFormField(
-      controller: controller,
-      focusNode: focusNode ?? FocusNode(),
-      maxLength: maxLength,
-      obscureText: obscureText,
-      textAlignVertical: TextAlignVertical.center,
-      textDirection: textDirection,
-      cursorColor: context.theme.colorScheme.background,
-      decoration: InputDecoration(
-        errorText: errorText,
-        counterText: counterText,
-        counterStyle: context.theme.textTheme.labelSmall,
-        labelText: floatingText,
-        labelStyle: labelTextStyle,
-        suffixIcon: sufficIcon,
-        border: outlineInputBorder,
-        focusedBorder: outlineInputBorder,
-        enabledBorder: outlineInputBorder,
-        errorBorder: outlineInputBorder,
-        focusedErrorBorder: outlineInputBorder,
-        isDense: true,
-        errorMaxLines: 1,
-        alignLabelWithHint: true,
-        floatingLabelBehavior: FloatingLabelBehavior.auto,
+    return SizedBox(
+      height: height,
+      child: TextFormField(
+        controller: controller,
+        focusNode: focusNode ?? FocusNode(),
+        maxLength: maxLength,
+        obscureText: obscureText,
+        textAlignVertical: TextAlignVertical.center,
+        textDirection: textDirection,
+        cursorColor: context.theme.colorScheme.background,
+        decoration: InputDecoration(
+          counterText: counterText,
+          counterStyle: context.theme.textTheme.labelSmall,
+          labelText: floatingText,
+          labelStyle: labelTextStyle,
+          suffixIcon: sufficIcon,
+          border: outlineInputBorder,
+          focusedBorder: outlineInputBorder,
+          enabledBorder: outlineInputBorder,
+          errorBorder: outlineInputBorder,
+          focusedErrorBorder: outlineInputBorder,
+          isDense: true,
+          errorMaxLines: 1,
+          alignLabelWithHint: true,
+          floatingLabelBehavior: FloatingLabelBehavior.auto,
+        ),
+        inputFormatters: inputFormatters,
+        keyboardType: keyboardType,
+        textInputAction: TextInputAction.done,
+        autovalidateMode: AutovalidateMode.disabled,
+        onSaved: onSaved,
+        validator: validator,
       ),
-      inputFormatters: inputFormatters,
-      keyboardType: keyboardType,
-      textInputAction: TextInputAction.done,
-      autovalidateMode: AutovalidateMode.disabled,
-      onSaved: onSaved,
-      validator: validator,
     );
   }
 }
