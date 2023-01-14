@@ -8,7 +8,9 @@ import 'package:jahadgaran_festival/src/presentation/core/components/container_w
 import 'package:jahadgaran_festival/src/presentation/core/components/header_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/page_decorator.dart';
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/important_dates_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/login_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/register_guid_widget.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 class HomePage extends StatelessWidget {
@@ -40,31 +42,34 @@ class _HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        /// Header Image
-        Image.asset(
-          PngAssets.headerAsset,
-          width: double.infinity,
-          height: 160,
-          fit: BoxFit.fill,
-        ),
-        const HeaderCustomWidget(),
-        const SizedBox(height: 20),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            SizedBox(width: 15),
-            _RightSectionWidget(),
-            SizedBox(width: 15),
-            _MiddleSectionWidget(),
-            SizedBox(width: 15),
-            _LeftSectionWidget(),
-            SizedBox(width: 15),
-          ],
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          /// Header Image
+          Image.asset(
+            PngAssets.headerAsset,
+            width: double.infinity,
+            height: 160,
+            fit: BoxFit.fill,
+          ),
+          const HeaderCustomWidget(),
+          const SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const <Widget>[
+              SizedBox(width: 10),
+              _RightSectionWidget(),
+              SizedBox(width: 15),
+              _MiddleSectionWidget(),
+              SizedBox(width: 15),
+              _LeftSectionWidget(),
+              SizedBox(width: 10),
+            ],
+          ),
+          const SizedBox(height: 90),
+        ],
+      ),
     );
   }
 }
@@ -81,6 +86,16 @@ class _RightSectionWidget extends StatelessWidget {
           ContainerWithTitleCustomWidget(
             title: context.l10n.login_to_system,
             content: const LoginWidget(),
+          ),
+          const SizedBox(height: 10),
+          ContainerWithTitleCustomWidget(
+            title: context.l10n.register_guid,
+            content: const RegisterGuidWidget(),
+          ),
+          const SizedBox(height: 10),
+          ContainerWithTitleCustomWidget(
+            title: context.l10n.important_dates,
+            content: const ImportantDatesWidget(),
           ),
         ],
       ),
