@@ -23,5 +23,9 @@
     "question2":"آیا شرکت در رویداد رایگان است؟",
     "question3":"ملاک داوری برای پذیرش در رویداد چیست؟",
     "question4":"شرایط اسکان و وعده های غذایی در طول رویداد چگونه است؟",
-    "until_event_description":"۱ ماه و ۱۲ روز و ۳۰ ساعت"
+    "until_event_description":"۱ ماه و ۱۲ روز و ۳۰ ساعت",
+    "introduction":"معرفی",
+    "news":"اخبار",
+    "event_information":"اطلاعات کلی رویداد",
+    "inside_event":"در این رویداد"
 }

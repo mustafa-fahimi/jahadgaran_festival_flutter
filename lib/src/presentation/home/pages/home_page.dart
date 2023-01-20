@@ -11,6 +11,7 @@ import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/authentication_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/f_a_q_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/important_dates_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/introduction_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/organizers_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/register_guid_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/until_event_widget.dart';
@@ -118,8 +119,19 @@ class _MiddleSectionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      flex: 10,
-      child: Column(),
+      flex: 9,
+      child: BlocBuilder<HomeBloc, HomeState>(
+        builder: (context, state) => state.when(
+          idle: (isLoading, users) => Column(
+            children: [
+              ContainerWithTitleCustomWidget(
+                title: context.l10n.introduction,
+                content: const IntroductionWidget(),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

@@ -30,15 +30,21 @@ class AuthenticationWidget extends HookWidget {
           const SizedBox(height: 10),
 
           /// Verify Code
-          Text(
-            context.l10n.verify_code,
-            style: body1Bold,
-            overflow: TextOverflow.clip,
+          Visibility(
+            visible: false,
+            child: Text(
+              context.l10n.verify_code,
+              style: body1Bold,
+              overflow: TextOverflow.clip,
+            ),
           ),
-          OutlinedTextFieldCustomWidget(
-            controller: verifyCodeTextController,
+          Visibility(
+            visible: false,
+            child: OutlinedTextFieldCustomWidget(
+              controller: verifyCodeTextController,
+            ),
           ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 10),
 
           /// Login and register button
           Row(

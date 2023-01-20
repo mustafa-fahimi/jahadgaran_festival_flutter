@@ -7,6 +7,7 @@ class PngAssets {
   static String get basigLogoAsset => 'basig_logo'.png;
   static String get jahadgaranLogoAsset => 'jahadgaran_logo'.png;
   static String get majmaLogoAsset => 'majma_logo'.png;
+  static String get introductionBannerAsset => 'introduction_banner'.png;
 }
 
 extension on String {
