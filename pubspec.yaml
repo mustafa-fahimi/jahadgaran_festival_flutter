@@ -11,6 +11,7 @@ dependencies:
     path: ../../packages/api_service
   auto_route: ^5.0.4
   bloc: ^8.1.0
+  carousel_slider: ^4.2.1
   crypto: ^3.0.2
   dartz: ^0.10.1
   database_service:

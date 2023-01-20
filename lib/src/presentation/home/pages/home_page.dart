@@ -8,8 +8,9 @@ import 'package:jahadgaran_festival/src/presentation/core/components/container_w
 import 'package:jahadgaran_festival/src/presentation/core/components/header_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/page_decorator.dart';
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/authentication_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/f_a_q_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/important_dates_widget.dart';
-import 'package:jahadgaran_festival/src/presentation/home/widgets/login_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/register_guid_widget.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
@@ -85,7 +86,7 @@ class _RightSectionWidget extends StatelessWidget {
         children: <Widget>[
           ContainerWithTitleCustomWidget(
             title: context.l10n.login_to_system,
-            content: const LoginWidget(),
+            content: const AuthenticationWidget(),
           ),
           const SizedBox(height: 10),
           ContainerWithTitleCustomWidget(
@@ -96,6 +97,11 @@ class _RightSectionWidget extends StatelessWidget {
           ContainerWithTitleCustomWidget(
             title: context.l10n.important_dates,
             content: const ImportantDatesWidget(),
+          ),
+          const SizedBox(height: 10),
+          ContainerWithTitleCustomWidget(
+            title: context.l10n.frequently_asked_questions,
+            content: const FAQWidget(),
           ),
         ],
       ),

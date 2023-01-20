@@ -6,8 +6,8 @@ import 'package:jahadgaran_festival/src/presentation/core/components/elevated_bu
 import 'package:jahadgaran_festival/src/presentation/core/components/outlined_button_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/outlined_text_field_custom_widget.dart';
 
-class LoginWidget extends HookWidget {
-  const LoginWidget({Key? key}) : super(key: key);
+class AuthenticationWidget extends HookWidget {
+  const AuthenticationWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +39,7 @@ class LoginWidget extends HookWidget {
             controller: verifyCodeTextController,
           ),
           const SizedBox(height: 30),
+
           /// Login and register button
           Row(
             children: <Widget>[
