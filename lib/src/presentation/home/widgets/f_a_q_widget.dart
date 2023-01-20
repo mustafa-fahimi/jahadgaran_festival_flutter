@@ -12,7 +12,7 @@ class FAQWidget extends StatelessWidget {
       padding: const EdgeInsets.all(12),
       child: CarouselSlider.builder(
         options: CarouselOptions(
-          height: 100,
+          height: 80,
           autoPlayInterval: const Duration(milliseconds: 2800),
           autoPlay: true,
           viewportFraction: 1,
@@ -29,15 +29,11 @@ class FAQWidget extends StatelessWidget {
             onTap: () {},
             child: SizedBox(
               width: double.infinity,
-              child: Column(
-                children: [
-                  Text(
-                    FAQ.values[itemIndex].getQuestion(context),
-                    style: heading6,
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 3,
-                  ),
-                ],
+              child: Text(
+                FAQ.values[itemIndex].getQuestion(context),
+                style: heading6,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 3,
               ),
             ),
           ),

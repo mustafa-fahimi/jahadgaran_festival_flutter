@@ -30,6 +30,12 @@ const TextStyle heading6 = TextStyle(
   fontWeight: FontWeight.w400,
 );
 
+const TextStyle heading5Bold = TextStyle(
+  fontSize: kTextSize7,
+  color: kTextPrimaryColor,
+  fontWeight: FontWeight.w700,
+);
+
 const TextStyle subtitle1 = TextStyle(
   fontSize: kTextSize5,
   color: kTextPrimaryColor,

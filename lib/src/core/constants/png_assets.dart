@@ -4,6 +4,9 @@ class PngAssets {
   static String get successAsset => 'success'.png;
   static String get headerAsset => 'header'.png;
   static String get registerGuidAsset => 'register_guid'.png;
+  static String get basigLogoAsset => 'basig_logo'.png;
+  static String get jahadgaranLogoAsset => 'jahadgaran_logo'.png;
+  static String get majmaLogoAsset => 'majma_logo'.png;
 }
 
 extension on String {

@@ -11,7 +11,9 @@ import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/authentication_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/f_a_q_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/important_dates_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/organizers_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/register_guid_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/until_event_widget.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 class HomePage extends StatelessWidget {
@@ -58,6 +60,7 @@ class _HomeBody extends StatelessWidget {
           const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: const <Widget>[
               SizedBox(width: 10),
               _RightSectionWidget(),
@@ -128,7 +131,19 @@ class _LeftSectionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       flex: 3,
-      child: Column(),
+      child: Column(
+        children: [
+          ContainerWithTitleCustomWidget(
+            title: context.l10n.until_event,
+            content: const UntilEventWidget(),
+          ),
+          const SizedBox(height: 10),
+          ContainerWithTitleCustomWidget(
+            title: context.l10n.organizers,
+            content: const OrganizersWidget(),
+          ),
+        ],
+      ),
     );
   }
 }
