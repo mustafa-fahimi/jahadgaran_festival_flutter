@@ -8,6 +8,7 @@ import 'package:jahadgaran_festival/src/presentation/core/components/container_w
 import 'package:jahadgaran_festival/src/presentation/core/components/header_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/page_decorator.dart';
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/all_news_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/authentication_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/f_a_q_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/important_dates_widget.dart';
@@ -127,6 +128,11 @@ class _MiddleSectionWidget extends StatelessWidget {
               ContainerWithTitleCustomWidget(
                 title: context.l10n.introduction,
                 content: const IntroductionWidget(),
+              ),
+              const SizedBox(height: 10),
+              ContainerWithTitleCustomWidget(
+                title: context.l10n.news,
+                content: AllNewsWidget(),
               ),
             ],
           ),

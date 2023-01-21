@@ -18,6 +18,8 @@ class IntroductionWidget extends StatelessWidget {
             child: Image.asset(
               PngAssets.introductionBannerAsset,
               fit: BoxFit.fill,
+              height: 400,
+              width: double.infinity,
             ),
           ),
         ),
@@ -27,7 +29,7 @@ class IntroductionWidget extends StatelessWidget {
 
   Future<void> _onTapBanner() async {
     final url = Uri.parse(
-      'https://muhajer.biz/Areas/Panel/Hamayesh/1/Files/55d0c74e-72f4-4781-94c4-9f28eebcea06.mp4',
+      'https://www.aparat.com/v/ULIEg/%D8%AA%DB%8C%D8%B2%D8%B1_%DA%86%D9%87%D8%A7%D8%B1%D9%85%DB%8C%D9%86_%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87_%D9%85%D9%84%DB%8C_%D8%AC%D9%87%D8%A7%D8%AF%DA%AF%D8%B1%D8%A7%D9%86',
     );
     await launchUrl(url);
   }
