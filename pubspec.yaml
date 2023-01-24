@@ -7,6 +7,7 @@ environment:
   sdk: ">=2.18.6 <3.0.0"
 
 dependencies:
+  accordion: ^2.5.1
   api_service:
     path: ../../packages/api_service
   auto_route: ^5.0.4

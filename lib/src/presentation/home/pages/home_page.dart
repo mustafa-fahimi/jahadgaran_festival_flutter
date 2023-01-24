@@ -11,11 +11,12 @@ import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/all_news_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/authentication_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/f_a_q_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/festival_information_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/important_dates_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/introduction_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/organizers_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/register_guid_widget.dart';
-import 'package:jahadgaran_festival/src/presentation/home/widgets/until_event_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/until_festival_widget.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 class HomePage extends StatelessWidget {
@@ -131,6 +132,11 @@ class _MiddleSectionWidget extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               ContainerWithTitleCustomWidget(
+                title: context.l10n.event_information,
+                content: const FestivalInformationWidget(),
+              ),
+              const SizedBox(height: 10),
+              ContainerWithTitleCustomWidget(
                 title: context.l10n.news,
                 content: AllNewsWidget(),
               ),
@@ -153,7 +159,7 @@ class _LeftSectionWidget extends StatelessWidget {
         children: [
           ContainerWithTitleCustomWidget(
             title: context.l10n.until_event,
-            content: const UntilEventWidget(),
+            content: const UntilFestivalWidget(),
           ),
           const SizedBox(height: 10),
           ContainerWithTitleCustomWidget(

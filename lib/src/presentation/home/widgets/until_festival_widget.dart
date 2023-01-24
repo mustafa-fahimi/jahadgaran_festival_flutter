@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
 
-class UntilEventWidget extends StatelessWidget {
-  const UntilEventWidget({Key? key}) : super(key: key);
+class UntilFestivalWidget extends StatelessWidget {
+  const UntilFestivalWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
