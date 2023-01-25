@@ -10,7 +10,7 @@ class HeaderCustomWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 35,
+      height: 40,
       width: double.infinity,
       child: ColoredBox(
         color: context.theme.colorScheme.primary,
@@ -60,7 +60,7 @@ class _HeaderItem extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Text(
             title,
-            style: body2.copyWith(color: Colors.white),
+            style: subtitle1Bold.copyWith(color: Colors.white),
           ),
         ),
       ),

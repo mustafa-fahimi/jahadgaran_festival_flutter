@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
@@ -17,7 +16,6 @@ import 'package:jahadgaran_festival/src/presentation/home/widgets/introduction_w
 import 'package:jahadgaran_festival/src/presentation/home/widgets/organizers_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/register_guid_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/until_festival_widget.dart';
-import 'package:talker_flutter/talker_flutter.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -27,9 +25,9 @@ class HomePage extends StatelessWidget {
     final bloc = getIt.get<HomeBloc>();
     return BlocProvider(
       create: (_) => bloc,
-      child: PageDecorator(
-        body: const _HomeBody(),
-        floatingActionButton: FloatingActionButton(
+      child: const PageDecorator(
+        body: _HomeBody(),
+        /* floatingActionButton: FloatingActionButton(
           onPressed: () => context.router.pushWidget(
             TalkerScreen(talker: getIt.get<Talker>()),
           ),
@@ -37,7 +35,7 @@ class HomePage extends StatelessWidget {
             Icons.monitor_heart_outlined,
             color: Colors.white,
           ),
-        ),
+        ), */
       ),
     );
   }
@@ -56,7 +54,7 @@ class _HomeBody extends StatelessWidget {
           Image.asset(
             PngAssets.headerAsset,
             width: double.infinity,
-            height: 160,
+            height: 450,
             fit: BoxFit.fill,
           ),
           const HeaderCustomWidget(),

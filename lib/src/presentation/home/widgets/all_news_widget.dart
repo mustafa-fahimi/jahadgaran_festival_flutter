@@ -19,7 +19,7 @@ class AllNewsWidget extends StatelessWidget {
           crossAxisCount: 2,
           crossAxisSpacing: 8,
           mainAxisSpacing: 8,
-          mainAxisExtent: 210,
+          mainAxisExtent: 215,
         ),
         shrinkWrap: true,
         itemCount: allNews.length,
@@ -96,12 +96,13 @@ class _NewsGridViewItemWidget extends StatelessWidget {
                     borderRadius: BorderRadius.circular(kDefaultBorderRadius),
                     child: Image.asset(
                       newsImage,
+                      height: 170,
                       fit: BoxFit.fill,
                     ),
                   ),
                   Text(
                     newsDate,
-                    style: body2.copyWith(color: Colors.black45),
+                    style: body1.copyWith(color: Colors.black54),
                     overflow: TextOverflow.ellipsis,
                   ),
                 ],
