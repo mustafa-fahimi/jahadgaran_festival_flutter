@@ -10,6 +10,7 @@ dependencies:
   accordion: ^2.5.1
   api_service:
     path: ../../packages/api_service
+  appinio_video_player: ^1.2.0
   auto_route: ^5.0.4
   bloc: ^8.1.0
   carousel_slider: ^4.2.1
