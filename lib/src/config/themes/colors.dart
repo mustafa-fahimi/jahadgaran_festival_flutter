@@ -1,7 +1,7 @@
 part of 'package:jahadgaran_festival/src/config/themes/app_themes.dart';
 
-const kPrimaryColor = Color(0xff68A7AD);
-const kSecondaryColor = Color(0xff99C4C8);
+const kPrimaryColor = Color(0xffC69749);
+const kSecondaryColor = Color(0xff735F32);
 
 const kSuccessColor = Color(0xff7DB343);
 const kWarningColor = Color(0xffDC7611);

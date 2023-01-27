@@ -13,7 +13,7 @@ class _IntroductionWidgetState extends State<IntroductionWidget> {
   late CustomVideoPlayerWebSettings customVideoPlayerWebSettings;
   late CustomVideoPlayerWebController _customVideoPlayerWebController;
   String videoUrl =
-      'https://caspian2.asset.aparat.com/aparat-video/c20de97b2ec6bdabdc28572f55c3325249196218-480p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjcyNTE3MWM4ZGRiNDI5ZDVhMDI5ZWZlMDU1NmY2MGMyIiwiZXhwIjoxNjc0NzAwNjc5LCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.p275CLgU5r5RuXmN4hgvQx-5PItIwMbLZBJK9FIpkus';
+      'https://caspian2.cdn.asset.aparat.com/aparat-video/c20de97b2ec6bdabdc28572f55c3325249196218-360p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjA3NzQzODAzNDhiZGZjYjBkOTJkNWJiOWQxODkwOTUzIiwiZXhwIjoxNjc0NzQxMTg0LCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.Pbp0WIkKCfPIfekOlvG9-7duw0ILlkEPFcDqPmA63IM';
   bool showVideoBanner = true;
 
   @override

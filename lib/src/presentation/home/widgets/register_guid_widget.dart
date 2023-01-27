@@ -15,8 +15,9 @@ class RegisterGuidWidget extends StatelessWidget {
           onTap: _onTapRegisterGuid,
           child: Center(
             child: Image.asset(
-              PngAssets.registerGuidAsset,
+              PngAssets.introductionBannerAsset,
               height: 180,
+              width: double.infinity,
               fit: BoxFit.fitWidth,
             ),
           ),
