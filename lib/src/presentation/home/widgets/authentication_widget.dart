@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/elevated_button_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/outlined_button_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/outlined_text_field_custom_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
+import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
 
 class AuthenticationWidget extends HookWidget {
   const AuthenticationWidget({Key? key}) : super(key: key);
@@ -49,6 +52,7 @@ class AuthenticationWidget extends HookWidget {
           /// Login and register button
           Row(
             children: <Widget>[
+              /// `Login button`
               Expanded(
                 child: ElevatedButtonCustomWidget(
                   btnText: context.l10n.login,
@@ -57,9 +61,12 @@ class AuthenticationWidget extends HookWidget {
                 ),
               ),
               const SizedBox(width: 6),
+
+              /// `Register button`
               Expanded(
                 child: OutlinedButtonCustomWidget(
                   btnText: context.l10n.register,
+                  onTap: () => _onTapRegisterButton(context),
                   height: 35,
                   buttonColor: context.theme.colorScheme.primary,
                 ),
@@ -69,5 +76,11 @@ class AuthenticationWidget extends HookWidget {
         ],
       ),
     );
+  }
+
+  void _onTapRegisterButton(BuildContext context) {
+    context.read<HomeBloc>().add(
+          const HomeEvent.changeMiddleView(view: HomeMiddleViews.register),
+        );
   }
 }

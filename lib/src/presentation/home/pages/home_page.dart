@@ -1,21 +1,21 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 import 'package:jahadgaran_festival/src/injection/injectable.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/container_with_title_custom_widget.dart';
-import 'package:jahadgaran_festival/src/presentation/core/components/header_custom_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/core/components/header_menu_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/page_decorator.dart';
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
-import 'package:jahadgaran_festival/src/presentation/home/widgets/all_news_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/authentication_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/f_a_q_widget.dart';
-import 'package:jahadgaran_festival/src/presentation/home/widgets/festival_information_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/important_dates_widget.dart';
-import 'package:jahadgaran_festival/src/presentation/home/widgets/introduction_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/organizers_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/register_guid_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/until_festival_widget.dart';
+import 'package:talker_flutter/talker_flutter.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -25,9 +25,9 @@ class HomePage extends StatelessWidget {
     final bloc = getIt.get<HomeBloc>();
     return BlocProvider(
       create: (_) => bloc,
-      child: const PageDecorator(
-        body: _HomeBody(),
-        /* floatingActionButton: FloatingActionButton(
+      child: PageDecorator(
+        body: const _HomeBody(),
+        floatingActionButton: FloatingActionButton(
           onPressed: () => context.router.pushWidget(
             TalkerScreen(talker: getIt.get<Talker>()),
           ),
@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
             Icons.monitor_heart_outlined,
             color: Colors.white,
           ),
-        ), */
+        ),
       ),
     );
   }
@@ -57,7 +57,7 @@ class _HomeBody extends StatelessWidget {
             height: 450,
             fit: BoxFit.fill,
           ),
-          const HeaderCustomWidget(),
+          const HeaderMenuCustomWidget(),
           const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -122,24 +122,9 @@ class _MiddleSectionWidget extends StatelessWidget {
       flex: 9,
       child: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) => state.when(
-          idle: (isLoading, users) => Column(
-            children: [
-              ContainerWithTitleCustomWidget(
-                title: context.l10n.introduction,
-                content: const IntroductionWidget(),
-              ),
-              const SizedBox(height: 10),
-              ContainerWithTitleCustomWidget(
-                title: context.l10n.event_information,
-                content: const FestivalInformationWidget(),
-              ),
-              const SizedBox(height: 10),
-              ContainerWithTitleCustomWidget(
-                title: context.l10n.news,
-                content: AllNewsWidget(),
-              ),
-            ],
-          ),
+          idle: (isLoading, currentMiddleView) => HomeMiddleViews.values
+              .firstWhere((middleView) => middleView == currentMiddleView)
+              .getCorrespondingWidget(),
         ),
       ),
     );

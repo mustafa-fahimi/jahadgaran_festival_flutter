@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/elevated_button_custom_widget.dart';
-import 'package:jahadgaran_festival/src/presentation/home/models/news.dart';
+import 'package:jahadgaran_festival/src/presentation/home/models/temporary_news.dart';
 
 class AllNewsWidget extends StatelessWidget {
   AllNewsWidget({Key? key}) : super(key: key);
 
-  final List<News> allNews = [];
+  final List<TemporaryNews> allNews = [];
 
   @override
   Widget build(BuildContext context) {
@@ -35,25 +35,25 @@ class AllNewsWidget extends StatelessWidget {
 
   void _fillAllNews(BuildContext context) {
     allNews.addAll([
-      News(
+      TemporaryNews(
         newsImage: PngAssets.newsPlaceHolderAsset,
         newsTitle: context.l10n.news1_title,
         newsDescription: context.l10n.news1_description,
         newsDate: context.l10n.news1_date,
       ),
-      News(
+      TemporaryNews(
         newsImage: PngAssets.newsPlaceHolderAsset,
         newsTitle: context.l10n.news2_title,
         newsDescription: context.l10n.news2_description,
         newsDate: context.l10n.news2_date,
       ),
-      News(
+      TemporaryNews(
         newsImage: PngAssets.newsPlaceHolderAsset,
         newsTitle: context.l10n.news3_title,
         newsDescription: context.l10n.news3_description,
         newsDate: context.l10n.news3_date,
       ),
-      News(
+      TemporaryNews(
         newsImage: PngAssets.newsPlaceHolderAsset,
         newsTitle: context.l10n.news4_title,
         newsDescription: context.l10n.news4_description,

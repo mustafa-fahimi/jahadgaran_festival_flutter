@@ -4,6 +4,6 @@ part of 'home_bloc.dart';
 class HomeState with _$HomeState {
   const factory HomeState.idle({
     @Default(false) bool isLoading,
-    @Default([]) List<User> users,
+    @Default(HomeMiddleViews.home) HomeMiddleViews currentMiddleView,
   }) = _Idle;
 }
