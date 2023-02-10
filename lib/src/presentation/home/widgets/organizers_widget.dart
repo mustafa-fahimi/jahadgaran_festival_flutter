@@ -23,12 +23,6 @@ class OrganizersWidget extends StatelessWidget {
               photoAddress2: PngAssets.jahadgaranLogoAsset,
               photoAddress3: PngAssets.majmaLogoAsset,
             ),
-            const SizedBox(height: 2),
-            _PictureRowWidget(
-              photoAddress1: PngAssets.majmaLogoAsset,
-              photoAddress2: PngAssets.jahadgaranLogoAsset,
-              photoAddress3: PngAssets.majmaLogoAsset,
-            ),
           ],
         ),
       ),

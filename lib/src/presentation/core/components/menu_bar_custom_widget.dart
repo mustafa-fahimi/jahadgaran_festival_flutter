@@ -10,34 +10,44 @@ class MenuBarCustomWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       children: [
-        /// `Top divider`
-        const _GradientDividerWidget(),
-        SizedBox(
-          width: context.deviceWidthFactor(0.6),
-          height: 45,
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(PngAssets.headerMenuBgAsset),
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                HeaderMenu.values.length,
-                (index) => _HeaderItem(
-                  headerMenu: HeaderMenu.values[index],
-                  isHome: index == 0,
+        const Expanded(flex: 3, child: SizedBox()),
+        const SizedBox(width: 25),
+        Expanded(
+          flex: 9,
+          child: SizedBox(
+            height: 45,
+            child: Column(
+              children: [
+                /// `Top divider`
+                const _GradientDividerWidget(),
+                DecoratedBox(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(PngAssets.headerMenuBgAsset),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                      HeaderMenu.values.length,
+                      (index) => _HeaderItem(
+                        headerMenu: HeaderMenu.values[index],
+                        isHome: index == 0,
+                      ),
+                    ),
+                  ),
                 ),
-              ),
+
+                /// `Bottom divider`
+                const _GradientDividerWidget(),
+              ],
             ),
           ),
         ),
-
-        /// `Bottom divider`
-        const _GradientDividerWidget(),
+        const SizedBox(width: 25),
+        const Expanded(flex: 3, child: SizedBox()),
       ],
     );
   }

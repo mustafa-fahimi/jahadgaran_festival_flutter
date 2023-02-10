@@ -11,7 +11,7 @@ class PngAssets {
   static String get headerMenuBgAsset => 'header_menu_bg'.png;
   static String get introductionBannerAsset => 'introduction_banner'.png;
   static String get menu1Asset => 'menu1'.png;
-  static String get newsPlaceHolderAsset => 'news_place_header'.png;
+  static String get newsPlaceHolderAsset => 'news_place_holder'.png;
   static String get registerGuidAsset => 'register_guid'.png;
   static String get homeAsset => 'home'.png;
 }

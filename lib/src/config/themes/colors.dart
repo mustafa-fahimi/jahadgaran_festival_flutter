@@ -8,7 +8,7 @@ const kWarningColor = Color(0xffDC7611);
 const kErrorColor = Color(0xffE05E5E);
 const kInfoColor = Color(0xff409EFF);
 
-const kBackgroundColor = Color(0xffc8cdd7);
+const kBackgroundColor = Color(0xfffaf9f0);
 const kHoverColor = Color(0xff8B6AB8);
 const kPressColor = Color(0xff533280);
 const kTextPrimaryColor = Color(0xff0A0A0A);

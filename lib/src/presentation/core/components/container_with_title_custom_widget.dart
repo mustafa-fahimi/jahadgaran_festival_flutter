@@ -19,27 +19,45 @@ class ContainerWithTitleCustomWidget extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(kDefaultBorderRadius),
-          border: Border.all(color: context.theme.colorScheme.primary),
-          color: Colors.white,
+          color: context.theme.colorScheme.background,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SizedBox(
-              width: double.infinity,
-              height: 35,
-              child: ColoredBox(
-                color: context.theme.colorScheme.primary,
-                child: Center(
-                  child: Text(
-                    title,
-                    style: subtitle1Bold.copyWith(color: Colors.white),
-                  ),
-                ),
-              ),
-            ),
+            _TitleWidget(title: title),
             if (content != null) content!,
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class _TitleWidget extends StatelessWidget {
+  const _TitleWidget({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      height: 35,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(PngAssets.headerMenuBgAsset),
+            fit: BoxFit.fill,
+          ),
+        ),
+        child: Center(
+          child: Text(
+            title,
+            style: subtitle2Bold.copyWith(color: Colors.white),
+          ),
         ),
       ),
     );

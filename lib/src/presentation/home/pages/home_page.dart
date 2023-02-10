@@ -111,6 +111,11 @@ class _RightSectionWidget extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           ContainerWithTitleCustomWidget(
+            title: context.l10n.until_event,
+            content: const UntilFestivalWidget(),
+          ),
+          const SizedBox(height: 10),
+          ContainerWithTitleCustomWidget(
             title: context.l10n.important_dates,
             content: const ImportantDatesWidget(),
           ),
@@ -118,6 +123,11 @@ class _RightSectionWidget extends StatelessWidget {
           ContainerWithTitleCustomWidget(
             title: context.l10n.frequently_asked_questions,
             content: const FAQWidget(),
+          ),
+          const SizedBox(height: 10),
+          ContainerWithTitleCustomWidget(
+            title: context.l10n.organizers,
+            content: const OrganizersWidget(),
           ),
         ],
       ),
@@ -152,15 +162,14 @@ class _LeftSectionWidget extends StatelessWidget {
       flex: 3,
       child: Column(
         children: [
-          ContainerWithTitleCustomWidget(
-            title: context.l10n.until_event,
-            content: const UntilFestivalWidget(),
-          ),
-          const SizedBox(height: 10),
-          ContainerWithTitleCustomWidget(
-            title: context.l10n.organizers,
-            content: const OrganizersWidget(),
-          ),
+          Image.asset(PngAssets.menu1Asset),
+          const SizedBox(height: 15),
+          Image.asset(PngAssets.menu1Asset),
+          const SizedBox(height: 15),
+          Image.asset(PngAssets.menu1Asset),
+          const SizedBox(height: 15),
+          Image.asset(PngAssets.menu1Asset),
+          const SizedBox(height: 15),
         ],
       ),
     );
