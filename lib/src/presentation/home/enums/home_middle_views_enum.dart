@@ -13,7 +13,7 @@ extension HomeMiddleViewsEx on HomeMiddleViews{
       case HomeMiddleViews.home:
         return const HomeMainWidget();
       case HomeMiddleViews.register:
-        return const RegisterWidget();
+        return RegisterWidget();
     }
   }
 }

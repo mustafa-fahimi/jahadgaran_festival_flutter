@@ -5,7 +5,7 @@ import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 import 'package:jahadgaran_festival/src/injection/injectable.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/container_with_title_custom_widget.dart';
-import 'package:jahadgaran_festival/src/presentation/core/components/header_menu_custom_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/core/components/menu_bar_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/page_decorator.dart';
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
@@ -46,35 +46,47 @@ class _HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          /// Header Image
-          Image.asset(
-            PngAssets.headerAsset,
-            width: double.infinity,
-            height: 450,
-            fit: BoxFit.fill,
+    return Stack(
+      children: [
+        /// `Page background`
+        Positioned.fill(
+          child: Image.asset(
+            PngAssets.bgPatternAsset,
+            repeat: ImageRepeat.repeat,
           ),
-          const HeaderMenuCustomWidget(),
-          const SizedBox(height: 10),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const <Widget>[
-              SizedBox(width: 10),
-              _RightSectionWidget(),
-              SizedBox(width: 15),
-              _MiddleSectionWidget(),
-              SizedBox(width: 15),
-              _LeftSectionWidget(),
-              SizedBox(width: 10),
-            ],
+        ),
+        Positioned.fill(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                /// Header Image
+                Image.asset(
+                  PngAssets.headerBannerAsset,
+                  width: context.deviceWidthFactor(0.6),
+                  height: 110,
+                  fit: BoxFit.fill,
+                ),
+                const MenuBarCustomWidget(),
+                const SizedBox(height: 25),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const <Widget>[
+                    SizedBox(width: 10),
+                    _RightSectionWidget(),
+                    SizedBox(width: 15),
+                    _MiddleSectionWidget(),
+                    SizedBox(width: 15),
+                    _LeftSectionWidget(),
+                    SizedBox(width: 10),
+                  ],
+                ),
+                const SizedBox(height: 90),
+              ],
+            ),
           ),
-          const SizedBox(height: 90),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

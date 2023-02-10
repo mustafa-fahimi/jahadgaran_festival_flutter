@@ -337,7 +337,8 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
 
 class _$_Idle implements _Idle {
   const _$_Idle(
-      {this.isLoading = false, this.currentMiddleView = HomeMiddleViews.home});
+      {this.isLoading = false,
+      this.currentMiddleView = HomeMiddleViews.register});
 
   @override
   @JsonKey()

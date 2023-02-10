@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
-import 'package:jahadgaran_festival/src/presentation/home/widgets/home_main_widget.dart';
 
 enum HeaderMenu {
   mainPage,
   festivalInformation,
-  registerConditions,
   feativalNews,
+  registerConditions,
   inMedia,
   contactUs,
 }
