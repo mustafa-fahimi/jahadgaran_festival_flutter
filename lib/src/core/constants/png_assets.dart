@@ -1,10 +1,9 @@
 class PngAssets {
   const PngAssets._();
 
-  static String get basigLogoAsset => 'organization_logos/basig_logo'.png;
-  static String get jahadgaranLogoAsset =>
-      'organization_logos/jahadgaran_logo'.png;
-  static String get majmaLogoAsset => 'organization_logos/majma_logo'.png;
+  static String get basigLogoAsset => 'organizations/basig_logo'.png;
+  static String get jahadgaranLogoAsset => 'organizations/jahadgaran_logo'.png;
+  static String get majmaLogoAsset => 'organizations/majma_logo'.png;
   static String get bgPatternAsset => 'bg_pattern'.png;
   static String get gradientDividerAsset => 'gradient_divider'.png;
   static String get headerBannerAsset => 'header_banner'.png;

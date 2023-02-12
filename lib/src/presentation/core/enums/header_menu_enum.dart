@@ -7,7 +7,7 @@ enum HeaderMenu {
   festivalInformation,
   feativalNews,
   registerConditions,
-  inMedia,
+  media,
   contactUs,
 }
 
@@ -22,8 +22,8 @@ extension HeaderMenuEx on HeaderMenu {
         return context.l10n.register_condition;
       case HeaderMenu.feativalNews:
         return context.l10n.festival_news;
-      case HeaderMenu.inMedia:
-        return context.l10n.in_media;
+      case HeaderMenu.media:
+        return context.l10n.media;
       case HeaderMenu.contactUs:
         return context.l10n.contacts_us;
     }
@@ -39,8 +39,8 @@ extension HeaderMenuEx on HeaderMenu {
         return HomeMiddleViews.home;
       case HeaderMenu.feativalNews:
         return HomeMiddleViews.home;
-      case HeaderMenu.inMedia:
-        return HomeMiddleViews.home;
+      case HeaderMenu.media:
+        return HomeMiddleViews.media;
       case HeaderMenu.contactUs:
         return HomeMiddleViews.home;
     }

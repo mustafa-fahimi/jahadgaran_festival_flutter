@@ -4,7 +4,7 @@
     "festival_information": "اطلاعات جشنواره",
     "register_condition": "شرایط ثبت نام",
     "festival_news": "اخبار جشنواره",
-    "in_media": "در رسانه",
+    "media": "چند رسانه ای",
     "contacts_us": "تماس با ما",
     "login_to_system": "ورود به سامانه",
     "phone_number": "شماره همراه",
@@ -52,5 +52,10 @@
     "advantages_description":"حمایت از طرح‌های اشتغال‌آفرینی برتر\nتسهیل اخذ مجوزهای اشتغال‌آفرینی\nگواهی معتبر دوره\nتقدیر از نفرات برتر\nارتباط با استادان و راهبران رویداد",
     "fname":"نام",
     "lname":"نام خانوادگی",
-    "nationalCode":"کد ملی"
+    "nationalCode":"کد ملی",
+    "supreme_leader":"مقام معظم رهبری",
+    "jahadgaran_atlas":"اطلس جهادگران",
+    "jahadgaran_festival_ir":"جشنواره ملی جهادگران",
+    "video1":"کلیپ اول",
+    "video2":"کلیپ دوم"
 }

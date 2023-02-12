@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/home_main_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/media_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/register_widget.dart';
 
-enum HomeMiddleViews{
+enum HomeMiddleViews {
   home,
   register,
+  media,
 }
 
-extension HomeMiddleViewsEx on HomeMiddleViews{
-  Widget getCorrespondingWidget(){
+extension HomeMiddleViewsEx on HomeMiddleViews {
+  Widget getCorrespondingWidget() {
     switch (this) {
       case HomeMiddleViews.home:
         return const HomeMainWidget();
       case HomeMiddleViews.register:
         return RegisterWidget();
+      case HomeMiddleViews.media:
+        return const MediaWidget();
     }
   }
 }

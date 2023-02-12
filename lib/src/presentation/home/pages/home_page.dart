@@ -162,15 +162,49 @@ class _LeftSectionWidget extends StatelessWidget {
       flex: 3,
       child: Column(
         children: [
-          Image.asset(PngAssets.menu1Asset),
+          _WebsiteLinkWidget(title: context.l10n.supreme_leader),
           const SizedBox(height: 15),
-          Image.asset(PngAssets.menu1Asset),
+          _WebsiteLinkWidget(title: context.l10n.jahadgaran_atlas),
           const SizedBox(height: 15),
-          Image.asset(PngAssets.menu1Asset),
-          const SizedBox(height: 15),
-          Image.asset(PngAssets.menu1Asset),
-          const SizedBox(height: 15),
+          _WebsiteLinkWidget(title: context.l10n.jahadgaran_festival_ir),
         ],
+      ),
+    );
+  }
+}
+
+class _WebsiteLinkWidget extends StatelessWidget {
+  const _WebsiteLinkWidget({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () {},
+        child: SizedBox(
+          width: double.infinity,
+          height: 75,
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(PngAssets.menu1Asset),
+                fit: BoxFit.fill,
+              ),
+            ),
+            child: Center(
+              child: Text(
+                title,
+                style: subtitle1Bold.copyWith(color: Colors.white70),
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
