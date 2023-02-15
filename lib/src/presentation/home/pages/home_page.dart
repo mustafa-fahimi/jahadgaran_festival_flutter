@@ -59,15 +59,32 @@ class _HomeBody extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                /// Header Image
-                Image.asset(
-                  PngAssets.headerBannerAsset,
-                  width: context.deviceWidthFactor(0.6),
-                  height: 110,
-                  fit: BoxFit.fill,
+                Row(
+                  children: <Widget>[
+                    /// `Emam photo`
+                    _LeadersImageWidget(image: PngAssets.emamAsset),
+                    Expanded(
+                      flex: 9,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          /// Header Image
+                          Image.asset(
+                            PngAssets.headerBannerAsset,
+                            width: context.deviceWidthFactor(0.6),
+                            height: 110,
+                            fit: BoxFit.fill,
+                          ),
+                          const MenuBarCustomWidget(),
+                          const SizedBox(height: 15),
+                        ],
+                      ),
+                    ),
+
+                    /// `Rahbar photo`
+                    _LeadersImageWidget(image: PngAssets.rahbarAsset),
+                  ],
                 ),
-                const MenuBarCustomWidget(),
-                const SizedBox(height: 25),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -205,6 +222,29 @@ class _WebsiteLinkWidget extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _LeadersImageWidget extends StatelessWidget {
+  const _LeadersImageWidget({
+    Key? key,
+    required this.image,
+  }) : super(key: key);
+  final String image;
+
+  @override
+  Widget build(BuildContext context) {
+    return const Expanded(
+      flex: 3,
+      child: Padding(
+        padding: EdgeInsets.all(30),
+        /* child: Image.asset(
+          image,
+          width: 100,
+          height: 130,
+        ), */
       ),
     );
   }

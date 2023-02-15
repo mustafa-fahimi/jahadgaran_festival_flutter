@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/contact_us_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/home_main_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/media_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/register_widget.dart';
@@ -7,6 +8,7 @@ enum HomeMiddleViews {
   home,
   register,
   media,
+  contactsUs,
 }
 
 extension HomeMiddleViewsEx on HomeMiddleViews {
@@ -18,6 +20,8 @@ extension HomeMiddleViewsEx on HomeMiddleViews {
         return RegisterWidget();
       case HomeMiddleViews.media:
         return const MediaWidget();
+      case HomeMiddleViews.contactsUs:
+        return ContactUsWidget();
     }
   }
 }

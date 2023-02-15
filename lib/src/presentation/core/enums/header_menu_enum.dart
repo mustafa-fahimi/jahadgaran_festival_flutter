@@ -42,7 +42,7 @@ extension HeaderMenuEx on HeaderMenu {
       case HeaderMenu.media:
         return HomeMiddleViews.media;
       case HeaderMenu.contactUs:
-        return HomeMiddleViews.home;
+        return HomeMiddleViews.contactsUs;
     }
   }
 }

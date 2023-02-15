@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/container_with_title_custom_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/core/components/elevated_button_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/outlined_text_field_custom_widget.dart';
 
 class RegisterWidget extends HookWidget {
@@ -99,6 +100,13 @@ class RegisterWidget extends HookWidget {
                           maxLength: 10,
                         ),
                         const SizedBox(height: 20),
+                        ElevatedButtonCustomWidget(
+                          btnText: context.l10n.register,
+                          height: 40,
+                          width: context.deviceWidthFactor(0.1),
+                          color: context.theme.colorScheme.primary,
+                        ),
+                        const SizedBox(height: 30),
                       ],
                     ),
                   ),

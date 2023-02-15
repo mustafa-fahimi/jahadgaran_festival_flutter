@@ -10,45 +10,34 @@ class MenuBarCustomWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        const Expanded(flex: 3, child: SizedBox()),
-        const SizedBox(width: 25),
-        Expanded(
-          flex: 9,
-          child: SizedBox(
-            height: 45,
-            child: Column(
-              children: [
-                /// `Top divider`
-                const _GradientDividerWidget(),
-                DecoratedBox(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(PngAssets.headerMenuBgAsset),
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                      HeaderMenu.values.length,
-                      (index) => _HeaderItem(
-                        headerMenu: HeaderMenu.values[index],
-                        isHome: index == 0,
-                      ),
-                    ),
-                  ),
+    return SizedBox(
+      height: 45,
+      child: Column(
+        children: [
+          /// `Top divider`
+          const _GradientDividerWidget(),
+          DecoratedBox(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(PngAssets.headerMenuBgAsset),
+              ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(
+                HeaderMenu.values.length,
+                (index) => _HeaderItem(
+                  headerMenu: HeaderMenu.values[index],
+                  isHome: index == 0,
                 ),
-
-                /// `Bottom divider`
-                const _GradientDividerWidget(),
-              ],
+              ),
             ),
           ),
-        ),
-        const SizedBox(width: 25),
-        const Expanded(flex: 3, child: SizedBox()),
-      ],
+
+          /// `Bottom divider`
+          const _GradientDividerWidget(),
+        ],
+      ),
     );
   }
 }

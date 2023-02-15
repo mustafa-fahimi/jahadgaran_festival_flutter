@@ -13,6 +13,8 @@ class PngAssets {
   static String get newsPlaceHolderAsset => 'news_place_holder'.png;
   static String get registerGuidAsset => 'register_guid'.png;
   static String get homeAsset => 'home'.png;
+  static String get emamAsset => 'emam'.png;
+  static String get rahbarAsset => 'rahbar'.png;
 }
 
 extension on String {
