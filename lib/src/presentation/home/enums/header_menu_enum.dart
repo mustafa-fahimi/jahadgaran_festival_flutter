@@ -3,9 +3,9 @@ import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
 
 enum HeaderMenu {
-  mainPage,
+  home,
   festivalInformation,
-  feativalNews,
+  news,
   registerConditions,
   media,
   contactUs,
@@ -14,11 +14,11 @@ enum HeaderMenu {
 extension HeaderMenuEx on HeaderMenu {
   String getMenuTitle(BuildContext context) {
     switch (this) {
-      case HeaderMenu.mainPage:
+      case HeaderMenu.home:
         return context.l10n.main_page;
       case HeaderMenu.festivalInformation:
         return context.l10n.festival_information;
-      case HeaderMenu.feativalNews:
+      case HeaderMenu.news:
         return context.l10n.festival_news;
       case HeaderMenu.registerConditions:
         return context.l10n.register_condition;
@@ -31,12 +31,12 @@ extension HeaderMenuEx on HeaderMenu {
 
   HomeMiddleViews getProperMiddleView() {
     switch (this) {
-      case HeaderMenu.mainPage:
+      case HeaderMenu.home:
         return HomeMiddleViews.home;
       case HeaderMenu.festivalInformation:
-        return HomeMiddleViews.home;
-      case HeaderMenu.feativalNews:
-        return HomeMiddleViews.home;
+        return HomeMiddleViews.festivalInformation;
+      case HeaderMenu.news:
+        return HomeMiddleViews.news;
       case HeaderMenu.registerConditions:
         return HomeMiddleViews.registerCondition;
       case HeaderMenu.media:

@@ -9,7 +9,7 @@ import 'package:jahadgaran_festival/src/presentation/core/components/page_decora
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/authentication_widget.dart';
-import 'package:jahadgaran_festival/src/presentation/home/widgets/f_a_q_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/f_a_q_slider_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/important_dates_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/menu_bar_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/organizers_widget.dart';
@@ -139,7 +139,7 @@ class _RightSectionWidget extends StatelessWidget {
           const SizedBox(height: 10),
           ContainerWithTitleCustomWidget(
             title: context.l10n.frequently_asked_questions,
-            content: const FAQWidget(),
+            content: const FAQSliderWidget(),
           ),
           const SizedBox(height: 10),
           ContainerWithTitleCustomWidget(

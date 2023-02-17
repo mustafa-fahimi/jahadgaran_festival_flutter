@@ -4,8 +4,8 @@ import 'package:jahadgaran_festival/src/core/core.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/elevated_button_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/models/temporary_news.dart';
 
-class AllNewsWidget extends StatelessWidget {
-  AllNewsWidget({Key? key}) : super(key: key);
+class NewsWidget extends StatelessWidget {
+  NewsWidget({Key? key}) : super(key: key);
 
   final List<TemporaryNews> allNews = [];
 
