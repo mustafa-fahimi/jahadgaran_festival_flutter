@@ -76,4 +76,23 @@ class AppHelper {
     final jalaliDate = gregorianDate.toJalali();
     return '${jalaliDate.year}/${jalaliDate.month}/${jalaliDate.day}';
   }
+
+  String calculateUntilStartDate() {
+    var finalDifference = '';
+    final festivalStartDate = DateTime(2023, 4, 27);
+    final differenceInDays =
+        festivalStartDate.difference(DateTime.now()).inDays;
+    final remainingMonth = differenceInDays ~/ 30;
+    final remainingDays = differenceInDays % 30;
+    if (remainingMonth > 0) {
+      finalDifference += '$remainingMonth ماه ';
+    }
+    if (remainingMonth > 0 && remainingDays > 0) {
+      finalDifference += 'و ';
+    }
+    if (remainingDays > 0) {
+      finalDifference += '$remainingDays روز';
+    }
+    return finalDifference;
+  }
 }
