@@ -61,5 +61,7 @@
     "fullname":"نام و نام خانوادگی",
     "message_text":"متن پیام",
     "send":"ارسال",
-    "contact_us_description":"دبیرخانه جشنواره:\n۰۹۳۷۰۶۲۱۴۱۲"
+    "contact_us_description":"دبیرخانه جشنواره:\n۰۹۳۷۰۶۲۱۴۱۲",
+    "register_condition_description":"جهت اطلاع از نحوه ثبت نام و شرایط ارسال آثار ، لینک زیر را لمس نمایید.",
+    "register_condition_link":"مطالعه نحوه ثبت نام و شرایط ارسال آثار"
 }

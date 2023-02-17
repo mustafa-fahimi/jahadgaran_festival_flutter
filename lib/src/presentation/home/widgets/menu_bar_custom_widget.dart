@@ -67,23 +67,26 @@ class _HeaderItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      type: MaterialType.transparency,
-      child: InkWell(
-        onTap: () => context.read<HomeBloc>().add(
-              HomeEvent.changeMiddleView(
-                view: headerMenu.getProperMiddleView(),
+    return SizedBox(
+      height: 42,
+      child: Material(
+        type: MaterialType.transparency,
+        child: InkWell(
+          onTap: () => context.read<HomeBloc>().add(
+                HomeEvent.changeMiddleView(
+                  view: headerMenu.getProperMiddleView(),
+                ),
               ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25),
+            child: Center(
+              child: isHome
+                  ? Image.asset(PngAssets.homeAsset)
+                  : Text(
+                      headerMenu.getMenuTitle(context),
+                      style: subtitle1Bold.copyWith(color: Colors.white),
+                    ),
             ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
-          child: Center(
-            child: isHome
-                ? Image.asset(PngAssets.homeAsset)
-                : Text(
-                    headerMenu.getMenuTitle(context),
-                    style: subtitle1Bold.copyWith(color: Colors.white),
-                  ),
           ),
         ),
       ),

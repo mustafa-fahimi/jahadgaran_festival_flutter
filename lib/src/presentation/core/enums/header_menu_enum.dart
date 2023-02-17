@@ -18,10 +18,10 @@ extension HeaderMenuEx on HeaderMenu {
         return context.l10n.main_page;
       case HeaderMenu.festivalInformation:
         return context.l10n.festival_information;
-      case HeaderMenu.registerConditions:
-        return context.l10n.register_condition;
       case HeaderMenu.feativalNews:
         return context.l10n.festival_news;
+      case HeaderMenu.registerConditions:
+        return context.l10n.register_condition;
       case HeaderMenu.media:
         return context.l10n.media;
       case HeaderMenu.contactUs:
@@ -35,10 +35,10 @@ extension HeaderMenuEx on HeaderMenu {
         return HomeMiddleViews.home;
       case HeaderMenu.festivalInformation:
         return HomeMiddleViews.home;
-      case HeaderMenu.registerConditions:
-        return HomeMiddleViews.home;
       case HeaderMenu.feativalNews:
         return HomeMiddleViews.home;
+      case HeaderMenu.registerConditions:
+        return HomeMiddleViews.registerCondition;
       case HeaderMenu.media:
         return HomeMiddleViews.media;
       case HeaderMenu.contactUs:
