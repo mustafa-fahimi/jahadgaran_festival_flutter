@@ -1,81 +1,58 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/elevated_button_custom_widget.dart';
-import 'package:jahadgaran_festival/src/presentation/home/models/temporary_news.dart';
+import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
+import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
+import 'package:jahadgaran_festival/src/presentation/home/models/news_model.dart';
 
 class NewsWidget extends StatelessWidget {
   NewsWidget({Key? key}) : super(key: key);
 
-  final List<TemporaryNews> allNews = [];
+  final List<NewsModel> allNews = [];
 
   @override
   Widget build(BuildContext context) {
     if (allNews.isEmpty) _fillAllNews(context);
     return Padding(
       padding: const EdgeInsets.all(8),
-      child: GridView.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 8,
-          mainAxisSpacing: 8,
-          mainAxisExtent: 215,
-        ),
-        shrinkWrap: true,
-        itemCount: allNews.length,
-        itemBuilder: (context, index) => _NewsGridViewItemWidget(
-          newsImage: allNews[index].newsImage,
-          newsTitle: allNews[index].newsTitle,
-          newsDescription: allNews[index].newsDescription,
-          newsDate: allNews[index].newsDate,
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 1, maxHeight: 500),
+        child: ListView.separated(
+          shrinkWrap: true,
+          itemCount: allNews.length,
+          itemBuilder: (context, index) => _NewsListViewItemWidget(
+            news: NewsModel(
+              newsImage: allNews[index].newsImage,
+              newsTitle: allNews[index].newsTitle,
+              newsDescription: allNews[index].newsDescription,
+              newsDate: allNews[index].newsDate,
+            ),
+          ),
+          separatorBuilder: (context, index) => const SizedBox(height: 6),
         ),
       ),
     );
   }
 
-  void _fillAllNews(BuildContext context) {
-    allNews.addAll([
-      TemporaryNews(
-        newsImage: PngAssets.newsPlaceHolderAsset,
-        newsTitle: context.l10n.news1_title,
-        newsDescription: context.l10n.news1_description,
-        newsDate: context.l10n.news1_date,
-      ),
-      TemporaryNews(
-        newsImage: PngAssets.newsPlaceHolderAsset,
-        newsTitle: context.l10n.news2_title,
-        newsDescription: context.l10n.news2_description,
-        newsDate: context.l10n.news2_date,
-      ),
-      TemporaryNews(
-        newsImage: PngAssets.newsPlaceHolderAsset,
-        newsTitle: context.l10n.news3_title,
-        newsDescription: context.l10n.news3_description,
-        newsDate: context.l10n.news3_date,
-      ),
-      TemporaryNews(
-        newsImage: PngAssets.newsPlaceHolderAsset,
-        newsTitle: context.l10n.news4_title,
-        newsDescription: context.l10n.news4_description,
-        newsDate: context.l10n.news4_date,
-      ),
-    ]);
-  }
+  void _fillAllNews(BuildContext context) => allNews.addAll([
+        NewsModel(
+          newsImage: PngAssets.news1Asset,
+          newsTitle: context.l10n.news1_title,
+          newsDescription: context.l10n.news1_description,
+          newsDate: context.l10n.news1_date,
+        ),
+      ]);
 }
 
-class _NewsGridViewItemWidget extends StatelessWidget {
-  const _NewsGridViewItemWidget({
+class _NewsListViewItemWidget extends StatelessWidget {
+  const _NewsListViewItemWidget({
     Key? key,
-    required this.newsImage,
-    required this.newsTitle,
-    required this.newsDescription,
-    required this.newsDate,
+    required this.news,
   }) : super(key: key);
 
-  final String newsImage;
-  final String newsTitle;
-  final String newsDescription;
-  final String newsDate;
+  final NewsModel news;
 
   @override
   Widget build(BuildContext context) {
@@ -88,52 +65,59 @@ class _NewsGridViewItemWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(10),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Expanded(
-              child: Column(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(kDefaultBorderRadius),
-                    child: Image.asset(
-                      newsImage,
-                      height: 170,
-                      fit: BoxFit.fill,
-                    ),
+            Column(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(kDefaultBorderRadius),
+                  child: Image.asset(
+                    news.newsImage,
+                    height: 160,
+                    width: 160,
+                    fit: BoxFit.fill,
                   ),
-                  Text(
-                    newsDate,
-                    style: body1.copyWith(color: Colors.black54),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ],
-              ),
+                ),
+                Text(
+                  news.newsDate,
+                  style: body2.copyWith(color: Colors.black54),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
             ),
-            const SizedBox(width: 6),
-            Expanded(
+            const SizedBox(width: 12),
+            SizedBox(
+              height: 170,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    newsTitle,
+                    news.newsTitle,
                     style: heading5Bold,
                     overflow: TextOverflow.ellipsis,
                   ),
                   const SizedBox(height: 6),
-                  Text(
-                    newsDescription,
-                    style: body1,
-                    maxLines: 3,
-                    overflow: TextOverflow.ellipsis,
+                  SizedBox(
+                    width: context.deviceWidthFactor(0.42),
+                    child: Text(
+                      news.newsDescription,
+                      style: subtitle2,
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                   const Spacer(),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: ElevatedButtonCustomWidget(
-                      btnText: context.l10n.read_more,
-                      height: 35,
-                      width: 90,
-                      color: context.theme.colorScheme.primary,
-                    ),
+                  ElevatedButtonCustomWidget(
+                    btnText: context.l10n.read_more,
+                    height: 35,
+                    width: 110,
+                    color: context.theme.colorScheme.primary,
+                    onTap: () => context.read<HomeBloc>().add(
+                          HomeEvent.changeMiddleView(
+                            view: HomeMiddleViews.singleNews,
+                            news: news,
+                          ),
+                        ),
                   ),
                 ],
               ),

@@ -161,9 +161,14 @@ class _MiddleSectionWidget extends StatelessWidget {
       flex: 9,
       child: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) => state.when(
-          idle: (isLoading, currentMiddleView) => HomeMiddleViews.values
-              .firstWhere((middleView) => middleView == currentMiddleView)
-              .getCorrespondingWidget(),
+          idle: (
+            isLoading,
+            currentMiddleView,
+            selectedNews,
+          ) =>
+              HomeMiddleViews.values
+                  .firstWhere((middleView) => middleView == currentMiddleView)
+                  .getCorrespondingWidget(news: selectedNews),
         ),
       ),
     );

@@ -1,5 +1,5 @@
-class TemporaryNews {
-  const TemporaryNews({
+class NewsModel {
+  const NewsModel({
     required this.newsImage,
     required this.newsTitle,
     required this.newsDescription,

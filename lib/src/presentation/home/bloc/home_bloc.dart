@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:jahadgaran_festival/src/features/user/domain/use_cases/get_users_use_case.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
+import 'package:jahadgaran_festival/src/presentation/home/models/news_model.dart';
 
 part 'home_bloc.freezed.dart';
 part 'home_event.dart';
@@ -22,5 +23,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     _ChangeMiddleView event,
     Emitter<HomeState> emit,
   ) async =>
-      emit(_Idle(currentMiddleView: event.view));
+      emit(
+        _Idle(
+          currentMiddleView: event.view,
+          selectedNews: event.news,
+        ),
+      );
 }
