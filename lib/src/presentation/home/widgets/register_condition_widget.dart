@@ -8,7 +8,7 @@ class RegisterConditionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ContainerWithTitleCustomWidget(
-      title: context.l10n.register,
+      title: context.l10n.register_and_send,
       content: Padding(
         padding: const EdgeInsets.all(10),
         child: Column(

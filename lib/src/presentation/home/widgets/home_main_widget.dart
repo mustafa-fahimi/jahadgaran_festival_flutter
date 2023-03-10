@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/container_with_title_custom_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/banner_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/festival_information_widget.dart';
-import 'package:jahadgaran_festival/src/presentation/home/widgets/introduction_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/news_widget.dart';
 
 class HomeMainWidget extends StatelessWidget {
@@ -13,8 +13,8 @@ class HomeMainWidget extends StatelessWidget {
     return Column(
       children: [
         ContainerWithTitleCustomWidget(
-          title: context.l10n.introduction,
-          content: const IntroductionWidget(),
+          title: context.l10n.festival_banner,
+          content: const BannerWidget(),
         ),
         const SizedBox(height: 10),
         ContainerWithTitleCustomWidget(

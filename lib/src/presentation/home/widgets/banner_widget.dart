@@ -2,14 +2,14 @@ import 'package:appinio_video_player/appinio_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 
-class IntroductionWidget extends StatefulWidget {
-  const IntroductionWidget({Key? key}) : super(key: key);
+class BannerWidget extends StatefulWidget {
+  const BannerWidget({Key? key}) : super(key: key);
 
   @override
-  State<IntroductionWidget> createState() => _IntroductionWidgetState();
+  State<BannerWidget> createState() => _BannerWidgetState();
 }
 
-class _IntroductionWidgetState extends State<IntroductionWidget> {
+class _BannerWidgetState extends State<BannerWidget> {
   late CustomVideoPlayerWebSettings customVideoPlayerWebSettings;
   late CustomVideoPlayerWebController _customVideoPlayerWebController;
   String videoUrl =
@@ -34,7 +34,7 @@ class _IntroductionWidgetState extends State<IntroductionWidget> {
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         child: GestureDetector(
-          onTap: _onTapBanner,
+          //onTap: _onTapBanner,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(5),
             child: SizedBox(
@@ -56,7 +56,7 @@ class _IntroductionWidgetState extends State<IntroductionWidget> {
     );
   }
 
-  void _onTapBanner() => setState(() {
+  /*  void _onTapBanner() => setState(() {
         showVideoBanner = false;
-      });
+      }); */
 }

@@ -8,12 +8,11 @@ import 'package:jahadgaran_festival/src/presentation/core/components/container_w
 import 'package:jahadgaran_festival/src/presentation/core/components/page_decorator.dart';
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
-import 'package:jahadgaran_festival/src/presentation/home/widgets/authentication_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/f_a_q_slider_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/important_dates_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/menu_bar_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/organizers_widget.dart';
-import 'package:jahadgaran_festival/src/presentation/home/widgets/register_guid_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/send_attachment_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/until_festival_widget.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
@@ -118,13 +117,8 @@ class _RightSectionWidget extends StatelessWidget {
       child: Column(
         children: <Widget>[
           ContainerWithTitleCustomWidget(
-            title: context.l10n.login_to_system,
-            content: const AuthenticationWidget(),
-          ),
-          const SizedBox(height: 10),
-          ContainerWithTitleCustomWidget(
-            title: context.l10n.register_guid,
-            content: const RegisterGuidWidget(),
+            title: context.l10n.register_and_send,
+            content: const SendAttachmentWidget(),
           ),
           const SizedBox(height: 10),
           ContainerWithTitleCustomWidget(

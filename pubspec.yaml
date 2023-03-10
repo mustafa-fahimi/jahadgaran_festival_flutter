@@ -19,7 +19,9 @@ dependencies:
   database_service:
     path: ../../packages/database_service
   dio: ^4.0.6
+  dropdown_button2: ^2.0.0
   equatable: ^2.0.5
+  file_picker: ^5.2.5
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.2
