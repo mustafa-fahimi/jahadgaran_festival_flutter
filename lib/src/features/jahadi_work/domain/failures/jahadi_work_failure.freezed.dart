@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'user_failure.dart';
+part of 'jahadi_work_failure.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$UserFailure {
+mixin _$JahadiWorkFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(ApiFailure failure) api,
@@ -57,16 +57,16 @@ mixin _$UserFailure {
 }
 
 /// @nodoc
-abstract class $UserFailureCopyWith<$Res> {
-  factory $UserFailureCopyWith(
-          UserFailure value, $Res Function(UserFailure) then) =
-      _$UserFailureCopyWithImpl<$Res, UserFailure>;
+abstract class $JahadiWorkFailureCopyWith<$Res> {
+  factory $JahadiWorkFailureCopyWith(
+          JahadiWorkFailure value, $Res Function(JahadiWorkFailure) then) =
+      _$JahadiWorkFailureCopyWithImpl<$Res, JahadiWorkFailure>;
 }
 
 /// @nodoc
-class _$UserFailureCopyWithImpl<$Res, $Val extends UserFailure>
-    implements $UserFailureCopyWith<$Res> {
-  _$UserFailureCopyWithImpl(this._value, this._then);
+class _$JahadiWorkFailureCopyWithImpl<$Res, $Val extends JahadiWorkFailure>
+    implements $JahadiWorkFailureCopyWith<$Res> {
+  _$JahadiWorkFailureCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -85,7 +85,8 @@ abstract class _$$_ApiCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ApiCopyWithImpl<$Res> extends _$UserFailureCopyWithImpl<$Res, _$_Api>
+class __$$_ApiCopyWithImpl<$Res>
+    extends _$JahadiWorkFailureCopyWithImpl<$Res, _$_Api>
     implements _$$_ApiCopyWith<$Res> {
   __$$_ApiCopyWithImpl(_$_Api _value, $Res Function(_$_Api) _then)
       : super(_value, _then);
@@ -122,7 +123,7 @@ class _$_Api implements _Api {
 
   @override
   String toString() {
-    return 'UserFailure.api(failure: $failure)';
+    return 'JahadiWorkFailure.api(failure: $failure)';
   }
 
   @override
@@ -205,7 +206,7 @@ class _$_Api implements _Api {
   }
 }
 
-abstract class _Api implements UserFailure {
+abstract class _Api implements JahadiWorkFailure {
   const factory _Api(final ApiFailure failure) = _$_Api;
 
   ApiFailure get failure;
@@ -222,7 +223,7 @@ abstract class _$$_NullParamCopyWith<$Res> {
 
 /// @nodoc
 class __$$_NullParamCopyWithImpl<$Res>
-    extends _$UserFailureCopyWithImpl<$Res, _$_NullParam>
+    extends _$JahadiWorkFailureCopyWithImpl<$Res, _$_NullParam>
     implements _$$_NullParamCopyWith<$Res> {
   __$$_NullParamCopyWithImpl(
       _$_NullParam _value, $Res Function(_$_NullParam) _then)
@@ -236,7 +237,7 @@ class _$_NullParam implements _NullParam {
 
   @override
   String toString() {
-    return 'UserFailure.nullParam()';
+    return 'JahadiWorkFailure.nullParam()';
   }
 
   @override
@@ -311,6 +312,6 @@ class _$_NullParam implements _NullParam {
   }
 }
 
-abstract class _NullParam implements UserFailure {
+abstract class _NullParam implements JahadiWorkFailure {
   const factory _NullParam() = _$_NullParam;
 }

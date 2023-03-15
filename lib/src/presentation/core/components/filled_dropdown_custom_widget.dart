@@ -56,7 +56,7 @@ class _FilledDropdownCustomWidgetState
           color: Colors.white,
           borderRadius: BorderRadius.circular(kDefaultBorderRadius),
         ),
-        maxHeight: 300,
+        maxHeight: 350,
         elevation: 2,
       ),
       buttonStyleData: ButtonStyleData(
@@ -67,7 +67,7 @@ class _FilledDropdownCustomWidgetState
           border: Border.all(color: Colors.black26),
         ),
         padding: const EdgeInsets.symmetric(horizontal: 4),
-        height: widget.height ?? 50,
+        height: widget.height ?? 45,
       ),
       underline: const SizedBox(height: 0),
       style: subtitle2,
@@ -83,17 +83,17 @@ class _FilledDropdownCustomWidgetState
           dropdownValue = newValue;
         });
       },
-      items: widget.dropdownItems.map<DropdownMenuItem<String>>(
-        (String value) {
-          return DropdownMenuItem<String>(
-            value: value,
-            child: Text(
-              value,
-              style: subtitle2Bold,
+      items: widget.dropdownItems
+          .map<DropdownMenuItem<String>>(
+            (String value) => DropdownMenuItem<String>(
+              value: value,
+              child: Text(
+                value,
+                style: subtitle2Bold,
+              ),
             ),
-          );
-        },
-      ).toList(),
+          )
+          .toList(),
     );
   }
 }

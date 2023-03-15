@@ -89,5 +89,7 @@
     "ideha":"ایده ها و طرح های نو",
     "khoshnevisi":"خوشنویسی",
     "karikator":"کاریکاتور",
-    "filmKotah":"فیلم کوتاه"
+    "filmKotah":"فیلم کوتاه",
+    "must_choose_attachment_type":"لطفا قالب اثر خود را انتخاب نمایید.",
+    "must_choose_attachment_file":"لطفا فایل اثر خود را انتخاب نمایید."
 }

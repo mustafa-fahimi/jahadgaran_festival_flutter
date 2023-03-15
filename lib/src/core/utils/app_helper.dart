@@ -4,6 +4,7 @@ import 'dart:math' as math;
 import 'package:crypto/crypto.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 import 'package:jahadgaran_festival/src/injection/injectable.dart';
@@ -32,25 +33,69 @@ class AppHelper {
   }) =>
       getIt.get<Talker>().log(message, logLevel: logLevel);
 
-  void displaySnackBar({
+  void displayToast(
+    BuildContext context, {
     required String message,
     bool isFailureMessage = false,
   }) {
-    final context = getIt.get<AppRouter>().navigatorKey.currentContext!;
-    final snackBar = SnackBar(
-      content: Text(
-        message.isNotEmpty ? message : 'Empty',
-        textAlign: TextAlign.center,
-        style: body1,
+    final fToast = FToast()..init(context);
+    final toastWidget = GestureDetector(
+      onTap: fToast.removeCustomToast,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(kDefaultBorderRadius * 2),
+          color: isFailureMessage ? kErrorColor : kSuccessColor,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                isFailureMessage ? Icons.close_rounded : Icons.check,
+                color: Colors.white,
+              ),
+              const SizedBox(width: 8),
+              Flexible(
+                child: Text(
+                  message,
+                  maxLines: 4,
+                  overflow: TextOverflow.ellipsis,
+                  style: body1.copyWith(color: Colors.white),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
-      backgroundColor:
-          isFailureMessage ? kErrorColor : context.theme.colorScheme.primary,
     );
 
-    ScaffoldMessenger.of(context)
-      ..hideCurrentSnackBar()
-      ..showSnackBar(snackBar);
+    fToast.showToast(
+      child: toastWidget,
+      toastDuration: const Duration(milliseconds: 3000),
+      positionedToastBuilder: (context, child) {
+        return Positioned(
+          bottom: context.deviceHeightFactor(0.05),
+          left: 20,
+          child: child,
+        );
+      },
+    );
   }
+
+  void displayToastWithoutContext({
+    required String message,
+    bool isFailureMessage = false,
+  }) =>
+      Fluttertoast.showToast(
+        msg: message,
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.TOP,
+        timeInSecForIosWeb: 3,
+        backgroundColor: isFailureMessage ? kErrorColor : kSuccessColor,
+        textColor: Colors.white,
+        fontSize: subtitle1.fontSize,
+      );
 
   void closeSoftKeyboard(BuildContext context) =>
       FocusScope.of(context).unfocus();

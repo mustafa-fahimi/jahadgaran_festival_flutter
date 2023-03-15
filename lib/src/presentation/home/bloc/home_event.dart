@@ -6,4 +6,8 @@ class HomeEvent with _$HomeEvent {
     required HomeMiddleViews view,
     NewsModel? news,
   }) = _ChangeMiddleView;
+
+  const factory HomeEvent.sendData({
+    required FormData formData,
+  }) = _SendData;
 }

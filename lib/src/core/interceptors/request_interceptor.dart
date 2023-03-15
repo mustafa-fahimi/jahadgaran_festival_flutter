@@ -14,9 +14,6 @@ class RequestInterceptor extends Interceptor {
     RequestInterceptorHandler handler,
   ) async {
     options.baseUrl = env.baseUrl;
-    // final token = getIt.get<GlobalRequestSupplier>().token;
-    // if (token.isNotEmpty) options.headers =
-    // {'Authorization': 'Bearer $token'};
 
     return super.onRequest(options, handler);
   }

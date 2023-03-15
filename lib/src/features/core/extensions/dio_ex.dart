@@ -23,7 +23,7 @@ extension FlApiFutureToDomain<T> on Future<Either<DioError, Response<T>>> {
 
 extension DioErrorEx on DioError {
   ApiFailure get toDomain {
-    if (type == DioErrorType.response) {
+    if (type == DioErrorType.badResponse) {
       switch (response?.statusCode) {
         case null:
           return const ApiFailure.crossOrigin('{"message": ["cross_origin"]}');
@@ -43,7 +43,7 @@ extension DioErrorEx on DioError {
         default:
           return ApiFailure.fetchData(response!.data);
       }
-    } else if (type == DioErrorType.other) {
+    } else if (type == DioErrorType.unknown) {
       if (error is SocketException) {
         return const ApiFailure.socket();
       } else if (error is TimeoutException) {
@@ -58,7 +58,7 @@ extension DioErrorEx on DioError {
     } else if (type == DioErrorType.cancel) {
       return const ApiFailure.cancel();
     } else if (type == DioErrorType.receiveTimeout ||
-        type == DioErrorType.connectTimeout ||
+        type == DioErrorType.connectionTimeout ||
         type == DioErrorType.sendTimeout) {
       return const ApiFailure.timeout('{"message": ["timeout"]}');
     } else {

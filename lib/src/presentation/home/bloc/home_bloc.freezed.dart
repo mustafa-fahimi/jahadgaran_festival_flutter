@@ -16,44 +16,44 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HomeEvent {
-  HomeMiddleViews get view => throw _privateConstructorUsedError;
-  NewsModel? get news => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(HomeMiddleViews view, NewsModel? news)
         changeMiddleView,
+    required TResult Function(FormData formData) sendData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult? Function(FormData formData)? sendData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult Function(FormData formData)? sendData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
+    required TResult Function(_SendData value) sendData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult? Function(_SendData value)? sendData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult Function(_SendData value)? sendData,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $HomeEventCopyWith<HomeEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -61,8 +61,6 @@ mixin _$HomeEvent {
 abstract class $HomeEventCopyWith<$Res> {
   factory $HomeEventCopyWith(HomeEvent value, $Res Function(HomeEvent) then) =
       _$HomeEventCopyWithImpl<$Res, HomeEvent>;
-  @useResult
-  $Res call({HomeMiddleViews view, NewsModel? news});
 }
 
 /// @nodoc
@@ -74,33 +72,13 @@ class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? view = null,
-    Object? news = freezed,
-  }) {
-    return _then(_value.copyWith(
-      view: null == view
-          ? _value.view
-          : view // ignore: cast_nullable_to_non_nullable
-              as HomeMiddleViews,
-      news: freezed == news
-          ? _value.news
-          : news // ignore: cast_nullable_to_non_nullable
-              as NewsModel?,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$_ChangeMiddleViewCopyWith<$Res>
-    implements $HomeEventCopyWith<$Res> {
+abstract class _$$_ChangeMiddleViewCopyWith<$Res> {
   factory _$$_ChangeMiddleViewCopyWith(
           _$_ChangeMiddleView value, $Res Function(_$_ChangeMiddleView) then) =
       __$$_ChangeMiddleViewCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({HomeMiddleViews view, NewsModel? news});
 }
@@ -170,6 +148,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   TResult when<TResult extends Object?>({
     required TResult Function(HomeMiddleViews view, NewsModel? news)
         changeMiddleView,
+    required TResult Function(FormData formData) sendData,
   }) {
     return changeMiddleView(view, news);
   }
@@ -178,6 +157,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult? Function(FormData formData)? sendData,
   }) {
     return changeMiddleView?.call(view, news);
   }
@@ -186,6 +166,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult Function(FormData formData)? sendData,
     required TResult orElse(),
   }) {
     if (changeMiddleView != null) {
@@ -198,6 +179,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
+    required TResult Function(_SendData value) sendData,
   }) {
     return changeMiddleView(this);
   }
@@ -206,6 +188,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult? Function(_SendData value)? sendData,
   }) {
     return changeMiddleView?.call(this);
   }
@@ -214,6 +197,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult Function(_SendData value)? sendData,
     required TResult orElse(),
   }) {
     if (changeMiddleView != null) {
@@ -228,38 +212,184 @@ abstract class _ChangeMiddleView implements HomeEvent {
       {required final HomeMiddleViews view,
       final NewsModel? news}) = _$_ChangeMiddleView;
 
-  @override
   HomeMiddleViews get view;
-  @override
   NewsModel? get news;
-  @override
   @JsonKey(ignore: true)
   _$$_ChangeMiddleViewCopyWith<_$_ChangeMiddleView> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
+abstract class _$$_SendDataCopyWith<$Res> {
+  factory _$$_SendDataCopyWith(
+          _$_SendData value, $Res Function(_$_SendData) then) =
+      __$$_SendDataCopyWithImpl<$Res>;
+  @useResult
+  $Res call({FormData formData});
+}
+
+/// @nodoc
+class __$$_SendDataCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$_SendData>
+    implements _$$_SendDataCopyWith<$Res> {
+  __$$_SendDataCopyWithImpl(
+      _$_SendData _value, $Res Function(_$_SendData) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? formData = null,
+  }) {
+    return _then(_$_SendData(
+      formData: null == formData
+          ? _value.formData
+          : formData // ignore: cast_nullable_to_non_nullable
+              as FormData,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SendData implements _SendData {
+  const _$_SendData({required this.formData});
+
+  @override
+  final FormData formData;
+
+  @override
+  String toString() {
+    return 'HomeEvent.sendData(formData: $formData)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_SendData &&
+            (identical(other.formData, formData) ||
+                other.formData == formData));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, formData);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_SendDataCopyWith<_$_SendData> get copyWith =>
+      __$$_SendDataCopyWithImpl<_$_SendData>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HomeMiddleViews view, NewsModel? news)
+        changeMiddleView,
+    required TResult Function(FormData formData) sendData,
+  }) {
+    return sendData(formData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult? Function(FormData formData)? sendData,
+  }) {
+    return sendData?.call(formData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult Function(FormData formData)? sendData,
+    required TResult orElse(),
+  }) {
+    if (sendData != null) {
+      return sendData(formData);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChangeMiddleView value) changeMiddleView,
+    required TResult Function(_SendData value) sendData,
+  }) {
+    return sendData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult? Function(_SendData value)? sendData,
+  }) {
+    return sendData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult Function(_SendData value)? sendData,
+    required TResult orElse(),
+  }) {
+    if (sendData != null) {
+      return sendData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SendData implements HomeEvent {
+  const factory _SendData({required final FormData formData}) = _$_SendData;
+
+  FormData get formData;
+  @JsonKey(ignore: true)
+  _$$_SendDataCopyWith<_$_SendData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$HomeState {
   bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoadingAction => throw _privateConstructorUsedError;
+  bool get isActionSuccessful => throw _privateConstructorUsedError;
   HomeMiddleViews get currentMiddleView => throw _privateConstructorUsedError;
   NewsModel? get selectedNews => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isLoading, HomeMiddleViews currentMiddleView,
+    required TResult Function(
+            bool isLoading,
+            bool isLoadingAction,
+            bool isActionSuccessful,
+            HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)
         idle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool isLoading, HomeMiddleViews currentMiddleView,
+    TResult? Function(
+            bool isLoading,
+            bool isLoadingAction,
+            bool isActionSuccessful,
+            HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isLoading, HomeMiddleViews currentMiddleView,
+    TResult Function(
+            bool isLoading,
+            bool isLoadingAction,
+            bool isActionSuccessful,
+            HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
     required TResult orElse(),
@@ -294,6 +424,8 @@ abstract class $HomeStateCopyWith<$Res> {
   @useResult
   $Res call(
       {bool isLoading,
+      bool isLoadingAction,
+      bool isActionSuccessful,
       HomeMiddleViews currentMiddleView,
       NewsModel? selectedNews});
 }
@@ -312,6 +444,8 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @override
   $Res call({
     Object? isLoading = null,
+    Object? isLoadingAction = null,
+    Object? isActionSuccessful = null,
     Object? currentMiddleView = null,
     Object? selectedNews = freezed,
   }) {
@@ -319,6 +453,14 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoadingAction: null == isLoadingAction
+          ? _value.isLoadingAction
+          : isLoadingAction // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isActionSuccessful: null == isActionSuccessful
+          ? _value.isActionSuccessful
+          : isActionSuccessful // ignore: cast_nullable_to_non_nullable
               as bool,
       currentMiddleView: null == currentMiddleView
           ? _value.currentMiddleView
@@ -340,6 +482,8 @@ abstract class _$$_IdleCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
   @useResult
   $Res call(
       {bool isLoading,
+      bool isLoadingAction,
+      bool isActionSuccessful,
       HomeMiddleViews currentMiddleView,
       NewsModel? selectedNews});
 }
@@ -354,6 +498,8 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
   @override
   $Res call({
     Object? isLoading = null,
+    Object? isLoadingAction = null,
+    Object? isActionSuccessful = null,
     Object? currentMiddleView = null,
     Object? selectedNews = freezed,
   }) {
@@ -361,6 +507,14 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoadingAction: null == isLoadingAction
+          ? _value.isLoadingAction
+          : isLoadingAction // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isActionSuccessful: null == isActionSuccessful
+          ? _value.isActionSuccessful
+          : isActionSuccessful // ignore: cast_nullable_to_non_nullable
               as bool,
       currentMiddleView: null == currentMiddleView
           ? _value.currentMiddleView
@@ -379,6 +533,8 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
 class _$_Idle implements _Idle {
   const _$_Idle(
       {this.isLoading = false,
+      this.isLoadingAction = false,
+      this.isActionSuccessful = false,
       this.currentMiddleView = HomeMiddleViews.home,
       this.selectedNews});
 
@@ -387,13 +543,19 @@ class _$_Idle implements _Idle {
   final bool isLoading;
   @override
   @JsonKey()
+  final bool isLoadingAction;
+  @override
+  @JsonKey()
+  final bool isActionSuccessful;
+  @override
+  @JsonKey()
   final HomeMiddleViews currentMiddleView;
   @override
   final NewsModel? selectedNews;
 
   @override
   String toString() {
-    return 'HomeState.idle(isLoading: $isLoading, currentMiddleView: $currentMiddleView, selectedNews: $selectedNews)';
+    return 'HomeState.idle(isLoading: $isLoading, isLoadingAction: $isLoadingAction, isActionSuccessful: $isActionSuccessful, currentMiddleView: $currentMiddleView, selectedNews: $selectedNews)';
   }
 
   @override
@@ -403,6 +565,10 @@ class _$_Idle implements _Idle {
             other is _$_Idle &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
+            (identical(other.isLoadingAction, isLoadingAction) ||
+                other.isLoadingAction == isLoadingAction) &&
+            (identical(other.isActionSuccessful, isActionSuccessful) ||
+                other.isActionSuccessful == isActionSuccessful) &&
             (identical(other.currentMiddleView, currentMiddleView) ||
                 other.currentMiddleView == currentMiddleView) &&
             (identical(other.selectedNews, selectedNews) ||
@@ -410,8 +576,8 @@ class _$_Idle implements _Idle {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, isLoading, currentMiddleView, selectedNews);
+  int get hashCode => Object.hash(runtimeType, isLoading, isLoadingAction,
+      isActionSuccessful, currentMiddleView, selectedNews);
 
   @JsonKey(ignore: true)
   @override
@@ -422,33 +588,48 @@ class _$_Idle implements _Idle {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isLoading, HomeMiddleViews currentMiddleView,
+    required TResult Function(
+            bool isLoading,
+            bool isLoadingAction,
+            bool isActionSuccessful,
+            HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)
         idle,
   }) {
-    return idle(isLoading, currentMiddleView, selectedNews);
+    return idle(isLoading, isLoadingAction, isActionSuccessful,
+        currentMiddleView, selectedNews);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool isLoading, HomeMiddleViews currentMiddleView,
+    TResult? Function(
+            bool isLoading,
+            bool isLoadingAction,
+            bool isActionSuccessful,
+            HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
   }) {
-    return idle?.call(isLoading, currentMiddleView, selectedNews);
+    return idle?.call(isLoading, isLoadingAction, isActionSuccessful,
+        currentMiddleView, selectedNews);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isLoading, HomeMiddleViews currentMiddleView,
+    TResult Function(
+            bool isLoading,
+            bool isLoadingAction,
+            bool isActionSuccessful,
+            HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
     required TResult orElse(),
   }) {
     if (idle != null) {
-      return idle(isLoading, currentMiddleView, selectedNews);
+      return idle(isLoading, isLoadingAction, isActionSuccessful,
+          currentMiddleView, selectedNews);
     }
     return orElse();
   }
@@ -485,11 +666,17 @@ class _$_Idle implements _Idle {
 abstract class _Idle implements HomeState {
   const factory _Idle(
       {final bool isLoading,
+      final bool isLoadingAction,
+      final bool isActionSuccessful,
       final HomeMiddleViews currentMiddleView,
       final NewsModel? selectedNews}) = _$_Idle;
 
   @override
   bool get isLoading;
+  @override
+  bool get isLoadingAction;
+  @override
+  bool get isActionSuccessful;
   @override
   HomeMiddleViews get currentMiddleView;
   @override

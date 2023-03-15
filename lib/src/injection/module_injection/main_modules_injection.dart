@@ -3,7 +3,6 @@ import 'package:database_service/database_service.dart';
 import 'package:dio/dio.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
-import 'package:jahadgaran_festival/src/core/interceptors/global_request_suplier.dart';
 import 'package:jahadgaran_festival/src/core/interceptors/request_interceptor.dart';
 import 'package:jahadgaran_festival/src/injection/injectable.dart';
 import 'package:talker_dio_logger/talker_dio_logger.dart';
@@ -11,7 +10,9 @@ import 'package:talker_flutter/talker_flutter.dart';
 
 class MainModulesInjection {
   MainModulesInjection() {
-    final dio = Dio(BaseOptions(connectTimeout: 20000));
+    final dio = Dio(
+      BaseOptions(connectTimeout: const Duration(seconds: 16)),
+    );
 
     final talker = TalkerFlutter.init();
 
@@ -26,7 +27,6 @@ class MainModulesInjection {
       ..registerSingleton<TalkerDioLogger>(talkerDioLogger)
       ..registerLazySingleton<AppRouter>(AppRouter.new)
       ..registerLazySingleton<DatabaseService>(DatabaseServiceImpl.new)
-      ..registerLazySingleton<GlobalRequestSupplier>(GlobalRequestSupplier.new)
       ..registerLazySingleton<ApiService>(
         () => ApiServiceImpl(
           interceptors: [
