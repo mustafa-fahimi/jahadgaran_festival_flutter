@@ -16,8 +16,8 @@ import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/attachment_type_enum.dart';
 
 // ignore: must_be_immutable
-class SendAttachmentFormWidget extends HookWidget {
-  SendAttachmentFormWidget({Key? key}) : super(key: key);
+class SendDataFormWidget extends HookWidget {
+  SendDataFormWidget({Key? key}) : super(key: key);
 
   final GlobalKey<FormState> formKey = GlobalKey();
   late TextEditingController groupNameController;
@@ -25,11 +25,13 @@ class SendAttachmentFormWidget extends HookWidget {
   late TextEditingController groupSupervisorFnameController;
   late TextEditingController groupSupervisorLnameController;
   late TextEditingController groupSupervisorPhoneController;
+  late TextEditingController verifyCodeController;
   late FocusNode groupNameFocusNode;
   late FocusNode groupCodeFocusNode;
   late FocusNode groupSupervisorFnameFocusNode;
   late FocusNode groupSupervisorLnameFocusNode;
   late FocusNode groupSupervisorPhoneFocusNode;
+  late FocusNode verifyCodeFocusNode;
   late ValueNotifier<String?> selectedAttachmentType;
   late ValueNotifier<PlatformFile?> selectedFile;
 
@@ -40,11 +42,13 @@ class SendAttachmentFormWidget extends HookWidget {
     groupSupervisorFnameController = useTextEditingController();
     groupSupervisorLnameController = useTextEditingController();
     groupSupervisorPhoneController = useTextEditingController();
+    verifyCodeController = useTextEditingController();
     groupNameFocusNode = useFocusNode();
     groupCodeFocusNode = useFocusNode();
     groupSupervisorFnameFocusNode = useFocusNode();
     groupSupervisorLnameFocusNode = useFocusNode();
     groupSupervisorPhoneFocusNode = useFocusNode();
+    verifyCodeFocusNode = useFocusNode();
     selectedAttachmentType = useState<String?>(null);
     selectedFile = useState<PlatformFile?>(null);
     return ContainerWithTitleCustomWidget(
@@ -121,22 +125,6 @@ class SendAttachmentFormWidget extends HookWidget {
                         ),
                         const SizedBox(height: 20),
                         Text(
-                          context.l10n.supervisor_phone,
-                          style: subtitle2,
-                        ),
-                        const SizedBox(height: 8),
-                        OutlinedTextFieldCustomWidget(
-                          controller: groupSupervisorPhoneController,
-                          focusNode: groupSupervisorPhoneFocusNode,
-                          hintText: context.l10n.supervisor_phone,
-                          validator: FormValidators().phoneNumberValidator,
-                          keyboardType: TextInputType.phone,
-                          inputFormatters: [
-                            FilteringTextInputFormatter.digitsOnly,
-                          ],
-                        ),
-                        const SizedBox(height: 20),
-                        Text(
                           context.l10n.choose_attachment_type,
                           style: subtitle2,
                         ),
@@ -169,6 +157,60 @@ class SendAttachmentFormWidget extends HookWidget {
                             '''${context.l10n.chosen_file_name}:\n ${selectedFile.value?.name}''',
                             style: subtitle1Bold,
                           ),
+                        Divider(
+                          height: 40,
+                          color: Colors.grey.shade400,
+                          thickness: 1,
+                        ),
+                        Text(
+                          context.l10n.supervisor_phone,
+                          style: subtitle2,
+                        ),
+                        const SizedBox(height: 8),
+                        OutlinedTextFieldCustomWidget(
+                          controller: groupSupervisorPhoneController,
+                          focusNode: groupSupervisorPhoneFocusNode,
+                          hintText: context.l10n.supervisor_phone,
+                          validator: FormValidators().phoneNumberValidator,
+                          keyboardType: TextInputType.phone,
+                          inputFormatters: [
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
+                        ),
+                        const SizedBox(height: 20),
+                        BlocConsumer<HomeBloc, HomeState>(
+                          listener: (context, state) {
+                            if (state.isActionSuccessful) {
+                              AppHelper().displayToast(context, message: 'hi');
+                            }
+                          },
+                          builder: (context, state) =>
+                              ElevatedButtonCustomWidget(
+                            onTap: () => _onTapSend(context),
+                            btnText: context.l10n.get_verify_code,
+                            height: 40,
+                            isLoading: state.isLoadingAction,
+                            width: context.deviceWidthFactor(0.1),
+                            color: context.theme.colorScheme.primary,
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        Text(
+                          context.l10n.verify_code_description,
+                          style: subtitle2,
+                        ),
+                        const SizedBox(height: 8),
+                        OutlinedTextFieldCustomWidget(
+                          controller: verifyCodeController,
+                          focusNode: verifyCodeFocusNode,
+                          hintText: context.l10n.verify_code,
+                          validator: FormValidators().emptyValidator,
+                          maxLength: 5,
+                          keyboardType: TextInputType.number,
+                          inputFormatters: [
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
+                        ),
                         const SizedBox(height: 40),
                         BlocConsumer<HomeBloc, HomeState>(
                           listener: (context, state) {
@@ -179,7 +221,7 @@ class SendAttachmentFormWidget extends HookWidget {
                           builder: (context, state) =>
                               ElevatedButtonCustomWidget(
                             onTap: () => _onTapSend(context),
-                            btnText: context.l10n.send,
+                            btnText: context.l10n.submit_information,
                             height: 40,
                             isLoading: state.isLoadingAction,
                             width: context.deviceWidthFactor(0.1),

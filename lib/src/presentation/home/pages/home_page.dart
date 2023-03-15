@@ -12,7 +12,7 @@ import 'package:jahadgaran_festival/src/presentation/home/widgets/f_a_q_slider_w
 import 'package:jahadgaran_festival/src/presentation/home/widgets/important_dates_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/menu_bar_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/organizers_widget.dart';
-import 'package:jahadgaran_festival/src/presentation/home/widgets/send_attachment_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/send_data_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/until_festival_widget.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
@@ -118,7 +118,7 @@ class _RightSectionWidget extends StatelessWidget {
         children: <Widget>[
           ContainerWithTitleCustomWidget(
             title: context.l10n.register_and_send,
-            content: const SendAttachmentWidget(),
+            content: const SendDataWidget(),
           ),
           const SizedBox(height: 10),
           ContainerWithTitleCustomWidget(

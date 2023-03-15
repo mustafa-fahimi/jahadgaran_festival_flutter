@@ -7,8 +7,8 @@ import 'package:jahadgaran_festival/src/presentation/core/components/outlined_bu
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
 
-class SendAttachmentWidget extends HookWidget {
-  const SendAttachmentWidget({Key? key}) : super(key: key);
+class SendDataWidget extends HookWidget {
+  const SendDataWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
