@@ -13,15 +13,15 @@ class OrganizersWidget extends StatelessWidget {
         child: Column(
           children: [
             _PictureRowWidget(
-              photoAddress1: PngAssets.majmaLogoAsset,
-              photoAddress2: PngAssets.jahadgaranLogoAsset,
-              photoAddress3: PngAssets.majmaLogoAsset,
+              photoAddress1: PngAssets.basijSazandegiAsset,
+              photoAddress2: PngAssets.jahadgaranKarafarinAsset,
+              photoAddress3: PngAssets.astanGhodsAsset,
             ),
             const SizedBox(height: 2),
             _PictureRowWidget(
-              photoAddress1: PngAssets.majmaLogoAsset,
-              photoAddress2: PngAssets.jahadgaranLogoAsset,
-              photoAddress3: PngAssets.majmaLogoAsset,
+              photoAddress1: PngAssets.edareErshadAsset,
+              photoAddress2: '',
+              photoAddress3: '',
             ),
           ],
         ),
@@ -51,11 +51,15 @@ class _PictureRowWidget extends StatelessWidget {
         ),
         const SizedBox(width: 2),
         Expanded(
-          child: Image.asset(photoAddress2),
+          child: photoAddress2.isEmpty
+              ? const SizedBox()
+              : Image.asset(photoAddress2),
         ),
         const SizedBox(width: 2),
         Expanded(
-          child: Image.asset(photoAddress3),
+          child: photoAddress3.isEmpty
+              ? const SizedBox()
+              : Image.asset(photoAddress3),
         ),
       ],
     );

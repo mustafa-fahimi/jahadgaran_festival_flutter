@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
@@ -14,7 +13,7 @@ import 'package:jahadgaran_festival/src/presentation/home/widgets/menu_bar_custo
 import 'package:jahadgaran_festival/src/presentation/home/widgets/organizers_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/send_data_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/until_festival_widget.dart';
-import 'package:talker_flutter/talker_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -24,9 +23,9 @@ class HomePage extends StatelessWidget {
     final bloc = getIt.get<HomeBloc>();
     return BlocProvider(
       create: (_) => bloc,
-      child: PageDecorator(
-        body: const _HomeBody(),
-        floatingActionButton: FloatingActionButton(
+      child: const PageDecorator(
+        body: _HomeBody(),
+        /* floatingActionButton: FloatingActionButton(
           onPressed: () => context.router.pushWidget(
             TalkerScreen(talker: getIt.get<Talker>()),
           ),
@@ -34,7 +33,7 @@ class HomePage extends StatelessWidget {
             Icons.monitor_heart_outlined,
             color: Colors.white,
           ),
-        ),
+        ), */
       ),
     );
   }
@@ -58,32 +57,15 @@ class _HomeBody extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Row(
-                  children: <Widget>[
-                    /// `Emam photo`
-                    _LeadersImageWidget(image: PngAssets.emamAsset),
-                    Expanded(
-                      flex: 9,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          /// Header Image
-                          Image.asset(
-                            PngAssets.headerBannerAsset,
-                            width: context.deviceWidthFactor(0.6),
-                            height: 110,
-                            fit: BoxFit.fill,
-                          ),
-                          const MenuBarCustomWidget(),
-                          const SizedBox(height: 15),
-                        ],
-                      ),
-                    ),
-
-                    /// `Rahbar photo`
-                    _LeadersImageWidget(image: PngAssets.rahbarAsset),
-                  ],
+                /// Header Image
+                Image.asset(
+                  PngAssets.headerBannerAsset,
+                  width: context.deviceWidthFactor(0.6),
+                  height: 110,
+                  fit: BoxFit.fill,
                 ),
+                const MenuBarCustomWidget(),
+                const SizedBox(height: 15),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -171,11 +153,21 @@ class _LeftSectionWidget extends StatelessWidget {
       flex: 3,
       child: Column(
         children: [
-          _WebsiteLinkWidget(title: context.l10n.supreme_leader),
+          _WebsiteLinkWidget(
+            title: context.l10n.website_supreme_leader,
+            url: 'https://farsi.khamenei.ir/',
+          ),
           const SizedBox(height: 15),
-          _WebsiteLinkWidget(title: context.l10n.jahadgaran_atlas),
+          _WebsiteLinkWidget(
+            title: context.l10n.jahadgaran_atlas,
+            url: 'https://www.atlas.tara.co.ir',
+          ),
           const SizedBox(height: 15),
-          _WebsiteLinkWidget(title: context.l10n.jahadgaran_festival_ir),
+          _WebsiteLinkWidget(
+            title: context.l10n.jahadgaran_festival_ir,
+            url:
+                'https://jahadgaran.org/tag/%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87-%D9%85%D9%84%DB%8C-%D8%AC%D9%87%D8%A7%D8%AF%DA%AF%D8%B1%D8%A7%D9%86/',
+          ),
         ],
       ),
     );
@@ -186,16 +178,18 @@ class _WebsiteLinkWidget extends StatelessWidget {
   const _WebsiteLinkWidget({
     Key? key,
     required this.title,
+    required this.url,
   }) : super(key: key);
 
   final String title;
+  final String url;
 
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
-        onTap: () {},
+        onTap: () async => launchUrl(Uri.parse(url)),
         child: SizedBox(
           width: double.infinity,
           height: 75,
@@ -214,29 +208,6 @@ class _WebsiteLinkWidget extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class _LeadersImageWidget extends StatelessWidget {
-  const _LeadersImageWidget({
-    Key? key,
-    required this.image,
-  }) : super(key: key);
-  final String image;
-
-  @override
-  Widget build(BuildContext context) {
-    return const Expanded(
-      flex: 3,
-      child: Padding(
-        padding: EdgeInsets.all(30),
-        /* child: Image.asset(
-          image,
-          width: 100,
-          height: 130,
-        ), */
       ),
     );
   }

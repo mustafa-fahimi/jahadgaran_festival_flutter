@@ -14,10 +14,6 @@
                 "development",
                 "--target",
                 "lib/main_development.dart",
-                "--web-port",
-                "8686",
-                "--web-renderer",
-                "html"
             ]
         },
         {
