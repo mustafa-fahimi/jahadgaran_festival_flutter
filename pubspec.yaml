@@ -18,7 +18,7 @@ dependencies:
   dartz: ^0.10.1
   database_service:
     path: ../../packages/database_service
-  dio: ^5.0.2
+  dio: ^5.1.1
   dropdown_button2: ^2.0.0
   equatable: ^2.0.5
   file_picker: ^5.2.5
