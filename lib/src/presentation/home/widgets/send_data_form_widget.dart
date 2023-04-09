@@ -8,8 +8,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/container_with_title_custom_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/core/components/dropdown_multi_select_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/elevated_button_custom_widget.dart';
-import 'package:jahadgaran_festival/src/presentation/core/components/filled_dropdown_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/outlined_button_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/outlined_text_field_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
@@ -32,7 +32,7 @@ class SendDataFormWidget extends HookWidget {
   late FocusNode groupSupervisorLnameFocusNode;
   late FocusNode groupSupervisorPhoneFocusNode;
   late FocusNode verifyCodeFocusNode;
-  late ValueNotifier<String?> selectedAttachmentType;
+  late ValueNotifier<List<String>> selectedAttachmentTypes;
   late ValueNotifier<PlatformFile?> selectedFile;
 
   @override
@@ -49,7 +49,7 @@ class SendDataFormWidget extends HookWidget {
     groupSupervisorLnameFocusNode = useFocusNode();
     groupSupervisorPhoneFocusNode = useFocusNode();
     verifyCodeFocusNode = useFocusNode();
-    selectedAttachmentType = useState<String?>(null);
+    selectedAttachmentTypes = useState<List<String>>([]);
     selectedFile = useState<PlatformFile?>(null);
     return ContainerWithTitleCustomWidget(
       title: context.l10n.register_and_send,
@@ -145,9 +145,11 @@ class SendDataFormWidget extends HookWidget {
                           style: subtitle2,
                         ),
                         const SizedBox(height: 8),
-                        FilledDropdownCustomWidget(
-                          onValueChange: (value) =>
-                              selectedAttachmentType.value = value ?? '',
+                        DropdownMultiSelectWidget(
+                          onSelectedItemsChange: (value) {
+                            selectedAttachmentTypes.value.clear();
+                            selectedAttachmentTypes.value.addAll(value);
+                          },
                           dropdownItems: List.generate(
                             AttachmentType.values.length,
                             (index) =>
@@ -292,7 +294,7 @@ class SendDataFormWidget extends HookWidget {
     /// If we have validation error then do nothing and return
     if (!formKey.currentState!.validate()) return;
 
-    if (selectedAttachmentType.value == null) {
+    if (selectedAttachmentTypes.value.isEmpty) {
       AppHelper().displayToast(
         context,
         message: context.l10n.must_choose_attachment_type,
@@ -321,7 +323,7 @@ class SendDataFormWidget extends HookWidget {
       'supervisor_fname': groupSupervisorFnameController.text,
       'supervisor_lname': groupSupervisorLnameController.text,
       'supervisor_phone': groupSupervisorPhoneController.text,
-      'attachment_type': selectedAttachmentType.value,
+      'attachment_type': selectedAttachmentTypes.value.join(', '),
       'file': file,
     });
 
