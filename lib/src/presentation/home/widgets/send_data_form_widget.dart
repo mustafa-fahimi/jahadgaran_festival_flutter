@@ -125,6 +125,22 @@ class SendDataFormWidget extends HookWidget {
                         ),
                         const SizedBox(height: 20),
                         Text(
+                          context.l10n.supervisor_phone,
+                          style: subtitle2,
+                        ),
+                        const SizedBox(height: 8),
+                        OutlinedTextFieldCustomWidget(
+                          controller: groupSupervisorPhoneController,
+                          focusNode: groupSupervisorPhoneFocusNode,
+                          hintText: context.l10n.supervisor_phone,
+                          validator: FormValidators().phoneNumberValidator,
+                          keyboardType: TextInputType.phone,
+                          inputFormatters: [
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
+                        ),
+                        const SizedBox(height: 20),
+                        Text(
                           context.l10n.choose_attachment_type,
                           style: subtitle2,
                         ),
@@ -157,7 +173,7 @@ class SendDataFormWidget extends HookWidget {
                             '''${context.l10n.chosen_file_name}:\n ${selectedFile.value?.name}''',
                             style: subtitle1Bold,
                           ),
-                        Divider(
+                        /* Divider(
                           height: 40,
                           color: Colors.grey.shade400,
                           thickness: 1,
@@ -211,11 +227,20 @@ class SendDataFormWidget extends HookWidget {
                             FilteringTextInputFormatter.digitsOnly,
                           ],
                         ),
-                        const SizedBox(height: 40),
+                        const SizedBox(height: 40), */
                         BlocConsumer<HomeBloc, HomeState>(
                           listener: (context, state) {
                             if (state.isActionSuccessful) {
-                              AppHelper().displayToast(context, message: 'hi');
+                              AppHelper().displayToast(
+                                context,
+                                message: context.l10n.submit_successfull,
+                              );
+                            } else if (state.actionFailMessage.isNotEmpty) {
+                              AppHelper().displayToast(
+                                context,
+                                message: state.actionFailMessage,
+                                isFailureMessage: true,
+                              );
                             }
                           },
                           builder: (context, state) =>

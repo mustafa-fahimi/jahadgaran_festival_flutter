@@ -6,6 +6,7 @@ class HomeState with _$HomeState {
     @Default(false) bool isLoading,
     @Default(false) bool isLoadingAction,
     @Default(false) bool isActionSuccessful,
+    @Default('') String actionFailMessage,
     @Default(HomeMiddleViews.home) HomeMiddleViews currentMiddleView,
     NewsModel? selectedNews,
   }) = _Idle;

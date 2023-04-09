@@ -359,6 +359,7 @@ mixin _$HomeState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isLoadingAction => throw _privateConstructorUsedError;
   bool get isActionSuccessful => throw _privateConstructorUsedError;
+  String get actionFailMessage => throw _privateConstructorUsedError;
   HomeMiddleViews get currentMiddleView => throw _privateConstructorUsedError;
   NewsModel? get selectedNews => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -367,6 +368,7 @@ mixin _$HomeState {
             bool isLoading,
             bool isLoadingAction,
             bool isActionSuccessful,
+            String actionFailMessage,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)
         idle,
@@ -378,6 +380,7 @@ mixin _$HomeState {
             bool isLoading,
             bool isLoadingAction,
             bool isActionSuccessful,
+            String actionFailMessage,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
@@ -389,6 +392,7 @@ mixin _$HomeState {
             bool isLoading,
             bool isLoadingAction,
             bool isActionSuccessful,
+            String actionFailMessage,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
@@ -426,6 +430,7 @@ abstract class $HomeStateCopyWith<$Res> {
       {bool isLoading,
       bool isLoadingAction,
       bool isActionSuccessful,
+      String actionFailMessage,
       HomeMiddleViews currentMiddleView,
       NewsModel? selectedNews});
 }
@@ -446,6 +451,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? isLoading = null,
     Object? isLoadingAction = null,
     Object? isActionSuccessful = null,
+    Object? actionFailMessage = null,
     Object? currentMiddleView = null,
     Object? selectedNews = freezed,
   }) {
@@ -462,6 +468,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.isActionSuccessful
           : isActionSuccessful // ignore: cast_nullable_to_non_nullable
               as bool,
+      actionFailMessage: null == actionFailMessage
+          ? _value.actionFailMessage
+          : actionFailMessage // ignore: cast_nullable_to_non_nullable
+              as String,
       currentMiddleView: null == currentMiddleView
           ? _value.currentMiddleView
           : currentMiddleView // ignore: cast_nullable_to_non_nullable
@@ -484,6 +494,7 @@ abstract class _$$_IdleCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
       {bool isLoading,
       bool isLoadingAction,
       bool isActionSuccessful,
+      String actionFailMessage,
       HomeMiddleViews currentMiddleView,
       NewsModel? selectedNews});
 }
@@ -500,6 +511,7 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
     Object? isLoading = null,
     Object? isLoadingAction = null,
     Object? isActionSuccessful = null,
+    Object? actionFailMessage = null,
     Object? currentMiddleView = null,
     Object? selectedNews = freezed,
   }) {
@@ -516,6 +528,10 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
           ? _value.isActionSuccessful
           : isActionSuccessful // ignore: cast_nullable_to_non_nullable
               as bool,
+      actionFailMessage: null == actionFailMessage
+          ? _value.actionFailMessage
+          : actionFailMessage // ignore: cast_nullable_to_non_nullable
+              as String,
       currentMiddleView: null == currentMiddleView
           ? _value.currentMiddleView
           : currentMiddleView // ignore: cast_nullable_to_non_nullable
@@ -535,6 +551,7 @@ class _$_Idle implements _Idle {
       {this.isLoading = false,
       this.isLoadingAction = false,
       this.isActionSuccessful = false,
+      this.actionFailMessage = '',
       this.currentMiddleView = HomeMiddleViews.home,
       this.selectedNews});
 
@@ -549,13 +566,16 @@ class _$_Idle implements _Idle {
   final bool isActionSuccessful;
   @override
   @JsonKey()
+  final String actionFailMessage;
+  @override
+  @JsonKey()
   final HomeMiddleViews currentMiddleView;
   @override
   final NewsModel? selectedNews;
 
   @override
   String toString() {
-    return 'HomeState.idle(isLoading: $isLoading, isLoadingAction: $isLoadingAction, isActionSuccessful: $isActionSuccessful, currentMiddleView: $currentMiddleView, selectedNews: $selectedNews)';
+    return 'HomeState.idle(isLoading: $isLoading, isLoadingAction: $isLoadingAction, isActionSuccessful: $isActionSuccessful, actionFailMessage: $actionFailMessage, currentMiddleView: $currentMiddleView, selectedNews: $selectedNews)';
   }
 
   @override
@@ -569,6 +589,8 @@ class _$_Idle implements _Idle {
                 other.isLoadingAction == isLoadingAction) &&
             (identical(other.isActionSuccessful, isActionSuccessful) ||
                 other.isActionSuccessful == isActionSuccessful) &&
+            (identical(other.actionFailMessage, actionFailMessage) ||
+                other.actionFailMessage == actionFailMessage) &&
             (identical(other.currentMiddleView, currentMiddleView) ||
                 other.currentMiddleView == currentMiddleView) &&
             (identical(other.selectedNews, selectedNews) ||
@@ -577,7 +599,7 @@ class _$_Idle implements _Idle {
 
   @override
   int get hashCode => Object.hash(runtimeType, isLoading, isLoadingAction,
-      isActionSuccessful, currentMiddleView, selectedNews);
+      isActionSuccessful, actionFailMessage, currentMiddleView, selectedNews);
 
   @JsonKey(ignore: true)
   @override
@@ -592,12 +614,13 @@ class _$_Idle implements _Idle {
             bool isLoading,
             bool isLoadingAction,
             bool isActionSuccessful,
+            String actionFailMessage,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)
         idle,
   }) {
     return idle(isLoading, isLoadingAction, isActionSuccessful,
-        currentMiddleView, selectedNews);
+        actionFailMessage, currentMiddleView, selectedNews);
   }
 
   @override
@@ -607,12 +630,13 @@ class _$_Idle implements _Idle {
             bool isLoading,
             bool isLoadingAction,
             bool isActionSuccessful,
+            String actionFailMessage,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
   }) {
     return idle?.call(isLoading, isLoadingAction, isActionSuccessful,
-        currentMiddleView, selectedNews);
+        actionFailMessage, currentMiddleView, selectedNews);
   }
 
   @override
@@ -622,6 +646,7 @@ class _$_Idle implements _Idle {
             bool isLoading,
             bool isLoadingAction,
             bool isActionSuccessful,
+            String actionFailMessage,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
@@ -629,7 +654,7 @@ class _$_Idle implements _Idle {
   }) {
     if (idle != null) {
       return idle(isLoading, isLoadingAction, isActionSuccessful,
-          currentMiddleView, selectedNews);
+          actionFailMessage, currentMiddleView, selectedNews);
     }
     return orElse();
   }
@@ -668,6 +693,7 @@ abstract class _Idle implements HomeState {
       {final bool isLoading,
       final bool isLoadingAction,
       final bool isActionSuccessful,
+      final String actionFailMessage,
       final HomeMiddleViews currentMiddleView,
       final NewsModel? selectedNews}) = _$_Idle;
 
@@ -677,6 +703,8 @@ abstract class _Idle implements HomeState {
   bool get isLoadingAction;
   @override
   bool get isActionSuccessful;
+  @override
+  String get actionFailMessage;
   @override
   HomeMiddleViews get currentMiddleView;
   @override

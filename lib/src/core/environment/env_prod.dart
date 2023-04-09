@@ -7,7 +7,7 @@ import 'package:jahadgaran_festival/src/core/environment/env.dart';
 @Singleton(as: Env, env: [Environment.prod])
 class EnvProd extends Env {
   @override
-  String get baseUrl => '';
+  String get baseUrl => 'http://festival-kh.ir/laravel_public/api/';
 
   @override
   String get authorizationHeader => '';

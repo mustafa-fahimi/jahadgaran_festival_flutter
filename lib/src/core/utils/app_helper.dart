@@ -72,7 +72,7 @@ class AppHelper {
 
     fToast.showToast(
       child: toastWidget,
-      toastDuration: const Duration(milliseconds: 3000),
+      toastDuration: const Duration(milliseconds: 3500),
       positionedToastBuilder: (context, child) {
         return Positioned(
           bottom: context.deviceHeightFactor(0.05),
@@ -82,20 +82,6 @@ class AppHelper {
       },
     );
   }
-
-  void displayToastWithoutContext({
-    required String message,
-    bool isFailureMessage = false,
-  }) =>
-      Fluttertoast.showToast(
-        msg: message,
-        toastLength: Toast.LENGTH_LONG,
-        gravity: ToastGravity.TOP,
-        timeInSecForIosWeb: 3,
-        backgroundColor: isFailureMessage ? kErrorColor : kSuccessColor,
-        textColor: Colors.white,
-        fontSize: subtitle1.fontSize,
-      );
 
   void closeSoftKeyboard(BuildContext context) =>
       FocusScope.of(context).unfocus();
