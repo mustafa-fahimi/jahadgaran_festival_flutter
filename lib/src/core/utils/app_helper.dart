@@ -110,7 +110,7 @@ class AppHelper {
 
   String calculateUntilStartDate() {
     var finalDifference = '';
-    final festivalStartDate = DateTime(2023, 4, 27);
+    final festivalStartDate = DateTime(2023, 5, 2);
     final differenceInDays =
         festivalStartDate.difference(DateTime.now()).inDays;
     final remainingMonth = differenceInDays ~/ 30;

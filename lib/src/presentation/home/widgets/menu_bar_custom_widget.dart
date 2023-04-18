@@ -10,33 +10,36 @@ class MenuBarCustomWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 45,
-      child: Column(
-        children: [
-          /// `Top divider`
-          const _GradientDividerWidget(),
-          DecoratedBox(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(PngAssets.headerMenuBgAsset),
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: SizedBox(
+        height: 45,
+        child: Column(
+          children: [
+            /// `Top divider`
+            const _GradientDividerWidget(),
+            DecoratedBox(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(PngAssets.headerMenuBgAsset),
+                ),
               ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                HeaderMenu.values.length,
-                (index) => _HeaderItem(
-                  headerMenu: HeaderMenu.values[index],
-                  isHome: index == 0,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                  HeaderMenu.values.length,
+                  (index) => _HeaderItem(
+                    headerMenu: HeaderMenu.values[index],
+                    isHome: index == 0,
+                  ),
                 ),
               ),
             ),
-          ),
 
-          /// `Bottom divider`
-          const _GradientDividerWidget(),
-        ],
+            /// `Bottom divider`
+            const _GradientDividerWidget(),
+          ],
+        ),
       ),
     );
   }

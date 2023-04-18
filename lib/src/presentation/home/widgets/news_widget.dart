@@ -73,8 +73,8 @@ class _NewsListViewItemWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(kDefaultBorderRadius),
                   child: Image.asset(
                     news.newsImage,
-                    height: 160,
-                    width: 160,
+                    height: 150,
+                    width: 150,
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -91,10 +91,14 @@ class _NewsListViewItemWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    news.newsTitle,
-                    style: heading5Bold,
-                    overflow: TextOverflow.ellipsis,
+                  SizedBox(
+                    width: context.deviceWidthFactor(0.5),
+                    child: Text(
+                      news.newsTitle,
+                      style: heading5Bold,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                   const SizedBox(height: 6),
                   SizedBox(

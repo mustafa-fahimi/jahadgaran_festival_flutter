@@ -13,6 +13,7 @@ import 'package:jahadgaran_festival/src/presentation/home/widgets/menu_bar_custo
 import 'package:jahadgaran_festival/src/presentation/home/widgets/organizers_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/send_data_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/until_festival_widget.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatelessWidget {
@@ -58,25 +59,43 @@ class _HomeBody extends StatelessWidget {
             child: Column(
               children: [
                 /// Header Image
-                Image.asset(
-                  PngAssets.headerBannerAsset,
-                  width: context.deviceWidthFactor(0.6),
-                  height: 110,
-                  fit: BoxFit.fill,
+                Center(
+                  child: Image.asset(
+                    PngAssets.headerBannerAsset,
+                    height: 120,
+                    fit: BoxFit.fill,
+                  ),
                 ),
                 const MenuBarCustomWidget(),
                 const SizedBox(height: 15),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const <Widget>[
-                    SizedBox(width: 10),
-                    _RightSectionWidget(),
-                    SizedBox(width: 15),
-                    _MiddleSectionWidget(),
-                    SizedBox(width: 15),
-                    _LeftSectionWidget(),
-                    SizedBox(width: 10),
+                ResponsiveRowColumn(
+                  layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                      ? ResponsiveRowColumnType.COLUMN
+                      : ResponsiveRowColumnType.ROW,
+                  rowMainAxisAlignment: MainAxisAlignment.center,
+                  rowCrossAxisAlignment: CrossAxisAlignment.start,
+                  rowSpacing: 15,
+                  columnSpacing: 15,
+                  columnPadding: const EdgeInsets.symmetric(horizontal: 14),
+                  children: [
+                    ResponsiveRowColumnItem(
+                      rowFlex: 3,
+                      child:
+                          ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                              ? const _MiddleSectionWidget()
+                              : const _RightSectionWidget(),
+                    ),
+                    ResponsiveRowColumnItem(
+                      rowFlex: 9,
+                      child:
+                          ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                              ? const _RightSectionWidget()
+                              : const _MiddleSectionWidget(),
+                    ),
+                    const ResponsiveRowColumnItem(
+                      rowFlex: 3,
+                      child: _LeftSectionWidget(),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 90),
@@ -94,36 +113,33 @@ class _RightSectionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      flex: 3,
-      child: Column(
-        children: <Widget>[
-          ContainerWithTitleCustomWidget(
-            title: context.l10n.register_and_send,
-            content: const SendDataWidget(),
-          ),
-          const SizedBox(height: 10),
-          ContainerWithTitleCustomWidget(
-            title: context.l10n.until_event,
-            content: const UntilFestivalWidget(),
-          ),
-          const SizedBox(height: 10),
-          ContainerWithTitleCustomWidget(
-            title: context.l10n.important_dates,
-            content: const ImportantDatesWidget(),
-          ),
-          const SizedBox(height: 10),
-          ContainerWithTitleCustomWidget(
-            title: context.l10n.frequently_asked_questions,
-            content: const FAQSliderWidget(),
-          ),
-          const SizedBox(height: 10),
-          ContainerWithTitleCustomWidget(
-            title: context.l10n.organizers,
-            content: const OrganizersWidget(),
-          ),
-        ],
-      ),
+    return Column(
+      children: <Widget>[
+        ContainerWithTitleCustomWidget(
+          title: context.l10n.register_and_send,
+          content: const SendDataWidget(),
+        ),
+        const SizedBox(height: 10),
+        ContainerWithTitleCustomWidget(
+          title: context.l10n.until_event,
+          content: const UntilFestivalWidget(),
+        ),
+        const SizedBox(height: 10),
+        ContainerWithTitleCustomWidget(
+          title: context.l10n.important_dates,
+          content: const ImportantDatesWidget(),
+        ),
+        const SizedBox(height: 10),
+        ContainerWithTitleCustomWidget(
+          title: context.l10n.frequently_asked_questions,
+          content: const FAQSliderWidget(),
+        ),
+        const SizedBox(height: 10),
+        ContainerWithTitleCustomWidget(
+          title: context.l10n.organizers,
+          content: const OrganizersWidget(),
+        ),
+      ],
     );
   }
 }
@@ -133,13 +149,10 @@ class _MiddleSectionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      flex: 9,
-      child: BlocBuilder<HomeBloc, HomeState>(
-        builder: (context, state) => HomeMiddleViews.values
-            .firstWhere((middleView) => middleView == state.currentMiddleView)
-            .getCorrespondingWidget(news: state.selectedNews),
-      ),
+    return BlocBuilder<HomeBloc, HomeState>(
+      builder: (context, state) => HomeMiddleViews.values
+          .firstWhere((middleView) => middleView == state.currentMiddleView)
+          .getCorrespondingWidget(news: state.selectedNews),
     );
   }
 }
@@ -149,27 +162,24 @@ class _LeftSectionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      flex: 3,
-      child: Column(
-        children: [
-          _WebsiteLinkWidget(
-            title: context.l10n.website_supreme_leader,
-            url: 'https://farsi.khamenei.ir/',
-          ),
-          const SizedBox(height: 15),
-          _WebsiteLinkWidget(
-            title: context.l10n.jahadgaran_atlas,
-            url: 'https://www.atlas.tara.co.ir',
-          ),
-          const SizedBox(height: 15),
-          _WebsiteLinkWidget(
-            title: context.l10n.jahadgaran_festival_ir,
-            url:
-                'https://jahadgaran.org/tag/%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87-%D9%85%D9%84%DB%8C-%D8%AC%D9%87%D8%A7%D8%AF%DA%AF%D8%B1%D8%A7%D9%86/',
-          ),
-        ],
-      ),
+    return Column(
+      children: [
+        _WebsiteLinkWidget(
+          title: context.l10n.website_supreme_leader,
+          url: 'https://farsi.khamenei.ir/',
+        ),
+        const SizedBox(height: 15),
+        _WebsiteLinkWidget(
+          title: context.l10n.jahadgaran_atlas,
+          url: 'https://www.atlas.tara.co.ir',
+        ),
+        const SizedBox(height: 15),
+        _WebsiteLinkWidget(
+          title: context.l10n.jahadgaran_festival_ir,
+          url:
+              'https://jahadgaran.org/tag/%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87-%D9%85%D9%84%DB%8C-%D8%AC%D9%87%D8%A7%D8%AF%DA%AF%D8%B1%D8%A7%D9%86/',
+        ),
+      ],
     );
   }
 }
