@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:dio/dio.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -15,263 +17,228 @@ import 'package:jahadgaran_festival/src/presentation/core/components/outlined_te
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/attachment_type_enum.dart';
 
-// ignore: must_be_immutable
 class SendDataFormWidget extends HookWidget {
   SendDataFormWidget({Key? key}) : super(key: key);
 
   final GlobalKey<FormState> formKey = GlobalKey();
-  late TextEditingController groupNameController;
-  late TextEditingController groupCodeController;
-  late TextEditingController groupSupervisorFnameController;
-  late TextEditingController groupSupervisorLnameController;
-  late TextEditingController groupSupervisorPhoneController;
-  late TextEditingController verifyCodeController;
-  late FocusNode groupNameFocusNode;
-  late FocusNode groupCodeFocusNode;
-  late FocusNode groupSupervisorFnameFocusNode;
-  late FocusNode groupSupervisorLnameFocusNode;
-  late FocusNode groupSupervisorPhoneFocusNode;
-  late FocusNode verifyCodeFocusNode;
-  late ValueNotifier<List<String>> selectedAttachmentTypes;
-  late ValueNotifier<PlatformFile?> selectedFile;
 
   @override
   Widget build(BuildContext context) {
-    groupNameController = useTextEditingController();
-    groupCodeController = useTextEditingController();
-    groupSupervisorFnameController = useTextEditingController();
-    groupSupervisorLnameController = useTextEditingController();
-    groupSupervisorPhoneController = useTextEditingController();
-    verifyCodeController = useTextEditingController();
-    groupNameFocusNode = useFocusNode();
-    groupCodeFocusNode = useFocusNode();
-    groupSupervisorFnameFocusNode = useFocusNode();
-    groupSupervisorLnameFocusNode = useFocusNode();
-    groupSupervisorPhoneFocusNode = useFocusNode();
-    verifyCodeFocusNode = useFocusNode();
-    selectedAttachmentTypes = useState<List<String>>([]);
-    selectedFile = useState<PlatformFile?>(null);
     return ContainerWithTitleCustomWidget(
       title: context.l10n.register_and_send,
+      bgColor: Colors.white,
       content: Padding(
         padding: const EdgeInsets.all(10),
         child: Form(
           key: formKey,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              const SizedBox(height: 10),
-              Text(
-                context.l10n.send_attachment_description,
-                style: heading5Bold.copyWith(color: kInfoColor),
-              ),
-              const SizedBox(height: 20),
-              Row(
+          child: BlocBuilder<HomeBloc, HomeState>(
+            builder: (context, state) {
+              return Row(
                 children: [
                   Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          context.l10n.jahadi_group_fullname,
-                          style: subtitle2,
-                        ),
-                        const SizedBox(height: 8),
-                        OutlinedTextFieldCustomWidget(
-                          controller: groupNameController,
-                          focusNode: groupNameFocusNode,
-                          hintText: context.l10n.jahadi_group_fullname,
-                          validator: FormValidators().emptyValidator,
-                        ),
-                        const SizedBox(height: 20),
-                        Text(
-                          context.l10n.jahadi_atlas_code,
-                          style: subtitle2,
-                        ),
-                        const SizedBox(height: 8),
-                        OutlinedTextFieldCustomWidget(
-                          controller: groupCodeController,
-                          focusNode: groupCodeFocusNode,
-                          hintText: context.l10n.jahadi_atlas_code,
-                          validator: FormValidators().emptyValidator,
-                          keyboardType: TextInputType.number,
-                          inputFormatters: [
-                            FilteringTextInputFormatter.digitsOnly
-                          ],
-                        ),
-                        const SizedBox(height: 20),
-                        Text(
-                          context.l10n.supervisor_fname,
-                          style: subtitle2,
-                        ),
-                        const SizedBox(height: 8),
-                        OutlinedTextFieldCustomWidget(
-                          controller: groupSupervisorFnameController,
-                          focusNode: groupSupervisorFnameFocusNode,
-                          hintText: context.l10n.supervisor_fname,
-                          validator: FormValidators().emptyValidator,
-                        ),
-                        const SizedBox(height: 20),
-                        Text(
-                          context.l10n.supervisor_lname,
-                          style: subtitle2,
-                        ),
-                        const SizedBox(height: 8),
-                        OutlinedTextFieldCustomWidget(
-                          controller: groupSupervisorLnameController,
-                          focusNode: groupSupervisorLnameFocusNode,
-                          hintText: context.l10n.supervisor_lname,
-                          validator: FormValidators().emptyValidator,
-                        ),
-                        const SizedBox(height: 20),
-                        Text(
-                          context.l10n.supervisor_phone,
-                          style: subtitle2,
-                        ),
-                        const SizedBox(height: 8),
-                        OutlinedTextFieldCustomWidget(
-                          controller: groupSupervisorPhoneController,
-                          focusNode: groupSupervisorPhoneFocusNode,
-                          hintText: context.l10n.supervisor_phone,
-                          validator: FormValidators().phoneNumberValidator,
-                          keyboardType: TextInputType.phone,
-                          inputFormatters: [
-                            FilteringTextInputFormatter.digitsOnly,
-                          ],
-                        ),
-                        const SizedBox(height: 20),
-                        Text(
-                          context.l10n.choose_attachment_type,
-                          style: subtitle2,
-                        ),
-                        const SizedBox(height: 8),
-                        DropdownMultiSelectWidget(
-                          onSelectedItemsChange: (value) {
-                            selectedAttachmentTypes.value.clear();
-                            selectedAttachmentTypes.value.addAll(value);
-                          },
-                          dropdownItems: List.generate(
-                            AttachmentType.values.length,
-                            (index) =>
-                                AttachmentType.values[index].getTitle(context),
-                          ),
-                        ),
-                        const SizedBox(height: 20),
-                        Text(
-                          context.l10n.choose_attachment_file,
-                          style: subtitle2,
-                        ),
-                        const SizedBox(height: 8),
-                        OutlinedButtonCustomWidget(
-                          onTap: _onTapSelectFile,
-                          btnText: context.l10n.choose_file,
-                          height: 35,
-                          width: context.deviceWidthFactor(0.07),
-                          buttonColor: context.theme.colorScheme.primary,
-                        ),
-                        const SizedBox(height: 15),
-                        if (selectedFile.value != null)
-                          Text(
-                            '''${context.l10n.chosen_file_name}:\n ${selectedFile.value?.name}''',
-                            style: subtitle1Bold,
-                          ),
-                        /* Divider(
-                          height: 40,
-                          color: Colors.grey.shade400,
-                          thickness: 1,
-                        ),
-                        Text(
-                          context.l10n.supervisor_phone,
-                          style: subtitle2,
-                        ),
-                        const SizedBox(height: 8),
-                        OutlinedTextFieldCustomWidget(
-                          controller: groupSupervisorPhoneController,
-                          focusNode: groupSupervisorPhoneFocusNode,
-                          hintText: context.l10n.supervisor_phone,
-                          validator: FormValidators().phoneNumberValidator,
-                          keyboardType: TextInputType.phone,
-                          inputFormatters: [
-                            FilteringTextInputFormatter.digitsOnly,
-                          ],
-                        ),
-                        const SizedBox(height: 20),
-                        BlocConsumer<HomeBloc, HomeState>(
-                          listener: (context, state) {
-                            if (state.isActionSuccessful) {
-                              AppHelper().displayToast(context, message: 'hi');
-                            }
-                          },
-                          builder: (context, state) =>
-                              ElevatedButtonCustomWidget(
-                            onTap: () => _onTapSend(context),
-                            btnText: context.l10n.get_verify_code,
-                            height: 40,
-                            isLoading: state.isLoadingAction,
-                            width: context.deviceWidthFactor(0.1),
-                            color: context.theme.colorScheme.primary,
-                          ),
-                        ),
-                        const SizedBox(height: 20),
-                        Text(
-                          context.l10n.verify_code_description,
-                          style: subtitle2,
-                        ),
-                        const SizedBox(height: 8),
-                        OutlinedTextFieldCustomWidget(
-                          controller: verifyCodeController,
-                          focusNode: verifyCodeFocusNode,
-                          hintText: context.l10n.verify_code,
-                          validator: FormValidators().emptyValidator,
-                          maxLength: 5,
-                          keyboardType: TextInputType.number,
-                          inputFormatters: [
-                            FilteringTextInputFormatter.digitsOnly,
-                          ],
-                        ),
-                        const SizedBox(height: 40), */
-                        BlocConsumer<HomeBloc, HomeState>(
-                          listener: (context, state) {
-                            if (state.isActionSuccessful) {
-                              AppHelper().displayToast(
-                                context,
-                                message: context.l10n.submit_successfull,
-                              );
-                            } else if (state.actionFailMessage.isNotEmpty) {
-                              AppHelper().displayToast(
-                                context,
-                                message: state.actionFailMessage,
-                                isFailureMessage: true,
-                              );
-                            }
-                          },
-                          builder: (context, state) =>
-                              ElevatedButtonCustomWidget(
-                            onTap: () => _onTapSend(context),
-                            btnText: context.l10n.submit_information,
-                            height: 40,
-                            isLoading: state.isLoadingAction,
-                            width: context.deviceWidthFactor(0.1),
-                            color: context.theme.colorScheme.primary,
-                          ),
-                        ),
-                        const SizedBox(height: 30),
-                      ],
-                    ),
+                    flex: 3,
+                    child: state.sendDataStep == 1
+                        ? _FirstStepFormWidget()
+                        : _SecondStepFormWidget(formKey: formKey),
                   ),
                   const SizedBox(width: 15),
                   Expanded(
+                    flex: 2,
                     child: SvgPicture.asset(
                       SvgAssets.formIllustrationAsset,
                       height: 250,
                     ),
                   ),
                 ],
-              ),
-            ],
+              );
+            },
           ),
         ),
       ),
+    );
+  }
+}
+
+class _FirstStepFormWidget extends HookWidget {
+  _FirstStepFormWidget({Key? key}) : super(key: key);
+
+  late TextEditingController groupCodeController;
+  late TextEditingController groupSupervisorNationalCodeController;
+  late FocusNode groupCodeFocusNode;
+  late FocusNode groupSupervisorNationalCodeFocusNode;
+
+  @override
+  Widget build(BuildContext context) {
+    groupCodeController = useTextEditingController();
+    groupSupervisorNationalCodeController = useTextEditingController();
+    groupCodeFocusNode = useFocusNode();
+    groupSupervisorNationalCodeFocusNode = useFocusNode();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          context.l10n.jahadi_atlas_code,
+          style: subtitle2,
+        ),
+        const SizedBox(height: 8),
+        OutlinedTextFieldCustomWidget(
+          controller: groupCodeController,
+          focusNode: groupCodeFocusNode,
+          hintText: context.l10n.jahadi_atlas_code,
+          validator: FormValidators().emptyValidator,
+          keyboardType: TextInputType.number,
+          inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+        ),
+        const SizedBox(height: 20),
+        Text(
+          context.l10n.supervisor_national_code,
+          style: subtitle2,
+        ),
+        const SizedBox(height: 8),
+        OutlinedTextFieldCustomWidget(
+          controller: groupSupervisorNationalCodeController,
+          focusNode: groupSupervisorNationalCodeFocusNode,
+          hintText: context.l10n.supervisor_national_code,
+          keyboardType: TextInputType.number,
+          inputFormatters: [
+            FilteringTextInputFormatter.digitsOnly,
+          ],
+          maxLength: 10,
+        ),
+        const SizedBox(height: 20),
+        ElevatedButtonCustomWidget(
+          onTap: () => _onTapCheckInformation(context),
+          btnText: context.l10n.check_information,
+          height: 40,
+          isLoading: context.watch<HomeBloc>().state.isLoadingCheckInformation,
+          width: context.deviceWidthFactor(0.1),
+          color: context.theme.colorScheme.primary,
+        ),
+      ],
+    );
+  }
+
+  void _onTapCheckInformation(BuildContext context) {}
+}
+
+class _SecondStepFormWidget extends HookWidget {
+  _SecondStepFormWidget({
+    Key? key,
+    required this.formKey,
+  }) : super(key: key);
+
+  final GlobalKey<FormState> formKey;
+
+  late TextEditingController descriptionController;
+  late FocusNode descriptionFocusNode;
+  late ValueNotifier<List<String>> selectedAttachmentTypes;
+  late ValueNotifier<PlatformFile?> selectedFile;
+
+  @override
+  Widget build(BuildContext context) {
+    descriptionController = useTextEditingController();
+    descriptionFocusNode = useFocusNode();
+    selectedAttachmentTypes = useState<List<String>>([]);
+    selectedFile = useState<PlatformFile?>(null);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        const SizedBox(height: 15),
+        Text(
+          context.l10n.choose_multi_attachment_type_description,
+          style: subtitle1Bold.copyWith(color: Colors.pink),
+        ),
+        const SizedBox(height: 25),
+        Text(
+          context.l10n.choose_attachment_type,
+          style: subtitle2,
+        ),
+        const SizedBox(height: 8),
+        DropdownMultiSelectWidget(
+          onSelectedItemsChange: (value) {
+            selectedAttachmentTypes.value.clear();
+            selectedAttachmentTypes.value.addAll(value);
+          },
+          dropdownItems: List.generate(
+            AttachmentType.values.length,
+            (index) => AttachmentType.values[index].getTitle(context),
+          ),
+        ),
+        const SizedBox(height: 20),
+        Text(
+          context.l10n.description,
+          style: subtitle2,
+        ),
+        const SizedBox(height: 8),
+        OutlinedTextFieldCustomWidget(
+          controller: descriptionController,
+          focusNode: descriptionFocusNode,
+          hintText: context.l10n.description_hint,
+          minLines: 4,
+          maxLines: 4,
+        ),
+        const SizedBox(height: 20),
+        Text(
+          context.l10n.choose_attachment_file,
+          style: subtitle2,
+        ),
+        const SizedBox(height: 8),
+        OutlinedButtonCustomWidget(
+          onTap: _onTapSelectFile,
+          btnText: context.l10n.choose_file,
+          height: 40,
+          width: context.deviceWidthFactor(0.15),
+          buttonColor: context.theme.colorScheme.primary,
+        ),
+        const SizedBox(height: 15),
+        if (selectedFile.value != null)
+          RichText(
+            text: TextSpan(
+              text: '${context.l10n.chosen_file_name}:\n',
+              style: subtitle1,
+              children: [
+                TextSpan(
+                  text: selectedFile.value?.name,
+                  style: heading6.copyWith(color: kSuccessColor),
+                ),
+              ],
+            ),
+          ),
+        const SizedBox(height: 40),
+        BlocConsumer<HomeBloc, HomeState>(
+          listener: (context, state) {
+            if (state.isSubmitDataSuccessful) {
+              AppHelper().displayToast(
+                context,
+                message: context.l10n.submit_successfull,
+              );
+            } else if (state.submitDataFailMessage.isNotEmpty) {
+              AppHelper().displayToast(
+                context,
+                message: state.submitDataFailMessage,
+                isFailureMessage: true,
+              );
+            }
+          },
+          builder: (context, state) => ElevatedButtonCustomWidget(
+            onTap: () => _onTapSendData(context),
+            btnText: context.l10n.submit_information,
+            height: 40,
+            isLoading: state.isLoadingSubmitData,
+            width: context.deviceWidthFactor(0.1),
+            color: context.theme.colorScheme.primary,
+          ),
+        ),
+        const SizedBox(height: 20),
+        if (context.watch<HomeBloc>().state.isSubmitDataSuccessful)
+          Text(
+            context.l10n.submit_successfull,
+            style: heading5Bold,
+          ),
+        const SizedBox(height: 30),
+      ],
     );
   }
 
@@ -288,9 +255,7 @@ class SendDataFormWidget extends HookWidget {
     }
   }
 
-  void _onTapSend(
-    BuildContext context,
-  ) {
+  void _onTapSendData(BuildContext context) {
     /// If we have validation error then do nothing and return
     if (!formKey.currentState!.validate()) return;
 
@@ -318,11 +283,6 @@ class SendDataFormWidget extends HookWidget {
     );
 
     final formData = FormData.fromMap({
-      'group_name': groupNameController.text,
-      'group_code': int.parse(groupCodeController.text),
-      'supervisor_fname': groupSupervisorFnameController.text,
-      'supervisor_lname': groupSupervisorLnameController.text,
-      'supervisor_phone': groupSupervisorPhoneController.text,
       'attachment_type': selectedAttachmentTypes.value.join(', '),
       'file': file,
     });

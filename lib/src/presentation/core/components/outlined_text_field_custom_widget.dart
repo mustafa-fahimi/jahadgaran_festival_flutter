@@ -49,7 +49,7 @@ class OutlinedTextFieldCustomWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hintTextStyle = body2.copyWith(color: Colors.black45);
+    final hintTextStyle = body1.copyWith(color: Colors.black45);
     final outlineInputBorder = OutlineInputBorder(
       borderRadius: BorderRadius.circular(kDefaultBorderRadius),
       borderSide: BorderSide(color: Colors.grey.shade400),
@@ -61,6 +61,7 @@ class OutlinedTextFieldCustomWidget extends StatelessWidget {
       maxLength: maxLength ?? 200,
       maxLines: maxLines,
       minLines: minLines,
+      style: subtitle2,
       obscureText: obscureText,
       inputFormatters: inputFormatters,
       textAlignVertical: TextAlignVertical.center,

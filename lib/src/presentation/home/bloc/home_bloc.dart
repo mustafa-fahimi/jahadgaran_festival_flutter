@@ -40,9 +40,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   ) async {
     emit(
       state.copyWith(
-        isLoadingAction: true,
-        isActionSuccessful: false,
-        actionFailMessage: '',
+        isLoadingSubmitData: true,
+        isLoadingCheckInformation: false,
+        isSubmitDataSuccessful: false,
+        isCheckInformationSuccessful: false,
+        submitDataFailMessage: '',
+        checkInformationFailMessage: '',
       ),
     );
     final sendDataResult = await sendDataUseCase(
@@ -51,15 +54,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     sendDataResult.fold(
       (l) => emit(
         state.copyWith(
-          isLoadingAction: false,
-          actionFailMessage: l.toMessage(),
+          isLoadingSubmitData: false,
+          submitDataFailMessage: l.toMessage(),
         ),
       ),
       (r) => emit(
         state.copyWith(
-          isLoadingAction: false,
-          isActionSuccessful: true,
-          actionFailMessage: '',
+          isLoadingSubmitData: false,
+          isSubmitDataSuccessful: true,
         ),
       ),
     );

@@ -7,10 +7,12 @@ class ContainerWithTitleCustomWidget extends StatelessWidget {
     Key? key,
     required this.title,
     this.content,
+    this.bgColor,
   }) : super(key: key);
 
   final String title;
   final Widget? content;
+  final Color? bgColor;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class ContainerWithTitleCustomWidget extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(kDefaultBorderRadius),
-          color: context.theme.colorScheme.background,
+          color: bgColor ?? context.theme.colorScheme.background,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

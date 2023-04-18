@@ -6,6 +6,7 @@ import 'package:jahadgaran_festival/src/presentation/core/components/elevated_bu
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
 import 'package:jahadgaran_festival/src/presentation/home/models/news_model.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class NewsWidget extends StatelessWidget {
   NewsWidget({Key? key}) : super(key: key);
@@ -92,7 +93,9 @@ class _NewsListViewItemWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    width: context.deviceWidthFactor(0.5),
+                    width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                        ? context.deviceWidthFactor(0.39)
+                        : context.deviceWidthFactor(0.43),
                     child: Text(
                       news.newsTitle,
                       style: heading5Bold,
@@ -102,7 +105,9 @@ class _NewsListViewItemWidget extends StatelessWidget {
                   ),
                   const SizedBox(height: 6),
                   SizedBox(
-                    width: context.deviceWidthFactor(0.42),
+                    width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                        ? context.deviceWidthFactor(0.39)
+                        : context.deviceWidthFactor(0.43),
                     child: Text(
                       news.newsDescription,
                       style: subtitle2,

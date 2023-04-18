@@ -356,19 +356,25 @@ abstract class _SendData implements HomeEvent {
 
 /// @nodoc
 mixin _$HomeState {
-  bool get isLoading => throw _privateConstructorUsedError;
-  bool get isLoadingAction => throw _privateConstructorUsedError;
-  bool get isActionSuccessful => throw _privateConstructorUsedError;
-  String get actionFailMessage => throw _privateConstructorUsedError;
+  int get sendDataStep => throw _privateConstructorUsedError;
+  bool get isLoadingCheckInformation => throw _privateConstructorUsedError;
+  bool get isLoadingSubmitData => throw _privateConstructorUsedError;
+  bool get isCheckInformationSuccessful => throw _privateConstructorUsedError;
+  bool get isSubmitDataSuccessful => throw _privateConstructorUsedError;
+  String get checkInformationFailMessage => throw _privateConstructorUsedError;
+  String get submitDataFailMessage => throw _privateConstructorUsedError;
   HomeMiddleViews get currentMiddleView => throw _privateConstructorUsedError;
   NewsModel? get selectedNews => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            bool isLoading,
-            bool isLoadingAction,
-            bool isActionSuccessful,
-            String actionFailMessage,
+            int sendDataStep,
+            bool isLoadingCheckInformation,
+            bool isLoadingSubmitData,
+            bool isCheckInformationSuccessful,
+            bool isSubmitDataSuccessful,
+            String checkInformationFailMessage,
+            String submitDataFailMessage,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)
         idle,
@@ -377,10 +383,13 @@ mixin _$HomeState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            bool isLoading,
-            bool isLoadingAction,
-            bool isActionSuccessful,
-            String actionFailMessage,
+            int sendDataStep,
+            bool isLoadingCheckInformation,
+            bool isLoadingSubmitData,
+            bool isCheckInformationSuccessful,
+            bool isSubmitDataSuccessful,
+            String checkInformationFailMessage,
+            String submitDataFailMessage,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
@@ -389,10 +398,13 @@ mixin _$HomeState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            bool isLoading,
-            bool isLoadingAction,
-            bool isActionSuccessful,
-            String actionFailMessage,
+            int sendDataStep,
+            bool isLoadingCheckInformation,
+            bool isLoadingSubmitData,
+            bool isCheckInformationSuccessful,
+            bool isSubmitDataSuccessful,
+            String checkInformationFailMessage,
+            String submitDataFailMessage,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
@@ -427,10 +439,13 @@ abstract class $HomeStateCopyWith<$Res> {
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
   $Res call(
-      {bool isLoading,
-      bool isLoadingAction,
-      bool isActionSuccessful,
-      String actionFailMessage,
+      {int sendDataStep,
+      bool isLoadingCheckInformation,
+      bool isLoadingSubmitData,
+      bool isCheckInformationSuccessful,
+      bool isSubmitDataSuccessful,
+      String checkInformationFailMessage,
+      String submitDataFailMessage,
       HomeMiddleViews currentMiddleView,
       NewsModel? selectedNews});
 }
@@ -448,29 +463,44 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLoading = null,
-    Object? isLoadingAction = null,
-    Object? isActionSuccessful = null,
-    Object? actionFailMessage = null,
+    Object? sendDataStep = null,
+    Object? isLoadingCheckInformation = null,
+    Object? isLoadingSubmitData = null,
+    Object? isCheckInformationSuccessful = null,
+    Object? isSubmitDataSuccessful = null,
+    Object? checkInformationFailMessage = null,
+    Object? submitDataFailMessage = null,
     Object? currentMiddleView = null,
     Object? selectedNews = freezed,
   }) {
     return _then(_value.copyWith(
-      isLoading: null == isLoading
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
+      sendDataStep: null == sendDataStep
+          ? _value.sendDataStep
+          : sendDataStep // ignore: cast_nullable_to_non_nullable
+              as int,
+      isLoadingCheckInformation: null == isLoadingCheckInformation
+          ? _value.isLoadingCheckInformation
+          : isLoadingCheckInformation // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoadingAction: null == isLoadingAction
-          ? _value.isLoadingAction
-          : isLoadingAction // ignore: cast_nullable_to_non_nullable
+      isLoadingSubmitData: null == isLoadingSubmitData
+          ? _value.isLoadingSubmitData
+          : isLoadingSubmitData // ignore: cast_nullable_to_non_nullable
               as bool,
-      isActionSuccessful: null == isActionSuccessful
-          ? _value.isActionSuccessful
-          : isActionSuccessful // ignore: cast_nullable_to_non_nullable
+      isCheckInformationSuccessful: null == isCheckInformationSuccessful
+          ? _value.isCheckInformationSuccessful
+          : isCheckInformationSuccessful // ignore: cast_nullable_to_non_nullable
               as bool,
-      actionFailMessage: null == actionFailMessage
-          ? _value.actionFailMessage
-          : actionFailMessage // ignore: cast_nullable_to_non_nullable
+      isSubmitDataSuccessful: null == isSubmitDataSuccessful
+          ? _value.isSubmitDataSuccessful
+          : isSubmitDataSuccessful // ignore: cast_nullable_to_non_nullable
+              as bool,
+      checkInformationFailMessage: null == checkInformationFailMessage
+          ? _value.checkInformationFailMessage
+          : checkInformationFailMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      submitDataFailMessage: null == submitDataFailMessage
+          ? _value.submitDataFailMessage
+          : submitDataFailMessage // ignore: cast_nullable_to_non_nullable
               as String,
       currentMiddleView: null == currentMiddleView
           ? _value.currentMiddleView
@@ -491,10 +521,13 @@ abstract class _$$_IdleCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {bool isLoading,
-      bool isLoadingAction,
-      bool isActionSuccessful,
-      String actionFailMessage,
+      {int sendDataStep,
+      bool isLoadingCheckInformation,
+      bool isLoadingSubmitData,
+      bool isCheckInformationSuccessful,
+      bool isSubmitDataSuccessful,
+      String checkInformationFailMessage,
+      String submitDataFailMessage,
       HomeMiddleViews currentMiddleView,
       NewsModel? selectedNews});
 }
@@ -508,29 +541,44 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLoading = null,
-    Object? isLoadingAction = null,
-    Object? isActionSuccessful = null,
-    Object? actionFailMessage = null,
+    Object? sendDataStep = null,
+    Object? isLoadingCheckInformation = null,
+    Object? isLoadingSubmitData = null,
+    Object? isCheckInformationSuccessful = null,
+    Object? isSubmitDataSuccessful = null,
+    Object? checkInformationFailMessage = null,
+    Object? submitDataFailMessage = null,
     Object? currentMiddleView = null,
     Object? selectedNews = freezed,
   }) {
     return _then(_$_Idle(
-      isLoading: null == isLoading
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
+      sendDataStep: null == sendDataStep
+          ? _value.sendDataStep
+          : sendDataStep // ignore: cast_nullable_to_non_nullable
+              as int,
+      isLoadingCheckInformation: null == isLoadingCheckInformation
+          ? _value.isLoadingCheckInformation
+          : isLoadingCheckInformation // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoadingAction: null == isLoadingAction
-          ? _value.isLoadingAction
-          : isLoadingAction // ignore: cast_nullable_to_non_nullable
+      isLoadingSubmitData: null == isLoadingSubmitData
+          ? _value.isLoadingSubmitData
+          : isLoadingSubmitData // ignore: cast_nullable_to_non_nullable
               as bool,
-      isActionSuccessful: null == isActionSuccessful
-          ? _value.isActionSuccessful
-          : isActionSuccessful // ignore: cast_nullable_to_non_nullable
+      isCheckInformationSuccessful: null == isCheckInformationSuccessful
+          ? _value.isCheckInformationSuccessful
+          : isCheckInformationSuccessful // ignore: cast_nullable_to_non_nullable
               as bool,
-      actionFailMessage: null == actionFailMessage
-          ? _value.actionFailMessage
-          : actionFailMessage // ignore: cast_nullable_to_non_nullable
+      isSubmitDataSuccessful: null == isSubmitDataSuccessful
+          ? _value.isSubmitDataSuccessful
+          : isSubmitDataSuccessful // ignore: cast_nullable_to_non_nullable
+              as bool,
+      checkInformationFailMessage: null == checkInformationFailMessage
+          ? _value.checkInformationFailMessage
+          : checkInformationFailMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      submitDataFailMessage: null == submitDataFailMessage
+          ? _value.submitDataFailMessage
+          : submitDataFailMessage // ignore: cast_nullable_to_non_nullable
               as String,
       currentMiddleView: null == currentMiddleView
           ? _value.currentMiddleView
@@ -548,25 +596,37 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
 
 class _$_Idle implements _Idle {
   const _$_Idle(
-      {this.isLoading = false,
-      this.isLoadingAction = false,
-      this.isActionSuccessful = false,
-      this.actionFailMessage = '',
+      {this.sendDataStep = 1,
+      this.isLoadingCheckInformation = false,
+      this.isLoadingSubmitData = false,
+      this.isCheckInformationSuccessful = false,
+      this.isSubmitDataSuccessful = false,
+      this.checkInformationFailMessage = '',
+      this.submitDataFailMessage = '',
       this.currentMiddleView = HomeMiddleViews.home,
       this.selectedNews});
 
   @override
   @JsonKey()
-  final bool isLoading;
+  final int sendDataStep;
   @override
   @JsonKey()
-  final bool isLoadingAction;
+  final bool isLoadingCheckInformation;
   @override
   @JsonKey()
-  final bool isActionSuccessful;
+  final bool isLoadingSubmitData;
   @override
   @JsonKey()
-  final String actionFailMessage;
+  final bool isCheckInformationSuccessful;
+  @override
+  @JsonKey()
+  final bool isSubmitDataSuccessful;
+  @override
+  @JsonKey()
+  final String checkInformationFailMessage;
+  @override
+  @JsonKey()
+  final String submitDataFailMessage;
   @override
   @JsonKey()
   final HomeMiddleViews currentMiddleView;
@@ -575,7 +635,7 @@ class _$_Idle implements _Idle {
 
   @override
   String toString() {
-    return 'HomeState.idle(isLoading: $isLoading, isLoadingAction: $isLoadingAction, isActionSuccessful: $isActionSuccessful, actionFailMessage: $actionFailMessage, currentMiddleView: $currentMiddleView, selectedNews: $selectedNews)';
+    return 'HomeState.idle(sendDataStep: $sendDataStep, isLoadingCheckInformation: $isLoadingCheckInformation, isLoadingSubmitData: $isLoadingSubmitData, isCheckInformationSuccessful: $isCheckInformationSuccessful, isSubmitDataSuccessful: $isSubmitDataSuccessful, checkInformationFailMessage: $checkInformationFailMessage, submitDataFailMessage: $submitDataFailMessage, currentMiddleView: $currentMiddleView, selectedNews: $selectedNews)';
   }
 
   @override
@@ -583,14 +643,25 @@ class _$_Idle implements _Idle {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Idle &&
-            (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading) &&
-            (identical(other.isLoadingAction, isLoadingAction) ||
-                other.isLoadingAction == isLoadingAction) &&
-            (identical(other.isActionSuccessful, isActionSuccessful) ||
-                other.isActionSuccessful == isActionSuccessful) &&
-            (identical(other.actionFailMessage, actionFailMessage) ||
-                other.actionFailMessage == actionFailMessage) &&
+            (identical(other.sendDataStep, sendDataStep) ||
+                other.sendDataStep == sendDataStep) &&
+            (identical(other.isLoadingCheckInformation,
+                    isLoadingCheckInformation) ||
+                other.isLoadingCheckInformation == isLoadingCheckInformation) &&
+            (identical(other.isLoadingSubmitData, isLoadingSubmitData) ||
+                other.isLoadingSubmitData == isLoadingSubmitData) &&
+            (identical(other.isCheckInformationSuccessful,
+                    isCheckInformationSuccessful) ||
+                other.isCheckInformationSuccessful ==
+                    isCheckInformationSuccessful) &&
+            (identical(other.isSubmitDataSuccessful, isSubmitDataSuccessful) ||
+                other.isSubmitDataSuccessful == isSubmitDataSuccessful) &&
+            (identical(other.checkInformationFailMessage,
+                    checkInformationFailMessage) ||
+                other.checkInformationFailMessage ==
+                    checkInformationFailMessage) &&
+            (identical(other.submitDataFailMessage, submitDataFailMessage) ||
+                other.submitDataFailMessage == submitDataFailMessage) &&
             (identical(other.currentMiddleView, currentMiddleView) ||
                 other.currentMiddleView == currentMiddleView) &&
             (identical(other.selectedNews, selectedNews) ||
@@ -598,8 +669,17 @@ class _$_Idle implements _Idle {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, isLoadingAction,
-      isActionSuccessful, actionFailMessage, currentMiddleView, selectedNews);
+  int get hashCode => Object.hash(
+      runtimeType,
+      sendDataStep,
+      isLoadingCheckInformation,
+      isLoadingSubmitData,
+      isCheckInformationSuccessful,
+      isSubmitDataSuccessful,
+      checkInformationFailMessage,
+      submitDataFailMessage,
+      currentMiddleView,
+      selectedNews);
 
   @JsonKey(ignore: true)
   @override
@@ -611,50 +691,83 @@ class _$_Idle implements _Idle {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            bool isLoading,
-            bool isLoadingAction,
-            bool isActionSuccessful,
-            String actionFailMessage,
+            int sendDataStep,
+            bool isLoadingCheckInformation,
+            bool isLoadingSubmitData,
+            bool isCheckInformationSuccessful,
+            bool isSubmitDataSuccessful,
+            String checkInformationFailMessage,
+            String submitDataFailMessage,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)
         idle,
   }) {
-    return idle(isLoading, isLoadingAction, isActionSuccessful,
-        actionFailMessage, currentMiddleView, selectedNews);
+    return idle(
+        sendDataStep,
+        isLoadingCheckInformation,
+        isLoadingSubmitData,
+        isCheckInformationSuccessful,
+        isSubmitDataSuccessful,
+        checkInformationFailMessage,
+        submitDataFailMessage,
+        currentMiddleView,
+        selectedNews);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            bool isLoading,
-            bool isLoadingAction,
-            bool isActionSuccessful,
-            String actionFailMessage,
+            int sendDataStep,
+            bool isLoadingCheckInformation,
+            bool isLoadingSubmitData,
+            bool isCheckInformationSuccessful,
+            bool isSubmitDataSuccessful,
+            String checkInformationFailMessage,
+            String submitDataFailMessage,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
   }) {
-    return idle?.call(isLoading, isLoadingAction, isActionSuccessful,
-        actionFailMessage, currentMiddleView, selectedNews);
+    return idle?.call(
+        sendDataStep,
+        isLoadingCheckInformation,
+        isLoadingSubmitData,
+        isCheckInformationSuccessful,
+        isSubmitDataSuccessful,
+        checkInformationFailMessage,
+        submitDataFailMessage,
+        currentMiddleView,
+        selectedNews);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            bool isLoading,
-            bool isLoadingAction,
-            bool isActionSuccessful,
-            String actionFailMessage,
+            int sendDataStep,
+            bool isLoadingCheckInformation,
+            bool isLoadingSubmitData,
+            bool isCheckInformationSuccessful,
+            bool isSubmitDataSuccessful,
+            String checkInformationFailMessage,
+            String submitDataFailMessage,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
     required TResult orElse(),
   }) {
     if (idle != null) {
-      return idle(isLoading, isLoadingAction, isActionSuccessful,
-          actionFailMessage, currentMiddleView, selectedNews);
+      return idle(
+          sendDataStep,
+          isLoadingCheckInformation,
+          isLoadingSubmitData,
+          isCheckInformationSuccessful,
+          isSubmitDataSuccessful,
+          checkInformationFailMessage,
+          submitDataFailMessage,
+          currentMiddleView,
+          selectedNews);
     }
     return orElse();
   }
@@ -690,21 +803,30 @@ class _$_Idle implements _Idle {
 
 abstract class _Idle implements HomeState {
   const factory _Idle(
-      {final bool isLoading,
-      final bool isLoadingAction,
-      final bool isActionSuccessful,
-      final String actionFailMessage,
+      {final int sendDataStep,
+      final bool isLoadingCheckInformation,
+      final bool isLoadingSubmitData,
+      final bool isCheckInformationSuccessful,
+      final bool isSubmitDataSuccessful,
+      final String checkInformationFailMessage,
+      final String submitDataFailMessage,
       final HomeMiddleViews currentMiddleView,
       final NewsModel? selectedNews}) = _$_Idle;
 
   @override
-  bool get isLoading;
+  int get sendDataStep;
   @override
-  bool get isLoadingAction;
+  bool get isLoadingCheckInformation;
   @override
-  bool get isActionSuccessful;
+  bool get isLoadingSubmitData;
   @override
-  String get actionFailMessage;
+  bool get isCheckInformationSuccessful;
+  @override
+  bool get isSubmitDataSuccessful;
+  @override
+  String get checkInformationFailMessage;
+  @override
+  String get submitDataFailMessage;
   @override
   HomeMiddleViews get currentMiddleView;
   @override
