@@ -19,32 +19,38 @@ mixin _$JahadiWorkEndpoints {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() groupData,
+    required TResult Function() submittedWork,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? groupData,
+    TResult? Function()? submittedWork,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? groupData,
+    TResult Function()? submittedWork,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GroupData value) groupData,
+    required TResult Function(_SubmittedWork value) submittedWork,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GroupData value)? groupData,
+    TResult? Function(_SubmittedWork value)? submittedWork,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GroupData value)? groupData,
+    TResult Function(_SubmittedWork value)? submittedWork,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,6 +113,7 @@ class _$_GroupData implements _GroupData {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() groupData,
+    required TResult Function() submittedWork,
   }) {
     return groupData();
   }
@@ -115,6 +122,7 @@ class _$_GroupData implements _GroupData {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? groupData,
+    TResult? Function()? submittedWork,
   }) {
     return groupData?.call();
   }
@@ -123,6 +131,7 @@ class _$_GroupData implements _GroupData {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? groupData,
+    TResult Function()? submittedWork,
     required TResult orElse(),
   }) {
     if (groupData != null) {
@@ -135,6 +144,7 @@ class _$_GroupData implements _GroupData {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GroupData value) groupData,
+    required TResult Function(_SubmittedWork value) submittedWork,
   }) {
     return groupData(this);
   }
@@ -143,6 +153,7 @@ class _$_GroupData implements _GroupData {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GroupData value)? groupData,
+    TResult? Function(_SubmittedWork value)? submittedWork,
   }) {
     return groupData?.call(this);
   }
@@ -151,6 +162,7 @@ class _$_GroupData implements _GroupData {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GroupData value)? groupData,
+    TResult Function(_SubmittedWork value)? submittedWork,
     required TResult orElse(),
   }) {
     if (groupData != null) {
@@ -162,4 +174,106 @@ class _$_GroupData implements _GroupData {
 
 abstract class _GroupData implements JahadiWorkEndpoints {
   const factory _GroupData() = _$_GroupData;
+}
+
+/// @nodoc
+abstract class _$$_SubmittedWorkCopyWith<$Res> {
+  factory _$$_SubmittedWorkCopyWith(
+          _$_SubmittedWork value, $Res Function(_$_SubmittedWork) then) =
+      __$$_SubmittedWorkCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_SubmittedWorkCopyWithImpl<$Res>
+    extends _$JahadiWorkEndpointsCopyWithImpl<$Res, _$_SubmittedWork>
+    implements _$$_SubmittedWorkCopyWith<$Res> {
+  __$$_SubmittedWorkCopyWithImpl(
+      _$_SubmittedWork _value, $Res Function(_$_SubmittedWork) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_SubmittedWork implements _SubmittedWork {
+  const _$_SubmittedWork();
+
+  @override
+  String toString() {
+    return 'JahadiWorkEndpoints.submittedWork()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_SubmittedWork);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() groupData,
+    required TResult Function() submittedWork,
+  }) {
+    return submittedWork();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? groupData,
+    TResult? Function()? submittedWork,
+  }) {
+    return submittedWork?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? groupData,
+    TResult Function()? submittedWork,
+    required TResult orElse(),
+  }) {
+    if (submittedWork != null) {
+      return submittedWork();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GroupData value) groupData,
+    required TResult Function(_SubmittedWork value) submittedWork,
+  }) {
+    return submittedWork(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GroupData value)? groupData,
+    TResult? Function(_SubmittedWork value)? submittedWork,
+  }) {
+    return submittedWork?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GroupData value)? groupData,
+    TResult Function(_SubmittedWork value)? submittedWork,
+    required TResult orElse(),
+  }) {
+    if (submittedWork != null) {
+      return submittedWork(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SubmittedWork implements JahadiWorkEndpoints {
+  const factory _SubmittedWork() = _$_SubmittedWork;
 }

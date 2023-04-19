@@ -23,7 +23,7 @@ import 'package:jahadgaran_festival/src/features/jahadi_work/domain/repositories
     as _i8;
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/get_group_data_use_case.dart'
     as _i6;
-import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/send_data_use_case.dart'
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/send_submitted_work_use_case.dart'
     as _i11;
 import 'package:jahadgaran_festival/src/injection/module_injection/feature_injection/jahadi_work_feature_module.dart'
     as _i13;
@@ -60,10 +60,10 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i8.JahadiWorkRepository>(() => jahadiWorkFeatureModule.repo);
     gh.factory<_i9.RequestInterceptor>(
         () => _i9.RequestInterceptor(gh<_i10.Env>()));
-    gh.factory<_i11.SendDataUseCase>(
-        () => jahadiWorkFeatureModule.sendDataUseCase);
+    gh.factory<_i11.SendSubmittedWorkUseCase>(
+        () => jahadiWorkFeatureModule.sendSubmittedWorkUseCase);
     gh.factory<_i12.HomeBloc>(() => _i12.HomeBloc(
-          gh<_i11.SendDataUseCase>(),
+          gh<_i11.SendSubmittedWorkUseCase>(),
           gh<_i6.GetGroupDataUseCase>(),
         ));
     return this;

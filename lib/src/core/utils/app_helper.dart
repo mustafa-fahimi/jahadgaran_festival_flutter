@@ -73,7 +73,7 @@ class AppHelper {
     fToast.showToast(
       child: toastWidget,
       toastDuration: const Duration(milliseconds: 3500),
-      positionedToastBuilder: (context, child) {
+      positionedToastBuilder: (_, child) {
         return Positioned(
           bottom: context.deviceHeightFactor(0.05),
           left: 20,

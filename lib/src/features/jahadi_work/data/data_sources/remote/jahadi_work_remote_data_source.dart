@@ -11,7 +11,7 @@ abstract class JahadiWorkRemoteDataSource {
     required GetGroupDataParams getGroupDataParams,
   });
 
-  Future<Either<ApiFailure, void>> sendData({
+  Future<Either<ApiFailure, void>> sendSubmittedWork({
     required FormData formData,
   });
 }
@@ -21,26 +21,24 @@ class JahadiWorkRemoteDataSourceImpl extends JahadiWorkRemoteDataSource {
   final ApiService apiService;
 
   @override
-  Future<Either<ApiFailure, Map<String, dynamic>>> sendData({
+  Future<Either<ApiFailure, Map<String, dynamic>>> getGroupData({
+    required GetGroupDataParams getGroupDataParams,
+  }) =>
+      apiService.getMethod<Map<String, dynamic>>(
+        '''${const JahadiWorkEndpoints.groupData().toPath}?group_registeration_number=${getGroupDataParams.groupRegisterationNumber}&group_supervisor_national_code=${getGroupDataParams.groupSupervisorNationalCode}&phone_number=${getGroupDataParams.phoneNumber}''',
+      ).toNonNullDomain;
+
+  @override
+  Future<Either<ApiFailure, Map<String, dynamic>>> sendSubmittedWork({
     required FormData formData,
   }) =>
       apiService
           .postMethod<Map<String, dynamic>>(
-            const JahadiWorkEndpoints.groupData().toPath,
+            const JahadiWorkEndpoints.submittedWork().toPath,
             body: formData,
             option: const ApiServiceOption(
               header: ApiServiceHeader.formData(),
             ),
-          )
-          .toNonNullDomain;
-
-  @override
-  Future<Either<ApiFailure, Map<String, dynamic>>> getGroupData({
-    required GetGroupDataParams getGroupDataParams,
-  }) =>
-      apiService
-          .getMethod<Map<String, dynamic>>(
-            '''${const JahadiWorkEndpoints.groupData().toPath}?group_registeration_number=${getGroupDataParams.groupRegisterationNumber}&group_supervisor_national_code=${getGroupDataParams.groupSupervisorNationalCode}&phone_number=${getGroupDataParams.phoneNumber}''',
           )
           .toNonNullDomain;
 }

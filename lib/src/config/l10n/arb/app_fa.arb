@@ -105,5 +105,7 @@
     "group_registre_date":"تاریخ ثبت گروه",
     "group_nature":"ماهیت گروه",
     "state":"استان",
-    "city":"شهر"
+    "city":"شهر",
+    "large_file_size_description":"اندازه فایل باید کمتر از ۱۰۰ مگابایت باشد",
+    "verify_code_sended":"کد تایید با موفقیت ارسال گردید"
 }

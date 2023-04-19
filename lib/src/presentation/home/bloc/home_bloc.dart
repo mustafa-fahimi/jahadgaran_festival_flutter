@@ -9,7 +9,7 @@ import 'package:jahadgaran_festival/src/features/core/models/tuple.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/get_group_data_params.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/get_group_data_response.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/get_group_data_use_case.dart';
-import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/send_data_use_case.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/send_submitted_work_use_case.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
 import 'package:jahadgaran_festival/src/presentation/home/models/news_model.dart';
 
@@ -20,16 +20,16 @@ part 'home_state.dart';
 @injectable
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc(
-    this.sendDataUseCase,
+    this.sendSubmittedWorkUseCase,
     this.getGroupDataUseCase,
   ) : super(const _Idle()) {
     on<_ChangeMiddleView>(_onChangeMiddleView);
     on<_GetGroupData>(_onGetGroupData);
-    on<_SendData>(_onSendData);
+    on<_SendSubmittedWork>(_onSendSubmittedWork);
   }
 
   final GetGroupDataUseCase getGroupDataUseCase;
-  final SendDataUseCase sendDataUseCase;
+  final SendSubmittedWorkUseCase sendSubmittedWorkUseCase;
 
   FutureOr<void> _onChangeMiddleView(
     _ChangeMiddleView event,
@@ -42,8 +42,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         ),
       );
 
-  FutureOr<void> _onSendData(
-    _SendData event,
+  FutureOr<void> _onSendSubmittedWork(
+    _SendSubmittedWork event,
     Emitter<HomeState> emit,
   ) async {
     emit(
@@ -56,10 +56,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         getGroupDataFailMessage: '',
       ),
     );
-    final sendDataResult = await sendDataUseCase(
+    final sendSubmittedWorkResult = await sendSubmittedWorkUseCase(
       param: Tuple1<FormData>(event.formData),
     );
-    sendDataResult.fold(
+    sendSubmittedWorkResult.fold(
       (l) => emit(
         state.copyWith(
           isLoadingSubmitData: false,

@@ -70,7 +70,7 @@ class SendDataFormWidget extends HookWidget {
                   if (state.isGetGroupDataSuccessful) {
                     AppHelper().displayToast(
                       context,
-                      message: 'Done',
+                      message: context.l10n.verify_code_sended,
                     );
                   } else if (state.getGroupDataFailMessage.isNotEmpty) {
                     AppHelper().displayToast(
@@ -79,10 +79,22 @@ class SendDataFormWidget extends HookWidget {
                       isFailureMessage: true,
                     );
                   }
+                  if (state.isSubmitDataSuccessful) {
+                    AppHelper().displayToast(
+                      context,
+                      message: context.l10n.submit_successfull,
+                    );
+                  } else if (state.submitDataFailMessage.isNotEmpty) {
+                    AppHelper().displayToast(
+                      context,
+                      message: state.submitDataFailMessage,
+                      isFailureMessage: true,
+                    );
+                  }
                 },
                 child: Expanded(
                   flex: 3,
-                  child: context.watch<HomeBloc>().state.sendDataStep == 2
+                  child: context.watch<HomeBloc>().state.sendDataStep == 1
                       ? _FirstStepFormWidget(
                           formKey: formKey,
                           groupCodeController: groupCodeController,
@@ -312,8 +324,8 @@ class _SecondStepFormWidget extends HookWidget {
             ),
             const SizedBox(height: 8),
             OutlinedTextFieldCustomWidget(
-              controller: descriptionController,
-              focusNode: descriptionFocusNode,
+              controller: verifyCodeController,
+              focusNode: verifyCodeFocusNode,
               hintText: context.l10n.verify_code,
               validator: (value) => FormValidators().emptyAndLengthValidator(
                 value,
@@ -411,9 +423,11 @@ class _SecondStepFormWidget extends HookWidget {
             ),
             const SizedBox(height: 20),
             if (context.watch<HomeBloc>().state.isSubmitDataSuccessful)
-              Text(
-                context.l10n.submit_successfull,
-                style: heading5Bold,
+              Center(
+                child: Text(
+                  context.l10n.submit_successfull,
+                  style: heading5Bold.copyWith(color: kSuccessColor),
+                ),
               ),
             const SizedBox(height: 30),
           ],
@@ -446,8 +460,14 @@ class _SecondStepFormWidget extends HookWidget {
         isFailureMessage: true,
       );
       return;
-    }
-    if (selectedFile.value == null) {
+    } else if (selectedFile.value == null) {
+      AppHelper().displayToast(
+        context,
+        message: context.l10n.large_file_size_description,
+        isFailureMessage: true,
+      );
+      return;
+    } else if (selectedFile.value!.size > 104857600) {
       AppHelper().displayToast(
         context,
         message: context.l10n.must_choose_attachment_file,
@@ -462,11 +482,18 @@ class _SecondStepFormWidget extends HookWidget {
       filename: selectedFile.value!.name,
     );
 
+    final bloc = context.read<HomeBloc>();
+
     final formData = FormData.fromMap({
+      'group_registeration_number':
+          bloc.state.groupData.groupRegisterationNumber,
+      'group_supervisor_national_code':
+          bloc.state.groupData.groupSupervisorNationalCode,
+      'verify_code': verifyCodeController.text,
       'attachment_type': selectedAttachmentTypes.value.join(', '),
       'file': file,
     });
 
-    context.read<HomeBloc>().add(HomeEvent.sendData(formData: formData));
+    bloc.add(HomeEvent.sendSubmittedWork(formData: formData));
   }
 }

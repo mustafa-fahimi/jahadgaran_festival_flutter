@@ -12,10 +12,10 @@ class JahadiWorkRepositoryImpl implements JahadiWorkRepository {
   final JahadiWorkRemoteDataSource _remoteDS;
 
   @override
-  Future<Either<JahadiWorkFailure, void>> sendData({
+  Future<Either<JahadiWorkFailure, void>> sendSubmittedWork({
     required FormData formData,
   }) =>
-      _remoteDS.sendData(formData: formData).then(
+      _remoteDS.sendSubmittedWork(formData: formData).then(
         (response) async {
           return response.fold(
             (l) async => left<JahadiWorkFailure, void>(

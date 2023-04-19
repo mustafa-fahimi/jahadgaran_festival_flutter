@@ -11,7 +11,7 @@ class HomeEvent with _$HomeEvent {
     required GetGroupDataParams getGroupDataParams,
   }) = _GetGroupData;
 
-  const factory HomeEvent.sendData({
+  const factory HomeEvent.sendSubmittedWork({
     required FormData formData,
-  }) = _SendData;
+  }) = _SendSubmittedWork;
 }

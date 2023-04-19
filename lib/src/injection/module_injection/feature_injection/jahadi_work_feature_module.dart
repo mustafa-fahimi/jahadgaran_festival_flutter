@@ -4,7 +4,7 @@ import 'package:jahadgaran_festival/src/features/jahadi_work/data/data_sources/r
 import 'package:jahadgaran_festival/src/features/jahadi_work/data/repositories/jahadi_work_repository_impl.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/repositories/jahadi_work_repository.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/get_group_data_use_case.dart';
-import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/send_data_use_case.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/send_submitted_work_use_case.dart';
 import 'package:jahadgaran_festival/src/injection/injectable.dart';
 
 @module
@@ -18,5 +18,6 @@ abstract class JahadiWorkFeatureModule {
 
   /// Use cases
   GetGroupDataUseCase get getGroupDataUseCase => GetGroupDataUseCase(repo);
-  SendDataUseCase get sendDataUseCase => SendDataUseCase(repo);
+  SendSubmittedWorkUseCase get sendSubmittedWorkUseCase =>
+      SendSubmittedWorkUseCase(repo);
 }

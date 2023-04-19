@@ -9,7 +9,7 @@ abstract class JahadiWorkRepository {
     required GetGroupDataParams getGroupDataParams,
   });
 
-  Future<Either<JahadiWorkFailure, void>> sendData({
+  Future<Either<JahadiWorkFailure, void>> sendSubmittedWork({
     required FormData formData,
   });
 }

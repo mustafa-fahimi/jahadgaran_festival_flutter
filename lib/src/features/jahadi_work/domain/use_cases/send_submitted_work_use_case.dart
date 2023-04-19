@@ -6,9 +6,9 @@ import 'package:jahadgaran_festival/src/features/core/use_case.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/failures/jahadi_work_failure.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/repositories/jahadi_work_repository.dart';
 
-class SendDataUseCase
+class SendSubmittedWorkUseCase
     implements UseCase<JahadiWorkFailure, void, tuple.Tuple1<FormData>> {
-  const SendDataUseCase(this.repo);
+  const SendSubmittedWorkUseCase(this.repo);
 
   final JahadiWorkRepository repo;
 
@@ -18,5 +18,5 @@ class SendDataUseCase
   }) =>
       (param == null)
           ? Future.value(left(const JahadiWorkFailure.nullParam()))
-          : repo.sendData(formData: param.value1);
+          : repo.sendSubmittedWork(formData: param.value1);
 }

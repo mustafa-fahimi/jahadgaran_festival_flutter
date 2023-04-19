@@ -22,21 +22,21 @@ mixin _$HomeEvent {
         changeMiddleView,
     required TResult Function(GetGroupDataParams getGroupDataParams)
         getGroupData,
-    required TResult Function(FormData formData) sendData,
+    required TResult Function(FormData formData) sendSubmittedWork,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
     TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
-    TResult? Function(FormData formData)? sendData,
+    TResult? Function(FormData formData)? sendSubmittedWork,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
     TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
-    TResult Function(FormData formData)? sendData,
+    TResult Function(FormData formData)? sendSubmittedWork,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -44,21 +44,21 @@ mixin _$HomeEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
     required TResult Function(_GetGroupData value) getGroupData,
-    required TResult Function(_SendData value) sendData,
+    required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
     TResult? Function(_GetGroupData value)? getGroupData,
-    TResult? Function(_SendData value)? sendData,
+    TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
     TResult Function(_GetGroupData value)? getGroupData,
-    TResult Function(_SendData value)? sendData,
+    TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -157,7 +157,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
         changeMiddleView,
     required TResult Function(GetGroupDataParams getGroupDataParams)
         getGroupData,
-    required TResult Function(FormData formData) sendData,
+    required TResult Function(FormData formData) sendSubmittedWork,
   }) {
     return changeMiddleView(view, news);
   }
@@ -167,7 +167,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
     TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
-    TResult? Function(FormData formData)? sendData,
+    TResult? Function(FormData formData)? sendSubmittedWork,
   }) {
     return changeMiddleView?.call(view, news);
   }
@@ -177,7 +177,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
     TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
-    TResult Function(FormData formData)? sendData,
+    TResult Function(FormData formData)? sendSubmittedWork,
     required TResult orElse(),
   }) {
     if (changeMiddleView != null) {
@@ -191,7 +191,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
     required TResult Function(_GetGroupData value) getGroupData,
-    required TResult Function(_SendData value) sendData,
+    required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
   }) {
     return changeMiddleView(this);
   }
@@ -201,7 +201,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
     TResult? Function(_GetGroupData value)? getGroupData,
-    TResult? Function(_SendData value)? sendData,
+    TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
   }) {
     return changeMiddleView?.call(this);
   }
@@ -211,7 +211,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
     TResult Function(_GetGroupData value)? getGroupData,
-    TResult Function(_SendData value)? sendData,
+    TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
     required TResult orElse(),
   }) {
     if (changeMiddleView != null) {
@@ -302,7 +302,7 @@ class _$_GetGroupData implements _GetGroupData {
         changeMiddleView,
     required TResult Function(GetGroupDataParams getGroupDataParams)
         getGroupData,
-    required TResult Function(FormData formData) sendData,
+    required TResult Function(FormData formData) sendSubmittedWork,
   }) {
     return getGroupData(getGroupDataParams);
   }
@@ -312,7 +312,7 @@ class _$_GetGroupData implements _GetGroupData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
     TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
-    TResult? Function(FormData formData)? sendData,
+    TResult? Function(FormData formData)? sendSubmittedWork,
   }) {
     return getGroupData?.call(getGroupDataParams);
   }
@@ -322,7 +322,7 @@ class _$_GetGroupData implements _GetGroupData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
     TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
-    TResult Function(FormData formData)? sendData,
+    TResult Function(FormData formData)? sendSubmittedWork,
     required TResult orElse(),
   }) {
     if (getGroupData != null) {
@@ -336,7 +336,7 @@ class _$_GetGroupData implements _GetGroupData {
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
     required TResult Function(_GetGroupData value) getGroupData,
-    required TResult Function(_SendData value) sendData,
+    required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
   }) {
     return getGroupData(this);
   }
@@ -346,7 +346,7 @@ class _$_GetGroupData implements _GetGroupData {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
     TResult? Function(_GetGroupData value)? getGroupData,
-    TResult? Function(_SendData value)? sendData,
+    TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
   }) {
     return getGroupData?.call(this);
   }
@@ -356,7 +356,7 @@ class _$_GetGroupData implements _GetGroupData {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
     TResult Function(_GetGroupData value)? getGroupData,
-    TResult Function(_SendData value)? sendData,
+    TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
     required TResult orElse(),
   }) {
     if (getGroupData != null) {
@@ -377,20 +377,20 @@ abstract class _GetGroupData implements HomeEvent {
 }
 
 /// @nodoc
-abstract class _$$_SendDataCopyWith<$Res> {
-  factory _$$_SendDataCopyWith(
-          _$_SendData value, $Res Function(_$_SendData) then) =
-      __$$_SendDataCopyWithImpl<$Res>;
+abstract class _$$_SendSubmittedWorkCopyWith<$Res> {
+  factory _$$_SendSubmittedWorkCopyWith(_$_SendSubmittedWork value,
+          $Res Function(_$_SendSubmittedWork) then) =
+      __$$_SendSubmittedWorkCopyWithImpl<$Res>;
   @useResult
   $Res call({FormData formData});
 }
 
 /// @nodoc
-class __$$_SendDataCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$_SendData>
-    implements _$$_SendDataCopyWith<$Res> {
-  __$$_SendDataCopyWithImpl(
-      _$_SendData _value, $Res Function(_$_SendData) _then)
+class __$$_SendSubmittedWorkCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$_SendSubmittedWork>
+    implements _$$_SendSubmittedWorkCopyWith<$Res> {
+  __$$_SendSubmittedWorkCopyWithImpl(
+      _$_SendSubmittedWork _value, $Res Function(_$_SendSubmittedWork) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -398,7 +398,7 @@ class __$$_SendDataCopyWithImpl<$Res>
   $Res call({
     Object? formData = null,
   }) {
-    return _then(_$_SendData(
+    return _then(_$_SendSubmittedWork(
       formData: null == formData
           ? _value.formData
           : formData // ignore: cast_nullable_to_non_nullable
@@ -409,22 +409,22 @@ class __$$_SendDataCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SendData implements _SendData {
-  const _$_SendData({required this.formData});
+class _$_SendSubmittedWork implements _SendSubmittedWork {
+  const _$_SendSubmittedWork({required this.formData});
 
   @override
   final FormData formData;
 
   @override
   String toString() {
-    return 'HomeEvent.sendData(formData: $formData)';
+    return 'HomeEvent.sendSubmittedWork(formData: $formData)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SendData &&
+            other is _$_SendSubmittedWork &&
             (identical(other.formData, formData) ||
                 other.formData == formData));
   }
@@ -435,8 +435,9 @@ class _$_SendData implements _SendData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SendDataCopyWith<_$_SendData> get copyWith =>
-      __$$_SendDataCopyWithImpl<_$_SendData>(this, _$identity);
+  _$$_SendSubmittedWorkCopyWith<_$_SendSubmittedWork> get copyWith =>
+      __$$_SendSubmittedWorkCopyWithImpl<_$_SendSubmittedWork>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -445,9 +446,9 @@ class _$_SendData implements _SendData {
         changeMiddleView,
     required TResult Function(GetGroupDataParams getGroupDataParams)
         getGroupData,
-    required TResult Function(FormData formData) sendData,
+    required TResult Function(FormData formData) sendSubmittedWork,
   }) {
-    return sendData(formData);
+    return sendSubmittedWork(formData);
   }
 
   @override
@@ -455,9 +456,9 @@ class _$_SendData implements _SendData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
     TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
-    TResult? Function(FormData formData)? sendData,
+    TResult? Function(FormData formData)? sendSubmittedWork,
   }) {
-    return sendData?.call(formData);
+    return sendSubmittedWork?.call(formData);
   }
 
   @override
@@ -465,11 +466,11 @@ class _$_SendData implements _SendData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
     TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
-    TResult Function(FormData formData)? sendData,
+    TResult Function(FormData formData)? sendSubmittedWork,
     required TResult orElse(),
   }) {
-    if (sendData != null) {
-      return sendData(formData);
+    if (sendSubmittedWork != null) {
+      return sendSubmittedWork(formData);
     }
     return orElse();
   }
@@ -479,9 +480,9 @@ class _$_SendData implements _SendData {
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
     required TResult Function(_GetGroupData value) getGroupData,
-    required TResult Function(_SendData value) sendData,
+    required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
   }) {
-    return sendData(this);
+    return sendSubmittedWork(this);
   }
 
   @override
@@ -489,9 +490,9 @@ class _$_SendData implements _SendData {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
     TResult? Function(_GetGroupData value)? getGroupData,
-    TResult? Function(_SendData value)? sendData,
+    TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
   }) {
-    return sendData?.call(this);
+    return sendSubmittedWork?.call(this);
   }
 
   @override
@@ -499,22 +500,23 @@ class _$_SendData implements _SendData {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
     TResult Function(_GetGroupData value)? getGroupData,
-    TResult Function(_SendData value)? sendData,
+    TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
     required TResult orElse(),
   }) {
-    if (sendData != null) {
-      return sendData(this);
+    if (sendSubmittedWork != null) {
+      return sendSubmittedWork(this);
     }
     return orElse();
   }
 }
 
-abstract class _SendData implements HomeEvent {
-  const factory _SendData({required final FormData formData}) = _$_SendData;
+abstract class _SendSubmittedWork implements HomeEvent {
+  const factory _SendSubmittedWork({required final FormData formData}) =
+      _$_SendSubmittedWork;
 
   FormData get formData;
   @JsonKey(ignore: true)
-  _$$_SendDataCopyWith<_$_SendData> get copyWith =>
+  _$$_SendSubmittedWorkCopyWith<_$_SendSubmittedWork> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
