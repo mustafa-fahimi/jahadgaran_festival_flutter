@@ -11,7 +11,7 @@ import 'package:talker_flutter/talker_flutter.dart';
 class MainModulesInjection {
   MainModulesInjection() {
     final dio = Dio(
-      BaseOptions(connectTimeout: const Duration(seconds: 16)),
+      BaseOptions(connectTimeout: const Duration(seconds: 25)),
     );
 
     final talker = TalkerFlutter.init();

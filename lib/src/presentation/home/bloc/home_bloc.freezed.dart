@@ -20,18 +20,22 @@ mixin _$HomeEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(HomeMiddleViews view, NewsModel? news)
         changeMiddleView,
+    required TResult Function(GetGroupDataParams getGroupDataParams)
+        getGroupData,
     required TResult Function(FormData formData) sendData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
     TResult? Function(FormData formData)? sendData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
     TResult Function(FormData formData)? sendData,
     required TResult orElse(),
   }) =>
@@ -39,18 +43,21 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
+    required TResult Function(_GetGroupData value) getGroupData,
     required TResult Function(_SendData value) sendData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult? Function(_GetGroupData value)? getGroupData,
     TResult? Function(_SendData value)? sendData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult Function(_GetGroupData value)? getGroupData,
     TResult Function(_SendData value)? sendData,
     required TResult orElse(),
   }) =>
@@ -148,6 +155,8 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   TResult when<TResult extends Object?>({
     required TResult Function(HomeMiddleViews view, NewsModel? news)
         changeMiddleView,
+    required TResult Function(GetGroupDataParams getGroupDataParams)
+        getGroupData,
     required TResult Function(FormData formData) sendData,
   }) {
     return changeMiddleView(view, news);
@@ -157,6 +166,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
     TResult? Function(FormData formData)? sendData,
   }) {
     return changeMiddleView?.call(view, news);
@@ -166,6 +176,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
     TResult Function(FormData formData)? sendData,
     required TResult orElse(),
   }) {
@@ -179,6 +190,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
+    required TResult Function(_GetGroupData value) getGroupData,
     required TResult Function(_SendData value) sendData,
   }) {
     return changeMiddleView(this);
@@ -188,6 +200,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult? Function(_GetGroupData value)? getGroupData,
     TResult? Function(_SendData value)? sendData,
   }) {
     return changeMiddleView?.call(this);
@@ -197,6 +210,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult Function(_GetGroupData value)? getGroupData,
     TResult Function(_SendData value)? sendData,
     required TResult orElse(),
   }) {
@@ -216,6 +230,149 @@ abstract class _ChangeMiddleView implements HomeEvent {
   NewsModel? get news;
   @JsonKey(ignore: true)
   _$$_ChangeMiddleViewCopyWith<_$_ChangeMiddleView> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_GetGroupDataCopyWith<$Res> {
+  factory _$$_GetGroupDataCopyWith(
+          _$_GetGroupData value, $Res Function(_$_GetGroupData) then) =
+      __$$_GetGroupDataCopyWithImpl<$Res>;
+  @useResult
+  $Res call({GetGroupDataParams getGroupDataParams});
+}
+
+/// @nodoc
+class __$$_GetGroupDataCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$_GetGroupData>
+    implements _$$_GetGroupDataCopyWith<$Res> {
+  __$$_GetGroupDataCopyWithImpl(
+      _$_GetGroupData _value, $Res Function(_$_GetGroupData) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? getGroupDataParams = null,
+  }) {
+    return _then(_$_GetGroupData(
+      getGroupDataParams: null == getGroupDataParams
+          ? _value.getGroupDataParams
+          : getGroupDataParams // ignore: cast_nullable_to_non_nullable
+              as GetGroupDataParams,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_GetGroupData implements _GetGroupData {
+  const _$_GetGroupData({required this.getGroupDataParams});
+
+  @override
+  final GetGroupDataParams getGroupDataParams;
+
+  @override
+  String toString() {
+    return 'HomeEvent.getGroupData(getGroupDataParams: $getGroupDataParams)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_GetGroupData &&
+            (identical(other.getGroupDataParams, getGroupDataParams) ||
+                other.getGroupDataParams == getGroupDataParams));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, getGroupDataParams);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_GetGroupDataCopyWith<_$_GetGroupData> get copyWith =>
+      __$$_GetGroupDataCopyWithImpl<_$_GetGroupData>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HomeMiddleViews view, NewsModel? news)
+        changeMiddleView,
+    required TResult Function(GetGroupDataParams getGroupDataParams)
+        getGroupData,
+    required TResult Function(FormData formData) sendData,
+  }) {
+    return getGroupData(getGroupDataParams);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult? Function(FormData formData)? sendData,
+  }) {
+    return getGroupData?.call(getGroupDataParams);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult Function(FormData formData)? sendData,
+    required TResult orElse(),
+  }) {
+    if (getGroupData != null) {
+      return getGroupData(getGroupDataParams);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChangeMiddleView value) changeMiddleView,
+    required TResult Function(_GetGroupData value) getGroupData,
+    required TResult Function(_SendData value) sendData,
+  }) {
+    return getGroupData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult? Function(_GetGroupData value)? getGroupData,
+    TResult? Function(_SendData value)? sendData,
+  }) {
+    return getGroupData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult Function(_GetGroupData value)? getGroupData,
+    TResult Function(_SendData value)? sendData,
+    required TResult orElse(),
+  }) {
+    if (getGroupData != null) {
+      return getGroupData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetGroupData implements HomeEvent {
+  const factory _GetGroupData(
+      {required final GetGroupDataParams getGroupDataParams}) = _$_GetGroupData;
+
+  GetGroupDataParams get getGroupDataParams;
+  @JsonKey(ignore: true)
+  _$$_GetGroupDataCopyWith<_$_GetGroupData> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -286,6 +443,8 @@ class _$_SendData implements _SendData {
   TResult when<TResult extends Object?>({
     required TResult Function(HomeMiddleViews view, NewsModel? news)
         changeMiddleView,
+    required TResult Function(GetGroupDataParams getGroupDataParams)
+        getGroupData,
     required TResult Function(FormData formData) sendData,
   }) {
     return sendData(formData);
@@ -295,6 +454,7 @@ class _$_SendData implements _SendData {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
     TResult? Function(FormData formData)? sendData,
   }) {
     return sendData?.call(formData);
@@ -304,6 +464,7 @@ class _$_SendData implements _SendData {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
     TResult Function(FormData formData)? sendData,
     required TResult orElse(),
   }) {
@@ -317,6 +478,7 @@ class _$_SendData implements _SendData {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
+    required TResult Function(_GetGroupData value) getGroupData,
     required TResult Function(_SendData value) sendData,
   }) {
     return sendData(this);
@@ -326,6 +488,7 @@ class _$_SendData implements _SendData {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult? Function(_GetGroupData value)? getGroupData,
     TResult? Function(_SendData value)? sendData,
   }) {
     return sendData?.call(this);
@@ -335,6 +498,7 @@ class _$_SendData implements _SendData {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult Function(_GetGroupData value)? getGroupData,
     TResult Function(_SendData value)? sendData,
     required TResult orElse(),
   }) {
@@ -357,24 +521,26 @@ abstract class _SendData implements HomeEvent {
 /// @nodoc
 mixin _$HomeState {
   int get sendDataStep => throw _privateConstructorUsedError;
-  bool get isLoadingCheckInformation => throw _privateConstructorUsedError;
+  bool get isLoadingGetGroupData => throw _privateConstructorUsedError;
   bool get isLoadingSubmitData => throw _privateConstructorUsedError;
-  bool get isCheckInformationSuccessful => throw _privateConstructorUsedError;
+  bool get isGetGroupDataSuccessful => throw _privateConstructorUsedError;
   bool get isSubmitDataSuccessful => throw _privateConstructorUsedError;
-  String get checkInformationFailMessage => throw _privateConstructorUsedError;
+  String get getGroupDataFailMessage => throw _privateConstructorUsedError;
   String get submitDataFailMessage => throw _privateConstructorUsedError;
+  GetGroupDataResponse get groupData => throw _privateConstructorUsedError;
   HomeMiddleViews get currentMiddleView => throw _privateConstructorUsedError;
   NewsModel? get selectedNews => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
             int sendDataStep,
-            bool isLoadingCheckInformation,
+            bool isLoadingGetGroupData,
             bool isLoadingSubmitData,
-            bool isCheckInformationSuccessful,
+            bool isGetGroupDataSuccessful,
             bool isSubmitDataSuccessful,
-            String checkInformationFailMessage,
+            String getGroupDataFailMessage,
             String submitDataFailMessage,
+            GetGroupDataResponse groupData,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)
         idle,
@@ -384,12 +550,13 @@ mixin _$HomeState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             int sendDataStep,
-            bool isLoadingCheckInformation,
+            bool isLoadingGetGroupData,
             bool isLoadingSubmitData,
-            bool isCheckInformationSuccessful,
+            bool isGetGroupDataSuccessful,
             bool isSubmitDataSuccessful,
-            String checkInformationFailMessage,
+            String getGroupDataFailMessage,
             String submitDataFailMessage,
+            GetGroupDataResponse groupData,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
@@ -399,12 +566,13 @@ mixin _$HomeState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             int sendDataStep,
-            bool isLoadingCheckInformation,
+            bool isLoadingGetGroupData,
             bool isLoadingSubmitData,
-            bool isCheckInformationSuccessful,
+            bool isGetGroupDataSuccessful,
             bool isSubmitDataSuccessful,
-            String checkInformationFailMessage,
+            String getGroupDataFailMessage,
             String submitDataFailMessage,
+            GetGroupDataResponse groupData,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
@@ -440,12 +608,13 @@ abstract class $HomeStateCopyWith<$Res> {
   @useResult
   $Res call(
       {int sendDataStep,
-      bool isLoadingCheckInformation,
+      bool isLoadingGetGroupData,
       bool isLoadingSubmitData,
-      bool isCheckInformationSuccessful,
+      bool isGetGroupDataSuccessful,
       bool isSubmitDataSuccessful,
-      String checkInformationFailMessage,
+      String getGroupDataFailMessage,
       String submitDataFailMessage,
+      GetGroupDataResponse groupData,
       HomeMiddleViews currentMiddleView,
       NewsModel? selectedNews});
 }
@@ -464,12 +633,13 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @override
   $Res call({
     Object? sendDataStep = null,
-    Object? isLoadingCheckInformation = null,
+    Object? isLoadingGetGroupData = null,
     Object? isLoadingSubmitData = null,
-    Object? isCheckInformationSuccessful = null,
+    Object? isGetGroupDataSuccessful = null,
     Object? isSubmitDataSuccessful = null,
-    Object? checkInformationFailMessage = null,
+    Object? getGroupDataFailMessage = null,
     Object? submitDataFailMessage = null,
+    Object? groupData = null,
     Object? currentMiddleView = null,
     Object? selectedNews = freezed,
   }) {
@@ -478,30 +648,34 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.sendDataStep
           : sendDataStep // ignore: cast_nullable_to_non_nullable
               as int,
-      isLoadingCheckInformation: null == isLoadingCheckInformation
-          ? _value.isLoadingCheckInformation
-          : isLoadingCheckInformation // ignore: cast_nullable_to_non_nullable
+      isLoadingGetGroupData: null == isLoadingGetGroupData
+          ? _value.isLoadingGetGroupData
+          : isLoadingGetGroupData // ignore: cast_nullable_to_non_nullable
               as bool,
       isLoadingSubmitData: null == isLoadingSubmitData
           ? _value.isLoadingSubmitData
           : isLoadingSubmitData // ignore: cast_nullable_to_non_nullable
               as bool,
-      isCheckInformationSuccessful: null == isCheckInformationSuccessful
-          ? _value.isCheckInformationSuccessful
-          : isCheckInformationSuccessful // ignore: cast_nullable_to_non_nullable
+      isGetGroupDataSuccessful: null == isGetGroupDataSuccessful
+          ? _value.isGetGroupDataSuccessful
+          : isGetGroupDataSuccessful // ignore: cast_nullable_to_non_nullable
               as bool,
       isSubmitDataSuccessful: null == isSubmitDataSuccessful
           ? _value.isSubmitDataSuccessful
           : isSubmitDataSuccessful // ignore: cast_nullable_to_non_nullable
               as bool,
-      checkInformationFailMessage: null == checkInformationFailMessage
-          ? _value.checkInformationFailMessage
-          : checkInformationFailMessage // ignore: cast_nullable_to_non_nullable
+      getGroupDataFailMessage: null == getGroupDataFailMessage
+          ? _value.getGroupDataFailMessage
+          : getGroupDataFailMessage // ignore: cast_nullable_to_non_nullable
               as String,
       submitDataFailMessage: null == submitDataFailMessage
           ? _value.submitDataFailMessage
           : submitDataFailMessage // ignore: cast_nullable_to_non_nullable
               as String,
+      groupData: null == groupData
+          ? _value.groupData
+          : groupData // ignore: cast_nullable_to_non_nullable
+              as GetGroupDataResponse,
       currentMiddleView: null == currentMiddleView
           ? _value.currentMiddleView
           : currentMiddleView // ignore: cast_nullable_to_non_nullable
@@ -522,12 +696,13 @@ abstract class _$$_IdleCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
   @useResult
   $Res call(
       {int sendDataStep,
-      bool isLoadingCheckInformation,
+      bool isLoadingGetGroupData,
       bool isLoadingSubmitData,
-      bool isCheckInformationSuccessful,
+      bool isGetGroupDataSuccessful,
       bool isSubmitDataSuccessful,
-      String checkInformationFailMessage,
+      String getGroupDataFailMessage,
       String submitDataFailMessage,
+      GetGroupDataResponse groupData,
       HomeMiddleViews currentMiddleView,
       NewsModel? selectedNews});
 }
@@ -542,12 +717,13 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
   @override
   $Res call({
     Object? sendDataStep = null,
-    Object? isLoadingCheckInformation = null,
+    Object? isLoadingGetGroupData = null,
     Object? isLoadingSubmitData = null,
-    Object? isCheckInformationSuccessful = null,
+    Object? isGetGroupDataSuccessful = null,
     Object? isSubmitDataSuccessful = null,
-    Object? checkInformationFailMessage = null,
+    Object? getGroupDataFailMessage = null,
     Object? submitDataFailMessage = null,
+    Object? groupData = null,
     Object? currentMiddleView = null,
     Object? selectedNews = freezed,
   }) {
@@ -556,30 +732,34 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
           ? _value.sendDataStep
           : sendDataStep // ignore: cast_nullable_to_non_nullable
               as int,
-      isLoadingCheckInformation: null == isLoadingCheckInformation
-          ? _value.isLoadingCheckInformation
-          : isLoadingCheckInformation // ignore: cast_nullable_to_non_nullable
+      isLoadingGetGroupData: null == isLoadingGetGroupData
+          ? _value.isLoadingGetGroupData
+          : isLoadingGetGroupData // ignore: cast_nullable_to_non_nullable
               as bool,
       isLoadingSubmitData: null == isLoadingSubmitData
           ? _value.isLoadingSubmitData
           : isLoadingSubmitData // ignore: cast_nullable_to_non_nullable
               as bool,
-      isCheckInformationSuccessful: null == isCheckInformationSuccessful
-          ? _value.isCheckInformationSuccessful
-          : isCheckInformationSuccessful // ignore: cast_nullable_to_non_nullable
+      isGetGroupDataSuccessful: null == isGetGroupDataSuccessful
+          ? _value.isGetGroupDataSuccessful
+          : isGetGroupDataSuccessful // ignore: cast_nullable_to_non_nullable
               as bool,
       isSubmitDataSuccessful: null == isSubmitDataSuccessful
           ? _value.isSubmitDataSuccessful
           : isSubmitDataSuccessful // ignore: cast_nullable_to_non_nullable
               as bool,
-      checkInformationFailMessage: null == checkInformationFailMessage
-          ? _value.checkInformationFailMessage
-          : checkInformationFailMessage // ignore: cast_nullable_to_non_nullable
+      getGroupDataFailMessage: null == getGroupDataFailMessage
+          ? _value.getGroupDataFailMessage
+          : getGroupDataFailMessage // ignore: cast_nullable_to_non_nullable
               as String,
       submitDataFailMessage: null == submitDataFailMessage
           ? _value.submitDataFailMessage
           : submitDataFailMessage // ignore: cast_nullable_to_non_nullable
               as String,
+      groupData: null == groupData
+          ? _value.groupData
+          : groupData // ignore: cast_nullable_to_non_nullable
+              as GetGroupDataResponse,
       currentMiddleView: null == currentMiddleView
           ? _value.currentMiddleView
           : currentMiddleView // ignore: cast_nullable_to_non_nullable
@@ -597,12 +777,13 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
 class _$_Idle implements _Idle {
   const _$_Idle(
       {this.sendDataStep = 1,
-      this.isLoadingCheckInformation = false,
+      this.isLoadingGetGroupData = false,
       this.isLoadingSubmitData = false,
-      this.isCheckInformationSuccessful = false,
+      this.isGetGroupDataSuccessful = false,
       this.isSubmitDataSuccessful = false,
-      this.checkInformationFailMessage = '',
+      this.getGroupDataFailMessage = '',
       this.submitDataFailMessage = '',
+      this.groupData = const GetGroupDataResponse(),
       this.currentMiddleView = HomeMiddleViews.home,
       this.selectedNews});
 
@@ -611,22 +792,25 @@ class _$_Idle implements _Idle {
   final int sendDataStep;
   @override
   @JsonKey()
-  final bool isLoadingCheckInformation;
+  final bool isLoadingGetGroupData;
   @override
   @JsonKey()
   final bool isLoadingSubmitData;
   @override
   @JsonKey()
-  final bool isCheckInformationSuccessful;
+  final bool isGetGroupDataSuccessful;
   @override
   @JsonKey()
   final bool isSubmitDataSuccessful;
   @override
   @JsonKey()
-  final String checkInformationFailMessage;
+  final String getGroupDataFailMessage;
   @override
   @JsonKey()
   final String submitDataFailMessage;
+  @override
+  @JsonKey()
+  final GetGroupDataResponse groupData;
   @override
   @JsonKey()
   final HomeMiddleViews currentMiddleView;
@@ -635,7 +819,7 @@ class _$_Idle implements _Idle {
 
   @override
   String toString() {
-    return 'HomeState.idle(sendDataStep: $sendDataStep, isLoadingCheckInformation: $isLoadingCheckInformation, isLoadingSubmitData: $isLoadingSubmitData, isCheckInformationSuccessful: $isCheckInformationSuccessful, isSubmitDataSuccessful: $isSubmitDataSuccessful, checkInformationFailMessage: $checkInformationFailMessage, submitDataFailMessage: $submitDataFailMessage, currentMiddleView: $currentMiddleView, selectedNews: $selectedNews)';
+    return 'HomeState.idle(sendDataStep: $sendDataStep, isLoadingGetGroupData: $isLoadingGetGroupData, isLoadingSubmitData: $isLoadingSubmitData, isGetGroupDataSuccessful: $isGetGroupDataSuccessful, isSubmitDataSuccessful: $isSubmitDataSuccessful, getGroupDataFailMessage: $getGroupDataFailMessage, submitDataFailMessage: $submitDataFailMessage, groupData: $groupData, currentMiddleView: $currentMiddleView, selectedNews: $selectedNews)';
   }
 
   @override
@@ -645,23 +829,22 @@ class _$_Idle implements _Idle {
             other is _$_Idle &&
             (identical(other.sendDataStep, sendDataStep) ||
                 other.sendDataStep == sendDataStep) &&
-            (identical(other.isLoadingCheckInformation,
-                    isLoadingCheckInformation) ||
-                other.isLoadingCheckInformation == isLoadingCheckInformation) &&
+            (identical(other.isLoadingGetGroupData, isLoadingGetGroupData) ||
+                other.isLoadingGetGroupData == isLoadingGetGroupData) &&
             (identical(other.isLoadingSubmitData, isLoadingSubmitData) ||
                 other.isLoadingSubmitData == isLoadingSubmitData) &&
-            (identical(other.isCheckInformationSuccessful,
-                    isCheckInformationSuccessful) ||
-                other.isCheckInformationSuccessful ==
-                    isCheckInformationSuccessful) &&
+            (identical(
+                    other.isGetGroupDataSuccessful, isGetGroupDataSuccessful) ||
+                other.isGetGroupDataSuccessful == isGetGroupDataSuccessful) &&
             (identical(other.isSubmitDataSuccessful, isSubmitDataSuccessful) ||
                 other.isSubmitDataSuccessful == isSubmitDataSuccessful) &&
-            (identical(other.checkInformationFailMessage,
-                    checkInformationFailMessage) ||
-                other.checkInformationFailMessage ==
-                    checkInformationFailMessage) &&
+            (identical(
+                    other.getGroupDataFailMessage, getGroupDataFailMessage) ||
+                other.getGroupDataFailMessage == getGroupDataFailMessage) &&
             (identical(other.submitDataFailMessage, submitDataFailMessage) ||
                 other.submitDataFailMessage == submitDataFailMessage) &&
+            (identical(other.groupData, groupData) ||
+                other.groupData == groupData) &&
             (identical(other.currentMiddleView, currentMiddleView) ||
                 other.currentMiddleView == currentMiddleView) &&
             (identical(other.selectedNews, selectedNews) ||
@@ -672,12 +855,13 @@ class _$_Idle implements _Idle {
   int get hashCode => Object.hash(
       runtimeType,
       sendDataStep,
-      isLoadingCheckInformation,
+      isLoadingGetGroupData,
       isLoadingSubmitData,
-      isCheckInformationSuccessful,
+      isGetGroupDataSuccessful,
       isSubmitDataSuccessful,
-      checkInformationFailMessage,
+      getGroupDataFailMessage,
       submitDataFailMessage,
+      groupData,
       currentMiddleView,
       selectedNews);
 
@@ -692,24 +876,26 @@ class _$_Idle implements _Idle {
   TResult when<TResult extends Object?>({
     required TResult Function(
             int sendDataStep,
-            bool isLoadingCheckInformation,
+            bool isLoadingGetGroupData,
             bool isLoadingSubmitData,
-            bool isCheckInformationSuccessful,
+            bool isGetGroupDataSuccessful,
             bool isSubmitDataSuccessful,
-            String checkInformationFailMessage,
+            String getGroupDataFailMessage,
             String submitDataFailMessage,
+            GetGroupDataResponse groupData,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)
         idle,
   }) {
     return idle(
         sendDataStep,
-        isLoadingCheckInformation,
+        isLoadingGetGroupData,
         isLoadingSubmitData,
-        isCheckInformationSuccessful,
+        isGetGroupDataSuccessful,
         isSubmitDataSuccessful,
-        checkInformationFailMessage,
+        getGroupDataFailMessage,
         submitDataFailMessage,
+        groupData,
         currentMiddleView,
         selectedNews);
   }
@@ -719,24 +905,26 @@ class _$_Idle implements _Idle {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             int sendDataStep,
-            bool isLoadingCheckInformation,
+            bool isLoadingGetGroupData,
             bool isLoadingSubmitData,
-            bool isCheckInformationSuccessful,
+            bool isGetGroupDataSuccessful,
             bool isSubmitDataSuccessful,
-            String checkInformationFailMessage,
+            String getGroupDataFailMessage,
             String submitDataFailMessage,
+            GetGroupDataResponse groupData,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
   }) {
     return idle?.call(
         sendDataStep,
-        isLoadingCheckInformation,
+        isLoadingGetGroupData,
         isLoadingSubmitData,
-        isCheckInformationSuccessful,
+        isGetGroupDataSuccessful,
         isSubmitDataSuccessful,
-        checkInformationFailMessage,
+        getGroupDataFailMessage,
         submitDataFailMessage,
+        groupData,
         currentMiddleView,
         selectedNews);
   }
@@ -746,12 +934,13 @@ class _$_Idle implements _Idle {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             int sendDataStep,
-            bool isLoadingCheckInformation,
+            bool isLoadingGetGroupData,
             bool isLoadingSubmitData,
-            bool isCheckInformationSuccessful,
+            bool isGetGroupDataSuccessful,
             bool isSubmitDataSuccessful,
-            String checkInformationFailMessage,
+            String getGroupDataFailMessage,
             String submitDataFailMessage,
+            GetGroupDataResponse groupData,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
@@ -760,12 +949,13 @@ class _$_Idle implements _Idle {
     if (idle != null) {
       return idle(
           sendDataStep,
-          isLoadingCheckInformation,
+          isLoadingGetGroupData,
           isLoadingSubmitData,
-          isCheckInformationSuccessful,
+          isGetGroupDataSuccessful,
           isSubmitDataSuccessful,
-          checkInformationFailMessage,
+          getGroupDataFailMessage,
           submitDataFailMessage,
+          groupData,
           currentMiddleView,
           selectedNews);
     }
@@ -804,29 +994,32 @@ class _$_Idle implements _Idle {
 abstract class _Idle implements HomeState {
   const factory _Idle(
       {final int sendDataStep,
-      final bool isLoadingCheckInformation,
+      final bool isLoadingGetGroupData,
       final bool isLoadingSubmitData,
-      final bool isCheckInformationSuccessful,
+      final bool isGetGroupDataSuccessful,
       final bool isSubmitDataSuccessful,
-      final String checkInformationFailMessage,
+      final String getGroupDataFailMessage,
       final String submitDataFailMessage,
+      final GetGroupDataResponse groupData,
       final HomeMiddleViews currentMiddleView,
       final NewsModel? selectedNews}) = _$_Idle;
 
   @override
   int get sendDataStep;
   @override
-  bool get isLoadingCheckInformation;
+  bool get isLoadingGetGroupData;
   @override
   bool get isLoadingSubmitData;
   @override
-  bool get isCheckInformationSuccessful;
+  bool get isGetGroupDataSuccessful;
   @override
   bool get isSubmitDataSuccessful;
   @override
-  String get checkInformationFailMessage;
+  String get getGroupDataFailMessage;
   @override
   String get submitDataFailMessage;
+  @override
+  GetGroupDataResponse get groupData;
   @override
   HomeMiddleViews get currentMiddleView;
   @override

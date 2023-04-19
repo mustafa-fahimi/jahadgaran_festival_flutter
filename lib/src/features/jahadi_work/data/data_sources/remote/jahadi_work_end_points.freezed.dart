@@ -18,33 +18,33 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$JahadiWorkEndpoints {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() jahadiData,
+    required TResult Function() groupData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jahadiData,
+    TResult? Function()? groupData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jahadiData,
+    TResult Function()? groupData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_JahadiData value) jahadiData,
+    required TResult Function(_GroupData value) groupData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_JahadiData value)? jahadiData,
+    TResult? Function(_GroupData value)? groupData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_JahadiData value)? jahadiData,
+    TResult Function(_GroupData value)? groupData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -69,35 +69,35 @@ class _$JahadiWorkEndpointsCopyWithImpl<$Res, $Val extends JahadiWorkEndpoints>
 }
 
 /// @nodoc
-abstract class _$$_JahadiDataCopyWith<$Res> {
-  factory _$$_JahadiDataCopyWith(
-          _$_JahadiData value, $Res Function(_$_JahadiData) then) =
-      __$$_JahadiDataCopyWithImpl<$Res>;
+abstract class _$$_GroupDataCopyWith<$Res> {
+  factory _$$_GroupDataCopyWith(
+          _$_GroupData value, $Res Function(_$_GroupData) then) =
+      __$$_GroupDataCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_JahadiDataCopyWithImpl<$Res>
-    extends _$JahadiWorkEndpointsCopyWithImpl<$Res, _$_JahadiData>
-    implements _$$_JahadiDataCopyWith<$Res> {
-  __$$_JahadiDataCopyWithImpl(
-      _$_JahadiData _value, $Res Function(_$_JahadiData) _then)
+class __$$_GroupDataCopyWithImpl<$Res>
+    extends _$JahadiWorkEndpointsCopyWithImpl<$Res, _$_GroupData>
+    implements _$$_GroupDataCopyWith<$Res> {
+  __$$_GroupDataCopyWithImpl(
+      _$_GroupData _value, $Res Function(_$_GroupData) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_JahadiData implements _JahadiData {
-  const _$_JahadiData();
+class _$_GroupData implements _GroupData {
+  const _$_GroupData();
 
   @override
   String toString() {
-    return 'JahadiWorkEndpoints.jahadiData()';
+    return 'JahadiWorkEndpoints.groupData()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_JahadiData);
+        (other.runtimeType == runtimeType && other is _$_GroupData);
   }
 
   @override
@@ -106,27 +106,27 @@ class _$_JahadiData implements _JahadiData {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() jahadiData,
+    required TResult Function() groupData,
   }) {
-    return jahadiData();
+    return groupData();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? jahadiData,
+    TResult? Function()? groupData,
   }) {
-    return jahadiData?.call();
+    return groupData?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? jahadiData,
+    TResult Function()? groupData,
     required TResult orElse(),
   }) {
-    if (jahadiData != null) {
-      return jahadiData();
+    if (groupData != null) {
+      return groupData();
     }
     return orElse();
   }
@@ -134,32 +134,32 @@ class _$_JahadiData implements _JahadiData {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_JahadiData value) jahadiData,
+    required TResult Function(_GroupData value) groupData,
   }) {
-    return jahadiData(this);
+    return groupData(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_JahadiData value)? jahadiData,
+    TResult? Function(_GroupData value)? groupData,
   }) {
-    return jahadiData?.call(this);
+    return groupData?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_JahadiData value)? jahadiData,
+    TResult Function(_GroupData value)? groupData,
     required TResult orElse(),
   }) {
-    if (jahadiData != null) {
-      return jahadiData(this);
+    if (groupData != null) {
+      return groupData(this);
     }
     return orElse();
   }
 }
 
-abstract class _JahadiData implements JahadiWorkEndpoints {
-  const factory _JahadiData() = _$_JahadiData;
+abstract class _GroupData implements JahadiWorkEndpoints {
+  const factory _GroupData() = _$_GroupData;
 }

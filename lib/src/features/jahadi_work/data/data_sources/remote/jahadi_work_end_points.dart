@@ -4,11 +4,11 @@ part 'jahadi_work_end_points.freezed.dart';
 
 @freezed
 class JahadiWorkEndpoints with _$JahadiWorkEndpoints {
-  const factory JahadiWorkEndpoints.jahadiData() = _JahadiData;
+  const factory JahadiWorkEndpoints.groupData() = _GroupData;
 }
 
 extension JahadiWorkEndpointsEx on JahadiWorkEndpoints {
   String get toPath => when(
-        jahadiData: () => 'jahadi',
+        groupData: () => 'group-data',
       );
 }

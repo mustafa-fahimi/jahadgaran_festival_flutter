@@ -4,12 +4,13 @@ part of 'home_bloc.dart';
 class HomeState with _$HomeState {
   const factory HomeState.idle({
     @Default(1) int sendDataStep,
-    @Default(false) bool isLoadingCheckInformation,
+    @Default(false) bool isLoadingGetGroupData,
     @Default(false) bool isLoadingSubmitData,
-    @Default(false) bool isCheckInformationSuccessful,
+    @Default(false) bool isGetGroupDataSuccessful,
     @Default(false) bool isSubmitDataSuccessful,
-    @Default('') String checkInformationFailMessage,
+    @Default('') String getGroupDataFailMessage,
     @Default('') String submitDataFailMessage,
+    @Default(GetGroupDataResponse()) GetGroupDataResponse groupData,
     @Default(HomeMiddleViews.home) HomeMiddleViews currentMiddleView,
     NewsModel? selectedNews,
   }) = _Idle;

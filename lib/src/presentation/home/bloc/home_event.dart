@@ -7,6 +7,10 @@ class HomeEvent with _$HomeEvent {
     NewsModel? news,
   }) = _ChangeMiddleView;
 
+  const factory HomeEvent.getGroupData({
+    required GetGroupDataParams getGroupDataParams,
+  }) = _GetGroupData;
+
   const factory HomeEvent.sendData({
     required FormData formData,
   }) = _SendData;

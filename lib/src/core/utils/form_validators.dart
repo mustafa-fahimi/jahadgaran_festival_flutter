@@ -13,6 +13,15 @@ class FormValidators {
     return null;
   }
 
+  String? emptyAndLengthValidator(String? value, int length) {
+    if (value == null || value.isEmpty) {
+      return 'الزامی*';
+    }else if(value.length != length){
+      return '$length رقمی';
+    }
+    return null;
+  }
+
   /// Check if TextField text has the required `length`
   String? _lengthValidator(String value, int minLength) {
     if (value.length < minLength) {
@@ -31,7 +40,7 @@ class FormValidators {
     final regExp = RegExp(pattern, caseSensitive: false);
 
     var res = emptyValidator(value);
-    return res ??= regExp.hasMatch(value!) ? null : 'wrong_phone_number';
+    return res ??= regExp.hasMatch(value!) ? null : 'شماره اشتباه است';
   }
 
   String? phoneNumberWithCountryCodeValidator(String? value) {

@@ -14,7 +14,7 @@ class RequestInterceptor extends Interceptor {
     RequestInterceptorHandler handler,
   ) async {
     options.baseUrl = env.baseUrl;
-    options.headers.addAll(
+    /* options.headers.addAll(
       {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET,PUT,PATCH,POST,DELETE',
@@ -22,7 +22,7 @@ class RequestInterceptor extends Interceptor {
         'Access-Control-Allow-Headers':
             'Origin, X-Requested-With, Content-Type, Accept',
       },
-    );
+    ); */
 
     return super.onRequest(options, handler);
   }

@@ -6,6 +6,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:jahadgaran_festival/src/features/core/failures/parse_failure.dart';
 import 'package:jahadgaran_festival/src/features/core/models/tuple.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/get_group_data_params.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/get_group_data_response.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/get_group_data_use_case.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/send_data_use_case.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
 import 'package:jahadgaran_festival/src/presentation/home/models/news_model.dart';
@@ -16,11 +19,16 @@ part 'home_state.dart';
 
 @injectable
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  HomeBloc(this.sendDataUseCase) : super(const _Idle()) {
+  HomeBloc(
+    this.sendDataUseCase,
+    this.getGroupDataUseCase,
+  ) : super(const _Idle()) {
     on<_ChangeMiddleView>(_onChangeMiddleView);
+    on<_GetGroupData>(_onGetGroupData);
     on<_SendData>(_onSendData);
   }
 
+  final GetGroupDataUseCase getGroupDataUseCase;
   final SendDataUseCase sendDataUseCase;
 
   FutureOr<void> _onChangeMiddleView(
@@ -41,11 +49,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     emit(
       state.copyWith(
         isLoadingSubmitData: true,
-        isLoadingCheckInformation: false,
+        isLoadingGetGroupData: false,
         isSubmitDataSuccessful: false,
-        isCheckInformationSuccessful: false,
+        isGetGroupDataSuccessful: false,
         submitDataFailMessage: '',
-        checkInformationFailMessage: '',
+        getGroupDataFailMessage: '',
       ),
     );
     final sendDataResult = await sendDataUseCase(
@@ -62,6 +70,41 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         state.copyWith(
           isLoadingSubmitData: false,
           isSubmitDataSuccessful: true,
+        ),
+      ),
+    );
+  }
+
+  FutureOr<void> _onGetGroupData(
+    _GetGroupData event,
+    Emitter<HomeState> emit,
+  ) async {
+    emit(
+      state.copyWith(
+        isLoadingSubmitData: false,
+        isLoadingGetGroupData: true,
+        isSubmitDataSuccessful: false,
+        isGetGroupDataSuccessful: false,
+        submitDataFailMessage: '',
+        getGroupDataFailMessage: '',
+      ),
+    );
+    final getGroupDataResult = await getGroupDataUseCase(
+      param: Tuple1<GetGroupDataParams>(event.getGroupDataParams),
+    );
+    getGroupDataResult.fold(
+      (l) => emit(
+        state.copyWith(
+          isLoadingGetGroupData: false,
+          getGroupDataFailMessage: l.toMessage(),
+        ),
+      ),
+      (r) => emit(
+        state.copyWith(
+          isLoadingGetGroupData: false,
+          isGetGroupDataSuccessful: true,
+          sendDataStep: 2,
+          groupData: r,
         ),
       ),
     );
