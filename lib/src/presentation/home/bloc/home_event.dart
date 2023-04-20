@@ -7,6 +7,10 @@ class HomeEvent with _$HomeEvent {
     NewsModel? news,
   }) = _ChangeMiddleView;
 
+  const factory HomeEvent.changeFormStep({
+    required int step,
+  }) = _ChangeFormStep;
+
   const factory HomeEvent.getGroupData({
     required GetGroupDataParams getGroupDataParams,
   }) = _GetGroupData;

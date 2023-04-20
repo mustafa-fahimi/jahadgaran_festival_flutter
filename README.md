@@ -40,3 +40,5 @@ _\*Reference Flutter works on iOS, Android, Web, and Windows._
 flutter pub run build_runner build --delete-conflicting-outputs
 flutter pub run flutter_launcher_icons
 flutter pub run change_app_package_name:main com.new.package.name
+
+flutter build web -t lib/main_development.dart

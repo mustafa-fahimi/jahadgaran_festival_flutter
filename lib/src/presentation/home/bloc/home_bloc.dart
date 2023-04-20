@@ -24,6 +24,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     this.getGroupDataUseCase,
   ) : super(const _Idle()) {
     on<_ChangeMiddleView>(_onChangeMiddleView);
+    on<_ChangeFormStep>(_onChangeFormStep);
     on<_GetGroupData>(_onGetGroupData);
     on<_SendSubmittedWork>(_onSendSubmittedWork);
   }
@@ -41,6 +42,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           selectedNews: event.news,
         ),
       );
+
+  FutureOr<void> _onChangeFormStep(
+    _ChangeFormStep event,
+    Emitter<HomeState> emit,
+  ) async =>
+      emit(state.copyWith(sendDataStep: event.step));
 
   FutureOr<void> _onSendSubmittedWork(
     _SendSubmittedWork event,

@@ -262,6 +262,21 @@ class _SecondStepFormWidget extends HookWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            const SizedBox(height: 10),
+            ElevatedButtonCustomWidget(
+              height: 40,
+              width: context.deviceWidthFactor(0.13),
+              color: context.theme.colorScheme.primary,
+              iconWidget: const Icon(
+                Icons.arrow_back_ios_rounded,
+                color: Colors.white,
+                size: 19,
+              ),
+              onTap: () => context.read<HomeBloc>().add(
+                    const HomeEvent.changeFormStep(step: 1),
+                  ),
+              btnText: context.l10n.return_to_previous_step,
+            ),
             const SizedBox(height: 15),
             Text(
               context.l10n.group_information,

@@ -19,14 +19,13 @@
     "event_begin": "آغاز جشنواره",
     "event_begin_date": "۱۴۰۲/۰۱/۰۵",
     "event_end": "پایان جشنواره",
-    "event_end_date": "۱۴۰۲/۰۲/۰۸",
+    "event_end_date": "۱۴۰۲/۰۲/۱۲",
     "question1":"زمان برگزاری جشنواره چه تاریخی است؟",
     "question2":"آیا شرکت در جشنواره رایگان است؟",
     "question3":"داوران جشنواره چه کسانی هستند؟",
     "answer1":"تاریخ برگزاری جشنواره هفتم اردیبهشت ماه سال ۱۴۰۲ می باشد.",
     "answer2":"وجه التزام ثبت نام در جشنواره مبلغ ۵۰ هزار تومان می باشد.",
     "answer3":"داوران جشنواره از میان نخبگان جهادی استانی و کشوری انتخاب شده اند.",
-    "until_event_description":"۱ ماه و ۱۲ روز و ۳۰ ساعت",
     "introduction":"معرفی",
     "news":"اخبار",
     "single_news":"خبر",
@@ -67,7 +66,7 @@
     "group_registration_code":"کد اطلس گروه جهادی",
     "supervisor_fullname":"نام مسئول گروه",
     "supervisor_phone":"شماره همراه مسئول گروه",
-    "supervisor_national_code":"کدملی مسئول گروه",
+    "supervisor_national_code":"کدملی مسئول گروه(بدون صفر اول)",
     "choose_attachment_type":"انتخاب قالب اثر ارسالی",
     "choose_attachment_file":"انتخاب فایل اثر",
     "chosen_file_name":"نام فایل انتخاب شده",
@@ -107,5 +106,6 @@
     "state":"استان",
     "city":"شهر",
     "large_file_size_description":"اندازه فایل باید کمتر از ۱۰۰ مگابایت باشد",
-    "verify_code_sended":"کد تایید با موفقیت ارسال گردید"
+    "verify_code_sended":"کد تایید با موفقیت ارسال گردید",
+    "return_to_previous_step":"بازگشت به مرحله قبل"
 }

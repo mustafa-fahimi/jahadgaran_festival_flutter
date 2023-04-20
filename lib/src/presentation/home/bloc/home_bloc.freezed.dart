@@ -20,6 +20,7 @@ mixin _$HomeEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(HomeMiddleViews view, NewsModel? news)
         changeMiddleView,
+    required TResult Function(int step) changeFormStep,
     required TResult Function(GetGroupDataParams getGroupDataParams)
         getGroupData,
     required TResult Function(FormData formData) sendSubmittedWork,
@@ -28,6 +29,7 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult? Function(int step)? changeFormStep,
     TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
     TResult? Function(FormData formData)? sendSubmittedWork,
   }) =>
@@ -35,6 +37,7 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult Function(int step)? changeFormStep,
     TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
     TResult Function(FormData formData)? sendSubmittedWork,
     required TResult orElse(),
@@ -43,6 +46,7 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
+    required TResult Function(_ChangeFormStep value) changeFormStep,
     required TResult Function(_GetGroupData value) getGroupData,
     required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
   }) =>
@@ -50,6 +54,7 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult? Function(_ChangeFormStep value)? changeFormStep,
     TResult? Function(_GetGroupData value)? getGroupData,
     TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
   }) =>
@@ -57,6 +62,7 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult Function(_ChangeFormStep value)? changeFormStep,
     TResult Function(_GetGroupData value)? getGroupData,
     TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
     required TResult orElse(),
@@ -155,6 +161,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   TResult when<TResult extends Object?>({
     required TResult Function(HomeMiddleViews view, NewsModel? news)
         changeMiddleView,
+    required TResult Function(int step) changeFormStep,
     required TResult Function(GetGroupDataParams getGroupDataParams)
         getGroupData,
     required TResult Function(FormData formData) sendSubmittedWork,
@@ -166,6 +173,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult? Function(int step)? changeFormStep,
     TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
     TResult? Function(FormData formData)? sendSubmittedWork,
   }) {
@@ -176,6 +184,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult Function(int step)? changeFormStep,
     TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
     TResult Function(FormData formData)? sendSubmittedWork,
     required TResult orElse(),
@@ -190,6 +199,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
+    required TResult Function(_ChangeFormStep value) changeFormStep,
     required TResult Function(_GetGroupData value) getGroupData,
     required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
   }) {
@@ -200,6 +210,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult? Function(_ChangeFormStep value)? changeFormStep,
     TResult? Function(_GetGroupData value)? getGroupData,
     TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
   }) {
@@ -210,6 +221,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult Function(_ChangeFormStep value)? changeFormStep,
     TResult Function(_GetGroupData value)? getGroupData,
     TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
     required TResult orElse(),
@@ -230,6 +242,153 @@ abstract class _ChangeMiddleView implements HomeEvent {
   NewsModel? get news;
   @JsonKey(ignore: true)
   _$$_ChangeMiddleViewCopyWith<_$_ChangeMiddleView> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_ChangeFormStepCopyWith<$Res> {
+  factory _$$_ChangeFormStepCopyWith(
+          _$_ChangeFormStep value, $Res Function(_$_ChangeFormStep) then) =
+      __$$_ChangeFormStepCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int step});
+}
+
+/// @nodoc
+class __$$_ChangeFormStepCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$_ChangeFormStep>
+    implements _$$_ChangeFormStepCopyWith<$Res> {
+  __$$_ChangeFormStepCopyWithImpl(
+      _$_ChangeFormStep _value, $Res Function(_$_ChangeFormStep) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? step = null,
+  }) {
+    return _then(_$_ChangeFormStep(
+      step: null == step
+          ? _value.step
+          : step // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ChangeFormStep implements _ChangeFormStep {
+  const _$_ChangeFormStep({required this.step});
+
+  @override
+  final int step;
+
+  @override
+  String toString() {
+    return 'HomeEvent.changeFormStep(step: $step)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ChangeFormStep &&
+            (identical(other.step, step) || other.step == step));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, step);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ChangeFormStepCopyWith<_$_ChangeFormStep> get copyWith =>
+      __$$_ChangeFormStepCopyWithImpl<_$_ChangeFormStep>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HomeMiddleViews view, NewsModel? news)
+        changeMiddleView,
+    required TResult Function(int step) changeFormStep,
+    required TResult Function(GetGroupDataParams getGroupDataParams)
+        getGroupData,
+    required TResult Function(FormData formData) sendSubmittedWork,
+  }) {
+    return changeFormStep(step);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult? Function(int step)? changeFormStep,
+    TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult? Function(FormData formData)? sendSubmittedWork,
+  }) {
+    return changeFormStep?.call(step);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult Function(int step)? changeFormStep,
+    TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult Function(FormData formData)? sendSubmittedWork,
+    required TResult orElse(),
+  }) {
+    if (changeFormStep != null) {
+      return changeFormStep(step);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChangeMiddleView value) changeMiddleView,
+    required TResult Function(_ChangeFormStep value) changeFormStep,
+    required TResult Function(_GetGroupData value) getGroupData,
+    required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
+  }) {
+    return changeFormStep(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult? Function(_ChangeFormStep value)? changeFormStep,
+    TResult? Function(_GetGroupData value)? getGroupData,
+    TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
+  }) {
+    return changeFormStep?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult Function(_ChangeFormStep value)? changeFormStep,
+    TResult Function(_GetGroupData value)? getGroupData,
+    TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
+    required TResult orElse(),
+  }) {
+    if (changeFormStep != null) {
+      return changeFormStep(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeFormStep implements HomeEvent {
+  const factory _ChangeFormStep({required final int step}) = _$_ChangeFormStep;
+
+  int get step;
+  @JsonKey(ignore: true)
+  _$$_ChangeFormStepCopyWith<_$_ChangeFormStep> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -300,6 +459,7 @@ class _$_GetGroupData implements _GetGroupData {
   TResult when<TResult extends Object?>({
     required TResult Function(HomeMiddleViews view, NewsModel? news)
         changeMiddleView,
+    required TResult Function(int step) changeFormStep,
     required TResult Function(GetGroupDataParams getGroupDataParams)
         getGroupData,
     required TResult Function(FormData formData) sendSubmittedWork,
@@ -311,6 +471,7 @@ class _$_GetGroupData implements _GetGroupData {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult? Function(int step)? changeFormStep,
     TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
     TResult? Function(FormData formData)? sendSubmittedWork,
   }) {
@@ -321,6 +482,7 @@ class _$_GetGroupData implements _GetGroupData {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult Function(int step)? changeFormStep,
     TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
     TResult Function(FormData formData)? sendSubmittedWork,
     required TResult orElse(),
@@ -335,6 +497,7 @@ class _$_GetGroupData implements _GetGroupData {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
+    required TResult Function(_ChangeFormStep value) changeFormStep,
     required TResult Function(_GetGroupData value) getGroupData,
     required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
   }) {
@@ -345,6 +508,7 @@ class _$_GetGroupData implements _GetGroupData {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult? Function(_ChangeFormStep value)? changeFormStep,
     TResult? Function(_GetGroupData value)? getGroupData,
     TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
   }) {
@@ -355,6 +519,7 @@ class _$_GetGroupData implements _GetGroupData {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult Function(_ChangeFormStep value)? changeFormStep,
     TResult Function(_GetGroupData value)? getGroupData,
     TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
     required TResult orElse(),
@@ -444,6 +609,7 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
   TResult when<TResult extends Object?>({
     required TResult Function(HomeMiddleViews view, NewsModel? news)
         changeMiddleView,
+    required TResult Function(int step) changeFormStep,
     required TResult Function(GetGroupDataParams getGroupDataParams)
         getGroupData,
     required TResult Function(FormData formData) sendSubmittedWork,
@@ -455,6 +621,7 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult? Function(int step)? changeFormStep,
     TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
     TResult? Function(FormData formData)? sendSubmittedWork,
   }) {
@@ -465,6 +632,7 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult Function(int step)? changeFormStep,
     TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
     TResult Function(FormData formData)? sendSubmittedWork,
     required TResult orElse(),
@@ -479,6 +647,7 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
+    required TResult Function(_ChangeFormStep value) changeFormStep,
     required TResult Function(_GetGroupData value) getGroupData,
     required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
   }) {
@@ -489,6 +658,7 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult? Function(_ChangeFormStep value)? changeFormStep,
     TResult? Function(_GetGroupData value)? getGroupData,
     TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
   }) {
@@ -499,6 +669,7 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult Function(_ChangeFormStep value)? changeFormStep,
     TResult Function(_GetGroupData value)? getGroupData,
     TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
     required TResult orElse(),
