@@ -13,7 +13,7 @@ class HomeMainWidget extends StatelessWidget {
     return Column(
       children: [
         ContainerWithTitleCustomWidget(
-          title: context.l10n.festival_banner,
+          title: context.l10n.festival_gallery,
           content: const BannerWidget(),
         ),
         const SizedBox(height: 10),

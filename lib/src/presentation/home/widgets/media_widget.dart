@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
+import 'package:jahadgaran_festival/src/presentation/core/components/clickable_image_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/container_with_title_custom_widget.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class MediaWidget extends StatelessWidget {
   const MediaWidget({Key? key}) : super(key: key);
@@ -11,33 +13,78 @@ class MediaWidget extends StatelessWidget {
     return ContainerWithTitleCustomWidget(
       title: context.l10n.media,
       content: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              child: Column(
-                children: [
-                  Text(
-                    context.l10n.video1,
-                    style: subtitle1Bold,
+        padding: const EdgeInsets.all(7),
+        child: Column(
+          children: [
+            /// `First row`
+            ResponsiveRowColumn(
+              layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                  ? ResponsiveRowColumnType.COLUMN
+                  : ResponsiveRowColumnType.ROW,
+              rowSpacing: 7,
+              columnSpacing: 7,
+              children: <ResponsiveRowColumnItem>[
+                ResponsiveRowColumnItem(
+                  rowFit: FlexFit.tight,
+                  child: ClickableImageCustomWidget(
+                    imagePath: PngAssets.slide1Asset,
                   ),
-                  const SizedBox(height: 10),
-                  Image.asset(PngAssets.introductionBannerAsset),
-                ],
-              ),
+                ),
+                ResponsiveRowColumnItem(
+                  rowFit: FlexFit.tight,
+                  child: ClickableImageCustomWidget(
+                    imagePath: PngAssets.slide2Asset,
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(width: 40),
-            Expanded(
-              child: Column(
-                children: [
-                  Text(
-                    context.l10n.video2,
-                    style: subtitle1Bold,
+            const SizedBox(height: 7),
+
+            /// `Second row`
+            ResponsiveRowColumn(
+              layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                  ? ResponsiveRowColumnType.COLUMN
+                  : ResponsiveRowColumnType.ROW,
+              rowSpacing: 7,
+              columnSpacing: 7,
+              children: <ResponsiveRowColumnItem>[
+                ResponsiveRowColumnItem(
+                  rowFit: FlexFit.tight,
+                  child: ClickableImageCustomWidget(
+                    imagePath: PngAssets.slide3Asset,
                   ),
-                  const SizedBox(height: 10),
-                  Image.asset(PngAssets.introductionBannerAsset),
-                ],
-              ),
+                ),
+                ResponsiveRowColumnItem(
+                  rowFit: FlexFit.tight,
+                  child: ClickableImageCustomWidget(
+                    imagePath: PngAssets.slide4Asset,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 7),
+
+            /// `Third row`
+            ResponsiveRowColumn(
+              layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                  ? ResponsiveRowColumnType.COLUMN
+                  : ResponsiveRowColumnType.ROW,
+              rowSpacing: 7,
+              columnSpacing: 7,
+              children: <ResponsiveRowColumnItem>[
+                ResponsiveRowColumnItem(
+                  rowFit: FlexFit.tight,
+                  child: ClickableImageCustomWidget(
+                    imagePath: PngAssets.slide5Asset,
+                  ),
+                ),
+                ResponsiveRowColumnItem(
+                  rowFit: FlexFit.tight,
+                  child: ClickableImageCustomWidget(
+                    imagePath: PngAssets.slide6Asset,
+                  ),
+                ),
+              ],
             ),
           ],
         ),

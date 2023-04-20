@@ -21,6 +21,7 @@ dependencies:
   dio: ^5.1.1
   dropdown_button2: ^2.0.0
   equatable: ^2.0.5
+  fan_carousel_image_slider: ^0.1.2
   file_picker: ^5.2.5
   flutter:
     sdk: flutter
@@ -44,7 +45,7 @@ dependencies:
   responsive_framework: ^0.2.0
   talker_dio_logger: ^1.0.2
   talker_flutter: ^2.2.1
-  universal_html: ^2.0.8
+  universal_html: ^2.2.1
   url_launcher: ^6.1.7
 
 dev_dependencies:
