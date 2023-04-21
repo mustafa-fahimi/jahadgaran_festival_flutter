@@ -17,34 +17,42 @@ class SingleNewsWidget extends StatelessWidget {
     return ContainerWithTitleCustomWidget(
       title: news.newsTitle,
       content: Padding(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.only(
+          top: 16,
+          left: 16,
+          right: 10,
+          bottom: 60,
+        ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Column(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(kDefaultBorderRadius),
-                  child: Image.asset(
-                    news.newsImage,
-                    height: 160,
-                    width: 160,
-                    fit: BoxFit.fill,
+            Expanded(
+              child: Column(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(kDefaultBorderRadius),
+                    child: Image.asset(
+                      news.newsImage,
+                      height: 160,
+                      width: 160,
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                ),
-                Text(
-                  news.newsDate,
-                  style: body2.copyWith(color: Colors.black54),
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ],
+                  const SizedBox(height: 10),
+                  Text(
+                    news.newsDate,
+                    style: body1.copyWith(color: Colors.black54),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
             ),
             const SizedBox(width: 12),
-            SizedBox(
-              width: context.deviceWidthFactor(0.42),
+            Expanded(
+              flex: 4,
               child: Text(
                 news.newsDescription,
-                style: subtitle2,
+                style: heading6,
               ),
             ),
           ],

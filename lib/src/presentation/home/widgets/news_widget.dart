@@ -19,7 +19,7 @@ class NewsWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8),
       child: ConstrainedBox(
-        constraints: const BoxConstraints(minHeight: 1, maxHeight: 500),
+        constraints: const BoxConstraints(minHeight: 1, maxHeight: 1000),
         child: ListView.separated(
           shrinkWrap: true,
           itemCount: allNews.length,
@@ -43,6 +43,24 @@ class NewsWidget extends StatelessWidget {
           newsTitle: context.l10n.news1_title,
           newsDescription: context.l10n.news1_description,
           newsDate: context.l10n.news1_date,
+        ),
+        NewsModel(
+          newsImage: PngAssets.news2Asset,
+          newsTitle: context.l10n.news2_title,
+          newsDescription: context.l10n.news2_description,
+          newsDate: context.l10n.news2_date,
+        ),
+        NewsModel(
+          newsImage: PngAssets.news3Asset,
+          newsTitle: context.l10n.news3_title,
+          newsDescription: context.l10n.news3_description,
+          newsDate: context.l10n.news3_date,
+        ),
+        NewsModel(
+          newsImage: PngAssets.news4Asset,
+          newsTitle: context.l10n.news4_title,
+          newsDescription: context.l10n.news4_description,
+          newsDate: context.l10n.news4_date,
         ),
       ]);
 }

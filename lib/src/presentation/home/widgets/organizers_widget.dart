@@ -14,14 +14,20 @@ class OrganizersWidget extends StatelessWidget {
           children: [
             _PictureRowWidget(
               photoAddress1: PngAssets.basijSazandegiAsset,
-              photoAddress2: PngAssets.jahadgaranKarafarinAsset,
+              photoAddress2: PngAssets.harkathayeJahadiAsset,
+              photoAddress3: PngAssets.edareErshadAsset,
+            ),
+            const SizedBox(height: 2),
+            _PictureRowWidget(
+              photoAddress1: PngAssets.majmaJahadgaranAsset,
+              photoAddress2: PngAssets.helaleAhmarAsset,
               photoAddress3: PngAssets.astanGhodsAsset,
             ),
             const SizedBox(height: 2),
             _PictureRowWidget(
-              photoAddress1: PngAssets.edareErshadAsset,
-              photoAddress2: '',
-              photoAddress3: '',
+              photoAddress1: PngAssets.sazmanTabliqatAsset,
+              photoAddress2: PngAssets.komiteEmdadAsset,
+              photoAddress3: PngAssets.jahadgaranKarafarinAsset,
             ),
           ],
         ),

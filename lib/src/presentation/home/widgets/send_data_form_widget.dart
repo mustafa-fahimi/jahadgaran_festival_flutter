@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_svg/svg.dart';
-
 import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/get_group_data_params.dart';
@@ -120,8 +118,8 @@ class SendDataFormWidget extends HookWidget {
               const SizedBox(width: 15),
               Expanded(
                 flex: 2,
-                child: SvgPicture.asset(
-                  SvgAssets.formIllustrationAsset,
+                child: Image.asset(
+                  PngAssets.formIllustrationAsset,
                   height: 250,
                 ),
               ),

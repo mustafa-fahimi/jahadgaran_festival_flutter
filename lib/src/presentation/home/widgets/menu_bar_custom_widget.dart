@@ -23,6 +23,7 @@ class MenuBarCustomWidget extends StatelessWidget {
                 image: DecorationImage(
                   image: AssetImage(PngAssets.headerMenuBgAsset),
                 ),
+                borderRadius: BorderRadius.circular(10),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -52,7 +53,7 @@ class _GradientDividerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.asset(
       PngAssets.gradientDividerAsset,
-      width: context.deviceWidthFactor(0.6),
+      width: context.deviceWidthFactor(0.5),
       fit: BoxFit.fitWidth,
     );
   }

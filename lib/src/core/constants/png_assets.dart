@@ -13,12 +13,20 @@ class PngAssets {
   static String get slide6Asset => 'slide6'.png;
   static String get menu1Asset => 'menu1'.png;
   static String get news1Asset => 'news1'.png;
-  static String get registerGuidAsset => 'register_guid'.png;
+  static String get news2Asset => 'news2'.png;
+  static String get news3Asset => 'news3'.png;
+  static String get news4Asset => 'news4'.png;
   static String get homeAsset => 'home'.png;
-  static String get astanGhodsAsset => 'organizations/astan_ghods'.png;
+  static String get astanGhodsAsset => 'organizations/astane_qods'.png;
   static String get basijSazandegiAsset => 'organizations/basij_sazandegi'.png;
   static String get edareErshadAsset => 'organizations/edare_ershad'.png;
+  static String get harkathayeJahadiAsset => 'organizations/harkathaye_jahadi'.png;
+  static String get helaleAhmarAsset => 'organizations/helale_ahmar'.png;
   static String get jahadgaranKarafarinAsset => 'organizations/jahadgaran_karafarin'.png;
+  static String get komiteEmdadAsset => 'organizations/komite_emdad'.png;
+  static String get majmaJahadgaranAsset => 'organizations/majma_jahadgaran'.png;
+  static String get sazmanTabliqatAsset => 'organizations/sazman_tabliqat'.png;
+  static String get formIllustrationAsset => 'form_illustration'.png;
 }
 
 extension on String {

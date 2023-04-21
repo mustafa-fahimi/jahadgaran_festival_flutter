@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_glow/flutter_glow.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
-import 'package:jahadgaran_festival/src/core/core.dart';
-import 'package:jahadgaran_festival/src/presentation/core/components/outlined_button_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
 
@@ -13,13 +12,16 @@ class SendDataWidget extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 20),
-      child: OutlinedButtonCustomWidget(
-        btnText: context.l10n.register_and_send,
+      padding: const EdgeInsets.all(10),
+      child: GlowButton(
+        onPressed: () => _onTapRegisterButton(context),
         width: double.infinity,
-        height: 50,
-        onTap: () => _onTapRegisterButton(context),
-        buttonColor: context.theme.colorScheme.primary,
+        height: 60,
+        color: Colors.lightGreen,
+        child: Text(
+          context.l10n.register_and_send,
+          style: subtitle2Bold.copyWith(color: Colors.white),
+        ),
       ),
     );
   }
