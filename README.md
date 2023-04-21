@@ -41,4 +41,7 @@ flutter pub run build_runner build --delete-conflicting-outputs
 flutter pub run flutter_launcher_icons
 flutter pub run change_app_package_name:main com.new.package.name
 
+*For Building apk:
+flutter run --flavor development -t lib/main_development.dart
 flutter build web -t lib/main_development.dart
+
