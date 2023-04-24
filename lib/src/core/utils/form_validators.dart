@@ -16,8 +16,8 @@ class FormValidators {
   String? emptyAndLengthValidator(String? value, int length) {
     if (value == null || value.isEmpty) {
       return 'الزامی*';
-    }else if(value.length != length){
-      return '$length رقمی';
+    }else if(value.length < length){
+      return 'حداقل $length رقم';
     }
     return null;
   }

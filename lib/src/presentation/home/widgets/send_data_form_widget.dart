@@ -155,7 +155,10 @@ class _FirstStepFormWidget extends HookWidget {
           controller: groupSupervisorNationalCodeController,
           focusNode: groupSupervisorNationalCodeFocusNode,
           hintText: context.l10n.national_code_hint,
-          validator: FormValidators().emptyValidator,
+          validator: (value) => FormValidators().emptyAndLengthValidator(
+            value,
+            7,
+          ),
           keyboardType: TextInputType.number,
           inputFormatters: [
             FilteringTextInputFormatter.digitsOnly,
