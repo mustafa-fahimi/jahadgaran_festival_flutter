@@ -23,10 +23,8 @@ class SendDataFormWidget extends HookWidget {
   final GlobalKey<FormState> formKey = GlobalKey();
 
   /// First form variables
-  late TextEditingController groupCodeController;
   late TextEditingController groupSupervisorNationalCodeController;
   late TextEditingController phoneNumberController;
-  late FocusNode groupCodeFocusNode;
   late FocusNode groupSupervisorNationalCodeFocusNode;
   late FocusNode phoneNumberFocusNode;
 
@@ -40,10 +38,8 @@ class SendDataFormWidget extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    groupCodeController = useTextEditingController();
     groupSupervisorNationalCodeController = useTextEditingController();
     phoneNumberController = useTextEditingController();
-    groupCodeFocusNode = useFocusNode();
     groupSupervisorNationalCodeFocusNode = useFocusNode();
     phoneNumberFocusNode = useFocusNode();
 
@@ -95,8 +91,6 @@ class SendDataFormWidget extends HookWidget {
                   child: context.watch<HomeBloc>().state.sendDataStep == 1
                       ? _FirstStepFormWidget(
                           formKey: formKey,
-                          groupCodeController: groupCodeController,
-                          groupCodeFocusNode: groupCodeFocusNode,
                           groupSupervisorNationalCodeController:
                               groupSupervisorNationalCodeController,
                           groupSupervisorNationalCodeFocusNode:
@@ -135,19 +129,15 @@ class _FirstStepFormWidget extends HookWidget {
   const _FirstStepFormWidget({
     Key? key,
     required this.formKey,
-    required this.groupCodeController,
     required this.groupSupervisorNationalCodeController,
     required this.phoneNumberController,
-    required this.groupCodeFocusNode,
     required this.groupSupervisorNationalCodeFocusNode,
     required this.phoneNumberFocusNode,
   }) : super(key: key);
 
   final GlobalKey<FormState> formKey;
-  final TextEditingController groupCodeController;
   final TextEditingController groupSupervisorNationalCodeController;
   final TextEditingController phoneNumberController;
-  final FocusNode groupCodeFocusNode;
   final FocusNode groupSupervisorNationalCodeFocusNode;
   final FocusNode phoneNumberFocusNode;
 
@@ -157,28 +147,14 @@ class _FirstStepFormWidget extends HookWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          context.l10n.group_registration_code,
-          style: subtitle2,
-        ),
-        const SizedBox(height: 8),
-        OutlinedTextFieldCustomWidget(
-          controller: groupCodeController,
-          focusNode: groupCodeFocusNode,
-          hintText: context.l10n.group_registration_code,
-          validator: FormValidators().emptyValidator,
-          keyboardType: TextInputType.number,
-          inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-        ),
-        const SizedBox(height: 20),
-        Text(
-          context.l10n.supervisor_national_code,
+          context.l10n.national_code_hint,
           style: subtitle2,
         ),
         const SizedBox(height: 8),
         OutlinedTextFieldCustomWidget(
           controller: groupSupervisorNationalCodeController,
           focusNode: groupSupervisorNationalCodeFocusNode,
-          hintText: context.l10n.supervisor_national_code,
+          hintText: context.l10n.national_code_hint,
           validator: FormValidators().emptyValidator,
           keyboardType: TextInputType.number,
           inputFormatters: [
@@ -223,7 +199,6 @@ class _FirstStepFormWidget extends HookWidget {
     context.read<HomeBloc>().add(
           HomeEvent.getGroupData(
             getGroupDataParams: GetGroupDataParams(
-              groupRegisterationNumber: groupCodeController.text,
               groupSupervisorNationalCode:
                   groupSupervisorNationalCodeController.text,
               phoneNumber: phoneNumberController.text,

@@ -29,7 +29,7 @@ class JahadiWorkRemoteDataSourceImpl extends JahadiWorkRemoteDataSource {
     required GetGroupDataParams getGroupDataParams,
   }) =>
       apiService.getMethod<Map<String, dynamic>>(
-        '''${const JahadiWorkEndpoints.groupData().toPath}?group_registeration_number=${getGroupDataParams.groupRegisterationNumber}&group_supervisor_national_code=${getGroupDataParams.groupSupervisorNationalCode}&phone_number=${getGroupDataParams.phoneNumber}''',
+        '''${const JahadiWorkEndpoints.groupData().toPath}?group_supervisor_national_code=${getGroupDataParams.groupSupervisorNationalCode}&phone_number=${getGroupDataParams.phoneNumber}''',
       ).toNonNullDomain;
 
   @override
