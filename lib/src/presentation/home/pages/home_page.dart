@@ -7,14 +7,14 @@ import 'package:jahadgaran_festival/src/presentation/core/components/container_w
 import 'package:jahadgaran_festival/src/presentation/core/components/page_decorator.dart';
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
-import 'package:jahadgaran_festival/src/presentation/home/widgets/f_a_q_slider_widget.dart';
-import 'package:jahadgaran_festival/src/presentation/home/widgets/important_dates_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/menu_bar_custom_widget.dart';
-import 'package:jahadgaran_festival/src/presentation/home/widgets/organizers_widget.dart';
-import 'package:jahadgaran_festival/src/presentation/home/widgets/send_data_widget.dart';
-import 'package:jahadgaran_festival/src/presentation/home/widgets/until_festival_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/side/f_a_q_slider_side_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/side/important_dates_side_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/side/organizers_side_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/side/register_side_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/side/until_festival_side_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/side/website_link_side_widget.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -117,27 +117,22 @@ class _RightSectionWidget extends StatelessWidget {
       children: <Widget>[
         ContainerWithTitleCustomWidget(
           title: context.l10n.register_and_send,
-          content: const SendDataWidget(),
+          content: const RegisterSideWidget(),
         ),
         const SizedBox(height: 10),
         ContainerWithTitleCustomWidget(
           title: context.l10n.until_event,
-          content: const UntilFestivalWidget(),
+          content: const UntilFestivalSideWidget(),
         ),
         const SizedBox(height: 10),
         ContainerWithTitleCustomWidget(
           title: context.l10n.important_dates,
-          content: const ImportantDatesWidget(),
+          content: const ImportantDatesSideWidget(),
         ),
         const SizedBox(height: 10),
         ContainerWithTitleCustomWidget(
           title: context.l10n.frequently_asked_questions,
-          content: const FAQSliderWidget(),
-        ),
-        const SizedBox(height: 10),
-        ContainerWithTitleCustomWidget(
-          title: context.l10n.organizers,
-          content: const OrganizersWidget(),
+          content: const FAQSliderSideWidget(),
         ),
       ],
     );
@@ -164,61 +159,27 @@ class _LeftSectionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        _WebsiteLinkWidget(
+        ContainerWithTitleCustomWidget(
+          title: context.l10n.organizers,
+          content: const OrganizersSideWidget(),
+        ),
+        const SizedBox(height: 20),
+        WebsiteLinkSideWidget(
           title: context.l10n.website_supreme_leader,
           url: 'https://farsi.khamenei.ir/',
         ),
         const SizedBox(height: 15),
-        _WebsiteLinkWidget(
+        WebsiteLinkSideWidget(
           title: context.l10n.jahadgaran_atlas,
           url: 'https://www.atlas.tara.co.ir',
         ),
         const SizedBox(height: 15),
-        _WebsiteLinkWidget(
+        WebsiteLinkSideWidget(
           title: context.l10n.jahadgaran_festival_ir,
           url:
               'https://jahadgaran.org/tag/%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87-%D9%85%D9%84%DB%8C-%D8%AC%D9%87%D8%A7%D8%AF%DA%AF%D8%B1%D8%A7%D9%86/',
         ),
       ],
-    );
-  }
-}
-
-class _WebsiteLinkWidget extends StatelessWidget {
-  const _WebsiteLinkWidget({
-    Key? key,
-    required this.title,
-    required this.url,
-  }) : super(key: key);
-
-  final String title;
-  final String url;
-
-  @override
-  Widget build(BuildContext context) {
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      child: GestureDetector(
-        onTap: () async => launchUrl(Uri.parse(url)),
-        child: SizedBox(
-          width: double.infinity,
-          height: 75,
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(PngAssets.menu1Asset),
-                fit: BoxFit.fill,
-              ),
-            ),
-            child: Center(
-              child: Text(
-                title,
-                style: subtitle1Bold.copyWith(color: Colors.white70),
-              ),
-            ),
-          ),
-        ),
-      ),
     );
   }
 }

@@ -6,8 +6,8 @@ import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/f_a_q_enum.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
 
-class FAQSliderWidget extends StatelessWidget {
-  const FAQSliderWidget({Key? key}) : super(key: key);
+class FAQSliderSideWidget extends StatelessWidget {
+  const FAQSliderSideWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

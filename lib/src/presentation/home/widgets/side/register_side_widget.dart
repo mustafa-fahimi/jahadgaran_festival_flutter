@@ -6,8 +6,8 @@ import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
 
-class SendDataWidget extends HookWidget {
-  const SendDataWidget({Key? key}) : super(key: key);
+class RegisterSideWidget extends HookWidget {
+  const RegisterSideWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

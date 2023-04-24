@@ -23,7 +23,7 @@ class GetAtlasCodeWidget extends HookWidget {
     nationalCodeController = useTextEditingController();
     nationalCodeFocusNode = useFocusNode();
     final getGroupDataFailMessage =
-        context.watch<HomeBloc>().state.getGroupDataFailMessage;
+        context.watch<HomeBloc>().state.getAtlasCodeFailMessage;
     final getAtlasCodeResult =
         context.watch<HomeBloc>().state.getAtlasCodeResult;
 
@@ -61,7 +61,7 @@ class GetAtlasCodeWidget extends HookWidget {
                 btnText: context.l10n.atlas_code_inquiry,
                 height: 40,
                 isLoading:
-                    context.watch<HomeBloc>().state.isLoadingGetGroupData,
+                    context.watch<HomeBloc>().state.isLoadingGetAtlasCode,
                 width: context.deviceWidthFactor(0.1),
                 color: context.theme.colorScheme.primary,
               ),

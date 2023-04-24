@@ -22,6 +22,7 @@ class NewsWidget extends StatelessWidget {
         constraints: const BoxConstraints(minHeight: 1, maxHeight: 1000),
         child: ListView.separated(
           shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
           itemCount: allNews.length,
           itemBuilder: (context, index) => _NewsListViewItemWidget(
             news: NewsModel(

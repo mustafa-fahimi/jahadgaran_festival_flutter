@@ -8,211 +8,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
-import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/get_group_data_params.dart';
-import 'package:jahadgaran_festival/src/presentation/core/components/container_with_title_custom_widget.dart';
+import 'package:jahadgaran_festival/src/features/core/enums/register_type_enum.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/dropdown_multi_select_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/elevated_button_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/outlined_button_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/outlined_text_field_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/attachment_type_enum.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
-class SendDataFormWidget extends HookWidget {
-  SendDataFormWidget({Key? key}) : super(key: key);
-
-  final GlobalKey<FormState> formKey = GlobalKey();
-
-  /// First form variables
-  late TextEditingController groupSupervisorNationalCodeController;
-  late TextEditingController phoneNumberController;
-  late FocusNode groupSupervisorNationalCodeFocusNode;
-  late FocusNode phoneNumberFocusNode;
-
-  /// Second form variables
-  late TextEditingController verifyCodeController;
-  late TextEditingController descriptionController;
-  late FocusNode verifyCodeFocusNode;
-  late FocusNode descriptionFocusNode;
-  late ValueNotifier<List<String>> selectedAttachmentTypes;
-  late ValueNotifier<PlatformFile?> selectedFile;
-
-  @override
-  Widget build(BuildContext context) {
-    groupSupervisorNationalCodeController = useTextEditingController();
-    phoneNumberController = useTextEditingController();
-    groupSupervisorNationalCodeFocusNode = useFocusNode();
-    phoneNumberFocusNode = useFocusNode();
-
-    verifyCodeController = useTextEditingController();
-    descriptionController = useTextEditingController();
-    verifyCodeFocusNode = useFocusNode();
-    descriptionFocusNode = useFocusNode();
-    selectedAttachmentTypes = useState<List<String>>([]);
-    selectedFile = useState<PlatformFile?>(null);
-
-    return ContainerWithTitleCustomWidget(
-      title: context.l10n.register_and_send,
-      bgColor: Colors.white,
-      content: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Form(
-          key: formKey,
-          child: Row(
-            children: [
-              BlocListener<HomeBloc, HomeState>(
-                listener: (context, state) {
-                  if (state.isGetGroupDataSuccessful) {
-                    AppHelper().displayToast(
-                      context,
-                      message: context.l10n.verify_code_sended,
-                    );
-                  } else if (state.getGroupDataFailMessage.isNotEmpty) {
-                    AppHelper().displayToast(
-                      context,
-                      message: state.getGroupDataFailMessage,
-                      isFailureMessage: true,
-                    );
-                  }
-                  if (state.isSubmitDataSuccessful) {
-                    AppHelper().displayToast(
-                      context,
-                      message: context.l10n.submit_successfull,
-                    );
-                  } else if (state.submitDataFailMessage.isNotEmpty) {
-                    AppHelper().displayToast(
-                      context,
-                      message: state.submitDataFailMessage,
-                      isFailureMessage: true,
-                    );
-                  }
-                },
-                child: Expanded(
-                  flex: 3,
-                  child: context.watch<HomeBloc>().state.sendDataStep == 1
-                      ? _FirstStepFormWidget(
-                          formKey: formKey,
-                          groupSupervisorNationalCodeController:
-                              groupSupervisorNationalCodeController,
-                          groupSupervisorNationalCodeFocusNode:
-                              groupSupervisorNationalCodeFocusNode,
-                          phoneNumberController: phoneNumberController,
-                          phoneNumberFocusNode: phoneNumberFocusNode,
-                        )
-                      : _SecondStepFormWidget(
-                          formKey: formKey,
-                          verifyCodeController: verifyCodeController,
-                          descriptionController: descriptionController,
-                          verifyCodeFocusNode: verifyCodeFocusNode,
-                          descriptionFocusNode: descriptionFocusNode,
-                          selectedAttachmentTypes: selectedAttachmentTypes,
-                          selectedFile: selectedFile,
-                        ),
-                ),
-              ),
-              const SizedBox(width: 15),
-              Expanded(
-                flex: 2,
-                child: Image.asset(
-                  PngAssets.formIllustrationAsset,
-                  height: 250,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _FirstStepFormWidget extends HookWidget {
-  const _FirstStepFormWidget({
-    Key? key,
-    required this.formKey,
-    required this.groupSupervisorNationalCodeController,
-    required this.phoneNumberController,
-    required this.groupSupervisorNationalCodeFocusNode,
-    required this.phoneNumberFocusNode,
-  }) : super(key: key);
-
-  final GlobalKey<FormState> formKey;
-  final TextEditingController groupSupervisorNationalCodeController;
-  final TextEditingController phoneNumberController;
-  final FocusNode groupSupervisorNationalCodeFocusNode;
-  final FocusNode phoneNumberFocusNode;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          context.l10n.national_code_hint,
-          style: subtitle2,
-        ),
-        const SizedBox(height: 8),
-        OutlinedTextFieldCustomWidget(
-          controller: groupSupervisorNationalCodeController,
-          focusNode: groupSupervisorNationalCodeFocusNode,
-          hintText: context.l10n.national_code_hint,
-          validator: (value) => FormValidators().emptyAndLengthValidator(
-            value,
-            7,
-          ),
-          keyboardType: TextInputType.number,
-          inputFormatters: [
-            FilteringTextInputFormatter.digitsOnly,
-          ],
-          maxLength: 10,
-        ),
-        const SizedBox(height: 20),
-        Text(
-          context.l10n.phone_number,
-          style: subtitle2,
-        ),
-        const SizedBox(height: 8),
-        OutlinedTextFieldCustomWidget(
-          controller: phoneNumberController,
-          focusNode: phoneNumberFocusNode,
-          hintText: context.l10n.phone_number,
-          validator: FormValidators().phoneNumberValidator,
-          keyboardType: TextInputType.number,
-          inputFormatters: [
-            FilteringTextInputFormatter.digitsOnly,
-          ],
-          maxLength: 11,
-        ),
-        const SizedBox(height: 20),
-        ElevatedButtonCustomWidget(
-          onTap: () => _onTapCheckInformation(context),
-          btnText: context.l10n.check_information,
-          height: 40,
-          isLoading: context.watch<HomeBloc>().state.isLoadingGetGroupData,
-          width: context.deviceWidthFactor(0.1),
-          color: context.theme.colorScheme.primary,
-        ),
-      ],
-    );
-  }
-
-  void _onTapCheckInformation(BuildContext context) {
-    /// If we have validation error then do nothing and return
-    if (!formKey.currentState!.validate()) return;
-
-    context.read<HomeBloc>().add(
-          HomeEvent.getGroupData(
-            getGroupDataParams: GetGroupDataParams(
-              groupSupervisorNationalCode:
-                  groupSupervisorNationalCodeController.text,
-              phoneNumber: phoneNumberController.text,
-            ),
-          ),
-        );
-  }
-}
-
-class _SecondStepFormWidget extends HookWidget {
-  const _SecondStepFormWidget({
+class JahadiGroupSubmitWorkFormWidget extends HookWidget {
+  const JahadiGroupSubmitWorkFormWidget({
     Key? key,
     required this.formKey,
     required this.verifyCodeController,
@@ -241,7 +47,9 @@ class _SecondStepFormWidget extends HookWidget {
             const SizedBox(height: 10),
             ElevatedButtonCustomWidget(
               height: 40,
-              width: context.deviceWidthFactor(0.13),
+              width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                  ? double.infinity
+                  : 200,
               color: context.theme.colorScheme.primary,
               iconWidget: const Icon(
                 Icons.arrow_back_ios_rounded,
@@ -249,7 +57,9 @@ class _SecondStepFormWidget extends HookWidget {
                 size: 19,
               ),
               onTap: () => context.read<HomeBloc>().add(
-                    const HomeEvent.changeFormStep(step: 1),
+                    const HomeEvent.changeFormState(
+                      registerFormState: RegisterType.initial,
+                    ),
                   ),
               btnText: context.l10n.return_to_previous_step,
             ),
@@ -265,47 +75,47 @@ class _SecondStepFormWidget extends HookWidget {
             ),
             const SizedBox(height: 20),
             Text(
-              '''${context.l10n.group_fullname}: ${state.groupData.groupName}''',
+              '''${context.l10n.group_fullname}: ${state.jahadiGroupData.groupName}''',
               style: subtitle1,
             ),
             const SizedBox(height: 10),
             Text(
-              '''${context.l10n.group_registration_code}: ${state.groupData.groupRegisterationNumber}''',
+              '''${context.l10n.group_registration_code}: ${state.jahadiGroupData.groupRegisterationNumber}''',
               style: subtitle1,
             ),
             const SizedBox(height: 10),
             Text(
-              '''${context.l10n.group_registre_date}: ${state.groupData.groupRegisterDate}''',
+              '''${context.l10n.group_registre_date}: ${state.jahadiGroupData.groupRegisterDate}''',
               style: subtitle1,
             ),
             const SizedBox(height: 10),
             Text(
-              '''${context.l10n.group_nature}: ${state.groupData.groupNature}''',
+              '''${context.l10n.group_nature}: ${state.jahadiGroupData.groupNature}''',
               style: subtitle1,
             ),
             const SizedBox(height: 10),
             Text(
-              '''${context.l10n.state}: ${state.groupData.groupState}''',
+              '''${context.l10n.state}: ${state.jahadiGroupData.groupState}''',
               style: subtitle1,
             ),
             const SizedBox(height: 10),
             Text(
-              '''${context.l10n.city}: ${state.groupData.groupCity}''',
+              '''${context.l10n.city}: ${state.jahadiGroupData.groupCity}''',
               style: subtitle1,
             ),
             const SizedBox(height: 10),
             Text(
-              '''${context.l10n.supervisor_fullname}: ${state.groupData.groupSupervisorFullname}''',
+              '''${context.l10n.supervisor_fullname}: ${state.jahadiGroupData.groupSupervisorFullname}''',
               style: subtitle1,
             ),
             const SizedBox(height: 10),
             Text(
-              '''${context.l10n.supervisor_national_code}: ${state.groupData.groupSupervisorNationalCode}''',
+              '''${context.l10n.supervisor_national_code}: ${state.jahadiGroupData.groupSupervisorNationalCode}''',
               style: subtitle1,
             ),
             const SizedBox(height: 10),
             Text(
-              '''${context.l10n.supervisor_phone}: ${state.groupData.groupSupervisorPhone}''',
+              '''${context.l10n.supervisor_phone}: ${state.jahadiGroupData.groupSupervisorPhone}''',
               style: subtitle1,
             ),
             const SizedBox(height: 40),
@@ -390,15 +200,15 @@ class _SecondStepFormWidget extends HookWidget {
             const SizedBox(height: 40),
             BlocConsumer<HomeBloc, HomeState>(
               listener: (context, state) {
-                if (state.isSubmitDataSuccessful) {
+                if (state.isSubmitWorkSuccessful) {
                   AppHelper().displayToast(
                     context,
                     message: context.l10n.submit_successfull,
                   );
-                } else if (state.submitDataFailMessage.isNotEmpty) {
+                } else if (state.submitWorkFailMessage.isNotEmpty) {
                   AppHelper().displayToast(
                     context,
-                    message: state.submitDataFailMessage,
+                    message: state.submitWorkFailMessage,
                     isFailureMessage: true,
                   );
                 }
@@ -407,13 +217,15 @@ class _SecondStepFormWidget extends HookWidget {
                 onTap: () => _onTapSendData(context),
                 btnText: context.l10n.submit_information,
                 height: 40,
-                isLoading: state.isLoadingSubmitData,
-                width: context.deviceWidthFactor(0.1),
+                isLoading: state.isLoadingSubmitWork,
+                width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                    ? double.infinity
+                    : 200,
                 color: context.theme.colorScheme.primary,
               ),
             ),
             const SizedBox(height: 20),
-            if (context.watch<HomeBloc>().state.isSubmitDataSuccessful)
+            if (context.watch<HomeBloc>().state.isSubmitWorkSuccessful)
               Center(
                 child: Text(
                   context.l10n.submit_successfull,
@@ -477,9 +289,9 @@ class _SecondStepFormWidget extends HookWidget {
 
     final formData = FormData.fromMap({
       'group_registeration_number':
-          bloc.state.groupData.groupRegisterationNumber,
+          bloc.state.jahadiGroupData.groupRegisterationNumber,
       'group_supervisor_national_code':
-          bloc.state.groupData.groupSupervisorNationalCode,
+          bloc.state.jahadiGroupData.groupSupervisorNationalCode,
       'verify_code': verifyCodeController.text,
       'attachment_type': selectedAttachmentTypes.value.join(', '),
       'file': file,

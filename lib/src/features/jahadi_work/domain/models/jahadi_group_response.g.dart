@@ -1,14 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'get_group_data_response.dart';
+part of 'jahadi_group_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-GetGroupDataResponse _$GetGroupDataResponseFromJson(
-        Map<String, dynamic> json) =>
-    GetGroupDataResponse(
+JahadiGroupResponse _$JahadiGroupResponseFromJson(Map<String, dynamic> json) =>
+    JahadiGroupResponse(
       id: json['id'] as int? ?? -1,
       groupName: json['group_name'] as String? ?? '',
       groupRegisterationNumber:

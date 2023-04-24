@@ -119,5 +119,9 @@
     "return_to_previous_step":"بازگشت به مرحله قبل",
     "atlas_code_inquiry":"استعلام کد اطلس",
     "atlas_code_inquiry_description":"جهت دریافت کد اطلس گروه جهادی خود ، کد ملی مسئول گروه را وارد نمایید",
-    "national_code_hint":"کد ملی (بدون صفرهای اول)"
+    "national_code_hint":"کد ملی (بدون صفرهای اول)",
+    "register_type_hint":"نوع ثبت نام را انتخاب کنید",
+    "jahadi_group_in_atlas":"گروه جهادی ثبت شده سامانه اطلس",
+    "individual":"شخص حقیقی",
+    "group":"گروه"
 }

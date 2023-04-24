@@ -7,13 +7,21 @@ class HomeEvent with _$HomeEvent {
     NewsModel? news,
   }) = _ChangeMiddleView;
 
-  const factory HomeEvent.changeFormStep({
-    required int step,
-  }) = _ChangeFormStep;
+  const factory HomeEvent.changeFormState({
+    required RegisterType registerFormState,
+  }) = _ChangeFormState;
 
-  const factory HomeEvent.getGroupData({
-    required GetGroupDataParams getGroupDataParams,
-  }) = _GetGroupData;
+  const factory HomeEvent.registerJahadiGroup({
+    required RegisterParams registerParams,
+  }) = _RegisterJahadiGroup;
+
+  const factory HomeEvent.registerIndividual({
+    required RegisterParams registerParams,
+  }) = _RegisterIndividual;
+
+  const factory HomeEvent.registerGroup({
+    required RegisterParams registerParams,
+  }) = _RegisterGroup;
 
   const factory HomeEvent.getAtlasCode({
     required String groupSupervisorNationalCode,

@@ -4,11 +4,19 @@ import 'package:dio/dio.dart';
 import 'package:jahadgaran_festival/src/features/core/extensions/dio_ex.dart';
 import 'package:jahadgaran_festival/src/features/core/failures/api_failure.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/data/data_sources/remote/jahadi_work_end_points.dart';
-import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/get_group_data_params.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/register_params.dart';
 
 abstract class JahadiWorkRemoteDataSource {
-  Future<Either<ApiFailure, Map<String, dynamic>>> getGroupData({
-    required GetGroupDataParams getGroupDataParams,
+  Future<Either<ApiFailure, Map<String, dynamic>>> registerJahadiGroup({
+    required RegisterParams registerParams,
+  });
+
+  Future<Either<ApiFailure, Map<String, dynamic>>> registerIndividual({
+    required RegisterParams registerParams,
+  });
+
+  Future<Either<ApiFailure, Map<String, dynamic>>> registerGroup({
+    required RegisterParams registerParams,
   });
 
   Future<Either<ApiFailure, void>> sendSubmittedWork({
@@ -25,11 +33,27 @@ class JahadiWorkRemoteDataSourceImpl extends JahadiWorkRemoteDataSource {
   final ApiService apiService;
 
   @override
-  Future<Either<ApiFailure, Map<String, dynamic>>> getGroupData({
-    required GetGroupDataParams getGroupDataParams,
+  Future<Either<ApiFailure, Map<String, dynamic>>> registerJahadiGroup({
+    required RegisterParams registerParams,
   }) =>
       apiService.getMethod<Map<String, dynamic>>(
-        '''${const JahadiWorkEndpoints.groupData().toPath}?group_supervisor_national_code=${getGroupDataParams.groupSupervisorNationalCode}&phone_number=${getGroupDataParams.phoneNumber}''',
+        '''${const JahadiWorkEndpoints.registerJahadiGroup().toPath}?national_code=${registerParams.nationalCode}&phone_number=${registerParams.phoneNumber}''',
+      ).toNonNullDomain;
+
+  @override
+  Future<Either<ApiFailure, Map<String, dynamic>>> registerIndividual({
+    required RegisterParams registerParams,
+  }) =>
+      apiService.getMethod<Map<String, dynamic>>(
+        '''${const JahadiWorkEndpoints.registerIndividual().toPath}?national_code=${registerParams.nationalCode}&phone_number=${registerParams.phoneNumber}''',
+      ).toNonNullDomain;
+
+  @override
+  Future<Either<ApiFailure, Map<String, dynamic>>> registerGroup({
+    required RegisterParams registerParams,
+  }) =>
+      apiService.getMethod<Map<String, dynamic>>(
+        '''${const JahadiWorkEndpoints.registerGroup().toPath}?national_code=${registerParams.nationalCode}&phone_number=${registerParams.phoneNumber}''',
       ).toNonNullDomain;
 
   @override

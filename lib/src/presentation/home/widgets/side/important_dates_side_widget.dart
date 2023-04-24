@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 
-class ImportantDatesWidget extends StatelessWidget {
-  const ImportantDatesWidget({Key? key}) : super(key: key);
+class ImportantDatesSideWidget extends StatelessWidget {
+  const ImportantDatesSideWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -7,7 +7,7 @@ import 'package:jahadgaran_festival/src/presentation/home/widgets/get_atlas_code
 import 'package:jahadgaran_festival/src/presentation/home/widgets/home_main_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/media_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/news_widget.dart';
-import 'package:jahadgaran_festival/src/presentation/home/widgets/send_data_form_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/register_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/single_news_widget.dart';
 
 enum HomeMiddleViews {
@@ -28,7 +28,7 @@ extension HomeMiddleViewsEx on HomeMiddleViews {
       case HomeMiddleViews.home:
         return const HomeMainWidget();
       case HomeMiddleViews.register:
-        return SendDataFormWidget();
+        return RegisterWidget();
       case HomeMiddleViews.festivalInformation:
         return const FestivalInformationWidget();
       case HomeMiddleViews.news:

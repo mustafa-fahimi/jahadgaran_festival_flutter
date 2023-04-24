@@ -1,10 +1,10 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'get_group_data_response.g.dart';
+part 'jahadi_group_response.g.dart';
 
 @JsonSerializable(createToJson: false)
-class GetGroupDataResponse {
-  const GetGroupDataResponse({
+class JahadiGroupResponse {
+  const JahadiGroupResponse({
     this.id = -1,
     this.groupName = '',
     this.groupRegisterationNumber = '',
@@ -17,8 +17,8 @@ class GetGroupDataResponse {
     this.groupSupervisorNationalCode = '',
   });
 
-  factory GetGroupDataResponse.fromJson(Map<String, dynamic> json) =>
-      _$GetGroupDataResponseFromJson(json);
+  factory JahadiGroupResponse.fromJson(Map<String, dynamic> json) =>
+      _$JahadiGroupResponseFromJson(json);
 
   final int id;
 

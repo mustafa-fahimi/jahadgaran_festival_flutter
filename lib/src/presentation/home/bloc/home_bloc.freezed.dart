@@ -20,9 +20,11 @@ mixin _$HomeEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(HomeMiddleViews view, NewsModel? news)
         changeMiddleView,
-    required TResult Function(int step) changeFormStep,
-    required TResult Function(GetGroupDataParams getGroupDataParams)
-        getGroupData,
+    required TResult Function(RegisterType registerFormState) changeFormState,
+    required TResult Function(RegisterParams registerParams)
+        registerJahadiGroup,
+    required TResult Function(RegisterParams registerParams) registerIndividual,
+    required TResult Function(RegisterParams registerParams) registerGroup,
     required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
     required TResult Function(FormData formData) sendSubmittedWork,
   }) =>
@@ -30,8 +32,10 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
-    TResult? Function(int step)? changeFormStep,
-    TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult? Function(RegisterType registerFormState)? changeFormState,
+    TResult? Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult? Function(RegisterParams registerParams)? registerIndividual,
+    TResult? Function(RegisterParams registerParams)? registerGroup,
     TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult? Function(FormData formData)? sendSubmittedWork,
   }) =>
@@ -39,8 +43,10 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
-    TResult Function(int step)? changeFormStep,
-    TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult Function(RegisterType registerFormState)? changeFormState,
+    TResult Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult Function(RegisterParams registerParams)? registerIndividual,
+    TResult Function(RegisterParams registerParams)? registerGroup,
     TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult Function(FormData formData)? sendSubmittedWork,
     required TResult orElse(),
@@ -49,8 +55,10 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
-    required TResult Function(_ChangeFormStep value) changeFormStep,
-    required TResult Function(_GetGroupData value) getGroupData,
+    required TResult Function(_ChangeFormState value) changeFormState,
+    required TResult Function(_RegisterJahadiGroup value) registerJahadiGroup,
+    required TResult Function(_RegisterIndividual value) registerIndividual,
+    required TResult Function(_RegisterGroup value) registerGroup,
     required TResult Function(_GetAtlasCode value) getAtlasCode,
     required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
   }) =>
@@ -58,8 +66,10 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
-    TResult? Function(_ChangeFormStep value)? changeFormStep,
-    TResult? Function(_GetGroupData value)? getGroupData,
+    TResult? Function(_ChangeFormState value)? changeFormState,
+    TResult? Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult? Function(_RegisterIndividual value)? registerIndividual,
+    TResult? Function(_RegisterGroup value)? registerGroup,
     TResult? Function(_GetAtlasCode value)? getAtlasCode,
     TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
   }) =>
@@ -67,8 +77,10 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
-    TResult Function(_ChangeFormStep value)? changeFormStep,
-    TResult Function(_GetGroupData value)? getGroupData,
+    TResult Function(_ChangeFormState value)? changeFormState,
+    TResult Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult Function(_RegisterIndividual value)? registerIndividual,
+    TResult Function(_RegisterGroup value)? registerGroup,
     TResult Function(_GetAtlasCode value)? getAtlasCode,
     TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
     required TResult orElse(),
@@ -167,9 +179,11 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   TResult when<TResult extends Object?>({
     required TResult Function(HomeMiddleViews view, NewsModel? news)
         changeMiddleView,
-    required TResult Function(int step) changeFormStep,
-    required TResult Function(GetGroupDataParams getGroupDataParams)
-        getGroupData,
+    required TResult Function(RegisterType registerFormState) changeFormState,
+    required TResult Function(RegisterParams registerParams)
+        registerJahadiGroup,
+    required TResult Function(RegisterParams registerParams) registerIndividual,
+    required TResult Function(RegisterParams registerParams) registerGroup,
     required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
     required TResult Function(FormData formData) sendSubmittedWork,
   }) {
@@ -180,8 +194,10 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
-    TResult? Function(int step)? changeFormStep,
-    TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult? Function(RegisterType registerFormState)? changeFormState,
+    TResult? Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult? Function(RegisterParams registerParams)? registerIndividual,
+    TResult? Function(RegisterParams registerParams)? registerGroup,
     TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult? Function(FormData formData)? sendSubmittedWork,
   }) {
@@ -192,8 +208,10 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
-    TResult Function(int step)? changeFormStep,
-    TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult Function(RegisterType registerFormState)? changeFormState,
+    TResult Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult Function(RegisterParams registerParams)? registerIndividual,
+    TResult Function(RegisterParams registerParams)? registerGroup,
     TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult Function(FormData formData)? sendSubmittedWork,
     required TResult orElse(),
@@ -208,8 +226,10 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
-    required TResult Function(_ChangeFormStep value) changeFormStep,
-    required TResult Function(_GetGroupData value) getGroupData,
+    required TResult Function(_ChangeFormState value) changeFormState,
+    required TResult Function(_RegisterJahadiGroup value) registerJahadiGroup,
+    required TResult Function(_RegisterIndividual value) registerIndividual,
+    required TResult Function(_RegisterGroup value) registerGroup,
     required TResult Function(_GetAtlasCode value) getAtlasCode,
     required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
   }) {
@@ -220,8 +240,10 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
-    TResult? Function(_ChangeFormStep value)? changeFormStep,
-    TResult? Function(_GetGroupData value)? getGroupData,
+    TResult? Function(_ChangeFormState value)? changeFormState,
+    TResult? Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult? Function(_RegisterIndividual value)? registerIndividual,
+    TResult? Function(_RegisterGroup value)? registerGroup,
     TResult? Function(_GetAtlasCode value)? getAtlasCode,
     TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
   }) {
@@ -232,8 +254,10 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
-    TResult Function(_ChangeFormStep value)? changeFormStep,
-    TResult Function(_GetGroupData value)? getGroupData,
+    TResult Function(_ChangeFormState value)? changeFormState,
+    TResult Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult Function(_RegisterIndividual value)? registerIndividual,
+    TResult Function(_RegisterGroup value)? registerGroup,
     TResult Function(_GetAtlasCode value)? getAtlasCode,
     TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
     required TResult orElse(),
@@ -258,104 +282,111 @@ abstract class _ChangeMiddleView implements HomeEvent {
 }
 
 /// @nodoc
-abstract class _$$_ChangeFormStepCopyWith<$Res> {
-  factory _$$_ChangeFormStepCopyWith(
-          _$_ChangeFormStep value, $Res Function(_$_ChangeFormStep) then) =
-      __$$_ChangeFormStepCopyWithImpl<$Res>;
+abstract class _$$_ChangeFormStateCopyWith<$Res> {
+  factory _$$_ChangeFormStateCopyWith(
+          _$_ChangeFormState value, $Res Function(_$_ChangeFormState) then) =
+      __$$_ChangeFormStateCopyWithImpl<$Res>;
   @useResult
-  $Res call({int step});
+  $Res call({RegisterType registerFormState});
 }
 
 /// @nodoc
-class __$$_ChangeFormStepCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$_ChangeFormStep>
-    implements _$$_ChangeFormStepCopyWith<$Res> {
-  __$$_ChangeFormStepCopyWithImpl(
-      _$_ChangeFormStep _value, $Res Function(_$_ChangeFormStep) _then)
+class __$$_ChangeFormStateCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$_ChangeFormState>
+    implements _$$_ChangeFormStateCopyWith<$Res> {
+  __$$_ChangeFormStateCopyWithImpl(
+      _$_ChangeFormState _value, $Res Function(_$_ChangeFormState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? step = null,
+    Object? registerFormState = null,
   }) {
-    return _then(_$_ChangeFormStep(
-      step: null == step
-          ? _value.step
-          : step // ignore: cast_nullable_to_non_nullable
-              as int,
+    return _then(_$_ChangeFormState(
+      registerFormState: null == registerFormState
+          ? _value.registerFormState
+          : registerFormState // ignore: cast_nullable_to_non_nullable
+              as RegisterType,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_ChangeFormStep implements _ChangeFormStep {
-  const _$_ChangeFormStep({required this.step});
+class _$_ChangeFormState implements _ChangeFormState {
+  const _$_ChangeFormState({required this.registerFormState});
 
   @override
-  final int step;
+  final RegisterType registerFormState;
 
   @override
   String toString() {
-    return 'HomeEvent.changeFormStep(step: $step)';
+    return 'HomeEvent.changeFormState(registerFormState: $registerFormState)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChangeFormStep &&
-            (identical(other.step, step) || other.step == step));
+            other is _$_ChangeFormState &&
+            (identical(other.registerFormState, registerFormState) ||
+                other.registerFormState == registerFormState));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, step);
+  int get hashCode => Object.hash(runtimeType, registerFormState);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChangeFormStepCopyWith<_$_ChangeFormStep> get copyWith =>
-      __$$_ChangeFormStepCopyWithImpl<_$_ChangeFormStep>(this, _$identity);
+  _$$_ChangeFormStateCopyWith<_$_ChangeFormState> get copyWith =>
+      __$$_ChangeFormStateCopyWithImpl<_$_ChangeFormState>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(HomeMiddleViews view, NewsModel? news)
         changeMiddleView,
-    required TResult Function(int step) changeFormStep,
-    required TResult Function(GetGroupDataParams getGroupDataParams)
-        getGroupData,
+    required TResult Function(RegisterType registerFormState) changeFormState,
+    required TResult Function(RegisterParams registerParams)
+        registerJahadiGroup,
+    required TResult Function(RegisterParams registerParams) registerIndividual,
+    required TResult Function(RegisterParams registerParams) registerGroup,
     required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
     required TResult Function(FormData formData) sendSubmittedWork,
   }) {
-    return changeFormStep(step);
+    return changeFormState(registerFormState);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
-    TResult? Function(int step)? changeFormStep,
-    TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult? Function(RegisterType registerFormState)? changeFormState,
+    TResult? Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult? Function(RegisterParams registerParams)? registerIndividual,
+    TResult? Function(RegisterParams registerParams)? registerGroup,
     TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult? Function(FormData formData)? sendSubmittedWork,
   }) {
-    return changeFormStep?.call(step);
+    return changeFormState?.call(registerFormState);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
-    TResult Function(int step)? changeFormStep,
-    TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult Function(RegisterType registerFormState)? changeFormState,
+    TResult Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult Function(RegisterParams registerParams)? registerIndividual,
+    TResult Function(RegisterParams registerParams)? registerGroup,
     TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult Function(FormData formData)? sendSubmittedWork,
     required TResult orElse(),
   }) {
-    if (changeFormStep != null) {
-      return changeFormStep(step);
+    if (changeFormState != null) {
+      return changeFormState(registerFormState);
     }
     return orElse();
   }
@@ -364,152 +395,166 @@ class _$_ChangeFormStep implements _ChangeFormStep {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
-    required TResult Function(_ChangeFormStep value) changeFormStep,
-    required TResult Function(_GetGroupData value) getGroupData,
+    required TResult Function(_ChangeFormState value) changeFormState,
+    required TResult Function(_RegisterJahadiGroup value) registerJahadiGroup,
+    required TResult Function(_RegisterIndividual value) registerIndividual,
+    required TResult Function(_RegisterGroup value) registerGroup,
     required TResult Function(_GetAtlasCode value) getAtlasCode,
     required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
   }) {
-    return changeFormStep(this);
+    return changeFormState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
-    TResult? Function(_ChangeFormStep value)? changeFormStep,
-    TResult? Function(_GetGroupData value)? getGroupData,
+    TResult? Function(_ChangeFormState value)? changeFormState,
+    TResult? Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult? Function(_RegisterIndividual value)? registerIndividual,
+    TResult? Function(_RegisterGroup value)? registerGroup,
     TResult? Function(_GetAtlasCode value)? getAtlasCode,
     TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
   }) {
-    return changeFormStep?.call(this);
+    return changeFormState?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
-    TResult Function(_ChangeFormStep value)? changeFormStep,
-    TResult Function(_GetGroupData value)? getGroupData,
+    TResult Function(_ChangeFormState value)? changeFormState,
+    TResult Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult Function(_RegisterIndividual value)? registerIndividual,
+    TResult Function(_RegisterGroup value)? registerGroup,
     TResult Function(_GetAtlasCode value)? getAtlasCode,
     TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
     required TResult orElse(),
   }) {
-    if (changeFormStep != null) {
-      return changeFormStep(this);
+    if (changeFormState != null) {
+      return changeFormState(this);
     }
     return orElse();
   }
 }
 
-abstract class _ChangeFormStep implements HomeEvent {
-  const factory _ChangeFormStep({required final int step}) = _$_ChangeFormStep;
+abstract class _ChangeFormState implements HomeEvent {
+  const factory _ChangeFormState(
+      {required final RegisterType registerFormState}) = _$_ChangeFormState;
 
-  int get step;
+  RegisterType get registerFormState;
   @JsonKey(ignore: true)
-  _$$_ChangeFormStepCopyWith<_$_ChangeFormStep> get copyWith =>
+  _$$_ChangeFormStateCopyWith<_$_ChangeFormState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_GetGroupDataCopyWith<$Res> {
-  factory _$$_GetGroupDataCopyWith(
-          _$_GetGroupData value, $Res Function(_$_GetGroupData) then) =
-      __$$_GetGroupDataCopyWithImpl<$Res>;
+abstract class _$$_RegisterJahadiGroupCopyWith<$Res> {
+  factory _$$_RegisterJahadiGroupCopyWith(_$_RegisterJahadiGroup value,
+          $Res Function(_$_RegisterJahadiGroup) then) =
+      __$$_RegisterJahadiGroupCopyWithImpl<$Res>;
   @useResult
-  $Res call({GetGroupDataParams getGroupDataParams});
+  $Res call({RegisterParams registerParams});
 }
 
 /// @nodoc
-class __$$_GetGroupDataCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$_GetGroupData>
-    implements _$$_GetGroupDataCopyWith<$Res> {
-  __$$_GetGroupDataCopyWithImpl(
-      _$_GetGroupData _value, $Res Function(_$_GetGroupData) _then)
+class __$$_RegisterJahadiGroupCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$_RegisterJahadiGroup>
+    implements _$$_RegisterJahadiGroupCopyWith<$Res> {
+  __$$_RegisterJahadiGroupCopyWithImpl(_$_RegisterJahadiGroup _value,
+      $Res Function(_$_RegisterJahadiGroup) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? getGroupDataParams = null,
+    Object? registerParams = null,
   }) {
-    return _then(_$_GetGroupData(
-      getGroupDataParams: null == getGroupDataParams
-          ? _value.getGroupDataParams
-          : getGroupDataParams // ignore: cast_nullable_to_non_nullable
-              as GetGroupDataParams,
+    return _then(_$_RegisterJahadiGroup(
+      registerParams: null == registerParams
+          ? _value.registerParams
+          : registerParams // ignore: cast_nullable_to_non_nullable
+              as RegisterParams,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_GetGroupData implements _GetGroupData {
-  const _$_GetGroupData({required this.getGroupDataParams});
+class _$_RegisterJahadiGroup implements _RegisterJahadiGroup {
+  const _$_RegisterJahadiGroup({required this.registerParams});
 
   @override
-  final GetGroupDataParams getGroupDataParams;
+  final RegisterParams registerParams;
 
   @override
   String toString() {
-    return 'HomeEvent.getGroupData(getGroupDataParams: $getGroupDataParams)';
+    return 'HomeEvent.registerJahadiGroup(registerParams: $registerParams)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetGroupData &&
-            (identical(other.getGroupDataParams, getGroupDataParams) ||
-                other.getGroupDataParams == getGroupDataParams));
+            other is _$_RegisterJahadiGroup &&
+            (identical(other.registerParams, registerParams) ||
+                other.registerParams == registerParams));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, getGroupDataParams);
+  int get hashCode => Object.hash(runtimeType, registerParams);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetGroupDataCopyWith<_$_GetGroupData> get copyWith =>
-      __$$_GetGroupDataCopyWithImpl<_$_GetGroupData>(this, _$identity);
+  _$$_RegisterJahadiGroupCopyWith<_$_RegisterJahadiGroup> get copyWith =>
+      __$$_RegisterJahadiGroupCopyWithImpl<_$_RegisterJahadiGroup>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(HomeMiddleViews view, NewsModel? news)
         changeMiddleView,
-    required TResult Function(int step) changeFormStep,
-    required TResult Function(GetGroupDataParams getGroupDataParams)
-        getGroupData,
+    required TResult Function(RegisterType registerFormState) changeFormState,
+    required TResult Function(RegisterParams registerParams)
+        registerJahadiGroup,
+    required TResult Function(RegisterParams registerParams) registerIndividual,
+    required TResult Function(RegisterParams registerParams) registerGroup,
     required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
     required TResult Function(FormData formData) sendSubmittedWork,
   }) {
-    return getGroupData(getGroupDataParams);
+    return registerJahadiGroup(registerParams);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
-    TResult? Function(int step)? changeFormStep,
-    TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult? Function(RegisterType registerFormState)? changeFormState,
+    TResult? Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult? Function(RegisterParams registerParams)? registerIndividual,
+    TResult? Function(RegisterParams registerParams)? registerGroup,
     TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult? Function(FormData formData)? sendSubmittedWork,
   }) {
-    return getGroupData?.call(getGroupDataParams);
+    return registerJahadiGroup?.call(registerParams);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
-    TResult Function(int step)? changeFormStep,
-    TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult Function(RegisterType registerFormState)? changeFormState,
+    TResult Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult Function(RegisterParams registerParams)? registerIndividual,
+    TResult Function(RegisterParams registerParams)? registerGroup,
     TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult Function(FormData formData)? sendSubmittedWork,
     required TResult orElse(),
   }) {
-    if (getGroupData != null) {
-      return getGroupData(getGroupDataParams);
+    if (registerJahadiGroup != null) {
+      return registerJahadiGroup(registerParams);
     }
     return orElse();
   }
@@ -518,50 +563,391 @@ class _$_GetGroupData implements _GetGroupData {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
-    required TResult Function(_ChangeFormStep value) changeFormStep,
-    required TResult Function(_GetGroupData value) getGroupData,
+    required TResult Function(_ChangeFormState value) changeFormState,
+    required TResult Function(_RegisterJahadiGroup value) registerJahadiGroup,
+    required TResult Function(_RegisterIndividual value) registerIndividual,
+    required TResult Function(_RegisterGroup value) registerGroup,
     required TResult Function(_GetAtlasCode value) getAtlasCode,
     required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
   }) {
-    return getGroupData(this);
+    return registerJahadiGroup(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
-    TResult? Function(_ChangeFormStep value)? changeFormStep,
-    TResult? Function(_GetGroupData value)? getGroupData,
+    TResult? Function(_ChangeFormState value)? changeFormState,
+    TResult? Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult? Function(_RegisterIndividual value)? registerIndividual,
+    TResult? Function(_RegisterGroup value)? registerGroup,
     TResult? Function(_GetAtlasCode value)? getAtlasCode,
     TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
   }) {
-    return getGroupData?.call(this);
+    return registerJahadiGroup?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
-    TResult Function(_ChangeFormStep value)? changeFormStep,
-    TResult Function(_GetGroupData value)? getGroupData,
+    TResult Function(_ChangeFormState value)? changeFormState,
+    TResult Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult Function(_RegisterIndividual value)? registerIndividual,
+    TResult Function(_RegisterGroup value)? registerGroup,
     TResult Function(_GetAtlasCode value)? getAtlasCode,
     TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
     required TResult orElse(),
   }) {
-    if (getGroupData != null) {
-      return getGroupData(this);
+    if (registerJahadiGroup != null) {
+      return registerJahadiGroup(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetGroupData implements HomeEvent {
-  const factory _GetGroupData(
-      {required final GetGroupDataParams getGroupDataParams}) = _$_GetGroupData;
+abstract class _RegisterJahadiGroup implements HomeEvent {
+  const factory _RegisterJahadiGroup(
+      {required final RegisterParams registerParams}) = _$_RegisterJahadiGroup;
 
-  GetGroupDataParams get getGroupDataParams;
+  RegisterParams get registerParams;
   @JsonKey(ignore: true)
-  _$$_GetGroupDataCopyWith<_$_GetGroupData> get copyWith =>
+  _$$_RegisterJahadiGroupCopyWith<_$_RegisterJahadiGroup> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_RegisterIndividualCopyWith<$Res> {
+  factory _$$_RegisterIndividualCopyWith(_$_RegisterIndividual value,
+          $Res Function(_$_RegisterIndividual) then) =
+      __$$_RegisterIndividualCopyWithImpl<$Res>;
+  @useResult
+  $Res call({RegisterParams registerParams});
+}
+
+/// @nodoc
+class __$$_RegisterIndividualCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$_RegisterIndividual>
+    implements _$$_RegisterIndividualCopyWith<$Res> {
+  __$$_RegisterIndividualCopyWithImpl(
+      _$_RegisterIndividual _value, $Res Function(_$_RegisterIndividual) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? registerParams = null,
+  }) {
+    return _then(_$_RegisterIndividual(
+      registerParams: null == registerParams
+          ? _value.registerParams
+          : registerParams // ignore: cast_nullable_to_non_nullable
+              as RegisterParams,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_RegisterIndividual implements _RegisterIndividual {
+  const _$_RegisterIndividual({required this.registerParams});
+
+  @override
+  final RegisterParams registerParams;
+
+  @override
+  String toString() {
+    return 'HomeEvent.registerIndividual(registerParams: $registerParams)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_RegisterIndividual &&
+            (identical(other.registerParams, registerParams) ||
+                other.registerParams == registerParams));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, registerParams);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_RegisterIndividualCopyWith<_$_RegisterIndividual> get copyWith =>
+      __$$_RegisterIndividualCopyWithImpl<_$_RegisterIndividual>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HomeMiddleViews view, NewsModel? news)
+        changeMiddleView,
+    required TResult Function(RegisterType registerFormState) changeFormState,
+    required TResult Function(RegisterParams registerParams)
+        registerJahadiGroup,
+    required TResult Function(RegisterParams registerParams) registerIndividual,
+    required TResult Function(RegisterParams registerParams) registerGroup,
+    required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
+    required TResult Function(FormData formData) sendSubmittedWork,
+  }) {
+    return registerIndividual(registerParams);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult? Function(RegisterType registerFormState)? changeFormState,
+    TResult? Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult? Function(RegisterParams registerParams)? registerIndividual,
+    TResult? Function(RegisterParams registerParams)? registerGroup,
+    TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
+    TResult? Function(FormData formData)? sendSubmittedWork,
+  }) {
+    return registerIndividual?.call(registerParams);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult Function(RegisterType registerFormState)? changeFormState,
+    TResult Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult Function(RegisterParams registerParams)? registerIndividual,
+    TResult Function(RegisterParams registerParams)? registerGroup,
+    TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
+    TResult Function(FormData formData)? sendSubmittedWork,
+    required TResult orElse(),
+  }) {
+    if (registerIndividual != null) {
+      return registerIndividual(registerParams);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChangeMiddleView value) changeMiddleView,
+    required TResult Function(_ChangeFormState value) changeFormState,
+    required TResult Function(_RegisterJahadiGroup value) registerJahadiGroup,
+    required TResult Function(_RegisterIndividual value) registerIndividual,
+    required TResult Function(_RegisterGroup value) registerGroup,
+    required TResult Function(_GetAtlasCode value) getAtlasCode,
+    required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
+  }) {
+    return registerIndividual(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult? Function(_ChangeFormState value)? changeFormState,
+    TResult? Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult? Function(_RegisterIndividual value)? registerIndividual,
+    TResult? Function(_RegisterGroup value)? registerGroup,
+    TResult? Function(_GetAtlasCode value)? getAtlasCode,
+    TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
+  }) {
+    return registerIndividual?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult Function(_ChangeFormState value)? changeFormState,
+    TResult Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult Function(_RegisterIndividual value)? registerIndividual,
+    TResult Function(_RegisterGroup value)? registerGroup,
+    TResult Function(_GetAtlasCode value)? getAtlasCode,
+    TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
+    required TResult orElse(),
+  }) {
+    if (registerIndividual != null) {
+      return registerIndividual(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RegisterIndividual implements HomeEvent {
+  const factory _RegisterIndividual(
+      {required final RegisterParams registerParams}) = _$_RegisterIndividual;
+
+  RegisterParams get registerParams;
+  @JsonKey(ignore: true)
+  _$$_RegisterIndividualCopyWith<_$_RegisterIndividual> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_RegisterGroupCopyWith<$Res> {
+  factory _$$_RegisterGroupCopyWith(
+          _$_RegisterGroup value, $Res Function(_$_RegisterGroup) then) =
+      __$$_RegisterGroupCopyWithImpl<$Res>;
+  @useResult
+  $Res call({RegisterParams registerParams});
+}
+
+/// @nodoc
+class __$$_RegisterGroupCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$_RegisterGroup>
+    implements _$$_RegisterGroupCopyWith<$Res> {
+  __$$_RegisterGroupCopyWithImpl(
+      _$_RegisterGroup _value, $Res Function(_$_RegisterGroup) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? registerParams = null,
+  }) {
+    return _then(_$_RegisterGroup(
+      registerParams: null == registerParams
+          ? _value.registerParams
+          : registerParams // ignore: cast_nullable_to_non_nullable
+              as RegisterParams,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_RegisterGroup implements _RegisterGroup {
+  const _$_RegisterGroup({required this.registerParams});
+
+  @override
+  final RegisterParams registerParams;
+
+  @override
+  String toString() {
+    return 'HomeEvent.registerGroup(registerParams: $registerParams)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_RegisterGroup &&
+            (identical(other.registerParams, registerParams) ||
+                other.registerParams == registerParams));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, registerParams);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_RegisterGroupCopyWith<_$_RegisterGroup> get copyWith =>
+      __$$_RegisterGroupCopyWithImpl<_$_RegisterGroup>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HomeMiddleViews view, NewsModel? news)
+        changeMiddleView,
+    required TResult Function(RegisterType registerFormState) changeFormState,
+    required TResult Function(RegisterParams registerParams)
+        registerJahadiGroup,
+    required TResult Function(RegisterParams registerParams) registerIndividual,
+    required TResult Function(RegisterParams registerParams) registerGroup,
+    required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
+    required TResult Function(FormData formData) sendSubmittedWork,
+  }) {
+    return registerGroup(registerParams);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult? Function(RegisterType registerFormState)? changeFormState,
+    TResult? Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult? Function(RegisterParams registerParams)? registerIndividual,
+    TResult? Function(RegisterParams registerParams)? registerGroup,
+    TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
+    TResult? Function(FormData formData)? sendSubmittedWork,
+  }) {
+    return registerGroup?.call(registerParams);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult Function(RegisterType registerFormState)? changeFormState,
+    TResult Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult Function(RegisterParams registerParams)? registerIndividual,
+    TResult Function(RegisterParams registerParams)? registerGroup,
+    TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
+    TResult Function(FormData formData)? sendSubmittedWork,
+    required TResult orElse(),
+  }) {
+    if (registerGroup != null) {
+      return registerGroup(registerParams);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChangeMiddleView value) changeMiddleView,
+    required TResult Function(_ChangeFormState value) changeFormState,
+    required TResult Function(_RegisterJahadiGroup value) registerJahadiGroup,
+    required TResult Function(_RegisterIndividual value) registerIndividual,
+    required TResult Function(_RegisterGroup value) registerGroup,
+    required TResult Function(_GetAtlasCode value) getAtlasCode,
+    required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
+  }) {
+    return registerGroup(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult? Function(_ChangeFormState value)? changeFormState,
+    TResult? Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult? Function(_RegisterIndividual value)? registerIndividual,
+    TResult? Function(_RegisterGroup value)? registerGroup,
+    TResult? Function(_GetAtlasCode value)? getAtlasCode,
+    TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
+  }) {
+    return registerGroup?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult Function(_ChangeFormState value)? changeFormState,
+    TResult Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult Function(_RegisterIndividual value)? registerIndividual,
+    TResult Function(_RegisterGroup value)? registerGroup,
+    TResult Function(_GetAtlasCode value)? getAtlasCode,
+    TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
+    required TResult orElse(),
+  }) {
+    if (registerGroup != null) {
+      return registerGroup(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RegisterGroup implements HomeEvent {
+  const factory _RegisterGroup({required final RegisterParams registerParams}) =
+      _$_RegisterGroup;
+
+  RegisterParams get registerParams;
+  @JsonKey(ignore: true)
+  _$$_RegisterGroupCopyWith<_$_RegisterGroup> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -634,9 +1020,11 @@ class _$_GetAtlasCode implements _GetAtlasCode {
   TResult when<TResult extends Object?>({
     required TResult Function(HomeMiddleViews view, NewsModel? news)
         changeMiddleView,
-    required TResult Function(int step) changeFormStep,
-    required TResult Function(GetGroupDataParams getGroupDataParams)
-        getGroupData,
+    required TResult Function(RegisterType registerFormState) changeFormState,
+    required TResult Function(RegisterParams registerParams)
+        registerJahadiGroup,
+    required TResult Function(RegisterParams registerParams) registerIndividual,
+    required TResult Function(RegisterParams registerParams) registerGroup,
     required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
     required TResult Function(FormData formData) sendSubmittedWork,
   }) {
@@ -647,8 +1035,10 @@ class _$_GetAtlasCode implements _GetAtlasCode {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
-    TResult? Function(int step)? changeFormStep,
-    TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult? Function(RegisterType registerFormState)? changeFormState,
+    TResult? Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult? Function(RegisterParams registerParams)? registerIndividual,
+    TResult? Function(RegisterParams registerParams)? registerGroup,
     TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult? Function(FormData formData)? sendSubmittedWork,
   }) {
@@ -659,8 +1049,10 @@ class _$_GetAtlasCode implements _GetAtlasCode {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
-    TResult Function(int step)? changeFormStep,
-    TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult Function(RegisterType registerFormState)? changeFormState,
+    TResult Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult Function(RegisterParams registerParams)? registerIndividual,
+    TResult Function(RegisterParams registerParams)? registerGroup,
     TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult Function(FormData formData)? sendSubmittedWork,
     required TResult orElse(),
@@ -675,8 +1067,10 @@ class _$_GetAtlasCode implements _GetAtlasCode {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
-    required TResult Function(_ChangeFormStep value) changeFormStep,
-    required TResult Function(_GetGroupData value) getGroupData,
+    required TResult Function(_ChangeFormState value) changeFormState,
+    required TResult Function(_RegisterJahadiGroup value) registerJahadiGroup,
+    required TResult Function(_RegisterIndividual value) registerIndividual,
+    required TResult Function(_RegisterGroup value) registerGroup,
     required TResult Function(_GetAtlasCode value) getAtlasCode,
     required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
   }) {
@@ -687,8 +1081,10 @@ class _$_GetAtlasCode implements _GetAtlasCode {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
-    TResult? Function(_ChangeFormStep value)? changeFormStep,
-    TResult? Function(_GetGroupData value)? getGroupData,
+    TResult? Function(_ChangeFormState value)? changeFormState,
+    TResult? Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult? Function(_RegisterIndividual value)? registerIndividual,
+    TResult? Function(_RegisterGroup value)? registerGroup,
     TResult? Function(_GetAtlasCode value)? getAtlasCode,
     TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
   }) {
@@ -699,8 +1095,10 @@ class _$_GetAtlasCode implements _GetAtlasCode {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
-    TResult Function(_ChangeFormStep value)? changeFormStep,
-    TResult Function(_GetGroupData value)? getGroupData,
+    TResult Function(_ChangeFormState value)? changeFormState,
+    TResult Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult Function(_RegisterIndividual value)? registerIndividual,
+    TResult Function(_RegisterGroup value)? registerGroup,
     TResult Function(_GetAtlasCode value)? getAtlasCode,
     TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
     required TResult orElse(),
@@ -790,9 +1188,11 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
   TResult when<TResult extends Object?>({
     required TResult Function(HomeMiddleViews view, NewsModel? news)
         changeMiddleView,
-    required TResult Function(int step) changeFormStep,
-    required TResult Function(GetGroupDataParams getGroupDataParams)
-        getGroupData,
+    required TResult Function(RegisterType registerFormState) changeFormState,
+    required TResult Function(RegisterParams registerParams)
+        registerJahadiGroup,
+    required TResult Function(RegisterParams registerParams) registerIndividual,
+    required TResult Function(RegisterParams registerParams) registerGroup,
     required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
     required TResult Function(FormData formData) sendSubmittedWork,
   }) {
@@ -803,8 +1203,10 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
-    TResult? Function(int step)? changeFormStep,
-    TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult? Function(RegisterType registerFormState)? changeFormState,
+    TResult? Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult? Function(RegisterParams registerParams)? registerIndividual,
+    TResult? Function(RegisterParams registerParams)? registerGroup,
     TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult? Function(FormData formData)? sendSubmittedWork,
   }) {
@@ -815,8 +1217,10 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
-    TResult Function(int step)? changeFormStep,
-    TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult Function(RegisterType registerFormState)? changeFormState,
+    TResult Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult Function(RegisterParams registerParams)? registerIndividual,
+    TResult Function(RegisterParams registerParams)? registerGroup,
     TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult Function(FormData formData)? sendSubmittedWork,
     required TResult orElse(),
@@ -831,8 +1235,10 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
-    required TResult Function(_ChangeFormStep value) changeFormStep,
-    required TResult Function(_GetGroupData value) getGroupData,
+    required TResult Function(_ChangeFormState value) changeFormState,
+    required TResult Function(_RegisterJahadiGroup value) registerJahadiGroup,
+    required TResult Function(_RegisterIndividual value) registerIndividual,
+    required TResult Function(_RegisterGroup value) registerGroup,
     required TResult Function(_GetAtlasCode value) getAtlasCode,
     required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
   }) {
@@ -843,8 +1249,10 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
-    TResult? Function(_ChangeFormStep value)? changeFormStep,
-    TResult? Function(_GetGroupData value)? getGroupData,
+    TResult? Function(_ChangeFormState value)? changeFormState,
+    TResult? Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult? Function(_RegisterIndividual value)? registerIndividual,
+    TResult? Function(_RegisterGroup value)? registerGroup,
     TResult? Function(_GetAtlasCode value)? getAtlasCode,
     TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
   }) {
@@ -855,8 +1263,10 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
-    TResult Function(_ChangeFormStep value)? changeFormStep,
-    TResult Function(_GetGroupData value)? getGroupData,
+    TResult Function(_ChangeFormState value)? changeFormState,
+    TResult Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult Function(_RegisterIndividual value)? registerIndividual,
+    TResult Function(_RegisterGroup value)? registerGroup,
     TResult Function(_GetAtlasCode value)? getAtlasCode,
     TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
     required TResult orElse(),
@@ -880,28 +1290,36 @@ abstract class _SendSubmittedWork implements HomeEvent {
 
 /// @nodoc
 mixin _$HomeState {
-  int get sendDataStep => throw _privateConstructorUsedError;
-  bool get isLoadingGetGroupData => throw _privateConstructorUsedError;
-  bool get isLoadingSubmitData => throw _privateConstructorUsedError;
-  bool get isGetGroupDataSuccessful => throw _privateConstructorUsedError;
-  bool get isSubmitDataSuccessful => throw _privateConstructorUsedError;
-  String get getGroupDataFailMessage => throw _privateConstructorUsedError;
-  String get submitDataFailMessage => throw _privateConstructorUsedError;
-  GetGroupDataResponse get groupData => throw _privateConstructorUsedError;
+  RegisterType get registerFormState => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoadingSubmitWork => throw _privateConstructorUsedError;
+  bool get isLoadingGetAtlasCode => throw _privateConstructorUsedError;
+  bool get isRegisterSuccessful => throw _privateConstructorUsedError;
+  bool get isSubmitWorkSuccessful => throw _privateConstructorUsedError;
+  bool get isGetAtlasCodeSuccessful => throw _privateConstructorUsedError;
+  String get registerFailMessage => throw _privateConstructorUsedError;
+  String get submitWorkFailMessage => throw _privateConstructorUsedError;
+  String get getAtlasCodeFailMessage => throw _privateConstructorUsedError;
+  JahadiGroupResponse get jahadiGroupData => throw _privateConstructorUsedError;
+  IndividualResponse? get individualData => throw _privateConstructorUsedError;
   String get getAtlasCodeResult => throw _privateConstructorUsedError;
   HomeMiddleViews get currentMiddleView => throw _privateConstructorUsedError;
   NewsModel? get selectedNews => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            int sendDataStep,
-            bool isLoadingGetGroupData,
-            bool isLoadingSubmitData,
-            bool isGetGroupDataSuccessful,
-            bool isSubmitDataSuccessful,
-            String getGroupDataFailMessage,
-            String submitDataFailMessage,
-            GetGroupDataResponse groupData,
+            RegisterType registerFormState,
+            bool isLoading,
+            bool isLoadingSubmitWork,
+            bool isLoadingGetAtlasCode,
+            bool isRegisterSuccessful,
+            bool isSubmitWorkSuccessful,
+            bool isGetAtlasCodeSuccessful,
+            String registerFailMessage,
+            String submitWorkFailMessage,
+            String getAtlasCodeFailMessage,
+            JahadiGroupResponse jahadiGroupData,
+            IndividualResponse? individualData,
             String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)
@@ -911,14 +1329,18 @@ mixin _$HomeState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            int sendDataStep,
-            bool isLoadingGetGroupData,
-            bool isLoadingSubmitData,
-            bool isGetGroupDataSuccessful,
-            bool isSubmitDataSuccessful,
-            String getGroupDataFailMessage,
-            String submitDataFailMessage,
-            GetGroupDataResponse groupData,
+            RegisterType registerFormState,
+            bool isLoading,
+            bool isLoadingSubmitWork,
+            bool isLoadingGetAtlasCode,
+            bool isRegisterSuccessful,
+            bool isSubmitWorkSuccessful,
+            bool isGetAtlasCodeSuccessful,
+            String registerFailMessage,
+            String submitWorkFailMessage,
+            String getAtlasCodeFailMessage,
+            JahadiGroupResponse jahadiGroupData,
+            IndividualResponse? individualData,
             String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
@@ -928,14 +1350,18 @@ mixin _$HomeState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            int sendDataStep,
-            bool isLoadingGetGroupData,
-            bool isLoadingSubmitData,
-            bool isGetGroupDataSuccessful,
-            bool isSubmitDataSuccessful,
-            String getGroupDataFailMessage,
-            String submitDataFailMessage,
-            GetGroupDataResponse groupData,
+            RegisterType registerFormState,
+            bool isLoading,
+            bool isLoadingSubmitWork,
+            bool isLoadingGetAtlasCode,
+            bool isRegisterSuccessful,
+            bool isSubmitWorkSuccessful,
+            bool isGetAtlasCodeSuccessful,
+            String registerFailMessage,
+            String submitWorkFailMessage,
+            String getAtlasCodeFailMessage,
+            JahadiGroupResponse jahadiGroupData,
+            IndividualResponse? individualData,
             String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
@@ -971,14 +1397,18 @@ abstract class $HomeStateCopyWith<$Res> {
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
   $Res call(
-      {int sendDataStep,
-      bool isLoadingGetGroupData,
-      bool isLoadingSubmitData,
-      bool isGetGroupDataSuccessful,
-      bool isSubmitDataSuccessful,
-      String getGroupDataFailMessage,
-      String submitDataFailMessage,
-      GetGroupDataResponse groupData,
+      {RegisterType registerFormState,
+      bool isLoading,
+      bool isLoadingSubmitWork,
+      bool isLoadingGetAtlasCode,
+      bool isRegisterSuccessful,
+      bool isSubmitWorkSuccessful,
+      bool isGetAtlasCodeSuccessful,
+      String registerFailMessage,
+      String submitWorkFailMessage,
+      String getAtlasCodeFailMessage,
+      JahadiGroupResponse jahadiGroupData,
+      IndividualResponse? individualData,
       String getAtlasCodeResult,
       HomeMiddleViews currentMiddleView,
       NewsModel? selectedNews});
@@ -997,51 +1427,71 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? sendDataStep = null,
-    Object? isLoadingGetGroupData = null,
-    Object? isLoadingSubmitData = null,
-    Object? isGetGroupDataSuccessful = null,
-    Object? isSubmitDataSuccessful = null,
-    Object? getGroupDataFailMessage = null,
-    Object? submitDataFailMessage = null,
-    Object? groupData = null,
+    Object? registerFormState = null,
+    Object? isLoading = null,
+    Object? isLoadingSubmitWork = null,
+    Object? isLoadingGetAtlasCode = null,
+    Object? isRegisterSuccessful = null,
+    Object? isSubmitWorkSuccessful = null,
+    Object? isGetAtlasCodeSuccessful = null,
+    Object? registerFailMessage = null,
+    Object? submitWorkFailMessage = null,
+    Object? getAtlasCodeFailMessage = null,
+    Object? jahadiGroupData = null,
+    Object? individualData = freezed,
     Object? getAtlasCodeResult = null,
     Object? currentMiddleView = null,
     Object? selectedNews = freezed,
   }) {
     return _then(_value.copyWith(
-      sendDataStep: null == sendDataStep
-          ? _value.sendDataStep
-          : sendDataStep // ignore: cast_nullable_to_non_nullable
-              as int,
-      isLoadingGetGroupData: null == isLoadingGetGroupData
-          ? _value.isLoadingGetGroupData
-          : isLoadingGetGroupData // ignore: cast_nullable_to_non_nullable
+      registerFormState: null == registerFormState
+          ? _value.registerFormState
+          : registerFormState // ignore: cast_nullable_to_non_nullable
+              as RegisterType,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoadingSubmitData: null == isLoadingSubmitData
-          ? _value.isLoadingSubmitData
-          : isLoadingSubmitData // ignore: cast_nullable_to_non_nullable
+      isLoadingSubmitWork: null == isLoadingSubmitWork
+          ? _value.isLoadingSubmitWork
+          : isLoadingSubmitWork // ignore: cast_nullable_to_non_nullable
               as bool,
-      isGetGroupDataSuccessful: null == isGetGroupDataSuccessful
-          ? _value.isGetGroupDataSuccessful
-          : isGetGroupDataSuccessful // ignore: cast_nullable_to_non_nullable
+      isLoadingGetAtlasCode: null == isLoadingGetAtlasCode
+          ? _value.isLoadingGetAtlasCode
+          : isLoadingGetAtlasCode // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitDataSuccessful: null == isSubmitDataSuccessful
-          ? _value.isSubmitDataSuccessful
-          : isSubmitDataSuccessful // ignore: cast_nullable_to_non_nullable
+      isRegisterSuccessful: null == isRegisterSuccessful
+          ? _value.isRegisterSuccessful
+          : isRegisterSuccessful // ignore: cast_nullable_to_non_nullable
               as bool,
-      getGroupDataFailMessage: null == getGroupDataFailMessage
-          ? _value.getGroupDataFailMessage
-          : getGroupDataFailMessage // ignore: cast_nullable_to_non_nullable
+      isSubmitWorkSuccessful: null == isSubmitWorkSuccessful
+          ? _value.isSubmitWorkSuccessful
+          : isSubmitWorkSuccessful // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGetAtlasCodeSuccessful: null == isGetAtlasCodeSuccessful
+          ? _value.isGetAtlasCodeSuccessful
+          : isGetAtlasCodeSuccessful // ignore: cast_nullable_to_non_nullable
+              as bool,
+      registerFailMessage: null == registerFailMessage
+          ? _value.registerFailMessage
+          : registerFailMessage // ignore: cast_nullable_to_non_nullable
               as String,
-      submitDataFailMessage: null == submitDataFailMessage
-          ? _value.submitDataFailMessage
-          : submitDataFailMessage // ignore: cast_nullable_to_non_nullable
+      submitWorkFailMessage: null == submitWorkFailMessage
+          ? _value.submitWorkFailMessage
+          : submitWorkFailMessage // ignore: cast_nullable_to_non_nullable
               as String,
-      groupData: null == groupData
-          ? _value.groupData
-          : groupData // ignore: cast_nullable_to_non_nullable
-              as GetGroupDataResponse,
+      getAtlasCodeFailMessage: null == getAtlasCodeFailMessage
+          ? _value.getAtlasCodeFailMessage
+          : getAtlasCodeFailMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      jahadiGroupData: null == jahadiGroupData
+          ? _value.jahadiGroupData
+          : jahadiGroupData // ignore: cast_nullable_to_non_nullable
+              as JahadiGroupResponse,
+      individualData: freezed == individualData
+          ? _value.individualData
+          : individualData // ignore: cast_nullable_to_non_nullable
+              as IndividualResponse?,
       getAtlasCodeResult: null == getAtlasCodeResult
           ? _value.getAtlasCodeResult
           : getAtlasCodeResult // ignore: cast_nullable_to_non_nullable
@@ -1065,14 +1515,18 @@ abstract class _$$_IdleCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int sendDataStep,
-      bool isLoadingGetGroupData,
-      bool isLoadingSubmitData,
-      bool isGetGroupDataSuccessful,
-      bool isSubmitDataSuccessful,
-      String getGroupDataFailMessage,
-      String submitDataFailMessage,
-      GetGroupDataResponse groupData,
+      {RegisterType registerFormState,
+      bool isLoading,
+      bool isLoadingSubmitWork,
+      bool isLoadingGetAtlasCode,
+      bool isRegisterSuccessful,
+      bool isSubmitWorkSuccessful,
+      bool isGetAtlasCodeSuccessful,
+      String registerFailMessage,
+      String submitWorkFailMessage,
+      String getAtlasCodeFailMessage,
+      JahadiGroupResponse jahadiGroupData,
+      IndividualResponse? individualData,
       String getAtlasCodeResult,
       HomeMiddleViews currentMiddleView,
       NewsModel? selectedNews});
@@ -1087,51 +1541,71 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? sendDataStep = null,
-    Object? isLoadingGetGroupData = null,
-    Object? isLoadingSubmitData = null,
-    Object? isGetGroupDataSuccessful = null,
-    Object? isSubmitDataSuccessful = null,
-    Object? getGroupDataFailMessage = null,
-    Object? submitDataFailMessage = null,
-    Object? groupData = null,
+    Object? registerFormState = null,
+    Object? isLoading = null,
+    Object? isLoadingSubmitWork = null,
+    Object? isLoadingGetAtlasCode = null,
+    Object? isRegisterSuccessful = null,
+    Object? isSubmitWorkSuccessful = null,
+    Object? isGetAtlasCodeSuccessful = null,
+    Object? registerFailMessage = null,
+    Object? submitWorkFailMessage = null,
+    Object? getAtlasCodeFailMessage = null,
+    Object? jahadiGroupData = null,
+    Object? individualData = freezed,
     Object? getAtlasCodeResult = null,
     Object? currentMiddleView = null,
     Object? selectedNews = freezed,
   }) {
     return _then(_$_Idle(
-      sendDataStep: null == sendDataStep
-          ? _value.sendDataStep
-          : sendDataStep // ignore: cast_nullable_to_non_nullable
-              as int,
-      isLoadingGetGroupData: null == isLoadingGetGroupData
-          ? _value.isLoadingGetGroupData
-          : isLoadingGetGroupData // ignore: cast_nullable_to_non_nullable
+      registerFormState: null == registerFormState
+          ? _value.registerFormState
+          : registerFormState // ignore: cast_nullable_to_non_nullable
+              as RegisterType,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoadingSubmitData: null == isLoadingSubmitData
-          ? _value.isLoadingSubmitData
-          : isLoadingSubmitData // ignore: cast_nullable_to_non_nullable
+      isLoadingSubmitWork: null == isLoadingSubmitWork
+          ? _value.isLoadingSubmitWork
+          : isLoadingSubmitWork // ignore: cast_nullable_to_non_nullable
               as bool,
-      isGetGroupDataSuccessful: null == isGetGroupDataSuccessful
-          ? _value.isGetGroupDataSuccessful
-          : isGetGroupDataSuccessful // ignore: cast_nullable_to_non_nullable
+      isLoadingGetAtlasCode: null == isLoadingGetAtlasCode
+          ? _value.isLoadingGetAtlasCode
+          : isLoadingGetAtlasCode // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitDataSuccessful: null == isSubmitDataSuccessful
-          ? _value.isSubmitDataSuccessful
-          : isSubmitDataSuccessful // ignore: cast_nullable_to_non_nullable
+      isRegisterSuccessful: null == isRegisterSuccessful
+          ? _value.isRegisterSuccessful
+          : isRegisterSuccessful // ignore: cast_nullable_to_non_nullable
               as bool,
-      getGroupDataFailMessage: null == getGroupDataFailMessage
-          ? _value.getGroupDataFailMessage
-          : getGroupDataFailMessage // ignore: cast_nullable_to_non_nullable
+      isSubmitWorkSuccessful: null == isSubmitWorkSuccessful
+          ? _value.isSubmitWorkSuccessful
+          : isSubmitWorkSuccessful // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGetAtlasCodeSuccessful: null == isGetAtlasCodeSuccessful
+          ? _value.isGetAtlasCodeSuccessful
+          : isGetAtlasCodeSuccessful // ignore: cast_nullable_to_non_nullable
+              as bool,
+      registerFailMessage: null == registerFailMessage
+          ? _value.registerFailMessage
+          : registerFailMessage // ignore: cast_nullable_to_non_nullable
               as String,
-      submitDataFailMessage: null == submitDataFailMessage
-          ? _value.submitDataFailMessage
-          : submitDataFailMessage // ignore: cast_nullable_to_non_nullable
+      submitWorkFailMessage: null == submitWorkFailMessage
+          ? _value.submitWorkFailMessage
+          : submitWorkFailMessage // ignore: cast_nullable_to_non_nullable
               as String,
-      groupData: null == groupData
-          ? _value.groupData
-          : groupData // ignore: cast_nullable_to_non_nullable
-              as GetGroupDataResponse,
+      getAtlasCodeFailMessage: null == getAtlasCodeFailMessage
+          ? _value.getAtlasCodeFailMessage
+          : getAtlasCodeFailMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      jahadiGroupData: null == jahadiGroupData
+          ? _value.jahadiGroupData
+          : jahadiGroupData // ignore: cast_nullable_to_non_nullable
+              as JahadiGroupResponse,
+      individualData: freezed == individualData
+          ? _value.individualData
+          : individualData // ignore: cast_nullable_to_non_nullable
+              as IndividualResponse?,
       getAtlasCodeResult: null == getAtlasCodeResult
           ? _value.getAtlasCodeResult
           : getAtlasCodeResult // ignore: cast_nullable_to_non_nullable
@@ -1152,42 +1626,58 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
 
 class _$_Idle implements _Idle {
   const _$_Idle(
-      {this.sendDataStep = 1,
-      this.isLoadingGetGroupData = false,
-      this.isLoadingSubmitData = false,
-      this.isGetGroupDataSuccessful = false,
-      this.isSubmitDataSuccessful = false,
-      this.getGroupDataFailMessage = '',
-      this.submitDataFailMessage = '',
-      this.groupData = const GetGroupDataResponse(),
+      {this.registerFormState = RegisterType.initial,
+      this.isLoading = false,
+      this.isLoadingSubmitWork = false,
+      this.isLoadingGetAtlasCode = false,
+      this.isRegisterSuccessful = false,
+      this.isSubmitWorkSuccessful = false,
+      this.isGetAtlasCodeSuccessful = false,
+      this.registerFailMessage = '',
+      this.submitWorkFailMessage = '',
+      this.getAtlasCodeFailMessage = '',
+      this.jahadiGroupData = const JahadiGroupResponse(),
+      this.individualData = null,
       this.getAtlasCodeResult = '',
       this.currentMiddleView = HomeMiddleViews.home,
       this.selectedNews});
 
   @override
   @JsonKey()
-  final int sendDataStep;
+  final RegisterType registerFormState;
   @override
   @JsonKey()
-  final bool isLoadingGetGroupData;
+  final bool isLoading;
   @override
   @JsonKey()
-  final bool isLoadingSubmitData;
+  final bool isLoadingSubmitWork;
   @override
   @JsonKey()
-  final bool isGetGroupDataSuccessful;
+  final bool isLoadingGetAtlasCode;
   @override
   @JsonKey()
-  final bool isSubmitDataSuccessful;
+  final bool isRegisterSuccessful;
   @override
   @JsonKey()
-  final String getGroupDataFailMessage;
+  final bool isSubmitWorkSuccessful;
   @override
   @JsonKey()
-  final String submitDataFailMessage;
+  final bool isGetAtlasCodeSuccessful;
   @override
   @JsonKey()
-  final GetGroupDataResponse groupData;
+  final String registerFailMessage;
+  @override
+  @JsonKey()
+  final String submitWorkFailMessage;
+  @override
+  @JsonKey()
+  final String getAtlasCodeFailMessage;
+  @override
+  @JsonKey()
+  final JahadiGroupResponse jahadiGroupData;
+  @override
+  @JsonKey()
+  final IndividualResponse? individualData;
   @override
   @JsonKey()
   final String getAtlasCodeResult;
@@ -1199,7 +1689,7 @@ class _$_Idle implements _Idle {
 
   @override
   String toString() {
-    return 'HomeState.idle(sendDataStep: $sendDataStep, isLoadingGetGroupData: $isLoadingGetGroupData, isLoadingSubmitData: $isLoadingSubmitData, isGetGroupDataSuccessful: $isGetGroupDataSuccessful, isSubmitDataSuccessful: $isSubmitDataSuccessful, getGroupDataFailMessage: $getGroupDataFailMessage, submitDataFailMessage: $submitDataFailMessage, groupData: $groupData, getAtlasCodeResult: $getAtlasCodeResult, currentMiddleView: $currentMiddleView, selectedNews: $selectedNews)';
+    return 'HomeState.idle(registerFormState: $registerFormState, isLoading: $isLoading, isLoadingSubmitWork: $isLoadingSubmitWork, isLoadingGetAtlasCode: $isLoadingGetAtlasCode, isRegisterSuccessful: $isRegisterSuccessful, isSubmitWorkSuccessful: $isSubmitWorkSuccessful, isGetAtlasCodeSuccessful: $isGetAtlasCodeSuccessful, registerFailMessage: $registerFailMessage, submitWorkFailMessage: $submitWorkFailMessage, getAtlasCodeFailMessage: $getAtlasCodeFailMessage, jahadiGroupData: $jahadiGroupData, individualData: $individualData, getAtlasCodeResult: $getAtlasCodeResult, currentMiddleView: $currentMiddleView, selectedNews: $selectedNews)';
   }
 
   @override
@@ -1207,24 +1697,32 @@ class _$_Idle implements _Idle {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Idle &&
-            (identical(other.sendDataStep, sendDataStep) ||
-                other.sendDataStep == sendDataStep) &&
-            (identical(other.isLoadingGetGroupData, isLoadingGetGroupData) ||
-                other.isLoadingGetGroupData == isLoadingGetGroupData) &&
-            (identical(other.isLoadingSubmitData, isLoadingSubmitData) ||
-                other.isLoadingSubmitData == isLoadingSubmitData) &&
+            (identical(other.registerFormState, registerFormState) ||
+                other.registerFormState == registerFormState) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.isLoadingSubmitWork, isLoadingSubmitWork) ||
+                other.isLoadingSubmitWork == isLoadingSubmitWork) &&
+            (identical(other.isLoadingGetAtlasCode, isLoadingGetAtlasCode) ||
+                other.isLoadingGetAtlasCode == isLoadingGetAtlasCode) &&
+            (identical(other.isRegisterSuccessful, isRegisterSuccessful) ||
+                other.isRegisterSuccessful == isRegisterSuccessful) &&
+            (identical(other.isSubmitWorkSuccessful, isSubmitWorkSuccessful) ||
+                other.isSubmitWorkSuccessful == isSubmitWorkSuccessful) &&
             (identical(
-                    other.isGetGroupDataSuccessful, isGetGroupDataSuccessful) ||
-                other.isGetGroupDataSuccessful == isGetGroupDataSuccessful) &&
-            (identical(other.isSubmitDataSuccessful, isSubmitDataSuccessful) ||
-                other.isSubmitDataSuccessful == isSubmitDataSuccessful) &&
+                    other.isGetAtlasCodeSuccessful, isGetAtlasCodeSuccessful) ||
+                other.isGetAtlasCodeSuccessful == isGetAtlasCodeSuccessful) &&
+            (identical(other.registerFailMessage, registerFailMessage) ||
+                other.registerFailMessage == registerFailMessage) &&
+            (identical(other.submitWorkFailMessage, submitWorkFailMessage) ||
+                other.submitWorkFailMessage == submitWorkFailMessage) &&
             (identical(
-                    other.getGroupDataFailMessage, getGroupDataFailMessage) ||
-                other.getGroupDataFailMessage == getGroupDataFailMessage) &&
-            (identical(other.submitDataFailMessage, submitDataFailMessage) ||
-                other.submitDataFailMessage == submitDataFailMessage) &&
-            (identical(other.groupData, groupData) ||
-                other.groupData == groupData) &&
+                    other.getAtlasCodeFailMessage, getAtlasCodeFailMessage) ||
+                other.getAtlasCodeFailMessage == getAtlasCodeFailMessage) &&
+            (identical(other.jahadiGroupData, jahadiGroupData) ||
+                other.jahadiGroupData == jahadiGroupData) &&
+            (identical(other.individualData, individualData) ||
+                other.individualData == individualData) &&
             (identical(other.getAtlasCodeResult, getAtlasCodeResult) ||
                 other.getAtlasCodeResult == getAtlasCodeResult) &&
             (identical(other.currentMiddleView, currentMiddleView) ||
@@ -1236,14 +1734,18 @@ class _$_Idle implements _Idle {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      sendDataStep,
-      isLoadingGetGroupData,
-      isLoadingSubmitData,
-      isGetGroupDataSuccessful,
-      isSubmitDataSuccessful,
-      getGroupDataFailMessage,
-      submitDataFailMessage,
-      groupData,
+      registerFormState,
+      isLoading,
+      isLoadingSubmitWork,
+      isLoadingGetAtlasCode,
+      isRegisterSuccessful,
+      isSubmitWorkSuccessful,
+      isGetAtlasCodeSuccessful,
+      registerFailMessage,
+      submitWorkFailMessage,
+      getAtlasCodeFailMessage,
+      jahadiGroupData,
+      individualData,
       getAtlasCodeResult,
       currentMiddleView,
       selectedNews);
@@ -1258,28 +1760,36 @@ class _$_Idle implements _Idle {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            int sendDataStep,
-            bool isLoadingGetGroupData,
-            bool isLoadingSubmitData,
-            bool isGetGroupDataSuccessful,
-            bool isSubmitDataSuccessful,
-            String getGroupDataFailMessage,
-            String submitDataFailMessage,
-            GetGroupDataResponse groupData,
+            RegisterType registerFormState,
+            bool isLoading,
+            bool isLoadingSubmitWork,
+            bool isLoadingGetAtlasCode,
+            bool isRegisterSuccessful,
+            bool isSubmitWorkSuccessful,
+            bool isGetAtlasCodeSuccessful,
+            String registerFailMessage,
+            String submitWorkFailMessage,
+            String getAtlasCodeFailMessage,
+            JahadiGroupResponse jahadiGroupData,
+            IndividualResponse? individualData,
             String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)
         idle,
   }) {
     return idle(
-        sendDataStep,
-        isLoadingGetGroupData,
-        isLoadingSubmitData,
-        isGetGroupDataSuccessful,
-        isSubmitDataSuccessful,
-        getGroupDataFailMessage,
-        submitDataFailMessage,
-        groupData,
+        registerFormState,
+        isLoading,
+        isLoadingSubmitWork,
+        isLoadingGetAtlasCode,
+        isRegisterSuccessful,
+        isSubmitWorkSuccessful,
+        isGetAtlasCodeSuccessful,
+        registerFailMessage,
+        submitWorkFailMessage,
+        getAtlasCodeFailMessage,
+        jahadiGroupData,
+        individualData,
         getAtlasCodeResult,
         currentMiddleView,
         selectedNews);
@@ -1289,28 +1799,36 @@ class _$_Idle implements _Idle {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            int sendDataStep,
-            bool isLoadingGetGroupData,
-            bool isLoadingSubmitData,
-            bool isGetGroupDataSuccessful,
-            bool isSubmitDataSuccessful,
-            String getGroupDataFailMessage,
-            String submitDataFailMessage,
-            GetGroupDataResponse groupData,
+            RegisterType registerFormState,
+            bool isLoading,
+            bool isLoadingSubmitWork,
+            bool isLoadingGetAtlasCode,
+            bool isRegisterSuccessful,
+            bool isSubmitWorkSuccessful,
+            bool isGetAtlasCodeSuccessful,
+            String registerFailMessage,
+            String submitWorkFailMessage,
+            String getAtlasCodeFailMessage,
+            JahadiGroupResponse jahadiGroupData,
+            IndividualResponse? individualData,
             String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
   }) {
     return idle?.call(
-        sendDataStep,
-        isLoadingGetGroupData,
-        isLoadingSubmitData,
-        isGetGroupDataSuccessful,
-        isSubmitDataSuccessful,
-        getGroupDataFailMessage,
-        submitDataFailMessage,
-        groupData,
+        registerFormState,
+        isLoading,
+        isLoadingSubmitWork,
+        isLoadingGetAtlasCode,
+        isRegisterSuccessful,
+        isSubmitWorkSuccessful,
+        isGetAtlasCodeSuccessful,
+        registerFailMessage,
+        submitWorkFailMessage,
+        getAtlasCodeFailMessage,
+        jahadiGroupData,
+        individualData,
         getAtlasCodeResult,
         currentMiddleView,
         selectedNews);
@@ -1320,14 +1838,18 @@ class _$_Idle implements _Idle {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            int sendDataStep,
-            bool isLoadingGetGroupData,
-            bool isLoadingSubmitData,
-            bool isGetGroupDataSuccessful,
-            bool isSubmitDataSuccessful,
-            String getGroupDataFailMessage,
-            String submitDataFailMessage,
-            GetGroupDataResponse groupData,
+            RegisterType registerFormState,
+            bool isLoading,
+            bool isLoadingSubmitWork,
+            bool isLoadingGetAtlasCode,
+            bool isRegisterSuccessful,
+            bool isSubmitWorkSuccessful,
+            bool isGetAtlasCodeSuccessful,
+            String registerFailMessage,
+            String submitWorkFailMessage,
+            String getAtlasCodeFailMessage,
+            JahadiGroupResponse jahadiGroupData,
+            IndividualResponse? individualData,
             String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
@@ -1336,14 +1858,18 @@ class _$_Idle implements _Idle {
   }) {
     if (idle != null) {
       return idle(
-          sendDataStep,
-          isLoadingGetGroupData,
-          isLoadingSubmitData,
-          isGetGroupDataSuccessful,
-          isSubmitDataSuccessful,
-          getGroupDataFailMessage,
-          submitDataFailMessage,
-          groupData,
+          registerFormState,
+          isLoading,
+          isLoadingSubmitWork,
+          isLoadingGetAtlasCode,
+          isRegisterSuccessful,
+          isSubmitWorkSuccessful,
+          isGetAtlasCodeSuccessful,
+          registerFailMessage,
+          submitWorkFailMessage,
+          getAtlasCodeFailMessage,
+          jahadiGroupData,
+          individualData,
           getAtlasCodeResult,
           currentMiddleView,
           selectedNews);
@@ -1382,34 +1908,46 @@ class _$_Idle implements _Idle {
 
 abstract class _Idle implements HomeState {
   const factory _Idle(
-      {final int sendDataStep,
-      final bool isLoadingGetGroupData,
-      final bool isLoadingSubmitData,
-      final bool isGetGroupDataSuccessful,
-      final bool isSubmitDataSuccessful,
-      final String getGroupDataFailMessage,
-      final String submitDataFailMessage,
-      final GetGroupDataResponse groupData,
+      {final RegisterType registerFormState,
+      final bool isLoading,
+      final bool isLoadingSubmitWork,
+      final bool isLoadingGetAtlasCode,
+      final bool isRegisterSuccessful,
+      final bool isSubmitWorkSuccessful,
+      final bool isGetAtlasCodeSuccessful,
+      final String registerFailMessage,
+      final String submitWorkFailMessage,
+      final String getAtlasCodeFailMessage,
+      final JahadiGroupResponse jahadiGroupData,
+      final IndividualResponse? individualData,
       final String getAtlasCodeResult,
       final HomeMiddleViews currentMiddleView,
       final NewsModel? selectedNews}) = _$_Idle;
 
   @override
-  int get sendDataStep;
+  RegisterType get registerFormState;
   @override
-  bool get isLoadingGetGroupData;
+  bool get isLoading;
   @override
-  bool get isLoadingSubmitData;
+  bool get isLoadingSubmitWork;
   @override
-  bool get isGetGroupDataSuccessful;
+  bool get isLoadingGetAtlasCode;
   @override
-  bool get isSubmitDataSuccessful;
+  bool get isRegisterSuccessful;
   @override
-  String get getGroupDataFailMessage;
+  bool get isSubmitWorkSuccessful;
   @override
-  String get submitDataFailMessage;
+  bool get isGetAtlasCodeSuccessful;
   @override
-  GetGroupDataResponse get groupData;
+  String get registerFailMessage;
+  @override
+  String get submitWorkFailMessage;
+  @override
+  String get getAtlasCodeFailMessage;
+  @override
+  JahadiGroupResponse get jahadiGroupData;
+  @override
+  IndividualResponse? get individualData;
   @override
   String get getAtlasCodeResult;
   @override

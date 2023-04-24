@@ -19,7 +19,7 @@ dependencies:
   database_service:
     path: ../../packages/database_service
   dio: ^5.1.1
-  dropdown_button2: ^2.0.0
+  dropdown_button2: ^2.1.0
   equatable: ^2.0.5
   fan_carousel_image_slider: ^0.1.2
   file_picker: ^5.2.5
