@@ -44,4 +44,25 @@ class JahadiWorkRepositoryImpl implements JahadiWorkRepository {
           );
         },
       );
+
+  @override
+  Future<Either<JahadiWorkFailure, String>> getAtlasCode({
+    required String groupSupervisorNationalCode,
+  }) =>
+      _remoteDS
+          .getAtlasCode(
+        groupSupervisorNationalCode: groupSupervisorNationalCode,
+      )
+          .then(
+        (response) async {
+          return response.fold(
+            (l) async => left<JahadiWorkFailure, String>(
+              JahadiWorkFailure.api(l),
+            ),
+            (r) async => right<JahadiWorkFailure, String>(
+              BaseResponse.fromJson(r).message,
+            ),
+          );
+        },
+      );
 }

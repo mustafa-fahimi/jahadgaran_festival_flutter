@@ -116,5 +116,7 @@
     "city":"شهر",
     "large_file_size_description":"اندازه فایل باید کمتر از ۱۰۰ مگابایت باشد",
     "verify_code_sended":"کد تایید با موفقیت ارسال گردید",
-    "return_to_previous_step":"بازگشت به مرحله قبل"
+    "return_to_previous_step":"بازگشت به مرحله قبل",
+    "atlas_code_inquiry":"استعلام کد اطلس",
+    "atlas_code_inquiry_description":"جهت دریافت کد اطلس گروه جهادی خود ، کد ملی مسئول گروه را وارد نمایید"
 }

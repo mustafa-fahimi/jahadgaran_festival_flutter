@@ -12,4 +12,8 @@ abstract class JahadiWorkRepository {
   Future<Either<JahadiWorkFailure, void>> sendSubmittedWork({
     required FormData formData,
   });
+
+  Future<Either<JahadiWorkFailure, String>> getAtlasCode({
+    required String groupSupervisorNationalCode,
+  });
 }

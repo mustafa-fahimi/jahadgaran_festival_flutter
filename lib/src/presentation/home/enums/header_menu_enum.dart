@@ -6,7 +6,7 @@ enum HeaderMenu {
   home,
   festivalInformation,
   news,
-  registerConditions,
+  getAtlasCode,
   media,
   contactUs,
 }
@@ -20,8 +20,8 @@ extension HeaderMenuEx on HeaderMenu {
         return context.l10n.festival_information;
       case HeaderMenu.news:
         return context.l10n.festival_news;
-      case HeaderMenu.registerConditions:
-        return context.l10n.register_condition;
+      case HeaderMenu.getAtlasCode:
+        return context.l10n.atlas_code_inquiry;
       case HeaderMenu.media:
         return context.l10n.media;
       case HeaderMenu.contactUs:
@@ -37,8 +37,8 @@ extension HeaderMenuEx on HeaderMenu {
         return HomeMiddleViews.festivalInformation;
       case HeaderMenu.news:
         return HomeMiddleViews.news;
-      case HeaderMenu.registerConditions:
-        return HomeMiddleViews.registerCondition;
+      case HeaderMenu.getAtlasCode:
+        return HomeMiddleViews.getAtlasCode;
       case HeaderMenu.media:
         return HomeMiddleViews.media;
       case HeaderMenu.contactUs:

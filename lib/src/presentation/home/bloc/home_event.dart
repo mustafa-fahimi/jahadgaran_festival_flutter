@@ -15,6 +15,10 @@ class HomeEvent with _$HomeEvent {
     required GetGroupDataParams getGroupDataParams,
   }) = _GetGroupData;
 
+  const factory HomeEvent.getAtlasCode({
+    required String groupSupervisorNationalCode,
+  }) = _GetAtlasCode;
+
   const factory HomeEvent.sendSubmittedWork({
     required FormData formData,
   }) = _SendSubmittedWork;

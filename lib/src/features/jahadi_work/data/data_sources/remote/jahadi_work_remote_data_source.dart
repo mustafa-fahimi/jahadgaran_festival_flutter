@@ -14,6 +14,10 @@ abstract class JahadiWorkRemoteDataSource {
   Future<Either<ApiFailure, void>> sendSubmittedWork({
     required FormData formData,
   });
+
+  Future<Either<ApiFailure, Map<String, dynamic>>> getAtlasCode({
+    required String groupSupervisorNationalCode,
+  });
 }
 
 class JahadiWorkRemoteDataSourceImpl extends JahadiWorkRemoteDataSource {
@@ -41,4 +45,12 @@ class JahadiWorkRemoteDataSourceImpl extends JahadiWorkRemoteDataSource {
             ),
           )
           .toNonNullDomain;
+
+  @override
+  Future<Either<ApiFailure, Map<String, dynamic>>> getAtlasCode({
+    required String groupSupervisorNationalCode,
+  }) =>
+      apiService.getMethod<Map<String, dynamic>>(
+        '''${const JahadiWorkEndpoints.getAtlasCode().toPath}?group_supervisor_national_code=$groupSupervisorNationalCode''',
+      ).toNonNullDomain;
 }

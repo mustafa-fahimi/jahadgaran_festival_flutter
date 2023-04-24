@@ -11,6 +11,7 @@ class HomeState with _$HomeState {
     @Default('') String getGroupDataFailMessage,
     @Default('') String submitDataFailMessage,
     @Default(GetGroupDataResponse()) GetGroupDataResponse groupData,
+    @Default('') String getAtlasCodeResult,
     @Default(HomeMiddleViews.home) HomeMiddleViews currentMiddleView,
     NewsModel? selectedNews,
   }) = _Idle;

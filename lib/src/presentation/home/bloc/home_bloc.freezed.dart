@@ -23,6 +23,7 @@ mixin _$HomeEvent {
     required TResult Function(int step) changeFormStep,
     required TResult Function(GetGroupDataParams getGroupDataParams)
         getGroupData,
+    required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
     required TResult Function(FormData formData) sendSubmittedWork,
   }) =>
       throw _privateConstructorUsedError;
@@ -31,6 +32,7 @@ mixin _$HomeEvent {
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
     TResult? Function(int step)? changeFormStep,
     TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult? Function(FormData formData)? sendSubmittedWork,
   }) =>
       throw _privateConstructorUsedError;
@@ -39,6 +41,7 @@ mixin _$HomeEvent {
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
     TResult Function(int step)? changeFormStep,
     TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult Function(FormData formData)? sendSubmittedWork,
     required TResult orElse(),
   }) =>
@@ -48,6 +51,7 @@ mixin _$HomeEvent {
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
     required TResult Function(_ChangeFormStep value) changeFormStep,
     required TResult Function(_GetGroupData value) getGroupData,
+    required TResult Function(_GetAtlasCode value) getAtlasCode,
     required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +60,7 @@ mixin _$HomeEvent {
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
     TResult? Function(_ChangeFormStep value)? changeFormStep,
     TResult? Function(_GetGroupData value)? getGroupData,
+    TResult? Function(_GetAtlasCode value)? getAtlasCode,
     TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
   }) =>
       throw _privateConstructorUsedError;
@@ -64,6 +69,7 @@ mixin _$HomeEvent {
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
     TResult Function(_ChangeFormStep value)? changeFormStep,
     TResult Function(_GetGroupData value)? getGroupData,
+    TResult Function(_GetAtlasCode value)? getAtlasCode,
     TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
     required TResult orElse(),
   }) =>
@@ -164,6 +170,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
     required TResult Function(int step) changeFormStep,
     required TResult Function(GetGroupDataParams getGroupDataParams)
         getGroupData,
+    required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
     required TResult Function(FormData formData) sendSubmittedWork,
   }) {
     return changeMiddleView(view, news);
@@ -175,6 +182,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
     TResult? Function(int step)? changeFormStep,
     TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult? Function(FormData formData)? sendSubmittedWork,
   }) {
     return changeMiddleView?.call(view, news);
@@ -186,6 +194,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
     TResult Function(int step)? changeFormStep,
     TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult Function(FormData formData)? sendSubmittedWork,
     required TResult orElse(),
   }) {
@@ -201,6 +210,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
     required TResult Function(_ChangeFormStep value) changeFormStep,
     required TResult Function(_GetGroupData value) getGroupData,
+    required TResult Function(_GetAtlasCode value) getAtlasCode,
     required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
   }) {
     return changeMiddleView(this);
@@ -212,6 +222,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
     TResult? Function(_ChangeFormStep value)? changeFormStep,
     TResult? Function(_GetGroupData value)? getGroupData,
+    TResult? Function(_GetAtlasCode value)? getAtlasCode,
     TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
   }) {
     return changeMiddleView?.call(this);
@@ -223,6 +234,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
     TResult Function(_ChangeFormStep value)? changeFormStep,
     TResult Function(_GetGroupData value)? getGroupData,
+    TResult Function(_GetAtlasCode value)? getAtlasCode,
     TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
     required TResult orElse(),
   }) {
@@ -314,6 +326,7 @@ class _$_ChangeFormStep implements _ChangeFormStep {
     required TResult Function(int step) changeFormStep,
     required TResult Function(GetGroupDataParams getGroupDataParams)
         getGroupData,
+    required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
     required TResult Function(FormData formData) sendSubmittedWork,
   }) {
     return changeFormStep(step);
@@ -325,6 +338,7 @@ class _$_ChangeFormStep implements _ChangeFormStep {
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
     TResult? Function(int step)? changeFormStep,
     TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult? Function(FormData formData)? sendSubmittedWork,
   }) {
     return changeFormStep?.call(step);
@@ -336,6 +350,7 @@ class _$_ChangeFormStep implements _ChangeFormStep {
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
     TResult Function(int step)? changeFormStep,
     TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult Function(FormData formData)? sendSubmittedWork,
     required TResult orElse(),
   }) {
@@ -351,6 +366,7 @@ class _$_ChangeFormStep implements _ChangeFormStep {
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
     required TResult Function(_ChangeFormStep value) changeFormStep,
     required TResult Function(_GetGroupData value) getGroupData,
+    required TResult Function(_GetAtlasCode value) getAtlasCode,
     required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
   }) {
     return changeFormStep(this);
@@ -362,6 +378,7 @@ class _$_ChangeFormStep implements _ChangeFormStep {
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
     TResult? Function(_ChangeFormStep value)? changeFormStep,
     TResult? Function(_GetGroupData value)? getGroupData,
+    TResult? Function(_GetAtlasCode value)? getAtlasCode,
     TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
   }) {
     return changeFormStep?.call(this);
@@ -373,6 +390,7 @@ class _$_ChangeFormStep implements _ChangeFormStep {
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
     TResult Function(_ChangeFormStep value)? changeFormStep,
     TResult Function(_GetGroupData value)? getGroupData,
+    TResult Function(_GetAtlasCode value)? getAtlasCode,
     TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
     required TResult orElse(),
   }) {
@@ -462,6 +480,7 @@ class _$_GetGroupData implements _GetGroupData {
     required TResult Function(int step) changeFormStep,
     required TResult Function(GetGroupDataParams getGroupDataParams)
         getGroupData,
+    required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
     required TResult Function(FormData formData) sendSubmittedWork,
   }) {
     return getGroupData(getGroupDataParams);
@@ -473,6 +492,7 @@ class _$_GetGroupData implements _GetGroupData {
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
     TResult? Function(int step)? changeFormStep,
     TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult? Function(FormData formData)? sendSubmittedWork,
   }) {
     return getGroupData?.call(getGroupDataParams);
@@ -484,6 +504,7 @@ class _$_GetGroupData implements _GetGroupData {
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
     TResult Function(int step)? changeFormStep,
     TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult Function(FormData formData)? sendSubmittedWork,
     required TResult orElse(),
   }) {
@@ -499,6 +520,7 @@ class _$_GetGroupData implements _GetGroupData {
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
     required TResult Function(_ChangeFormStep value) changeFormStep,
     required TResult Function(_GetGroupData value) getGroupData,
+    required TResult Function(_GetAtlasCode value) getAtlasCode,
     required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
   }) {
     return getGroupData(this);
@@ -510,6 +532,7 @@ class _$_GetGroupData implements _GetGroupData {
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
     TResult? Function(_ChangeFormStep value)? changeFormStep,
     TResult? Function(_GetGroupData value)? getGroupData,
+    TResult? Function(_GetAtlasCode value)? getAtlasCode,
     TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
   }) {
     return getGroupData?.call(this);
@@ -521,6 +544,7 @@ class _$_GetGroupData implements _GetGroupData {
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
     TResult Function(_ChangeFormStep value)? changeFormStep,
     TResult Function(_GetGroupData value)? getGroupData,
+    TResult Function(_GetAtlasCode value)? getAtlasCode,
     TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
     required TResult orElse(),
   }) {
@@ -538,6 +562,163 @@ abstract class _GetGroupData implements HomeEvent {
   GetGroupDataParams get getGroupDataParams;
   @JsonKey(ignore: true)
   _$$_GetGroupDataCopyWith<_$_GetGroupData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_GetAtlasCodeCopyWith<$Res> {
+  factory _$$_GetAtlasCodeCopyWith(
+          _$_GetAtlasCode value, $Res Function(_$_GetAtlasCode) then) =
+      __$$_GetAtlasCodeCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String groupSupervisorNationalCode});
+}
+
+/// @nodoc
+class __$$_GetAtlasCodeCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$_GetAtlasCode>
+    implements _$$_GetAtlasCodeCopyWith<$Res> {
+  __$$_GetAtlasCodeCopyWithImpl(
+      _$_GetAtlasCode _value, $Res Function(_$_GetAtlasCode) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? groupSupervisorNationalCode = null,
+  }) {
+    return _then(_$_GetAtlasCode(
+      groupSupervisorNationalCode: null == groupSupervisorNationalCode
+          ? _value.groupSupervisorNationalCode
+          : groupSupervisorNationalCode // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_GetAtlasCode implements _GetAtlasCode {
+  const _$_GetAtlasCode({required this.groupSupervisorNationalCode});
+
+  @override
+  final String groupSupervisorNationalCode;
+
+  @override
+  String toString() {
+    return 'HomeEvent.getAtlasCode(groupSupervisorNationalCode: $groupSupervisorNationalCode)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_GetAtlasCode &&
+            (identical(other.groupSupervisorNationalCode,
+                    groupSupervisorNationalCode) ||
+                other.groupSupervisorNationalCode ==
+                    groupSupervisorNationalCode));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, groupSupervisorNationalCode);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_GetAtlasCodeCopyWith<_$_GetAtlasCode> get copyWith =>
+      __$$_GetAtlasCodeCopyWithImpl<_$_GetAtlasCode>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HomeMiddleViews view, NewsModel? news)
+        changeMiddleView,
+    required TResult Function(int step) changeFormStep,
+    required TResult Function(GetGroupDataParams getGroupDataParams)
+        getGroupData,
+    required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
+    required TResult Function(FormData formData) sendSubmittedWork,
+  }) {
+    return getAtlasCode(groupSupervisorNationalCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult? Function(int step)? changeFormStep,
+    TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
+    TResult? Function(FormData formData)? sendSubmittedWork,
+  }) {
+    return getAtlasCode?.call(groupSupervisorNationalCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult Function(int step)? changeFormStep,
+    TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
+    TResult Function(FormData formData)? sendSubmittedWork,
+    required TResult orElse(),
+  }) {
+    if (getAtlasCode != null) {
+      return getAtlasCode(groupSupervisorNationalCode);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChangeMiddleView value) changeMiddleView,
+    required TResult Function(_ChangeFormStep value) changeFormStep,
+    required TResult Function(_GetGroupData value) getGroupData,
+    required TResult Function(_GetAtlasCode value) getAtlasCode,
+    required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
+  }) {
+    return getAtlasCode(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult? Function(_ChangeFormStep value)? changeFormStep,
+    TResult? Function(_GetGroupData value)? getGroupData,
+    TResult? Function(_GetAtlasCode value)? getAtlasCode,
+    TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
+  }) {
+    return getAtlasCode?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult Function(_ChangeFormStep value)? changeFormStep,
+    TResult Function(_GetGroupData value)? getGroupData,
+    TResult Function(_GetAtlasCode value)? getAtlasCode,
+    TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
+    required TResult orElse(),
+  }) {
+    if (getAtlasCode != null) {
+      return getAtlasCode(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetAtlasCode implements HomeEvent {
+  const factory _GetAtlasCode(
+      {required final String groupSupervisorNationalCode}) = _$_GetAtlasCode;
+
+  String get groupSupervisorNationalCode;
+  @JsonKey(ignore: true)
+  _$$_GetAtlasCodeCopyWith<_$_GetAtlasCode> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -612,6 +793,7 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
     required TResult Function(int step) changeFormStep,
     required TResult Function(GetGroupDataParams getGroupDataParams)
         getGroupData,
+    required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
     required TResult Function(FormData formData) sendSubmittedWork,
   }) {
     return sendSubmittedWork(formData);
@@ -623,6 +805,7 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
     TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
     TResult? Function(int step)? changeFormStep,
     TResult? Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult? Function(FormData formData)? sendSubmittedWork,
   }) {
     return sendSubmittedWork?.call(formData);
@@ -634,6 +817,7 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
     TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
     TResult Function(int step)? changeFormStep,
     TResult Function(GetGroupDataParams getGroupDataParams)? getGroupData,
+    TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
     TResult Function(FormData formData)? sendSubmittedWork,
     required TResult orElse(),
   }) {
@@ -649,6 +833,7 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
     required TResult Function(_ChangeMiddleView value) changeMiddleView,
     required TResult Function(_ChangeFormStep value) changeFormStep,
     required TResult Function(_GetGroupData value) getGroupData,
+    required TResult Function(_GetAtlasCode value) getAtlasCode,
     required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
   }) {
     return sendSubmittedWork(this);
@@ -660,6 +845,7 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
     TResult? Function(_ChangeMiddleView value)? changeMiddleView,
     TResult? Function(_ChangeFormStep value)? changeFormStep,
     TResult? Function(_GetGroupData value)? getGroupData,
+    TResult? Function(_GetAtlasCode value)? getAtlasCode,
     TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
   }) {
     return sendSubmittedWork?.call(this);
@@ -671,6 +857,7 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
     TResult Function(_ChangeMiddleView value)? changeMiddleView,
     TResult Function(_ChangeFormStep value)? changeFormStep,
     TResult Function(_GetGroupData value)? getGroupData,
+    TResult Function(_GetAtlasCode value)? getAtlasCode,
     TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
     required TResult orElse(),
   }) {
@@ -701,6 +888,7 @@ mixin _$HomeState {
   String get getGroupDataFailMessage => throw _privateConstructorUsedError;
   String get submitDataFailMessage => throw _privateConstructorUsedError;
   GetGroupDataResponse get groupData => throw _privateConstructorUsedError;
+  String get getAtlasCodeResult => throw _privateConstructorUsedError;
   HomeMiddleViews get currentMiddleView => throw _privateConstructorUsedError;
   NewsModel? get selectedNews => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -714,6 +902,7 @@ mixin _$HomeState {
             String getGroupDataFailMessage,
             String submitDataFailMessage,
             GetGroupDataResponse groupData,
+            String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)
         idle,
@@ -730,6 +919,7 @@ mixin _$HomeState {
             String getGroupDataFailMessage,
             String submitDataFailMessage,
             GetGroupDataResponse groupData,
+            String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
@@ -746,6 +936,7 @@ mixin _$HomeState {
             String getGroupDataFailMessage,
             String submitDataFailMessage,
             GetGroupDataResponse groupData,
+            String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
@@ -788,6 +979,7 @@ abstract class $HomeStateCopyWith<$Res> {
       String getGroupDataFailMessage,
       String submitDataFailMessage,
       GetGroupDataResponse groupData,
+      String getAtlasCodeResult,
       HomeMiddleViews currentMiddleView,
       NewsModel? selectedNews});
 }
@@ -813,6 +1005,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? getGroupDataFailMessage = null,
     Object? submitDataFailMessage = null,
     Object? groupData = null,
+    Object? getAtlasCodeResult = null,
     Object? currentMiddleView = null,
     Object? selectedNews = freezed,
   }) {
@@ -849,6 +1042,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.groupData
           : groupData // ignore: cast_nullable_to_non_nullable
               as GetGroupDataResponse,
+      getAtlasCodeResult: null == getAtlasCodeResult
+          ? _value.getAtlasCodeResult
+          : getAtlasCodeResult // ignore: cast_nullable_to_non_nullable
+              as String,
       currentMiddleView: null == currentMiddleView
           ? _value.currentMiddleView
           : currentMiddleView // ignore: cast_nullable_to_non_nullable
@@ -876,6 +1073,7 @@ abstract class _$$_IdleCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
       String getGroupDataFailMessage,
       String submitDataFailMessage,
       GetGroupDataResponse groupData,
+      String getAtlasCodeResult,
       HomeMiddleViews currentMiddleView,
       NewsModel? selectedNews});
 }
@@ -897,6 +1095,7 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
     Object? getGroupDataFailMessage = null,
     Object? submitDataFailMessage = null,
     Object? groupData = null,
+    Object? getAtlasCodeResult = null,
     Object? currentMiddleView = null,
     Object? selectedNews = freezed,
   }) {
@@ -933,6 +1132,10 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
           ? _value.groupData
           : groupData // ignore: cast_nullable_to_non_nullable
               as GetGroupDataResponse,
+      getAtlasCodeResult: null == getAtlasCodeResult
+          ? _value.getAtlasCodeResult
+          : getAtlasCodeResult // ignore: cast_nullable_to_non_nullable
+              as String,
       currentMiddleView: null == currentMiddleView
           ? _value.currentMiddleView
           : currentMiddleView // ignore: cast_nullable_to_non_nullable
@@ -957,6 +1160,7 @@ class _$_Idle implements _Idle {
       this.getGroupDataFailMessage = '',
       this.submitDataFailMessage = '',
       this.groupData = const GetGroupDataResponse(),
+      this.getAtlasCodeResult = '',
       this.currentMiddleView = HomeMiddleViews.home,
       this.selectedNews});
 
@@ -986,13 +1190,16 @@ class _$_Idle implements _Idle {
   final GetGroupDataResponse groupData;
   @override
   @JsonKey()
+  final String getAtlasCodeResult;
+  @override
+  @JsonKey()
   final HomeMiddleViews currentMiddleView;
   @override
   final NewsModel? selectedNews;
 
   @override
   String toString() {
-    return 'HomeState.idle(sendDataStep: $sendDataStep, isLoadingGetGroupData: $isLoadingGetGroupData, isLoadingSubmitData: $isLoadingSubmitData, isGetGroupDataSuccessful: $isGetGroupDataSuccessful, isSubmitDataSuccessful: $isSubmitDataSuccessful, getGroupDataFailMessage: $getGroupDataFailMessage, submitDataFailMessage: $submitDataFailMessage, groupData: $groupData, currentMiddleView: $currentMiddleView, selectedNews: $selectedNews)';
+    return 'HomeState.idle(sendDataStep: $sendDataStep, isLoadingGetGroupData: $isLoadingGetGroupData, isLoadingSubmitData: $isLoadingSubmitData, isGetGroupDataSuccessful: $isGetGroupDataSuccessful, isSubmitDataSuccessful: $isSubmitDataSuccessful, getGroupDataFailMessage: $getGroupDataFailMessage, submitDataFailMessage: $submitDataFailMessage, groupData: $groupData, getAtlasCodeResult: $getAtlasCodeResult, currentMiddleView: $currentMiddleView, selectedNews: $selectedNews)';
   }
 
   @override
@@ -1018,6 +1225,8 @@ class _$_Idle implements _Idle {
                 other.submitDataFailMessage == submitDataFailMessage) &&
             (identical(other.groupData, groupData) ||
                 other.groupData == groupData) &&
+            (identical(other.getAtlasCodeResult, getAtlasCodeResult) ||
+                other.getAtlasCodeResult == getAtlasCodeResult) &&
             (identical(other.currentMiddleView, currentMiddleView) ||
                 other.currentMiddleView == currentMiddleView) &&
             (identical(other.selectedNews, selectedNews) ||
@@ -1035,6 +1244,7 @@ class _$_Idle implements _Idle {
       getGroupDataFailMessage,
       submitDataFailMessage,
       groupData,
+      getAtlasCodeResult,
       currentMiddleView,
       selectedNews);
 
@@ -1056,6 +1266,7 @@ class _$_Idle implements _Idle {
             String getGroupDataFailMessage,
             String submitDataFailMessage,
             GetGroupDataResponse groupData,
+            String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)
         idle,
@@ -1069,6 +1280,7 @@ class _$_Idle implements _Idle {
         getGroupDataFailMessage,
         submitDataFailMessage,
         groupData,
+        getAtlasCodeResult,
         currentMiddleView,
         selectedNews);
   }
@@ -1085,6 +1297,7 @@ class _$_Idle implements _Idle {
             String getGroupDataFailMessage,
             String submitDataFailMessage,
             GetGroupDataResponse groupData,
+            String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
@@ -1098,6 +1311,7 @@ class _$_Idle implements _Idle {
         getGroupDataFailMessage,
         submitDataFailMessage,
         groupData,
+        getAtlasCodeResult,
         currentMiddleView,
         selectedNews);
   }
@@ -1114,6 +1328,7 @@ class _$_Idle implements _Idle {
             String getGroupDataFailMessage,
             String submitDataFailMessage,
             GetGroupDataResponse groupData,
+            String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
         idle,
@@ -1129,6 +1344,7 @@ class _$_Idle implements _Idle {
           getGroupDataFailMessage,
           submitDataFailMessage,
           groupData,
+          getAtlasCodeResult,
           currentMiddleView,
           selectedNews);
     }
@@ -1174,6 +1390,7 @@ abstract class _Idle implements HomeState {
       final String getGroupDataFailMessage,
       final String submitDataFailMessage,
       final GetGroupDataResponse groupData,
+      final String getAtlasCodeResult,
       final HomeMiddleViews currentMiddleView,
       final NewsModel? selectedNews}) = _$_Idle;
 
@@ -1193,6 +1410,8 @@ abstract class _Idle implements HomeState {
   String get submitDataFailMessage;
   @override
   GetGroupDataResponse get groupData;
+  @override
+  String get getAtlasCodeResult;
   @override
   HomeMiddleViews get currentMiddleView;
   @override

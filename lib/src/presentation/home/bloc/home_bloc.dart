@@ -8,6 +8,7 @@ import 'package:jahadgaran_festival/src/features/core/failures/parse_failure.dar
 import 'package:jahadgaran_festival/src/features/core/models/tuple.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/get_group_data_params.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/get_group_data_response.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/get_atlas_code_use_case.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/get_group_data_use_case.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/send_submitted_work_use_case.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
@@ -22,15 +23,18 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc(
     this.sendSubmittedWorkUseCase,
     this.getGroupDataUseCase,
+    this.getAtlasCodeUseCase,
   ) : super(const _Idle()) {
     on<_ChangeMiddleView>(_onChangeMiddleView);
     on<_ChangeFormStep>(_onChangeFormStep);
     on<_GetGroupData>(_onGetGroupData);
     on<_SendSubmittedWork>(_onSendSubmittedWork);
+    on<_GetAtlasCode>(_onGetAtlasCode);
   }
 
   final GetGroupDataUseCase getGroupDataUseCase;
   final SendSubmittedWorkUseCase sendSubmittedWorkUseCase;
+  final GetAtlasCodeUseCase getAtlasCodeUseCase;
 
   FutureOr<void> _onChangeMiddleView(
     _ChangeMiddleView event,
@@ -112,6 +116,41 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           isGetGroupDataSuccessful: true,
           sendDataStep: 2,
           groupData: r,
+        ),
+      ),
+    );
+  }
+
+  FutureOr<void> _onGetAtlasCode(
+    _GetAtlasCode event,
+    Emitter<HomeState> emit,
+  ) async {
+    emit(
+      state.copyWith(
+        isLoadingSubmitData: false,
+        isLoadingGetGroupData: true,
+        isSubmitDataSuccessful: false,
+        isGetGroupDataSuccessful: false,
+        submitDataFailMessage: '',
+        getGroupDataFailMessage: '',
+        getAtlasCodeResult: '',
+      ),
+    );
+    final getAtlasCodeResult = await getAtlasCodeUseCase(
+      param: Tuple1<String>(event.groupSupervisorNationalCode),
+    );
+    getAtlasCodeResult.fold(
+      (l) => emit(
+        state.copyWith(
+          isLoadingGetGroupData: false,
+          getGroupDataFailMessage: l.toMessage(),
+        ),
+      ),
+      (r) => emit(
+        state.copyWith(
+          isLoadingGetGroupData: false,
+          isGetGroupDataSuccessful: true,
+          getAtlasCodeResult: r,
         ),
       ),
     );

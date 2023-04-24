@@ -20,18 +20,21 @@ mixin _$JahadiWorkEndpoints {
   TResult when<TResult extends Object?>({
     required TResult Function() groupData,
     required TResult Function() submittedWork,
+    required TResult Function() getAtlasCode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? groupData,
     TResult? Function()? submittedWork,
+    TResult? Function()? getAtlasCode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? groupData,
     TResult Function()? submittedWork,
+    TResult Function()? getAtlasCode,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$JahadiWorkEndpoints {
   TResult map<TResult extends Object?>({
     required TResult Function(_GroupData value) groupData,
     required TResult Function(_SubmittedWork value) submittedWork,
+    required TResult Function(_GetAtlasCode value) getAtlasCode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GroupData value)? groupData,
     TResult? Function(_SubmittedWork value)? submittedWork,
+    TResult? Function(_GetAtlasCode value)? getAtlasCode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GroupData value)? groupData,
     TResult Function(_SubmittedWork value)? submittedWork,
+    TResult Function(_GetAtlasCode value)? getAtlasCode,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,6 +120,7 @@ class _$_GroupData implements _GroupData {
   TResult when<TResult extends Object?>({
     required TResult Function() groupData,
     required TResult Function() submittedWork,
+    required TResult Function() getAtlasCode,
   }) {
     return groupData();
   }
@@ -123,6 +130,7 @@ class _$_GroupData implements _GroupData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? groupData,
     TResult? Function()? submittedWork,
+    TResult? Function()? getAtlasCode,
   }) {
     return groupData?.call();
   }
@@ -132,6 +140,7 @@ class _$_GroupData implements _GroupData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? groupData,
     TResult Function()? submittedWork,
+    TResult Function()? getAtlasCode,
     required TResult orElse(),
   }) {
     if (groupData != null) {
@@ -145,6 +154,7 @@ class _$_GroupData implements _GroupData {
   TResult map<TResult extends Object?>({
     required TResult Function(_GroupData value) groupData,
     required TResult Function(_SubmittedWork value) submittedWork,
+    required TResult Function(_GetAtlasCode value) getAtlasCode,
   }) {
     return groupData(this);
   }
@@ -154,6 +164,7 @@ class _$_GroupData implements _GroupData {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GroupData value)? groupData,
     TResult? Function(_SubmittedWork value)? submittedWork,
+    TResult? Function(_GetAtlasCode value)? getAtlasCode,
   }) {
     return groupData?.call(this);
   }
@@ -163,6 +174,7 @@ class _$_GroupData implements _GroupData {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GroupData value)? groupData,
     TResult Function(_SubmittedWork value)? submittedWork,
+    TResult Function(_GetAtlasCode value)? getAtlasCode,
     required TResult orElse(),
   }) {
     if (groupData != null) {
@@ -216,6 +228,7 @@ class _$_SubmittedWork implements _SubmittedWork {
   TResult when<TResult extends Object?>({
     required TResult Function() groupData,
     required TResult Function() submittedWork,
+    required TResult Function() getAtlasCode,
   }) {
     return submittedWork();
   }
@@ -225,6 +238,7 @@ class _$_SubmittedWork implements _SubmittedWork {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? groupData,
     TResult? Function()? submittedWork,
+    TResult? Function()? getAtlasCode,
   }) {
     return submittedWork?.call();
   }
@@ -234,6 +248,7 @@ class _$_SubmittedWork implements _SubmittedWork {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? groupData,
     TResult Function()? submittedWork,
+    TResult Function()? getAtlasCode,
     required TResult orElse(),
   }) {
     if (submittedWork != null) {
@@ -247,6 +262,7 @@ class _$_SubmittedWork implements _SubmittedWork {
   TResult map<TResult extends Object?>({
     required TResult Function(_GroupData value) groupData,
     required TResult Function(_SubmittedWork value) submittedWork,
+    required TResult Function(_GetAtlasCode value) getAtlasCode,
   }) {
     return submittedWork(this);
   }
@@ -256,6 +272,7 @@ class _$_SubmittedWork implements _SubmittedWork {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GroupData value)? groupData,
     TResult? Function(_SubmittedWork value)? submittedWork,
+    TResult? Function(_GetAtlasCode value)? getAtlasCode,
   }) {
     return submittedWork?.call(this);
   }
@@ -265,6 +282,7 @@ class _$_SubmittedWork implements _SubmittedWork {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GroupData value)? groupData,
     TResult Function(_SubmittedWork value)? submittedWork,
+    TResult Function(_GetAtlasCode value)? getAtlasCode,
     required TResult orElse(),
   }) {
     if (submittedWork != null) {
@@ -276,4 +294,112 @@ class _$_SubmittedWork implements _SubmittedWork {
 
 abstract class _SubmittedWork implements JahadiWorkEndpoints {
   const factory _SubmittedWork() = _$_SubmittedWork;
+}
+
+/// @nodoc
+abstract class _$$_GetAtlasCodeCopyWith<$Res> {
+  factory _$$_GetAtlasCodeCopyWith(
+          _$_GetAtlasCode value, $Res Function(_$_GetAtlasCode) then) =
+      __$$_GetAtlasCodeCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_GetAtlasCodeCopyWithImpl<$Res>
+    extends _$JahadiWorkEndpointsCopyWithImpl<$Res, _$_GetAtlasCode>
+    implements _$$_GetAtlasCodeCopyWith<$Res> {
+  __$$_GetAtlasCodeCopyWithImpl(
+      _$_GetAtlasCode _value, $Res Function(_$_GetAtlasCode) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_GetAtlasCode implements _GetAtlasCode {
+  const _$_GetAtlasCode();
+
+  @override
+  String toString() {
+    return 'JahadiWorkEndpoints.getAtlasCode()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_GetAtlasCode);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() groupData,
+    required TResult Function() submittedWork,
+    required TResult Function() getAtlasCode,
+  }) {
+    return getAtlasCode();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? groupData,
+    TResult? Function()? submittedWork,
+    TResult? Function()? getAtlasCode,
+  }) {
+    return getAtlasCode?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? groupData,
+    TResult Function()? submittedWork,
+    TResult Function()? getAtlasCode,
+    required TResult orElse(),
+  }) {
+    if (getAtlasCode != null) {
+      return getAtlasCode();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GroupData value) groupData,
+    required TResult Function(_SubmittedWork value) submittedWork,
+    required TResult Function(_GetAtlasCode value) getAtlasCode,
+  }) {
+    return getAtlasCode(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GroupData value)? groupData,
+    TResult? Function(_SubmittedWork value)? submittedWork,
+    TResult? Function(_GetAtlasCode value)? getAtlasCode,
+  }) {
+    return getAtlasCode?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GroupData value)? groupData,
+    TResult Function(_SubmittedWork value)? submittedWork,
+    TResult Function(_GetAtlasCode value)? getAtlasCode,
+    required TResult orElse(),
+  }) {
+    if (getAtlasCode != null) {
+      return getAtlasCode(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetAtlasCode implements JahadiWorkEndpoints {
+  const factory _GetAtlasCode() = _$_GetAtlasCode;
 }
