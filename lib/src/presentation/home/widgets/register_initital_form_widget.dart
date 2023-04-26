@@ -12,8 +12,8 @@ import 'package:jahadgaran_festival/src/presentation/core/components/outlined_te
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-class RegisterFormWidget extends HookWidget {
-  const RegisterFormWidget({
+class RegisterInititalFormWidget extends HookWidget {
+  const RegisterInititalFormWidget({
     Key? key,
     required this.formKey,
     required this.nationalCodeController,
@@ -144,25 +144,35 @@ class RegisterFormWidget extends HookWidget {
   void _onTapCheckInformation(BuildContext context) {
     /// If we have validation error then do nothing and return
     if (!formKey.currentState!.validate()) return;
+    final homeBloc = context.read<HomeBloc>();
 
     if (selectedRegisterType.value == RegisterType.jahadiGroup) {
-      context.read<HomeBloc>().add(
-            HomeEvent.registerJahadiGroup(
-              registerParams: RegisterParams(
-                nationalCode: nationalCodeController.text,
-                phoneNumber: phoneNumberController.text,
-              ),
-            ),
-          );
+      homeBloc.add(
+        HomeEvent.registerJahadiGroup(
+          registerParams: RegisterParams(
+            nationalCode: nationalCodeController.text,
+            phoneNumber: phoneNumberController.text,
+          ),
+        ),
+      );
     } else if (selectedRegisterType.value == RegisterType.individual) {
-      context.read<HomeBloc>().add(
-            HomeEvent.registerIndividual(
-              registerParams: RegisterParams(
-                nationalCode: nationalCodeController.text,
-                phoneNumber: phoneNumberController.text,
-              ),
-            ),
-          );
-    } else if (selectedRegisterType.value == RegisterType.group) {}
+      homeBloc.add(
+        HomeEvent.registerIndividual(
+          registerParams: RegisterParams(
+            nationalCode: nationalCodeController.text,
+            phoneNumber: phoneNumberController.text,
+          ),
+        ),
+      );
+    } else if (selectedRegisterType.value == RegisterType.group) {
+      homeBloc.add(
+        HomeEvent.registerGroup(
+          registerParams: RegisterParams(
+            nationalCode: nationalCodeController.text,
+            phoneNumber: phoneNumberController.text,
+          ),
+        ),
+      );
+    }
   }
 }

@@ -7,6 +7,7 @@ import 'package:injectable/injectable.dart';
 import 'package:jahadgaran_festival/src/features/core/enums/register_type_enum.dart';
 import 'package:jahadgaran_festival/src/features/core/failures/parse_failure.dart';
 import 'package:jahadgaran_festival/src/features/core/models/tuple.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/group_response.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/individual_response.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/jahadi_group_response.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/register_params.dart';
@@ -14,7 +15,8 @@ import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/ge
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/group_submitted_work_use_case.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/individual_submitted_work_use_case.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/jahadi_group_submitted_work_use_case.dart';
-import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/register_individual_group_use_case.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/register_group_use_case.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/register_individual_use_case.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/register_jahadi_group_use_case.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
 import 'package:jahadgaran_festival/src/presentation/home/models/news_model.dart';
@@ -29,6 +31,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     this.jahadiGroupSubmittedWorkUseCase,
     this.registerJahadiGroupUseCase,
     this.registerIndividualUseCase,
+    this.registerGroupUseCase,
     this.getAtlasCodeUseCase,
     this.individualSubmittedWorkUseCase,
     this.groupSubmittedWorkUseCase,
@@ -37,6 +40,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_ChangeFormState>(_onChangeFormState);
     on<_RegisterJahadiGroup>(_onRegisterJahadiGroup);
     on<_RegisterIndividual>(_onRegisterIndividual);
+    on<_RegisterGroup>(_onRegisterGroup);
     on<_JahadiGroupSubmittedWork>(_onJahadiGroupSubmittedWork);
     on<_IndividualSubmittedWork>(_onIndividualSubmittedWork);
     on<_GroupSubmittedWork>(_onGroupSubmittedWork);
@@ -45,6 +49,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   final RegisterJahadiGroupUseCase registerJahadiGroupUseCase;
   final RegisterIndividualUseCase registerIndividualUseCase;
+  final RegisterGroupUseCase registerGroupUseCase;
   final JahadiGroupSubmittedWorkUseCase jahadiGroupSubmittedWorkUseCase;
   final IndividualSubmittedWorkUseCase individualSubmittedWorkUseCase;
   final GroupSubmittedWorkUseCase groupSubmittedWorkUseCase;
@@ -235,6 +240,41 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           isRegisterSuccessful: true,
           registerFormState: RegisterType.individual,
           individualData: r,
+        ),
+      ),
+    );
+  }
+
+  FutureOr<void> _onRegisterGroup(
+    _RegisterGroup event,
+    Emitter<HomeState> emit,
+  ) async {
+    emit(
+      state.copyWith(
+        isLoadingSubmitWork: false,
+        isLoading: true,
+        isSubmitWorkSuccessful: false,
+        isRegisterSuccessful: false,
+        submitWorkFailMessage: '',
+        registerFailMessage: '',
+      ),
+    );
+    final registerGroupResult = await registerGroupUseCase(
+      param: Tuple1<RegisterParams>(event.registerParams),
+    );
+    registerGroupResult.fold(
+      (l) => emit(
+        state.copyWith(
+          isLoading: false,
+          registerFailMessage: l.toMessage(),
+        ),
+      ),
+      (r) => emit(
+        state.copyWith(
+          isLoading: false,
+          isRegisterSuccessful: true,
+          registerFormState: RegisterType.group,
+          groupData: r,
         ),
       ),
     );

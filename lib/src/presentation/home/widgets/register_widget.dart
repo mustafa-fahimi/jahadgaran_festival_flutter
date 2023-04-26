@@ -9,7 +9,8 @@ import 'package:jahadgaran_festival/src/core/core.dart';
 import 'package:jahadgaran_festival/src/features/core/enums/register_type_enum.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/container_with_title_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
-import 'package:jahadgaran_festival/src/presentation/home/widgets/register_form_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/register_initital_form_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/submitted_work_forms/group_submitted_work_form_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/submitted_work_forms/individual_submitted_work_form_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/submitted_work_forms/jahadi_group_submitted_work_form_widget.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -107,7 +108,7 @@ class RegisterWidget extends HookWidget {
                 child: Expanded(
                   flex: 3,
                   child: registerFormState == RegisterType.initial
-                      ? RegisterFormWidget(
+                      ? RegisterInititalFormWidget(
                           formKey: formKey,
                           nationalCodeController: nationalCodeController,
                           nationalCodeFocusNode: nationalCodeFocusNode,
@@ -144,14 +145,8 @@ class RegisterWidget extends HookWidget {
                                       selectedAttachmentTypes,
                                   selectedFile: selectedFile,
                                 )
-                              : RegisterFormWidget(
-                                  formKey: formKey,
-                                  nationalCodeController:
-                                      nationalCodeController,
-                                  nationalCodeFocusNode: nationalCodeFocusNode,
-                                  phoneNumberController: phoneNumberController,
-                                  phoneNumberFocusNode: phoneNumberFocusNode,
-                                  selectedRegisterType: selectedRegisterType,
+                              : GroupSubmitWorkFormWidget(
+                                  nationalCode: nationalCodeController.text,
                                 ),
                 ),
               ),

@@ -78,12 +78,12 @@ class JahadiGroupSubmitWorkFormWidget extends HookWidget {
             ),
             const SizedBox(height: 20),
             Text(
-              '''${context.l10n.group_fullname}: ${state.jahadiGroupData.groupName}''',
+              '''${context.l10n.jahadi_group_fullname}: ${state.jahadiGroupData.groupName}''',
               style: subtitle1,
             ),
             const SizedBox(height: 10),
             Text(
-              '''${context.l10n.group_registration_code}: ${state.jahadiGroupData.groupRegisterationNumber}''',
+              '''${context.l10n.jahadi_group_registration_code}: ${state.jahadiGroupData.groupRegisterationNumber}''',
               style: subtitle1,
             ),
             const SizedBox(height: 10),

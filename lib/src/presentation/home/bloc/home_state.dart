@@ -15,6 +15,7 @@ class HomeState with _$HomeState {
     @Default('') String getAtlasCodeFailMessage,
     @Default(JahadiGroupResponse()) JahadiGroupResponse jahadiGroupData,
     @Default(null) IndividualResponse? individualData,
+    @Default(null) GroupResponse? groupData,
     @Default('') String getAtlasCodeResult,
     @Default(HomeMiddleViews.home) HomeMiddleViews currentMiddleView,
     NewsModel? selectedNews,

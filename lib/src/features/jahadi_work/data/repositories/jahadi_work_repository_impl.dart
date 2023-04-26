@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:jahadgaran_festival/src/features/core/models/base_response.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/data/data_sources/remote/jahadi_work_remote_data_source.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/failures/jahadi_work_failure.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/group_response.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/individual_response.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/jahadi_group_response.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/register_params.dart';
@@ -58,16 +59,27 @@ class JahadiWorkRepositoryImpl implements JahadiWorkRepository {
       );
 
   @override
-  Future<Either<JahadiWorkFailure, void>> registerGroup({
+  Future<Either<JahadiWorkFailure, GroupResponse?>> registerGroup({
     required RegisterParams registerParams,
   }) =>
       _remoteDS.registerGroup(registerParams: registerParams).then(
         (response) async {
           return response.fold(
-            (l) async => left<JahadiWorkFailure, void>(
+            (l) async => left<JahadiWorkFailure, GroupResponse?>(
               JahadiWorkFailure.api(l),
             ),
-            (r) async => right<JahadiWorkFailure, void>(null),
+            (r) async {
+              final data = BaseResponse.fromJson(r).data;
+              if (data != null) {
+                return right<JahadiWorkFailure, GroupResponse?>(
+                  GroupResponse.fromJson(
+                    BaseResponse.fromJson(r).data as Map<String, dynamic>,
+                  ),
+                );
+              } else {
+                return right<JahadiWorkFailure, GroupResponse?>(null);
+              }
+            },
           );
         },
       );

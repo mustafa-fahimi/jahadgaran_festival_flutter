@@ -1790,6 +1790,7 @@ mixin _$HomeState {
   String get getAtlasCodeFailMessage => throw _privateConstructorUsedError;
   JahadiGroupResponse get jahadiGroupData => throw _privateConstructorUsedError;
   IndividualResponse? get individualData => throw _privateConstructorUsedError;
+  GroupResponse? get groupData => throw _privateConstructorUsedError;
   String get getAtlasCodeResult => throw _privateConstructorUsedError;
   HomeMiddleViews get currentMiddleView => throw _privateConstructorUsedError;
   NewsModel? get selectedNews => throw _privateConstructorUsedError;
@@ -1808,6 +1809,7 @@ mixin _$HomeState {
             String getAtlasCodeFailMessage,
             JahadiGroupResponse jahadiGroupData,
             IndividualResponse? individualData,
+            GroupResponse? groupData,
             String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)
@@ -1829,6 +1831,7 @@ mixin _$HomeState {
             String getAtlasCodeFailMessage,
             JahadiGroupResponse jahadiGroupData,
             IndividualResponse? individualData,
+            GroupResponse? groupData,
             String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
@@ -1850,6 +1853,7 @@ mixin _$HomeState {
             String getAtlasCodeFailMessage,
             JahadiGroupResponse jahadiGroupData,
             IndividualResponse? individualData,
+            GroupResponse? groupData,
             String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
@@ -1897,6 +1901,7 @@ abstract class $HomeStateCopyWith<$Res> {
       String getAtlasCodeFailMessage,
       JahadiGroupResponse jahadiGroupData,
       IndividualResponse? individualData,
+      GroupResponse? groupData,
       String getAtlasCodeResult,
       HomeMiddleViews currentMiddleView,
       NewsModel? selectedNews});
@@ -1927,6 +1932,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? getAtlasCodeFailMessage = null,
     Object? jahadiGroupData = null,
     Object? individualData = freezed,
+    Object? groupData = freezed,
     Object? getAtlasCodeResult = null,
     Object? currentMiddleView = null,
     Object? selectedNews = freezed,
@@ -1980,6 +1986,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.individualData
           : individualData // ignore: cast_nullable_to_non_nullable
               as IndividualResponse?,
+      groupData: freezed == groupData
+          ? _value.groupData
+          : groupData // ignore: cast_nullable_to_non_nullable
+              as GroupResponse?,
       getAtlasCodeResult: null == getAtlasCodeResult
           ? _value.getAtlasCodeResult
           : getAtlasCodeResult // ignore: cast_nullable_to_non_nullable
@@ -2015,6 +2025,7 @@ abstract class _$$_IdleCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
       String getAtlasCodeFailMessage,
       JahadiGroupResponse jahadiGroupData,
       IndividualResponse? individualData,
+      GroupResponse? groupData,
       String getAtlasCodeResult,
       HomeMiddleViews currentMiddleView,
       NewsModel? selectedNews});
@@ -2041,6 +2052,7 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
     Object? getAtlasCodeFailMessage = null,
     Object? jahadiGroupData = null,
     Object? individualData = freezed,
+    Object? groupData = freezed,
     Object? getAtlasCodeResult = null,
     Object? currentMiddleView = null,
     Object? selectedNews = freezed,
@@ -2094,6 +2106,10 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
           ? _value.individualData
           : individualData // ignore: cast_nullable_to_non_nullable
               as IndividualResponse?,
+      groupData: freezed == groupData
+          ? _value.groupData
+          : groupData // ignore: cast_nullable_to_non_nullable
+              as GroupResponse?,
       getAtlasCodeResult: null == getAtlasCodeResult
           ? _value.getAtlasCodeResult
           : getAtlasCodeResult // ignore: cast_nullable_to_non_nullable
@@ -2126,6 +2142,7 @@ class _$_Idle implements _Idle {
       this.getAtlasCodeFailMessage = '',
       this.jahadiGroupData = const JahadiGroupResponse(),
       this.individualData = null,
+      this.groupData = null,
       this.getAtlasCodeResult = '',
       this.currentMiddleView = HomeMiddleViews.home,
       this.selectedNews});
@@ -2168,6 +2185,9 @@ class _$_Idle implements _Idle {
   final IndividualResponse? individualData;
   @override
   @JsonKey()
+  final GroupResponse? groupData;
+  @override
+  @JsonKey()
   final String getAtlasCodeResult;
   @override
   @JsonKey()
@@ -2177,7 +2197,7 @@ class _$_Idle implements _Idle {
 
   @override
   String toString() {
-    return 'HomeState.idle(registerFormState: $registerFormState, isLoading: $isLoading, isLoadingSubmitWork: $isLoadingSubmitWork, isLoadingGetAtlasCode: $isLoadingGetAtlasCode, isRegisterSuccessful: $isRegisterSuccessful, isSubmitWorkSuccessful: $isSubmitWorkSuccessful, isGetAtlasCodeSuccessful: $isGetAtlasCodeSuccessful, registerFailMessage: $registerFailMessage, submitWorkFailMessage: $submitWorkFailMessage, getAtlasCodeFailMessage: $getAtlasCodeFailMessage, jahadiGroupData: $jahadiGroupData, individualData: $individualData, getAtlasCodeResult: $getAtlasCodeResult, currentMiddleView: $currentMiddleView, selectedNews: $selectedNews)';
+    return 'HomeState.idle(registerFormState: $registerFormState, isLoading: $isLoading, isLoadingSubmitWork: $isLoadingSubmitWork, isLoadingGetAtlasCode: $isLoadingGetAtlasCode, isRegisterSuccessful: $isRegisterSuccessful, isSubmitWorkSuccessful: $isSubmitWorkSuccessful, isGetAtlasCodeSuccessful: $isGetAtlasCodeSuccessful, registerFailMessage: $registerFailMessage, submitWorkFailMessage: $submitWorkFailMessage, getAtlasCodeFailMessage: $getAtlasCodeFailMessage, jahadiGroupData: $jahadiGroupData, individualData: $individualData, groupData: $groupData, getAtlasCodeResult: $getAtlasCodeResult, currentMiddleView: $currentMiddleView, selectedNews: $selectedNews)';
   }
 
   @override
@@ -2211,6 +2231,8 @@ class _$_Idle implements _Idle {
                 other.jahadiGroupData == jahadiGroupData) &&
             (identical(other.individualData, individualData) ||
                 other.individualData == individualData) &&
+            (identical(other.groupData, groupData) ||
+                other.groupData == groupData) &&
             (identical(other.getAtlasCodeResult, getAtlasCodeResult) ||
                 other.getAtlasCodeResult == getAtlasCodeResult) &&
             (identical(other.currentMiddleView, currentMiddleView) ||
@@ -2234,6 +2256,7 @@ class _$_Idle implements _Idle {
       getAtlasCodeFailMessage,
       jahadiGroupData,
       individualData,
+      groupData,
       getAtlasCodeResult,
       currentMiddleView,
       selectedNews);
@@ -2260,6 +2283,7 @@ class _$_Idle implements _Idle {
             String getAtlasCodeFailMessage,
             JahadiGroupResponse jahadiGroupData,
             IndividualResponse? individualData,
+            GroupResponse? groupData,
             String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)
@@ -2278,6 +2302,7 @@ class _$_Idle implements _Idle {
         getAtlasCodeFailMessage,
         jahadiGroupData,
         individualData,
+        groupData,
         getAtlasCodeResult,
         currentMiddleView,
         selectedNews);
@@ -2299,6 +2324,7 @@ class _$_Idle implements _Idle {
             String getAtlasCodeFailMessage,
             JahadiGroupResponse jahadiGroupData,
             IndividualResponse? individualData,
+            GroupResponse? groupData,
             String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
@@ -2317,6 +2343,7 @@ class _$_Idle implements _Idle {
         getAtlasCodeFailMessage,
         jahadiGroupData,
         individualData,
+        groupData,
         getAtlasCodeResult,
         currentMiddleView,
         selectedNews);
@@ -2338,6 +2365,7 @@ class _$_Idle implements _Idle {
             String getAtlasCodeFailMessage,
             JahadiGroupResponse jahadiGroupData,
             IndividualResponse? individualData,
+            GroupResponse? groupData,
             String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
             NewsModel? selectedNews)?
@@ -2358,6 +2386,7 @@ class _$_Idle implements _Idle {
           getAtlasCodeFailMessage,
           jahadiGroupData,
           individualData,
+          groupData,
           getAtlasCodeResult,
           currentMiddleView,
           selectedNews);
@@ -2408,6 +2437,7 @@ abstract class _Idle implements HomeState {
       final String getAtlasCodeFailMessage,
       final JahadiGroupResponse jahadiGroupData,
       final IndividualResponse? individualData,
+      final GroupResponse? groupData,
       final String getAtlasCodeResult,
       final HomeMiddleViews currentMiddleView,
       final NewsModel? selectedNews}) = _$_Idle;
@@ -2436,6 +2466,8 @@ abstract class _Idle implements HomeState {
   JahadiGroupResponse get jahadiGroupData;
   @override
   IndividualResponse? get individualData;
+  @override
+  GroupResponse? get groupData;
   @override
   String get getAtlasCodeResult;
   @override
