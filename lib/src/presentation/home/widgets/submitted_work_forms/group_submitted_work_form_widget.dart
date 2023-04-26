@@ -10,7 +10,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 import 'package:jahadgaran_festival/src/features/core/enums/register_type_enum.dart';
-import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/individual_submitted_work_params.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/group_submitted_work_params.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/dropdown_multi_select_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/elevated_button_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/outlined_button_custom_widget.dart';
@@ -24,10 +24,11 @@ class GroupSubmitWorkFormWidget extends HookWidget {
   GroupSubmitWorkFormWidget({
     super.key,
     required this.nationalCode,
+    required this.formKey,
   });
 
   final String nationalCode;
-  final GlobalKey<FormState> formKey = GlobalKey();
+  final GlobalKey<FormState> formKey;
   late TextEditingController groupNameController;
   late TextEditingController establishedYearController;
   late TextEditingController groupLicenseNumberController;
@@ -84,19 +85,23 @@ class GroupSubmitWorkFormWidget extends HookWidget {
             groupInstitutionController.text.isEmpty &&
             groupCityController.text.isEmpty &&
             groupSupervisorFnameController.text.isEmpty &&
-            groupSupervisorLnameController.text.isEmpty) {
-          groupNameController.text = state.groupData?.groupName ?? '';
+            groupSupervisorLnameController.text.isEmpty &&
+            state.groupData != null) {
+          groupNameController.text = state.groupData!.groupName;
           establishedYearController.text =
-              state.groupData?.establishedYear.toString() ?? '';
+              state.groupData!.establishedYear != null
+                  ? state.groupData!.establishedYear!.toString()
+                  : '';
           groupLicenseNumberController.text =
-              state.groupData?.groupLicenseNumber ?? '';
-          groupInstitutionController.text =
-              state.groupData?.groupInstitution ?? '';
-          groupCityController.text = state.groupData?.groupCity ?? '';
+              state.groupData!.groupLicenseNumber != null
+                  ? state.groupData!.groupLicenseNumber!
+                  : '';
+          groupInstitutionController.text = state.groupData!.groupInstitution;
+          groupCityController.text = state.groupData!.groupCity;
           groupSupervisorFnameController.text =
-              state.groupData?.groupSupervisorFname ?? '';
+              state.groupData!.groupSupervisorFname;
           groupSupervisorLnameController.text =
-              state.groupData?.groupSupervisorLname ?? '';
+              state.groupData!.groupSupervisorLname;
         }
 
         return Column(
@@ -471,11 +476,19 @@ class GroupSubmitWorkFormWidget extends HookWidget {
     final bloc = context.read<HomeBloc>();
 
     final formData = FormData.fromMap(
-      IndividualSubmittedWorkParams(
-        nationalCode: nationalCode,
-        fname: groupNameController.text,
-        lname: establishedYearController.text,
-        city: groupInstitutionController.text,
+      GroupSubmittedWorkParams(
+        groupSupervisorNationalCode: nationalCode,
+        establishedYear: int.parse(establishedYearController.text),
+        groupName: groupNameController.text,
+        groupCity: groupCityController.text,
+        groupLicenseNumber: selectedHasLicense.value == context.l10n.yes
+            ? groupLicenseNumberController.text
+            : null,
+        groupInstitution: selectedInstitution.value != GroupInstitution.none
+            ? selectedInstitution.value!.getName(context)
+            : groupInstitutionController.text,
+        groupSupervisorFname: groupSupervisorFnameController.text,
+        groupSupervisorLname: groupSupervisorLnameController.text,
         verifyCode: verifyCodeController.text,
         attachmentType: selectedAttachmentTypes.value.join(', '),
         description: descriptionController.text,
@@ -483,6 +496,6 @@ class GroupSubmitWorkFormWidget extends HookWidget {
         ..addAll({'file': file}),
     );
 
-    bloc.add(HomeEvent.individualSubmittedWork(formData: formData));
+    bloc.add(HomeEvent.groupSubmittedWork(formData: formData));
   }
 }

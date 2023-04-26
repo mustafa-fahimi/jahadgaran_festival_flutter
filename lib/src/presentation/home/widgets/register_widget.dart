@@ -147,6 +147,7 @@ class RegisterWidget extends HookWidget {
                                 )
                               : GroupSubmitWorkFormWidget(
                                   nationalCode: nationalCodeController.text,
+                                  formKey: formKey,
                                 ),
                 ),
               ),
