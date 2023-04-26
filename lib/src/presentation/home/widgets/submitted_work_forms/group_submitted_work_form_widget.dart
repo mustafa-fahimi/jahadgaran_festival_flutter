@@ -6,7 +6,6 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 import 'package:jahadgaran_festival/src/features/core/enums/register_type_enum.dart';
@@ -20,63 +19,62 @@ import 'package:jahadgaran_festival/src/presentation/home/enums/attachment_type_
 import 'package:jahadgaran_festival/src/presentation/home/enums/group_institution_enum.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-class GroupSubmitWorkFormWidget extends HookWidget {
-  GroupSubmitWorkFormWidget({
-    super.key,
+class GroupSubmitWorkFormWidget extends StatelessWidget {
+  const GroupSubmitWorkFormWidget({
+    Key? key,
     required this.nationalCode,
     required this.formKey,
-  });
+    required this.groupNameController,
+    required this.establishedYearController,
+    required this.groupLicenseNumberController,
+    required this.groupInstitutionController,
+    required this.groupCityController,
+    required this.groupSupervisorFnameController,
+    required this.groupSupervisorLnameController,
+    required this.verifyCodeController,
+    required this.descriptionController,
+    required this.groupNameFocusNode,
+    required this.establishedYearFocusNode,
+    required this.groupLicenseNumberFocusNode,
+    required this.groupInstitutionFocusNode,
+    required this.groupCityFocusNode,
+    required this.groupSupervisorFnameFocusNode,
+    required this.groupSupervisorLnameFocusNode,
+    required this.verifyCodeFocusNode,
+    required this.descriptionFocusNode,
+    required this.selectedAttachmentTypes,
+    required this.selectedFile,
+    required this.selectedHasLicense,
+    required this.selectedInstitution,
+  }) : super(key: key);
 
   final String nationalCode;
   final GlobalKey<FormState> formKey;
-  late TextEditingController groupNameController;
-  late TextEditingController establishedYearController;
-  late TextEditingController groupLicenseNumberController;
-  late TextEditingController groupInstitutionController;
-  late TextEditingController groupCityController;
-  late TextEditingController groupSupervisorFnameController;
-  late TextEditingController groupSupervisorLnameController;
-  late TextEditingController verifyCodeController;
-  late TextEditingController descriptionController;
-  late FocusNode groupNameFocusNode;
-  late FocusNode establishedYearFocusNode;
-  late FocusNode groupLicenseNumberFocusNode;
-  late FocusNode groupInstitutionFocusNode;
-  late FocusNode groupCityFocusNode;
-  late FocusNode groupSupervisorFnameFocusNode;
-  late FocusNode groupSupervisorLnameFocusNode;
-  late FocusNode verifyCodeFocusNode;
-  late FocusNode descriptionFocusNode;
-  late ValueNotifier<List<String>> selectedAttachmentTypes;
-  late ValueNotifier<PlatformFile?> selectedFile;
-  late ValueNotifier<String?> selectedHasLicense;
-  late ValueNotifier<GroupInstitution?> selectedInstitution;
+  final TextEditingController groupNameController;
+  final TextEditingController establishedYearController;
+  final TextEditingController groupLicenseNumberController;
+  final TextEditingController groupInstitutionController;
+  final TextEditingController groupCityController;
+  final TextEditingController groupSupervisorFnameController;
+  final TextEditingController groupSupervisorLnameController;
+  final TextEditingController verifyCodeController;
+  final TextEditingController descriptionController;
+  final FocusNode groupNameFocusNode;
+  final FocusNode establishedYearFocusNode;
+  final FocusNode groupLicenseNumberFocusNode;
+  final FocusNode groupInstitutionFocusNode;
+  final FocusNode groupCityFocusNode;
+  final FocusNode groupSupervisorFnameFocusNode;
+  final FocusNode groupSupervisorLnameFocusNode;
+  final FocusNode verifyCodeFocusNode;
+  final FocusNode descriptionFocusNode;
+  final ValueNotifier<List<String>> selectedAttachmentTypes;
+  final ValueNotifier<PlatformFile?> selectedFile;
+  final ValueNotifier<String?> selectedHasLicense;
+  final ValueNotifier<GroupInstitution?> selectedInstitution;
 
   @override
   Widget build(BuildContext context) {
-    groupNameController = useTextEditingController();
-    establishedYearController = useTextEditingController();
-    groupLicenseNumberController = useTextEditingController();
-    groupInstitutionController = useTextEditingController();
-    groupCityController = useTextEditingController();
-    groupSupervisorFnameController = useTextEditingController();
-    groupSupervisorLnameController = useTextEditingController();
-    verifyCodeController = useTextEditingController();
-    descriptionController = useTextEditingController();
-    groupNameFocusNode = useFocusNode();
-    establishedYearFocusNode = useFocusNode();
-    groupLicenseNumberFocusNode = useFocusNode();
-    groupInstitutionFocusNode = useFocusNode();
-    groupCityFocusNode = useFocusNode();
-    groupSupervisorFnameFocusNode = useFocusNode();
-    groupSupervisorLnameFocusNode = useFocusNode();
-    verifyCodeFocusNode = useFocusNode();
-    descriptionFocusNode = useFocusNode();
-    selectedAttachmentTypes = useState([]);
-    selectedFile = useState(null);
-    selectedHasLicense = useState(context.l10n.no);
-    selectedInstitution = useState(GroupInstitution.edareErshad);
-
     return BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
         if (groupNameController.text.isEmpty &&

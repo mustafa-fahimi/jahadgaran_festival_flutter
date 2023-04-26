@@ -9,6 +9,7 @@ import 'package:jahadgaran_festival/src/core/core.dart';
 import 'package:jahadgaran_festival/src/features/core/enums/register_type_enum.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/container_with_title_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
+import 'package:jahadgaran_festival/src/presentation/home/enums/group_institution_enum.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/register_initital_form_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/submitted_work_forms/group_submitted_work_form_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/submitted_work_forms/individual_submitted_work_form_widget.dart';
@@ -43,14 +44,34 @@ class RegisterWidget extends HookWidget {
   late FocusNode lnameFocusNode;
   late FocusNode cityFocusNode;
 
+  /// Group submit work form variables
+  late TextEditingController groupNameController;
+  late TextEditingController establishedYearController;
+  late TextEditingController groupLicenseNumberController;
+  late TextEditingController groupInstitutionController;
+  late TextEditingController groupCityController;
+  late TextEditingController groupSupervisorFnameController;
+  late TextEditingController groupSupervisorLnameController;
+  late FocusNode groupNameFocusNode;
+  late FocusNode establishedYearFocusNode;
+  late FocusNode groupLicenseNumberFocusNode;
+  late FocusNode groupInstitutionFocusNode;
+  late FocusNode groupCityFocusNode;
+  late FocusNode groupSupervisorFnameFocusNode;
+  late FocusNode groupSupervisorLnameFocusNode;
+  late ValueNotifier<String?> selectedHasLicense;
+  late ValueNotifier<GroupInstitution?> selectedInstitution;
+
   @override
   Widget build(BuildContext context) {
+    /// Register form variables
     nationalCodeController = useTextEditingController();
     phoneNumberController = useTextEditingController();
     nationalCodeFocusNode = useFocusNode();
     phoneNumberFocusNode = useFocusNode();
     selectedRegisterType = useState(RegisterType.jahadiGroup);
 
+    /// Jahadi group submit work form variables
     verifyCodeController = useTextEditingController();
     descriptionController = useTextEditingController();
     verifyCodeFocusNode = useFocusNode();
@@ -58,12 +79,31 @@ class RegisterWidget extends HookWidget {
     selectedAttachmentTypes = useState<List<String>>([]);
     selectedFile = useState<PlatformFile?>(null);
 
+    /// Individual submit work form variables
     fnameController = useTextEditingController();
     lnameController = useTextEditingController();
     cityController = useTextEditingController();
     fnameFocusNode = useFocusNode();
     lnameFocusNode = useFocusNode();
     cityFocusNode = useFocusNode();
+
+    /// Group submit work form variables
+    groupNameController = useTextEditingController();
+    establishedYearController = useTextEditingController();
+    groupLicenseNumberController = useTextEditingController();
+    groupInstitutionController = useTextEditingController();
+    groupCityController = useTextEditingController();
+    groupSupervisorFnameController = useTextEditingController();
+    groupSupervisorLnameController = useTextEditingController();
+    groupNameFocusNode = useFocusNode();
+    establishedYearFocusNode = useFocusNode();
+    groupLicenseNumberFocusNode = useFocusNode();
+    groupInstitutionFocusNode = useFocusNode();
+    groupCityFocusNode = useFocusNode();
+    groupSupervisorFnameFocusNode = useFocusNode();
+    groupSupervisorLnameFocusNode = useFocusNode();
+    selectedHasLicense = useState(context.l10n.no);
+    selectedInstitution = useState(GroupInstitution.edareErshad);
 
     final registerFormState = context.watch<HomeBloc>().state.registerFormState;
 
@@ -148,6 +188,39 @@ class RegisterWidget extends HookWidget {
                               : GroupSubmitWorkFormWidget(
                                   nationalCode: nationalCodeController.text,
                                   formKey: formKey,
+                                  verifyCodeController: verifyCodeController,
+                                  descriptionController: descriptionController,
+                                  verifyCodeFocusNode: verifyCodeFocusNode,
+                                  descriptionFocusNode: descriptionFocusNode,
+                                  selectedAttachmentTypes:
+                                      selectedAttachmentTypes,
+                                  selectedFile: selectedFile,
+                                  groupNameController: groupNameController,
+                                  establishedYearController:
+                                      establishedYearController,
+                                  groupLicenseNumberController:
+                                      groupLicenseNumberController,
+                                  groupInstitutionController:
+                                      groupInstitutionController,
+                                  groupCityController: groupCityController,
+                                  groupSupervisorFnameController:
+                                      groupSupervisorFnameController,
+                                  groupSupervisorLnameController:
+                                      groupSupervisorLnameController,
+                                  groupNameFocusNode: groupNameFocusNode,
+                                  establishedYearFocusNode:
+                                      establishedYearFocusNode,
+                                  groupLicenseNumberFocusNode:
+                                      groupLicenseNumberFocusNode,
+                                  groupInstitutionFocusNode:
+                                      groupInstitutionFocusNode,
+                                  groupCityFocusNode: groupCityFocusNode,
+                                  groupSupervisorFnameFocusNode:
+                                      groupSupervisorFnameFocusNode,
+                                  groupSupervisorLnameFocusNode:
+                                      groupSupervisorLnameFocusNode,
+                                  selectedHasLicense: selectedHasLicense,
+                                  selectedInstitution: selectedInstitution,
                                 ),
                 ),
               ),
