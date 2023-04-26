@@ -9,6 +9,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 import 'package:jahadgaran_festival/src/features/core/enums/register_type_enum.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/individual_submitted_work_params.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/dropdown_multi_select_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/elevated_button_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/outlined_button_custom_widget.dart';
@@ -21,6 +22,7 @@ class IndividualSubmitWorkFormWidget extends HookWidget {
   const IndividualSubmitWorkFormWidget({
     Key? key,
     required this.formKey,
+    required this.nationalCode,
     required this.fnameController,
     required this.lnameController,
     required this.cityController,
@@ -36,6 +38,7 @@ class IndividualSubmitWorkFormWidget extends HookWidget {
   }) : super(key: key);
 
   final GlobalKey<FormState> formKey;
+  final String nationalCode;
   final TextEditingController fnameController;
   final TextEditingController lnameController;
   final TextEditingController cityController;
@@ -53,9 +56,14 @@ class IndividualSubmitWorkFormWidget extends HookWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
-        fnameController.text = state.individualData?.fname ?? '';
-        lnameController.text = state.individualData?.lname ?? '';
-        cityController.text = state.individualData?.city ?? '';
+        if (fnameController.text.isEmpty &&
+            lnameController.text.isEmpty &&
+            cityController.text.isEmpty) {
+          fnameController.text = state.individualData?.fname ?? '';
+          lnameController.text = state.individualData?.lname ?? '';
+          cityController.text = state.individualData?.city ?? '';
+        }
+
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -176,7 +184,9 @@ class IndividualSubmitWorkFormWidget extends HookWidget {
               onTap: _onTapSelectFile,
               btnText: context.l10n.choose_file,
               height: 40,
-              width: context.deviceWidthFactor(0.15),
+              width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                  ? 200
+                  : 200,
               buttonColor: context.theme.colorScheme.primary,
             ),
             const SizedBox(height: 15),
@@ -221,14 +231,6 @@ class IndividualSubmitWorkFormWidget extends HookWidget {
               ),
             ),
             const SizedBox(height: 20),
-            if (context.watch<HomeBloc>().state.isSubmitWorkSuccessful)
-              Center(
-                child: Text(
-                  context.l10n.submit_successfull,
-                  style: heading5Bold.copyWith(color: kSuccessColor),
-                ),
-              ),
-            const SizedBox(height: 30),
           ],
         );
       },
@@ -283,16 +285,19 @@ class IndividualSubmitWorkFormWidget extends HookWidget {
 
     final bloc = context.read<HomeBloc>();
 
-    final formData = FormData.fromMap({
-      'group_registeration_number':
-          bloc.state.jahadiGroupData.groupRegisterationNumber,
-      'group_supervisor_national_code':
-          bloc.state.jahadiGroupData.groupSupervisorNationalCode,
-      'verify_code': verifyCodeController.text,
-      'attachment_type': selectedAttachmentTypes.value.join(', '),
-      'file': file,
-    });
+    final formData = FormData.fromMap(
+      IndividualSubmittedWorkParams(
+        nationalCode: nationalCode,
+        fname: fnameController.text,
+        lname: lnameController.text,
+        city: cityController.text,
+        verifyCode: verifyCodeController.text,
+        attachmentType: selectedAttachmentTypes.value.join(', '),
+        description: descriptionController.text,
+      ).toJson()
+        ..addAll({'file': file}),
+    );
 
-    bloc.add(HomeEvent.sendSubmittedWork(formData: formData));
+    bloc.add(HomeEvent.individualSubmittedWork(formData: formData));
   }
 }

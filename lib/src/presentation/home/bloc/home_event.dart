@@ -27,7 +27,15 @@ class HomeEvent with _$HomeEvent {
     required String groupSupervisorNationalCode,
   }) = _GetAtlasCode;
 
-  const factory HomeEvent.sendSubmittedWork({
+  const factory HomeEvent.jahadiGroupSubmittedWork({
     required FormData formData,
-  }) = _SendSubmittedWork;
+  }) = _JahadiGroupSubmittedWork;
+
+  const factory HomeEvent.individualSubmittedWork({
+    required FormData formData,
+  }) = _IndividualSubmittedWork;
+
+  const factory HomeEvent.groupSubmittedWork({
+    required FormData formData,
+  }) = _GroupSubmittedWork;
 }

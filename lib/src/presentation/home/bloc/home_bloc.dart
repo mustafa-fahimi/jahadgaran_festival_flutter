@@ -11,9 +11,11 @@ import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/indiv
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/jahadi_group_response.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/register_params.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/get_atlas_code_use_case.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/group_submitted_work_use_case.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/individual_submitted_work_use_case.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/jahadi_group_submitted_work_use_case.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/register_individual_group_use_case.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/register_jahadi_group_use_case.dart';
-import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/send_submitted_work_use_case.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
 import 'package:jahadgaran_festival/src/presentation/home/models/news_model.dart';
 
@@ -24,22 +26,28 @@ part 'home_state.dart';
 @injectable
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc(
-    this.sendSubmittedWorkUseCase,
+    this.jahadiGroupSubmittedWorkUseCase,
     this.registerJahadiGroupUseCase,
     this.registerIndividualUseCase,
     this.getAtlasCodeUseCase,
+    this.individualSubmittedWorkUseCase,
+    this.groupSubmittedWorkUseCase,
   ) : super(const _Idle()) {
     on<_ChangeMiddleView>(_onChangeMiddleView);
     on<_ChangeFormState>(_onChangeFormState);
     on<_RegisterJahadiGroup>(_onRegisterJahadiGroup);
     on<_RegisterIndividual>(_onRegisterIndividual);
-    on<_SendSubmittedWork>(_onSendSubmittedWork);
+    on<_JahadiGroupSubmittedWork>(_onJahadiGroupSubmittedWork);
+    on<_IndividualSubmittedWork>(_onIndividualSubmittedWork);
+    on<_GroupSubmittedWork>(_onGroupSubmittedWork);
     on<_GetAtlasCode>(_onGetAtlasCode);
   }
 
   final RegisterJahadiGroupUseCase registerJahadiGroupUseCase;
   final RegisterIndividualUseCase registerIndividualUseCase;
-  final SendSubmittedWorkUseCase sendSubmittedWorkUseCase;
+  final JahadiGroupSubmittedWorkUseCase jahadiGroupSubmittedWorkUseCase;
+  final IndividualSubmittedWorkUseCase individualSubmittedWorkUseCase;
+  final GroupSubmittedWorkUseCase groupSubmittedWorkUseCase;
   final GetAtlasCodeUseCase getAtlasCodeUseCase;
 
   FutureOr<void> _onChangeMiddleView(
@@ -59,8 +67,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   ) async =>
       emit(state.copyWith(registerFormState: event.registerFormState));
 
-  FutureOr<void> _onSendSubmittedWork(
-    _SendSubmittedWork event,
+  FutureOr<void> _onJahadiGroupSubmittedWork(
+    _JahadiGroupSubmittedWork event,
     Emitter<HomeState> emit,
   ) async {
     emit(
@@ -73,10 +81,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         registerFailMessage: '',
       ),
     );
-    final sendSubmittedWorkResult = await sendSubmittedWorkUseCase(
+    final jahadiGroupSubmittedWorkResult =
+        await jahadiGroupSubmittedWorkUseCase(
       param: Tuple1<FormData>(event.formData),
     );
-    sendSubmittedWorkResult.fold(
+    jahadiGroupSubmittedWorkResult.fold(
       (l) => emit(
         state.copyWith(
           isLoadingSubmitWork: false,
@@ -87,6 +96,75 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         state.copyWith(
           isLoadingSubmitWork: false,
           isSubmitWorkSuccessful: true,
+          registerFormState: RegisterType.initial,
+        ),
+      ),
+    );
+  }
+
+  FutureOr<void> _onIndividualSubmittedWork(
+    _IndividualSubmittedWork event,
+    Emitter<HomeState> emit,
+  ) async {
+    emit(
+      state.copyWith(
+        isLoadingSubmitWork: true,
+        isLoading: false,
+        isSubmitWorkSuccessful: false,
+        isRegisterSuccessful: false,
+        submitWorkFailMessage: '',
+        registerFailMessage: '',
+      ),
+    );
+    final individualSubmittedWorkResult = await individualSubmittedWorkUseCase(
+      param: Tuple1<FormData>(event.formData),
+    );
+    individualSubmittedWorkResult.fold(
+      (l) => emit(
+        state.copyWith(
+          isLoadingSubmitWork: false,
+          submitWorkFailMessage: l.toMessage(),
+        ),
+      ),
+      (r) => emit(
+        state.copyWith(
+          isLoadingSubmitWork: false,
+          isSubmitWorkSuccessful: true,
+          registerFormState: RegisterType.initial,
+        ),
+      ),
+    );
+  }
+
+  FutureOr<void> _onGroupSubmittedWork(
+    _GroupSubmittedWork event,
+    Emitter<HomeState> emit,
+  ) async {
+    emit(
+      state.copyWith(
+        isLoadingSubmitWork: true,
+        isLoading: false,
+        isSubmitWorkSuccessful: false,
+        isRegisterSuccessful: false,
+        submitWorkFailMessage: '',
+        registerFailMessage: '',
+      ),
+    );
+    final groupSubmittedWorkResult = await groupSubmittedWorkUseCase(
+      param: Tuple1<FormData>(event.formData),
+    );
+    groupSubmittedWorkResult.fold(
+      (l) => emit(
+        state.copyWith(
+          isLoadingSubmitWork: false,
+          submitWorkFailMessage: l.toMessage(),
+        ),
+      ),
+      (r) => emit(
+        state.copyWith(
+          isLoadingSubmitWork: false,
+          isSubmitWorkSuccessful: true,
+          registerFormState: RegisterType.initial,
         ),
       ),
     );

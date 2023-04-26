@@ -19,7 +19,15 @@ abstract class JahadiWorkRemoteDataSource {
     required RegisterParams registerParams,
   });
 
-  Future<Either<ApiFailure, void>> sendSubmittedWork({
+  Future<Either<ApiFailure, void>> jahadiGroupSubmittedWork({
+    required FormData formData,
+  });
+
+  Future<Either<ApiFailure, void>> individualSubmittedWork({
+    required FormData formData,
+  });
+
+  Future<Either<ApiFailure, void>> groupSubmittedWork({
     required FormData formData,
   });
 
@@ -57,12 +65,20 @@ class JahadiWorkRemoteDataSourceImpl extends JahadiWorkRemoteDataSource {
       ).toNonNullDomain;
 
   @override
-  Future<Either<ApiFailure, Map<String, dynamic>>> sendSubmittedWork({
+  Future<Either<ApiFailure, Map<String, dynamic>>> getAtlasCode({
+    required String groupSupervisorNationalCode,
+  }) =>
+      apiService.getMethod<Map<String, dynamic>>(
+        '''${const JahadiWorkEndpoints.getAtlasCode().toPath}?group_supervisor_national_code=$groupSupervisorNationalCode''',
+      ).toNonNullDomain;
+
+  @override
+  Future<Either<ApiFailure, Map<String, dynamic>>> jahadiGroupSubmittedWork({
     required FormData formData,
   }) =>
       apiService
           .postMethod<Map<String, dynamic>>(
-            const JahadiWorkEndpoints.submittedWork().toPath,
+            const JahadiWorkEndpoints.jahadiGroupSubmittedWork().toPath,
             body: formData,
             option: const ApiServiceOption(
               header: ApiServiceHeader.formData(),
@@ -71,10 +87,30 @@ class JahadiWorkRemoteDataSourceImpl extends JahadiWorkRemoteDataSource {
           .toNonNullDomain;
 
   @override
-  Future<Either<ApiFailure, Map<String, dynamic>>> getAtlasCode({
-    required String groupSupervisorNationalCode,
+  Future<Either<ApiFailure, void>> groupSubmittedWork({
+    required FormData formData,
   }) =>
-      apiService.getMethod<Map<String, dynamic>>(
-        '''${const JahadiWorkEndpoints.getAtlasCode().toPath}?group_supervisor_national_code=$groupSupervisorNationalCode''',
-      ).toNonNullDomain;
+      apiService
+          .postMethod<Map<String, dynamic>>(
+            const JahadiWorkEndpoints.groupSubmittedWork().toPath,
+            body: formData,
+            option: const ApiServiceOption(
+              header: ApiServiceHeader.formData(),
+            ),
+          )
+          .toNonNullDomain;
+
+  @override
+  Future<Either<ApiFailure, void>> individualSubmittedWork({
+    required FormData formData,
+  }) =>
+      apiService
+          .postMethod<Map<String, dynamic>>(
+            const JahadiWorkEndpoints.individualSubmittedWork().toPath,
+            body: formData,
+            option: const ApiServiceOption(
+              header: ApiServiceHeader.formData(),
+            ),
+          )
+          .toNonNullDomain;
 }

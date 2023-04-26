@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -49,7 +47,7 @@ class RegisterFormWidget extends HookWidget {
                 .map(
                   (item) => DropdownMenuItem<RegisterType?>(
                     value: item,
-                    child: SelectableText(
+                    child: Text(
                       item.getName(context),
                       style: subtitle2.copyWith(color: Colors.white),
                     ),
@@ -130,6 +128,14 @@ class RegisterFormWidget extends HookWidget {
               : 200,
           color: context.theme.colorScheme.primary,
         ),
+        const SizedBox(height: 20),
+        if (context.watch<HomeBloc>().state.isSubmitWorkSuccessful)
+          Center(
+            child: Text(
+              context.l10n.submit_successfull,
+              style: heading5Bold.copyWith(color: kSuccessColor),
+            ),
+          ),
         const SizedBox(height: 20),
       ],
     );

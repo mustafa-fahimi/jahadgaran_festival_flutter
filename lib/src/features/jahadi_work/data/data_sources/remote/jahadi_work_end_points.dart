@@ -8,7 +8,11 @@ class JahadiWorkEndpoints with _$JahadiWorkEndpoints {
       _RegisterJahadiGroup;
   const factory JahadiWorkEndpoints.registerIndividual() = _RegisterIndividual;
   const factory JahadiWorkEndpoints.registerGroup() = _RegisterGroup;
-  const factory JahadiWorkEndpoints.submittedWork() = _SubmittedWork;
+  const factory JahadiWorkEndpoints.jahadiGroupSubmittedWork() =
+      _JahadiGroupSubmittedWork;
+  const factory JahadiWorkEndpoints.individualSubmittedWork() =
+      _IndividualSubmittedWork;
+  const factory JahadiWorkEndpoints.groupSubmittedWork() = _GroupSubmittedWork;
   const factory JahadiWorkEndpoints.getAtlasCode() = _GetAtlasCode;
 }
 
@@ -17,7 +21,9 @@ extension JahadiWorkEndpointsEx on JahadiWorkEndpoints {
         registerJahadiGroup: () => 'registerJahadiGroup',
         registerIndividual: () => 'registerIndividual',
         registerGroup: () => 'registerGroup',
-        submittedWork: () => 'submittedWork',
+        jahadiGroupSubmittedWork: () => 'jahadiGroupSubmittedWork',
+        individualSubmittedWork: () => 'individualSubmittedWork',
+        groupSubmittedWork: () => 'groupSubmittedWork',
         getAtlasCode: () => 'atlasCode',
       );
 }

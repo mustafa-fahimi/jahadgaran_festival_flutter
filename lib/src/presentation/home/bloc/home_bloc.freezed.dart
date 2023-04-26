@@ -26,7 +26,9 @@ mixin _$HomeEvent {
     required TResult Function(RegisterParams registerParams) registerIndividual,
     required TResult Function(RegisterParams registerParams) registerGroup,
     required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
-    required TResult Function(FormData formData) sendSubmittedWork,
+    required TResult Function(FormData formData) jahadiGroupSubmittedWork,
+    required TResult Function(FormData formData) individualSubmittedWork,
+    required TResult Function(FormData formData) groupSubmittedWork,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +39,9 @@ mixin _$HomeEvent {
     TResult? Function(RegisterParams registerParams)? registerIndividual,
     TResult? Function(RegisterParams registerParams)? registerGroup,
     TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
-    TResult? Function(FormData formData)? sendSubmittedWork,
+    TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult? Function(FormData formData)? individualSubmittedWork,
+    TResult? Function(FormData formData)? groupSubmittedWork,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -48,7 +52,9 @@ mixin _$HomeEvent {
     TResult Function(RegisterParams registerParams)? registerIndividual,
     TResult Function(RegisterParams registerParams)? registerGroup,
     TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
-    TResult Function(FormData formData)? sendSubmittedWork,
+    TResult Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult Function(FormData formData)? individualSubmittedWork,
+    TResult Function(FormData formData)? groupSubmittedWork,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -60,7 +66,11 @@ mixin _$HomeEvent {
     required TResult Function(_RegisterIndividual value) registerIndividual,
     required TResult Function(_RegisterGroup value) registerGroup,
     required TResult Function(_GetAtlasCode value) getAtlasCode,
-    required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
+    required TResult Function(_JahadiGroupSubmittedWork value)
+        jahadiGroupSubmittedWork,
+    required TResult Function(_IndividualSubmittedWork value)
+        individualSubmittedWork,
+    required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,7 +81,10 @@ mixin _$HomeEvent {
     TResult? Function(_RegisterIndividual value)? registerIndividual,
     TResult? Function(_RegisterGroup value)? registerGroup,
     TResult? Function(_GetAtlasCode value)? getAtlasCode,
-    TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
+    TResult? Function(_JahadiGroupSubmittedWork value)?
+        jahadiGroupSubmittedWork,
+    TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,7 +95,9 @@ mixin _$HomeEvent {
     TResult Function(_RegisterIndividual value)? registerIndividual,
     TResult Function(_RegisterGroup value)? registerGroup,
     TResult Function(_GetAtlasCode value)? getAtlasCode,
-    TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
+    TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
+    TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -185,7 +200,9 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
     required TResult Function(RegisterParams registerParams) registerIndividual,
     required TResult Function(RegisterParams registerParams) registerGroup,
     required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
-    required TResult Function(FormData formData) sendSubmittedWork,
+    required TResult Function(FormData formData) jahadiGroupSubmittedWork,
+    required TResult Function(FormData formData) individualSubmittedWork,
+    required TResult Function(FormData formData) groupSubmittedWork,
   }) {
     return changeMiddleView(view, news);
   }
@@ -199,7 +216,9 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
     TResult? Function(RegisterParams registerParams)? registerIndividual,
     TResult? Function(RegisterParams registerParams)? registerGroup,
     TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
-    TResult? Function(FormData formData)? sendSubmittedWork,
+    TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult? Function(FormData formData)? individualSubmittedWork,
+    TResult? Function(FormData formData)? groupSubmittedWork,
   }) {
     return changeMiddleView?.call(view, news);
   }
@@ -213,7 +232,9 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
     TResult Function(RegisterParams registerParams)? registerIndividual,
     TResult Function(RegisterParams registerParams)? registerGroup,
     TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
-    TResult Function(FormData formData)? sendSubmittedWork,
+    TResult Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult Function(FormData formData)? individualSubmittedWork,
+    TResult Function(FormData formData)? groupSubmittedWork,
     required TResult orElse(),
   }) {
     if (changeMiddleView != null) {
@@ -231,7 +252,11 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
     required TResult Function(_RegisterIndividual value) registerIndividual,
     required TResult Function(_RegisterGroup value) registerGroup,
     required TResult Function(_GetAtlasCode value) getAtlasCode,
-    required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
+    required TResult Function(_JahadiGroupSubmittedWork value)
+        jahadiGroupSubmittedWork,
+    required TResult Function(_IndividualSubmittedWork value)
+        individualSubmittedWork,
+    required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
   }) {
     return changeMiddleView(this);
   }
@@ -245,7 +270,10 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
     TResult? Function(_RegisterIndividual value)? registerIndividual,
     TResult? Function(_RegisterGroup value)? registerGroup,
     TResult? Function(_GetAtlasCode value)? getAtlasCode,
-    TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
+    TResult? Function(_JahadiGroupSubmittedWork value)?
+        jahadiGroupSubmittedWork,
+    TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
   }) {
     return changeMiddleView?.call(this);
   }
@@ -259,7 +287,9 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
     TResult Function(_RegisterIndividual value)? registerIndividual,
     TResult Function(_RegisterGroup value)? registerGroup,
     TResult Function(_GetAtlasCode value)? getAtlasCode,
-    TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
+    TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
+    TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
     required TResult orElse(),
   }) {
     if (changeMiddleView != null) {
@@ -354,7 +384,9 @@ class _$_ChangeFormState implements _ChangeFormState {
     required TResult Function(RegisterParams registerParams) registerIndividual,
     required TResult Function(RegisterParams registerParams) registerGroup,
     required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
-    required TResult Function(FormData formData) sendSubmittedWork,
+    required TResult Function(FormData formData) jahadiGroupSubmittedWork,
+    required TResult Function(FormData formData) individualSubmittedWork,
+    required TResult Function(FormData formData) groupSubmittedWork,
   }) {
     return changeFormState(registerFormState);
   }
@@ -368,7 +400,9 @@ class _$_ChangeFormState implements _ChangeFormState {
     TResult? Function(RegisterParams registerParams)? registerIndividual,
     TResult? Function(RegisterParams registerParams)? registerGroup,
     TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
-    TResult? Function(FormData formData)? sendSubmittedWork,
+    TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult? Function(FormData formData)? individualSubmittedWork,
+    TResult? Function(FormData formData)? groupSubmittedWork,
   }) {
     return changeFormState?.call(registerFormState);
   }
@@ -382,7 +416,9 @@ class _$_ChangeFormState implements _ChangeFormState {
     TResult Function(RegisterParams registerParams)? registerIndividual,
     TResult Function(RegisterParams registerParams)? registerGroup,
     TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
-    TResult Function(FormData formData)? sendSubmittedWork,
+    TResult Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult Function(FormData formData)? individualSubmittedWork,
+    TResult Function(FormData formData)? groupSubmittedWork,
     required TResult orElse(),
   }) {
     if (changeFormState != null) {
@@ -400,7 +436,11 @@ class _$_ChangeFormState implements _ChangeFormState {
     required TResult Function(_RegisterIndividual value) registerIndividual,
     required TResult Function(_RegisterGroup value) registerGroup,
     required TResult Function(_GetAtlasCode value) getAtlasCode,
-    required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
+    required TResult Function(_JahadiGroupSubmittedWork value)
+        jahadiGroupSubmittedWork,
+    required TResult Function(_IndividualSubmittedWork value)
+        individualSubmittedWork,
+    required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
   }) {
     return changeFormState(this);
   }
@@ -414,7 +454,10 @@ class _$_ChangeFormState implements _ChangeFormState {
     TResult? Function(_RegisterIndividual value)? registerIndividual,
     TResult? Function(_RegisterGroup value)? registerGroup,
     TResult? Function(_GetAtlasCode value)? getAtlasCode,
-    TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
+    TResult? Function(_JahadiGroupSubmittedWork value)?
+        jahadiGroupSubmittedWork,
+    TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
   }) {
     return changeFormState?.call(this);
   }
@@ -428,7 +471,9 @@ class _$_ChangeFormState implements _ChangeFormState {
     TResult Function(_RegisterIndividual value)? registerIndividual,
     TResult Function(_RegisterGroup value)? registerGroup,
     TResult Function(_GetAtlasCode value)? getAtlasCode,
-    TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
+    TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
+    TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
     required TResult orElse(),
   }) {
     if (changeFormState != null) {
@@ -522,7 +567,9 @@ class _$_RegisterJahadiGroup implements _RegisterJahadiGroup {
     required TResult Function(RegisterParams registerParams) registerIndividual,
     required TResult Function(RegisterParams registerParams) registerGroup,
     required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
-    required TResult Function(FormData formData) sendSubmittedWork,
+    required TResult Function(FormData formData) jahadiGroupSubmittedWork,
+    required TResult Function(FormData formData) individualSubmittedWork,
+    required TResult Function(FormData formData) groupSubmittedWork,
   }) {
     return registerJahadiGroup(registerParams);
   }
@@ -536,7 +583,9 @@ class _$_RegisterJahadiGroup implements _RegisterJahadiGroup {
     TResult? Function(RegisterParams registerParams)? registerIndividual,
     TResult? Function(RegisterParams registerParams)? registerGroup,
     TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
-    TResult? Function(FormData formData)? sendSubmittedWork,
+    TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult? Function(FormData formData)? individualSubmittedWork,
+    TResult? Function(FormData formData)? groupSubmittedWork,
   }) {
     return registerJahadiGroup?.call(registerParams);
   }
@@ -550,7 +599,9 @@ class _$_RegisterJahadiGroup implements _RegisterJahadiGroup {
     TResult Function(RegisterParams registerParams)? registerIndividual,
     TResult Function(RegisterParams registerParams)? registerGroup,
     TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
-    TResult Function(FormData formData)? sendSubmittedWork,
+    TResult Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult Function(FormData formData)? individualSubmittedWork,
+    TResult Function(FormData formData)? groupSubmittedWork,
     required TResult orElse(),
   }) {
     if (registerJahadiGroup != null) {
@@ -568,7 +619,11 @@ class _$_RegisterJahadiGroup implements _RegisterJahadiGroup {
     required TResult Function(_RegisterIndividual value) registerIndividual,
     required TResult Function(_RegisterGroup value) registerGroup,
     required TResult Function(_GetAtlasCode value) getAtlasCode,
-    required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
+    required TResult Function(_JahadiGroupSubmittedWork value)
+        jahadiGroupSubmittedWork,
+    required TResult Function(_IndividualSubmittedWork value)
+        individualSubmittedWork,
+    required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
   }) {
     return registerJahadiGroup(this);
   }
@@ -582,7 +637,10 @@ class _$_RegisterJahadiGroup implements _RegisterJahadiGroup {
     TResult? Function(_RegisterIndividual value)? registerIndividual,
     TResult? Function(_RegisterGroup value)? registerGroup,
     TResult? Function(_GetAtlasCode value)? getAtlasCode,
-    TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
+    TResult? Function(_JahadiGroupSubmittedWork value)?
+        jahadiGroupSubmittedWork,
+    TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
   }) {
     return registerJahadiGroup?.call(this);
   }
@@ -596,7 +654,9 @@ class _$_RegisterJahadiGroup implements _RegisterJahadiGroup {
     TResult Function(_RegisterIndividual value)? registerIndividual,
     TResult Function(_RegisterGroup value)? registerGroup,
     TResult Function(_GetAtlasCode value)? getAtlasCode,
-    TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
+    TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
+    TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
     required TResult orElse(),
   }) {
     if (registerJahadiGroup != null) {
@@ -690,7 +750,9 @@ class _$_RegisterIndividual implements _RegisterIndividual {
     required TResult Function(RegisterParams registerParams) registerIndividual,
     required TResult Function(RegisterParams registerParams) registerGroup,
     required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
-    required TResult Function(FormData formData) sendSubmittedWork,
+    required TResult Function(FormData formData) jahadiGroupSubmittedWork,
+    required TResult Function(FormData formData) individualSubmittedWork,
+    required TResult Function(FormData formData) groupSubmittedWork,
   }) {
     return registerIndividual(registerParams);
   }
@@ -704,7 +766,9 @@ class _$_RegisterIndividual implements _RegisterIndividual {
     TResult? Function(RegisterParams registerParams)? registerIndividual,
     TResult? Function(RegisterParams registerParams)? registerGroup,
     TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
-    TResult? Function(FormData formData)? sendSubmittedWork,
+    TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult? Function(FormData formData)? individualSubmittedWork,
+    TResult? Function(FormData formData)? groupSubmittedWork,
   }) {
     return registerIndividual?.call(registerParams);
   }
@@ -718,7 +782,9 @@ class _$_RegisterIndividual implements _RegisterIndividual {
     TResult Function(RegisterParams registerParams)? registerIndividual,
     TResult Function(RegisterParams registerParams)? registerGroup,
     TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
-    TResult Function(FormData formData)? sendSubmittedWork,
+    TResult Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult Function(FormData formData)? individualSubmittedWork,
+    TResult Function(FormData formData)? groupSubmittedWork,
     required TResult orElse(),
   }) {
     if (registerIndividual != null) {
@@ -736,7 +802,11 @@ class _$_RegisterIndividual implements _RegisterIndividual {
     required TResult Function(_RegisterIndividual value) registerIndividual,
     required TResult Function(_RegisterGroup value) registerGroup,
     required TResult Function(_GetAtlasCode value) getAtlasCode,
-    required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
+    required TResult Function(_JahadiGroupSubmittedWork value)
+        jahadiGroupSubmittedWork,
+    required TResult Function(_IndividualSubmittedWork value)
+        individualSubmittedWork,
+    required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
   }) {
     return registerIndividual(this);
   }
@@ -750,7 +820,10 @@ class _$_RegisterIndividual implements _RegisterIndividual {
     TResult? Function(_RegisterIndividual value)? registerIndividual,
     TResult? Function(_RegisterGroup value)? registerGroup,
     TResult? Function(_GetAtlasCode value)? getAtlasCode,
-    TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
+    TResult? Function(_JahadiGroupSubmittedWork value)?
+        jahadiGroupSubmittedWork,
+    TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
   }) {
     return registerIndividual?.call(this);
   }
@@ -764,7 +837,9 @@ class _$_RegisterIndividual implements _RegisterIndividual {
     TResult Function(_RegisterIndividual value)? registerIndividual,
     TResult Function(_RegisterGroup value)? registerGroup,
     TResult Function(_GetAtlasCode value)? getAtlasCode,
-    TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
+    TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
+    TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
     required TResult orElse(),
   }) {
     if (registerIndividual != null) {
@@ -857,7 +932,9 @@ class _$_RegisterGroup implements _RegisterGroup {
     required TResult Function(RegisterParams registerParams) registerIndividual,
     required TResult Function(RegisterParams registerParams) registerGroup,
     required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
-    required TResult Function(FormData formData) sendSubmittedWork,
+    required TResult Function(FormData formData) jahadiGroupSubmittedWork,
+    required TResult Function(FormData formData) individualSubmittedWork,
+    required TResult Function(FormData formData) groupSubmittedWork,
   }) {
     return registerGroup(registerParams);
   }
@@ -871,7 +948,9 @@ class _$_RegisterGroup implements _RegisterGroup {
     TResult? Function(RegisterParams registerParams)? registerIndividual,
     TResult? Function(RegisterParams registerParams)? registerGroup,
     TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
-    TResult? Function(FormData formData)? sendSubmittedWork,
+    TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult? Function(FormData formData)? individualSubmittedWork,
+    TResult? Function(FormData formData)? groupSubmittedWork,
   }) {
     return registerGroup?.call(registerParams);
   }
@@ -885,7 +964,9 @@ class _$_RegisterGroup implements _RegisterGroup {
     TResult Function(RegisterParams registerParams)? registerIndividual,
     TResult Function(RegisterParams registerParams)? registerGroup,
     TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
-    TResult Function(FormData formData)? sendSubmittedWork,
+    TResult Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult Function(FormData formData)? individualSubmittedWork,
+    TResult Function(FormData formData)? groupSubmittedWork,
     required TResult orElse(),
   }) {
     if (registerGroup != null) {
@@ -903,7 +984,11 @@ class _$_RegisterGroup implements _RegisterGroup {
     required TResult Function(_RegisterIndividual value) registerIndividual,
     required TResult Function(_RegisterGroup value) registerGroup,
     required TResult Function(_GetAtlasCode value) getAtlasCode,
-    required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
+    required TResult Function(_JahadiGroupSubmittedWork value)
+        jahadiGroupSubmittedWork,
+    required TResult Function(_IndividualSubmittedWork value)
+        individualSubmittedWork,
+    required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
   }) {
     return registerGroup(this);
   }
@@ -917,7 +1002,10 @@ class _$_RegisterGroup implements _RegisterGroup {
     TResult? Function(_RegisterIndividual value)? registerIndividual,
     TResult? Function(_RegisterGroup value)? registerGroup,
     TResult? Function(_GetAtlasCode value)? getAtlasCode,
-    TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
+    TResult? Function(_JahadiGroupSubmittedWork value)?
+        jahadiGroupSubmittedWork,
+    TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
   }) {
     return registerGroup?.call(this);
   }
@@ -931,7 +1019,9 @@ class _$_RegisterGroup implements _RegisterGroup {
     TResult Function(_RegisterIndividual value)? registerIndividual,
     TResult Function(_RegisterGroup value)? registerGroup,
     TResult Function(_GetAtlasCode value)? getAtlasCode,
-    TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
+    TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
+    TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
     required TResult orElse(),
   }) {
     if (registerGroup != null) {
@@ -1026,7 +1116,9 @@ class _$_GetAtlasCode implements _GetAtlasCode {
     required TResult Function(RegisterParams registerParams) registerIndividual,
     required TResult Function(RegisterParams registerParams) registerGroup,
     required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
-    required TResult Function(FormData formData) sendSubmittedWork,
+    required TResult Function(FormData formData) jahadiGroupSubmittedWork,
+    required TResult Function(FormData formData) individualSubmittedWork,
+    required TResult Function(FormData formData) groupSubmittedWork,
   }) {
     return getAtlasCode(groupSupervisorNationalCode);
   }
@@ -1040,7 +1132,9 @@ class _$_GetAtlasCode implements _GetAtlasCode {
     TResult? Function(RegisterParams registerParams)? registerIndividual,
     TResult? Function(RegisterParams registerParams)? registerGroup,
     TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
-    TResult? Function(FormData formData)? sendSubmittedWork,
+    TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult? Function(FormData formData)? individualSubmittedWork,
+    TResult? Function(FormData formData)? groupSubmittedWork,
   }) {
     return getAtlasCode?.call(groupSupervisorNationalCode);
   }
@@ -1054,7 +1148,9 @@ class _$_GetAtlasCode implements _GetAtlasCode {
     TResult Function(RegisterParams registerParams)? registerIndividual,
     TResult Function(RegisterParams registerParams)? registerGroup,
     TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
-    TResult Function(FormData formData)? sendSubmittedWork,
+    TResult Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult Function(FormData formData)? individualSubmittedWork,
+    TResult Function(FormData formData)? groupSubmittedWork,
     required TResult orElse(),
   }) {
     if (getAtlasCode != null) {
@@ -1072,7 +1168,11 @@ class _$_GetAtlasCode implements _GetAtlasCode {
     required TResult Function(_RegisterIndividual value) registerIndividual,
     required TResult Function(_RegisterGroup value) registerGroup,
     required TResult Function(_GetAtlasCode value) getAtlasCode,
-    required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
+    required TResult Function(_JahadiGroupSubmittedWork value)
+        jahadiGroupSubmittedWork,
+    required TResult Function(_IndividualSubmittedWork value)
+        individualSubmittedWork,
+    required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
   }) {
     return getAtlasCode(this);
   }
@@ -1086,7 +1186,10 @@ class _$_GetAtlasCode implements _GetAtlasCode {
     TResult? Function(_RegisterIndividual value)? registerIndividual,
     TResult? Function(_RegisterGroup value)? registerGroup,
     TResult? Function(_GetAtlasCode value)? getAtlasCode,
-    TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
+    TResult? Function(_JahadiGroupSubmittedWork value)?
+        jahadiGroupSubmittedWork,
+    TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
   }) {
     return getAtlasCode?.call(this);
   }
@@ -1100,7 +1203,9 @@ class _$_GetAtlasCode implements _GetAtlasCode {
     TResult Function(_RegisterIndividual value)? registerIndividual,
     TResult Function(_RegisterGroup value)? registerGroup,
     TResult Function(_GetAtlasCode value)? getAtlasCode,
-    TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
+    TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
+    TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
     required TResult orElse(),
   }) {
     if (getAtlasCode != null) {
@@ -1121,20 +1226,21 @@ abstract class _GetAtlasCode implements HomeEvent {
 }
 
 /// @nodoc
-abstract class _$$_SendSubmittedWorkCopyWith<$Res> {
-  factory _$$_SendSubmittedWorkCopyWith(_$_SendSubmittedWork value,
-          $Res Function(_$_SendSubmittedWork) then) =
-      __$$_SendSubmittedWorkCopyWithImpl<$Res>;
+abstract class _$$_JahadiGroupSubmittedWorkCopyWith<$Res> {
+  factory _$$_JahadiGroupSubmittedWorkCopyWith(
+          _$_JahadiGroupSubmittedWork value,
+          $Res Function(_$_JahadiGroupSubmittedWork) then) =
+      __$$_JahadiGroupSubmittedWorkCopyWithImpl<$Res>;
   @useResult
   $Res call({FormData formData});
 }
 
 /// @nodoc
-class __$$_SendSubmittedWorkCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$_SendSubmittedWork>
-    implements _$$_SendSubmittedWorkCopyWith<$Res> {
-  __$$_SendSubmittedWorkCopyWithImpl(
-      _$_SendSubmittedWork _value, $Res Function(_$_SendSubmittedWork) _then)
+class __$$_JahadiGroupSubmittedWorkCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$_JahadiGroupSubmittedWork>
+    implements _$$_JahadiGroupSubmittedWorkCopyWith<$Res> {
+  __$$_JahadiGroupSubmittedWorkCopyWithImpl(_$_JahadiGroupSubmittedWork _value,
+      $Res Function(_$_JahadiGroupSubmittedWork) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1142,7 +1248,7 @@ class __$$_SendSubmittedWorkCopyWithImpl<$Res>
   $Res call({
     Object? formData = null,
   }) {
-    return _then(_$_SendSubmittedWork(
+    return _then(_$_JahadiGroupSubmittedWork(
       formData: null == formData
           ? _value.formData
           : formData // ignore: cast_nullable_to_non_nullable
@@ -1153,22 +1259,22 @@ class __$$_SendSubmittedWorkCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SendSubmittedWork implements _SendSubmittedWork {
-  const _$_SendSubmittedWork({required this.formData});
+class _$_JahadiGroupSubmittedWork implements _JahadiGroupSubmittedWork {
+  const _$_JahadiGroupSubmittedWork({required this.formData});
 
   @override
   final FormData formData;
 
   @override
   String toString() {
-    return 'HomeEvent.sendSubmittedWork(formData: $formData)';
+    return 'HomeEvent.jahadiGroupSubmittedWork(formData: $formData)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SendSubmittedWork &&
+            other is _$_JahadiGroupSubmittedWork &&
             (identical(other.formData, formData) ||
                 other.formData == formData));
   }
@@ -1179,9 +1285,9 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SendSubmittedWorkCopyWith<_$_SendSubmittedWork> get copyWith =>
-      __$$_SendSubmittedWorkCopyWithImpl<_$_SendSubmittedWork>(
-          this, _$identity);
+  _$$_JahadiGroupSubmittedWorkCopyWith<_$_JahadiGroupSubmittedWork>
+      get copyWith => __$$_JahadiGroupSubmittedWorkCopyWithImpl<
+          _$_JahadiGroupSubmittedWork>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1194,9 +1300,11 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
     required TResult Function(RegisterParams registerParams) registerIndividual,
     required TResult Function(RegisterParams registerParams) registerGroup,
     required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
-    required TResult Function(FormData formData) sendSubmittedWork,
+    required TResult Function(FormData formData) jahadiGroupSubmittedWork,
+    required TResult Function(FormData formData) individualSubmittedWork,
+    required TResult Function(FormData formData) groupSubmittedWork,
   }) {
-    return sendSubmittedWork(formData);
+    return jahadiGroupSubmittedWork(formData);
   }
 
   @override
@@ -1208,9 +1316,11 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
     TResult? Function(RegisterParams registerParams)? registerIndividual,
     TResult? Function(RegisterParams registerParams)? registerGroup,
     TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
-    TResult? Function(FormData formData)? sendSubmittedWork,
+    TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult? Function(FormData formData)? individualSubmittedWork,
+    TResult? Function(FormData formData)? groupSubmittedWork,
   }) {
-    return sendSubmittedWork?.call(formData);
+    return jahadiGroupSubmittedWork?.call(formData);
   }
 
   @override
@@ -1222,11 +1332,13 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
     TResult Function(RegisterParams registerParams)? registerIndividual,
     TResult Function(RegisterParams registerParams)? registerGroup,
     TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
-    TResult Function(FormData formData)? sendSubmittedWork,
+    TResult Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult Function(FormData formData)? individualSubmittedWork,
+    TResult Function(FormData formData)? groupSubmittedWork,
     required TResult orElse(),
   }) {
-    if (sendSubmittedWork != null) {
-      return sendSubmittedWork(formData);
+    if (jahadiGroupSubmittedWork != null) {
+      return jahadiGroupSubmittedWork(formData);
     }
     return orElse();
   }
@@ -1240,9 +1352,13 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
     required TResult Function(_RegisterIndividual value) registerIndividual,
     required TResult Function(_RegisterGroup value) registerGroup,
     required TResult Function(_GetAtlasCode value) getAtlasCode,
-    required TResult Function(_SendSubmittedWork value) sendSubmittedWork,
+    required TResult Function(_JahadiGroupSubmittedWork value)
+        jahadiGroupSubmittedWork,
+    required TResult Function(_IndividualSubmittedWork value)
+        individualSubmittedWork,
+    required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
   }) {
-    return sendSubmittedWork(this);
+    return jahadiGroupSubmittedWork(this);
   }
 
   @override
@@ -1254,9 +1370,12 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
     TResult? Function(_RegisterIndividual value)? registerIndividual,
     TResult? Function(_RegisterGroup value)? registerGroup,
     TResult? Function(_GetAtlasCode value)? getAtlasCode,
-    TResult? Function(_SendSubmittedWork value)? sendSubmittedWork,
+    TResult? Function(_JahadiGroupSubmittedWork value)?
+        jahadiGroupSubmittedWork,
+    TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
   }) {
-    return sendSubmittedWork?.call(this);
+    return jahadiGroupSubmittedWork?.call(this);
   }
 
   @override
@@ -1268,23 +1387,392 @@ class _$_SendSubmittedWork implements _SendSubmittedWork {
     TResult Function(_RegisterIndividual value)? registerIndividual,
     TResult Function(_RegisterGroup value)? registerGroup,
     TResult Function(_GetAtlasCode value)? getAtlasCode,
-    TResult Function(_SendSubmittedWork value)? sendSubmittedWork,
+    TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
+    TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
     required TResult orElse(),
   }) {
-    if (sendSubmittedWork != null) {
-      return sendSubmittedWork(this);
+    if (jahadiGroupSubmittedWork != null) {
+      return jahadiGroupSubmittedWork(this);
     }
     return orElse();
   }
 }
 
-abstract class _SendSubmittedWork implements HomeEvent {
-  const factory _SendSubmittedWork({required final FormData formData}) =
-      _$_SendSubmittedWork;
+abstract class _JahadiGroupSubmittedWork implements HomeEvent {
+  const factory _JahadiGroupSubmittedWork({required final FormData formData}) =
+      _$_JahadiGroupSubmittedWork;
 
   FormData get formData;
   @JsonKey(ignore: true)
-  _$$_SendSubmittedWorkCopyWith<_$_SendSubmittedWork> get copyWith =>
+  _$$_JahadiGroupSubmittedWorkCopyWith<_$_JahadiGroupSubmittedWork>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_IndividualSubmittedWorkCopyWith<$Res> {
+  factory _$$_IndividualSubmittedWorkCopyWith(_$_IndividualSubmittedWork value,
+          $Res Function(_$_IndividualSubmittedWork) then) =
+      __$$_IndividualSubmittedWorkCopyWithImpl<$Res>;
+  @useResult
+  $Res call({FormData formData});
+}
+
+/// @nodoc
+class __$$_IndividualSubmittedWorkCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$_IndividualSubmittedWork>
+    implements _$$_IndividualSubmittedWorkCopyWith<$Res> {
+  __$$_IndividualSubmittedWorkCopyWithImpl(_$_IndividualSubmittedWork _value,
+      $Res Function(_$_IndividualSubmittedWork) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? formData = null,
+  }) {
+    return _then(_$_IndividualSubmittedWork(
+      formData: null == formData
+          ? _value.formData
+          : formData // ignore: cast_nullable_to_non_nullable
+              as FormData,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_IndividualSubmittedWork implements _IndividualSubmittedWork {
+  const _$_IndividualSubmittedWork({required this.formData});
+
+  @override
+  final FormData formData;
+
+  @override
+  String toString() {
+    return 'HomeEvent.individualSubmittedWork(formData: $formData)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_IndividualSubmittedWork &&
+            (identical(other.formData, formData) ||
+                other.formData == formData));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, formData);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_IndividualSubmittedWorkCopyWith<_$_IndividualSubmittedWork>
+      get copyWith =>
+          __$$_IndividualSubmittedWorkCopyWithImpl<_$_IndividualSubmittedWork>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HomeMiddleViews view, NewsModel? news)
+        changeMiddleView,
+    required TResult Function(RegisterType registerFormState) changeFormState,
+    required TResult Function(RegisterParams registerParams)
+        registerJahadiGroup,
+    required TResult Function(RegisterParams registerParams) registerIndividual,
+    required TResult Function(RegisterParams registerParams) registerGroup,
+    required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
+    required TResult Function(FormData formData) jahadiGroupSubmittedWork,
+    required TResult Function(FormData formData) individualSubmittedWork,
+    required TResult Function(FormData formData) groupSubmittedWork,
+  }) {
+    return individualSubmittedWork(formData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult? Function(RegisterType registerFormState)? changeFormState,
+    TResult? Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult? Function(RegisterParams registerParams)? registerIndividual,
+    TResult? Function(RegisterParams registerParams)? registerGroup,
+    TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
+    TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult? Function(FormData formData)? individualSubmittedWork,
+    TResult? Function(FormData formData)? groupSubmittedWork,
+  }) {
+    return individualSubmittedWork?.call(formData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult Function(RegisterType registerFormState)? changeFormState,
+    TResult Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult Function(RegisterParams registerParams)? registerIndividual,
+    TResult Function(RegisterParams registerParams)? registerGroup,
+    TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
+    TResult Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult Function(FormData formData)? individualSubmittedWork,
+    TResult Function(FormData formData)? groupSubmittedWork,
+    required TResult orElse(),
+  }) {
+    if (individualSubmittedWork != null) {
+      return individualSubmittedWork(formData);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChangeMiddleView value) changeMiddleView,
+    required TResult Function(_ChangeFormState value) changeFormState,
+    required TResult Function(_RegisterJahadiGroup value) registerJahadiGroup,
+    required TResult Function(_RegisterIndividual value) registerIndividual,
+    required TResult Function(_RegisterGroup value) registerGroup,
+    required TResult Function(_GetAtlasCode value) getAtlasCode,
+    required TResult Function(_JahadiGroupSubmittedWork value)
+        jahadiGroupSubmittedWork,
+    required TResult Function(_IndividualSubmittedWork value)
+        individualSubmittedWork,
+    required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
+  }) {
+    return individualSubmittedWork(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult? Function(_ChangeFormState value)? changeFormState,
+    TResult? Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult? Function(_RegisterIndividual value)? registerIndividual,
+    TResult? Function(_RegisterGroup value)? registerGroup,
+    TResult? Function(_GetAtlasCode value)? getAtlasCode,
+    TResult? Function(_JahadiGroupSubmittedWork value)?
+        jahadiGroupSubmittedWork,
+    TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
+  }) {
+    return individualSubmittedWork?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult Function(_ChangeFormState value)? changeFormState,
+    TResult Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult Function(_RegisterIndividual value)? registerIndividual,
+    TResult Function(_RegisterGroup value)? registerGroup,
+    TResult Function(_GetAtlasCode value)? getAtlasCode,
+    TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
+    TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    required TResult orElse(),
+  }) {
+    if (individualSubmittedWork != null) {
+      return individualSubmittedWork(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _IndividualSubmittedWork implements HomeEvent {
+  const factory _IndividualSubmittedWork({required final FormData formData}) =
+      _$_IndividualSubmittedWork;
+
+  FormData get formData;
+  @JsonKey(ignore: true)
+  _$$_IndividualSubmittedWorkCopyWith<_$_IndividualSubmittedWork>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_GroupSubmittedWorkCopyWith<$Res> {
+  factory _$$_GroupSubmittedWorkCopyWith(_$_GroupSubmittedWork value,
+          $Res Function(_$_GroupSubmittedWork) then) =
+      __$$_GroupSubmittedWorkCopyWithImpl<$Res>;
+  @useResult
+  $Res call({FormData formData});
+}
+
+/// @nodoc
+class __$$_GroupSubmittedWorkCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$_GroupSubmittedWork>
+    implements _$$_GroupSubmittedWorkCopyWith<$Res> {
+  __$$_GroupSubmittedWorkCopyWithImpl(
+      _$_GroupSubmittedWork _value, $Res Function(_$_GroupSubmittedWork) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? formData = null,
+  }) {
+    return _then(_$_GroupSubmittedWork(
+      formData: null == formData
+          ? _value.formData
+          : formData // ignore: cast_nullable_to_non_nullable
+              as FormData,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_GroupSubmittedWork implements _GroupSubmittedWork {
+  const _$_GroupSubmittedWork({required this.formData});
+
+  @override
+  final FormData formData;
+
+  @override
+  String toString() {
+    return 'HomeEvent.groupSubmittedWork(formData: $formData)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_GroupSubmittedWork &&
+            (identical(other.formData, formData) ||
+                other.formData == formData));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, formData);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_GroupSubmittedWorkCopyWith<_$_GroupSubmittedWork> get copyWith =>
+      __$$_GroupSubmittedWorkCopyWithImpl<_$_GroupSubmittedWork>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HomeMiddleViews view, NewsModel? news)
+        changeMiddleView,
+    required TResult Function(RegisterType registerFormState) changeFormState,
+    required TResult Function(RegisterParams registerParams)
+        registerJahadiGroup,
+    required TResult Function(RegisterParams registerParams) registerIndividual,
+    required TResult Function(RegisterParams registerParams) registerGroup,
+    required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
+    required TResult Function(FormData formData) jahadiGroupSubmittedWork,
+    required TResult Function(FormData formData) individualSubmittedWork,
+    required TResult Function(FormData formData) groupSubmittedWork,
+  }) {
+    return groupSubmittedWork(formData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult? Function(RegisterType registerFormState)? changeFormState,
+    TResult? Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult? Function(RegisterParams registerParams)? registerIndividual,
+    TResult? Function(RegisterParams registerParams)? registerGroup,
+    TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
+    TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult? Function(FormData formData)? individualSubmittedWork,
+    TResult? Function(FormData formData)? groupSubmittedWork,
+  }) {
+    return groupSubmittedWork?.call(formData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult Function(RegisterType registerFormState)? changeFormState,
+    TResult Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult Function(RegisterParams registerParams)? registerIndividual,
+    TResult Function(RegisterParams registerParams)? registerGroup,
+    TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
+    TResult Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult Function(FormData formData)? individualSubmittedWork,
+    TResult Function(FormData formData)? groupSubmittedWork,
+    required TResult orElse(),
+  }) {
+    if (groupSubmittedWork != null) {
+      return groupSubmittedWork(formData);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChangeMiddleView value) changeMiddleView,
+    required TResult Function(_ChangeFormState value) changeFormState,
+    required TResult Function(_RegisterJahadiGroup value) registerJahadiGroup,
+    required TResult Function(_RegisterIndividual value) registerIndividual,
+    required TResult Function(_RegisterGroup value) registerGroup,
+    required TResult Function(_GetAtlasCode value) getAtlasCode,
+    required TResult Function(_JahadiGroupSubmittedWork value)
+        jahadiGroupSubmittedWork,
+    required TResult Function(_IndividualSubmittedWork value)
+        individualSubmittedWork,
+    required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
+  }) {
+    return groupSubmittedWork(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult? Function(_ChangeFormState value)? changeFormState,
+    TResult? Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult? Function(_RegisterIndividual value)? registerIndividual,
+    TResult? Function(_RegisterGroup value)? registerGroup,
+    TResult? Function(_GetAtlasCode value)? getAtlasCode,
+    TResult? Function(_JahadiGroupSubmittedWork value)?
+        jahadiGroupSubmittedWork,
+    TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
+  }) {
+    return groupSubmittedWork?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult Function(_ChangeFormState value)? changeFormState,
+    TResult Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult Function(_RegisterIndividual value)? registerIndividual,
+    TResult Function(_RegisterGroup value)? registerGroup,
+    TResult Function(_GetAtlasCode value)? getAtlasCode,
+    TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
+    TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    required TResult orElse(),
+  }) {
+    if (groupSubmittedWork != null) {
+      return groupSubmittedWork(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GroupSubmittedWork implements HomeEvent {
+  const factory _GroupSubmittedWork({required final FormData formData}) =
+      _$_GroupSubmittedWork;
+
+  FormData get formData;
+  @JsonKey(ignore: true)
+  _$$_GroupSubmittedWorkCopyWith<_$_GroupSubmittedWork> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

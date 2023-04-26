@@ -18,7 +18,15 @@ abstract class JahadiWorkRepository {
     required RegisterParams registerParams,
   });
 
-  Future<Either<JahadiWorkFailure, void>> sendSubmittedWork({
+  Future<Either<JahadiWorkFailure, void>> jahadiGroupSubmittedWork({
+    required FormData formData,
+  });
+
+  Future<Either<JahadiWorkFailure, void>> individualSubmittedWork({
+    required FormData formData,
+  });
+
+  Future<Either<JahadiWorkFailure, void>> groupSubmittedWork({
     required FormData formData,
   });
 

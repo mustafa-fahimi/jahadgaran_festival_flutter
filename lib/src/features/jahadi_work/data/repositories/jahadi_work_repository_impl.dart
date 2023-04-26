@@ -60,16 +60,23 @@ class JahadiWorkRepositoryImpl implements JahadiWorkRepository {
   @override
   Future<Either<JahadiWorkFailure, void>> registerGroup({
     required RegisterParams registerParams,
-  }) {
-    // TODO: implement registerGroup
-    throw UnimplementedError();
-  }
+  }) =>
+      _remoteDS.registerGroup(registerParams: registerParams).then(
+        (response) async {
+          return response.fold(
+            (l) async => left<JahadiWorkFailure, void>(
+              JahadiWorkFailure.api(l),
+            ),
+            (r) async => right<JahadiWorkFailure, void>(null),
+          );
+        },
+      );
 
   @override
-  Future<Either<JahadiWorkFailure, void>> sendSubmittedWork({
+  Future<Either<JahadiWorkFailure, void>> jahadiGroupSubmittedWork({
     required FormData formData,
   }) =>
-      _remoteDS.sendSubmittedWork(formData: formData).then(
+      _remoteDS.jahadiGroupSubmittedWork(formData: formData).then(
         (response) async {
           return response.fold(
             (l) async => left<JahadiWorkFailure, void>(
@@ -97,6 +104,36 @@ class JahadiWorkRepositoryImpl implements JahadiWorkRepository {
             (r) async => right<JahadiWorkFailure, String>(
               BaseResponse.fromJson(r).message,
             ),
+          );
+        },
+      );
+
+  @override
+  Future<Either<JahadiWorkFailure, void>> groupSubmittedWork({
+    required FormData formData,
+  }) =>
+      _remoteDS.groupSubmittedWork(formData: formData).then(
+        (response) async {
+          return response.fold(
+            (l) async => left<JahadiWorkFailure, void>(
+              JahadiWorkFailure.api(l),
+            ),
+            (r) async => right<JahadiWorkFailure, void>(null),
+          );
+        },
+      );
+
+  @override
+  Future<Either<JahadiWorkFailure, void>> individualSubmittedWork({
+    required FormData formData,
+  }) =>
+      _remoteDS.individualSubmittedWork(formData: formData).then(
+        (response) async {
+          return response.fold(
+            (l) async => left<JahadiWorkFailure, void>(
+              JahadiWorkFailure.api(l),
+            ),
+            (r) async => right<JahadiWorkFailure, void>(null),
           );
         },
       );

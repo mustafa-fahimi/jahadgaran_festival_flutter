@@ -94,6 +94,8 @@ class RegisterWidget extends HookWidget {
                       context,
                       message: context.l10n.submit_successfull,
                     );
+                    phoneNumberController.clear();
+                    nationalCodeController.clear();
                   } else if (state.submitWorkFailMessage.isNotEmpty) {
                     AppHelper().displayToast(
                       context,
@@ -116,6 +118,7 @@ class RegisterWidget extends HookWidget {
                       : registerFormState == RegisterType.jahadiGroup
                           ? JahadiGroupSubmitWorkFormWidget(
                               formKey: formKey,
+                              nationalCode: nationalCodeController.text,
                               verifyCodeController: verifyCodeController,
                               descriptionController: descriptionController,
                               verifyCodeFocusNode: verifyCodeFocusNode,
@@ -126,6 +129,7 @@ class RegisterWidget extends HookWidget {
                           : registerFormState == RegisterType.individual
                               ? IndividualSubmitWorkFormWidget(
                                   formKey: formKey,
+                                  nationalCode: nationalCodeController.text,
                                   fnameController: fnameController,
                                   lnameController: lnameController,
                                   cityController: cityController,

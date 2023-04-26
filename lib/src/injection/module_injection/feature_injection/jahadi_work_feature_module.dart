@@ -4,9 +4,11 @@ import 'package:jahadgaran_festival/src/features/jahadi_work/data/data_sources/r
 import 'package:jahadgaran_festival/src/features/jahadi_work/data/repositories/jahadi_work_repository_impl.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/repositories/jahadi_work_repository.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/get_atlas_code_use_case.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/group_submitted_work_use_case.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/individual_submitted_work_use_case.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/jahadi_group_submitted_work_use_case.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/register_individual_group_use_case.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/register_jahadi_group_use_case.dart';
-import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/send_submitted_work_use_case.dart';
 import 'package:jahadgaran_festival/src/injection/injectable.dart';
 
 @module
@@ -23,7 +25,11 @@ abstract class JahadiWorkFeatureModule {
       RegisterJahadiGroupUseCase(repo);
   RegisterIndividualUseCase get registerIndividualUseCase =>
       RegisterIndividualUseCase(repo);
-  SendSubmittedWorkUseCase get sendSubmittedWorkUseCase =>
-      SendSubmittedWorkUseCase(repo);
+  JahadiGroupSubmittedWorkUseCase get jahadiGroupSubmittedWorkUseCase =>
+      JahadiGroupSubmittedWorkUseCase(repo);
+  IndividualSubmittedWorkUseCase get individualSubmittedWorkUseCase =>
+      IndividualSubmittedWorkUseCase(repo);
+  GroupSubmittedWorkUseCase get groupSubmittedWorkUseCase =>
+      GroupSubmittedWorkUseCase(repo);
   GetAtlasCodeUseCase get getAtlasCodeUseCase => GetAtlasCodeUseCase(repo);
 }
