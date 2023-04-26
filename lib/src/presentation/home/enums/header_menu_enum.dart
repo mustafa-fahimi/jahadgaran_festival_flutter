@@ -19,7 +19,7 @@ extension HeaderMenuEx on HeaderMenu {
       case HeaderMenu.festivalInformation:
         return context.l10n.festival_information;
       case HeaderMenu.news:
-        return context.l10n.festival_news;
+        return context.l10n.news;
       case HeaderMenu.getAtlasCode:
         return context.l10n.atlas_code_inquiry;
       case HeaderMenu.media:

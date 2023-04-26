@@ -13,9 +13,6 @@ class PngAssets {
   static String get slide6Asset => 'slide6'.png;
   static String get menu1Asset => 'menu1'.png;
   static String get news1Asset => 'news1'.png;
-  static String get news2Asset => 'news2'.png;
-  static String get news3Asset => 'news3'.png;
-  static String get news4Asset => 'news4'.png;
   static String get homeAsset => 'home'.png;
   static String get astanGhodsAsset => 'organizations/astane_qods'.png;
   static String get basijSazandegiAsset => 'organizations/basij_sazandegi'.png;

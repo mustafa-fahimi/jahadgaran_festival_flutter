@@ -46,19 +46,19 @@ class NewsWidget extends StatelessWidget {
           newsDate: context.l10n.news1_date,
         ),
         NewsModel(
-          newsImage: PngAssets.news2Asset,
+          newsImage: PngAssets.slide3Asset,
           newsTitle: context.l10n.news2_title,
           newsDescription: context.l10n.news2_description,
           newsDate: context.l10n.news2_date,
         ),
         NewsModel(
-          newsImage: PngAssets.news3Asset,
+          newsImage: PngAssets.slide4Asset,
           newsTitle: context.l10n.news3_title,
           newsDescription: context.l10n.news3_description,
           newsDate: context.l10n.news3_date,
         ),
         NewsModel(
-          newsImage: PngAssets.news4Asset,
+          newsImage: PngAssets.slide5Asset,
           newsTitle: context.l10n.news4_title,
           newsDescription: context.l10n.news4_description,
           newsDate: context.l10n.news4_date,

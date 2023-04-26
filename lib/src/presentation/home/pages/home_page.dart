@@ -76,7 +76,8 @@ class _HomeBody extends StatelessWidget {
                   rowCrossAxisAlignment: CrossAxisAlignment.start,
                   rowSpacing: 15,
                   columnSpacing: 15,
-                  columnPadding: const EdgeInsets.symmetric(horizontal: 14),
+                  columnPadding: const EdgeInsets.symmetric(horizontal: 10),
+                  rowPadding: const EdgeInsets.symmetric(horizontal: 10),
                   children: [
                     ResponsiveRowColumnItem(
                       rowFlex: 3,
