@@ -24,6 +24,7 @@ class PngAssets {
   static String get majmaJahadgaranAsset => 'organizations/majma_jahadgaran'.png;
   static String get sazmanTabliqatAsset => 'organizations/sazman_tabliqat'.png;
   static String get formIllustrationAsset => 'form_illustration'.png;
+  static String get downloadApkAsset => 'download_apk'.png;
 }
 
 extension on String {

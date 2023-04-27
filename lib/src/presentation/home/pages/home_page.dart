@@ -8,6 +8,7 @@ import 'package:jahadgaran_festival/src/presentation/core/components/page_decora
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/menu_bar_custom_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/side/download_apk_side_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/side/f_a_q_slider_side_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/side/important_dates_side_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/side/organizers_side_widget.dart';
@@ -121,6 +122,11 @@ class _RightSectionWidget extends StatelessWidget {
         ContainerWithTitleCustomWidget(
           title: context.l10n.register_and_send,
           content: const RegisterSideWidget(),
+        ),
+        const SizedBox(height: 10),
+        ContainerWithTitleCustomWidget(
+          title: context.l10n.download_application,
+          content: const DownloadApkSideWidget(),
         ),
         const SizedBox(height: 10),
         ContainerWithTitleCustomWidget(
