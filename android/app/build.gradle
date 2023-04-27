@@ -79,17 +79,17 @@ android {
         production {
             dimension "default"
             applicationIdSuffix ""
-            manifestPlaceholders = [appName: "Reference Flutter"]
+            manifestPlaceholders = [appName: "جشنواره جهادگران خراسان رضوی"]
         }
         staging {
             dimension "default"
             applicationIdSuffix ".stg"
-            manifestPlaceholders = [appName: "[STG] Reference Flutter"]
+            manifestPlaceholders = [appName: "جشنواره جهادگران خراسان رضوی"]
         }
         development {
             dimension "default"
             applicationIdSuffix ".dev"
-            manifestPlaceholders = [appName: "[DEV] Reference Flutter"]
+            manifestPlaceholders = [appName: "جشنواره جهادگران خراسان رضوی"]
         }
     }
 
