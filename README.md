@@ -30,5 +30,6 @@ $ flutter pub run change_app_package_name:main com.new.package.name
 
 * For Building:
 ```sh
-$ flutter build web -t lib/main_development.dart
+$ flutter build web -t lib/main_production.dart
+$ flutter build apk --flavor production -t lib/main_production.dart
 ```
