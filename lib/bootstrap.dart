@@ -47,7 +47,7 @@ Future<void> _startupSetup() async {
 }
 
 Future<void> _initializeInjection() async {
-  configureInjection(Environment.dev);
+  configureInjection(Environment.prod);
   final mainModules = MainModulesInjection();
   await mainModules.initDatabase();
   await mainModules.registerHiveAdapters();

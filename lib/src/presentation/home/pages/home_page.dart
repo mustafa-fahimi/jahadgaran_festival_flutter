@@ -58,11 +58,13 @@ class _HomeBody extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                const SizedBox(height: 30),
+
                 /// Header Image
                 Center(
                   child: Image.asset(
                     PngAssets.headerBannerAsset,
-                    height: 120,
+                    height: 70,
                     fit: BoxFit.fill,
                   ),
                 ),

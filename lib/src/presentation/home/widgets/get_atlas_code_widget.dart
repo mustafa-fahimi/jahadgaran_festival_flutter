@@ -10,6 +10,7 @@ import 'package:jahadgaran_festival/src/presentation/core/components/container_w
 import 'package:jahadgaran_festival/src/presentation/core/components/elevated_button_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/outlined_text_field_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class GetAtlasCodeWidget extends HookWidget {
   GetAtlasCodeWidget({Key? key}) : super(key: key);
@@ -45,7 +46,9 @@ class GetAtlasCodeWidget extends HookWidget {
 
               /// `National Code text field`
               SizedBox(
-                width: context.deviceWidthFactor(0.2),
+                width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                    ? double.infinity
+                    : context.deviceWidthFactor(0.25),
                 child: OutlinedTextFieldCustomWidget(
                   controller: nationalCodeController,
                   focusNode: nationalCodeFocusNode,
@@ -62,7 +65,9 @@ class GetAtlasCodeWidget extends HookWidget {
                 height: 40,
                 isLoading:
                     context.watch<HomeBloc>().state.isLoadingGetAtlasCode,
-                width: context.deviceWidthFactor(0.1),
+                width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                    ? double.infinity
+                    : context.deviceWidthFactor(0.1),
                 color: context.theme.colorScheme.primary,
               ),
               const SizedBox(height: 20),
@@ -72,12 +77,11 @@ class GetAtlasCodeWidget extends HookWidget {
                   getGroupDataFailMessage,
                   style: heading5Bold.copyWith(color: kErrorColor),
                 )
-              else
+              else if (getAtlasCodeResult.isNotEmpty)
                 Text(
                   getAtlasCodeResult,
                   style: heading5Bold.copyWith(color: kSuccessColor),
                 ),
-              const SizedBox(height: 20),
             ],
           ),
         ),

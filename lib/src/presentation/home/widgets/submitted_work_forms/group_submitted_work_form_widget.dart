@@ -373,7 +373,7 @@ class GroupSubmitWorkFormWidget extends StatelessWidget {
               btnText: context.l10n.choose_file,
               height: 40,
               width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
-                  ? 200
+                  ? 150
                   : 200,
               buttonColor: context.theme.colorScheme.primary,
             ),

@@ -17,6 +17,7 @@ class FestivalInformationWidget extends StatelessWidget {
       width: double.infinity,
       child: Accordion(
         maxOpenSections: 1,
+        disableScrolling: true,
         headerBackgroundColor: context.theme.colorScheme.primary,
         headerBackgroundColorOpened: kSuccessColor,
         scaleWhenAnimating: true,
