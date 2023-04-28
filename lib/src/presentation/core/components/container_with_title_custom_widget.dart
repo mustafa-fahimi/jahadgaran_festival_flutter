@@ -12,7 +12,7 @@ class ContainerWithTitleCustomWidget extends StatelessWidget {
 
   final String title;
   final Widget? content;
-  final Color? bgColor;
+  final Color? bgColor; //hi
 
   @override
   Widget build(BuildContext context) {
