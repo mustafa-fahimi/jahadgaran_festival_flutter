@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
@@ -124,11 +125,13 @@ class _RightSectionWidget extends StatelessWidget {
           content: const RegisterSideWidget(),
         ),
         const SizedBox(height: 10),
-        ContainerWithTitleCustomWidget(
-          title: context.l10n.download_application,
-          content: const DownloadApkSideWidget(),
-        ),
-        const SizedBox(height: 10),
+        if (kIsWeb) ...[
+          ContainerWithTitleCustomWidget(
+            title: context.l10n.download_application,
+            content: const DownloadApkSideWidget(),
+          ),
+          const SizedBox(height: 10),
+        ],
         ContainerWithTitleCustomWidget(
           title: context.l10n.until_event,
           content: const UntilFestivalSideWidget(),
