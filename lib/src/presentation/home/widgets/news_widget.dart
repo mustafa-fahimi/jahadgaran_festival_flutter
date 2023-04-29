@@ -20,19 +20,21 @@ class NewsWidget extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       child: ConstrainedBox(
         constraints: const BoxConstraints(minHeight: 1, maxHeight: 1000),
-        child: ListView.separated(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: allNews.length,
-          itemBuilder: (context, index) => _NewsListViewItemWidget(
-            news: NewsModel(
-              newsImage: allNews[index].newsImage,
-              newsTitle: allNews[index].newsTitle,
-              newsDescription: allNews[index].newsDescription,
-              newsDate: allNews[index].newsDate,
+        child: SelectionArea(
+          child: ListView.separated(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: allNews.length,
+            itemBuilder: (context, index) => _NewsListViewItemWidget(
+              news: NewsModel(
+                newsImage: allNews[index].newsImage,
+                newsTitle: allNews[index].newsTitle,
+                newsDescription: allNews[index].newsDescription,
+                newsDate: allNews[index].newsDate,
+              ),
             ),
+            separatorBuilder: (context, index) => const SizedBox(height: 6),
           ),
-          separatorBuilder: (context, index) => const SizedBox(height: 6),
         ),
       ),
     );

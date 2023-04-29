@@ -15,41 +15,43 @@ class FestivalInformationWidget extends StatelessWidget {
 
     return SizedBox(
       width: double.infinity,
-      child: Accordion(
-        maxOpenSections: 1,
-        disableScrolling: true,
-        headerBackgroundColor: context.theme.colorScheme.primary,
-        headerBackgroundColorOpened: kSuccessColor,
-        scaleWhenAnimating: true,
-        openAndCloseAnimation: true,
-        paddingListBottom: 1,
-        contentBorderWidth: 1,
-        headerPadding: const EdgeInsets.symmetric(
-          vertical: 10,
-          horizontal: 15,
-        ),
-        sectionOpeningHapticFeedback: SectionHapticFeedback.heavy,
-        sectionClosingHapticFeedback: SectionHapticFeedback.light,
-        children: List.generate(
-          FestivalInformation.values.length,
-          (index) => AccordionSection(
-            isOpen: index == 0,
-            paddingBetweenClosedSections: 16,
-            paddingBetweenOpenSections: 16,
-            contentVerticalPadding: 16,
-            leftIcon: const Icon(
-              Icons.insights_rounded,
-              color: Colors.white,
-            ),
-            header: Text(
-              FestivalInformation.values[index].getTitle(context),
-              style: headerStyle,
-            ),
-            content: SizedBox(
-              width: double.infinity,
-              child: Text(
-                FestivalInformation.values[index].getContent(context),
-                style: contentStyle,
+      child: SelectionArea(
+        child: Accordion(
+          maxOpenSections: 1,
+          disableScrolling: true,
+          headerBackgroundColor: context.theme.colorScheme.primary,
+          headerBackgroundColorOpened: kSuccessColor,
+          scaleWhenAnimating: true,
+          openAndCloseAnimation: true,
+          paddingListBottom: 1,
+          contentBorderWidth: 1,
+          headerPadding: const EdgeInsets.symmetric(
+            vertical: 10,
+            horizontal: 15,
+          ),
+          sectionOpeningHapticFeedback: SectionHapticFeedback.heavy,
+          sectionClosingHapticFeedback: SectionHapticFeedback.light,
+          children: List.generate(
+            FestivalInformation.values.length,
+            (index) => AccordionSection(
+              isOpen: index == 0,
+              paddingBetweenClosedSections: 16,
+              paddingBetweenOpenSections: 16,
+              contentVerticalPadding: 16,
+              leftIcon: const Icon(
+                Icons.insights_rounded,
+                color: Colors.white,
+              ),
+              header: Text(
+                FestivalInformation.values[index].getTitle(context),
+                style: headerStyle,
+              ),
+              content: SizedBox(
+                width: double.infinity,
+                child: Text(
+                  FestivalInformation.values[index].getContent(context),
+                  style: contentStyle,
+                ),
               ),
             ),
           ),

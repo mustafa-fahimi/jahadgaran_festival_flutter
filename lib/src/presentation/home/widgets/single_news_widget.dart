@@ -16,46 +16,48 @@ class SingleNewsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ContainerWithTitleCustomWidget(
       title: news.newsTitle,
-      content: Padding(
-        padding: const EdgeInsets.only(
-          top: 16,
-          left: 16,
-          right: 10,
-          bottom: 60,
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Expanded(
-              child: Column(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(kDefaultBorderRadius),
-                    child: Image.asset(
-                      news.newsImage,
-                      height: 160,
-                      width: 160,
-                      fit: BoxFit.fill,
+      content: SelectionArea(
+        child: Padding(
+          padding: const EdgeInsets.only(
+            top: 16,
+            left: 16,
+            right: 10,
+            bottom: 60,
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Expanded(
+                child: Column(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(kDefaultBorderRadius),
+                      child: Image.asset(
+                        news.newsImage,
+                        height: 160,
+                        width: 160,
+                        fit: BoxFit.fill,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    news.newsDate,
-                    style: body1.copyWith(color: Colors.black54),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ],
+                    const SizedBox(height: 10),
+                    Text(
+                      news.newsDate,
+                      style: body1.copyWith(color: Colors.black54),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              flex: 4,
-              child: Text(
-                news.newsDescription,
-                style: heading6,
+              const SizedBox(width: 12),
+              Expanded(
+                flex: 4,
+                child: Text(
+                  news.newsDescription,
+                  style: heading6,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

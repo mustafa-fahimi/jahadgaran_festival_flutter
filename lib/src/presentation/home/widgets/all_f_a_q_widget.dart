@@ -13,41 +13,43 @@ class AllFAQWidget extends StatelessWidget {
     final headerStyle = subtitle1Bold.copyWith(color: Colors.white);
     final contentStyle = heading6.copyWith(color: Colors.black54);
 
-    return SizedBox(
-      width: double.infinity,
-      child: Accordion(
-        maxOpenSections: 5,
-        headerBackgroundColor: context.theme.colorScheme.primary,
-        headerBackgroundColorOpened: kSuccessColor,
-        scaleWhenAnimating: true,
-        openAndCloseAnimation: true,
-        contentBorderWidth: 1,
-        paddingListBottom: 20,
-        headerPadding: const EdgeInsets.symmetric(
-          vertical: 15,
-          horizontal: 15,
-        ),
-        sectionOpeningHapticFeedback: SectionHapticFeedback.heavy,
-        sectionClosingHapticFeedback: SectionHapticFeedback.light,
-        children: List.generate(
-          FAQ.values.length,
-          (index) => AccordionSection(
-            isOpen: index == 0,
-            accordionId: index.toString(),
-            paddingBetweenClosedSections: 18,
-            paddingBetweenOpenSections: 18,
-            contentVerticalPadding: 25,
-            leftIcon: const Icon(
-              Icons.question_answer_rounded,
-              color: Colors.white,
-            ),
-            header: Text(
-              FAQ.values[index].getQuestion(context),
-              style: headerStyle,
-            ),
-            content: Text(
-              FAQ.values[index].getAnswer(context),
-              style: contentStyle,
+    return SelectionArea(
+      child: SizedBox(
+        width: double.infinity,
+        child: Accordion(
+          maxOpenSections: 5,
+          headerBackgroundColor: context.theme.colorScheme.primary,
+          headerBackgroundColorOpened: kSuccessColor,
+          scaleWhenAnimating: true,
+          openAndCloseAnimation: true,
+          contentBorderWidth: 1,
+          paddingListBottom: 20,
+          headerPadding: const EdgeInsets.symmetric(
+            vertical: 15,
+            horizontal: 15,
+          ),
+          sectionOpeningHapticFeedback: SectionHapticFeedback.heavy,
+          sectionClosingHapticFeedback: SectionHapticFeedback.light,
+          children: List.generate(
+            FAQ.values.length,
+            (index) => AccordionSection(
+              isOpen: index == 0,
+              accordionId: index.toString(),
+              paddingBetweenClosedSections: 18,
+              paddingBetweenOpenSections: 18,
+              contentVerticalPadding: 25,
+              leftIcon: const Icon(
+                Icons.question_answer_rounded,
+                color: Colors.white,
+              ),
+              header: Text(
+                FAQ.values[index].getQuestion(context),
+                style: headerStyle,
+              ),
+              content: Text(
+                FAQ.values[index].getAnswer(context),
+                style: contentStyle,
+              ),
             ),
           ),
         ),
