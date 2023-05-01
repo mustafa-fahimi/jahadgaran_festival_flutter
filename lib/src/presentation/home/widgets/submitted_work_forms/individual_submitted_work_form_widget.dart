@@ -263,14 +263,14 @@ class IndividualSubmitWorkFormWidget extends StatelessWidget {
     } else if (selectedFile.value == null) {
       AppHelper().displayToast(
         context,
-        message: context.l10n.large_file_size_description,
+        message: context.l10n.must_choose_attachment_file,
         isFailureMessage: true,
       );
       return;
-    } else if (selectedFile.value!.size > 104857600) {
+    } else if (selectedFile.value!.size > maxFileSize) {
       AppHelper().displayToast(
         context,
-        message: context.l10n.must_choose_attachment_file,
+        message: context.l10n.large_file_size_description,
         isFailureMessage: true,
       );
       return;
