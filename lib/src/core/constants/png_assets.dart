@@ -36,6 +36,7 @@ class PngAssets {
   static String get sherRulesAsset => 'rules/sher_rules'.png;
   static String get tarahiRulesAsset => 'rules/tarahi_rules'.png;
   static String get rubikaChannelAsset => 'rubika_channel'.png;
+  static String get shahidHadiLogoAsset => 'shahid_hadi_logo'.png;
 }
 
 extension on String {

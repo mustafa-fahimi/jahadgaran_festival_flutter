@@ -142,5 +142,8 @@
     "none":"هیچکدام",
     "download_application":"دانلود اندروید",
     "login_limit_description":"دقت کنید که حداکثر ۳ مرتبه امکان ورود را دارید و پس از آن برای شما پیامک کد تایید ارسال نمی گردد.",
-    "rubika_channel":"کانال روبیکا"
+    "rubika_channel":"کانال روبیکا",
+    "designed_by_description":"طراحی و پیاده سازی توسط گروه جهادی",
+    "shahid":"شهید",
+    "ebrahim_hadi_quchan":"ابراهیم هادی قوچان"
 }

@@ -8,6 +8,7 @@ import 'package:jahadgaran_festival/src/presentation/core/components/container_w
 import 'package:jahadgaran_festival/src/presentation/core/components/page_decorator.dart';
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/designed_by_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/menu_bar_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/side/download_apk_side_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/side/f_a_q_slider_side_widget.dart';
@@ -104,7 +105,9 @@ class _HomeBody extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 90),
+                const SizedBox(height: 70),
+                const DesignedByWidget(),
+                const SizedBox(height: 40),
               ],
             ),
           ),
