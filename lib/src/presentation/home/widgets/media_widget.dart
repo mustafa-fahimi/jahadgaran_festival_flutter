@@ -86,6 +86,127 @@ class MediaWidget extends StatelessWidget {
                 ),
               ],
             ),
+            const SizedBox(height: 7),
+
+            /// `Fourth row`
+            ResponsiveRowColumn(
+              layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                  ? ResponsiveRowColumnType.COLUMN
+                  : ResponsiveRowColumnType.ROW,
+              rowSpacing: 7,
+              columnSpacing: 7,
+              children: <ResponsiveRowColumnItem>[
+                ResponsiveRowColumnItem(
+                  rowFit: FlexFit.tight,
+                  child: ClickableImageCustomWidget(
+                    imagePath: PngAssets.festivalCoverAsset,
+                  ),
+                ),
+                ResponsiveRowColumnItem(
+                  rowFit: FlexFit.tight,
+                  child: ClickableImageCustomWidget(
+                    imagePath: PngAssets.publicRulesAsset,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 7),
+
+            /// `Fifth row`
+            ResponsiveRowColumn(
+              layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                  ? ResponsiveRowColumnType.COLUMN
+                  : ResponsiveRowColumnType.ROW,
+              rowSpacing: 7,
+              columnSpacing: 7,
+              children: <ResponsiveRowColumnItem>[
+                ResponsiveRowColumnItem(
+                  rowFit: FlexFit.tight,
+                  child: ClickableImageCustomWidget(
+                    imagePath: PngAssets.dastanRulesAsset,
+                  ),
+                ),
+                ResponsiveRowColumnItem(
+                  rowFit: FlexFit.tight,
+                  child: ClickableImageCustomWidget(
+                    imagePath: PngAssets.khoshnevisiRulesAsset,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 7),
+
+            /// `Sixth row`
+            ResponsiveRowColumn(
+              layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                  ? ResponsiveRowColumnType.COLUMN
+                  : ResponsiveRowColumnType.ROW,
+              rowSpacing: 7,
+              columnSpacing: 7,
+              children: <ResponsiveRowColumnItem>[
+                ResponsiveRowColumnItem(
+                  rowFit: FlexFit.tight,
+                  child: ClickableImageCustomWidget(
+                    imagePath: PngAssets.mostanadRulesAsset,
+                  ),
+                ),
+                ResponsiveRowColumnItem(
+                  rowFit: FlexFit.tight,
+                  child: ClickableImageCustomWidget(
+                    imagePath: PngAssets.motionRulesAsset,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 7),
+
+            /// `Seventh row`
+            ResponsiveRowColumn(
+              layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                  ? ResponsiveRowColumnType.COLUMN
+                  : ResponsiveRowColumnType.ROW,
+              rowSpacing: 7,
+              columnSpacing: 7,
+              children: <ResponsiveRowColumnItem>[
+                ResponsiveRowColumnItem(
+                  rowFit: FlexFit.tight,
+                  child: ClickableImageCustomWidget(
+                    imagePath: PngAssets.namahangRulesAsset,
+                  ),
+                ),
+                ResponsiveRowColumnItem(
+                  rowFit: FlexFit.tight,
+                  child: ClickableImageCustomWidget(
+                    imagePath: PngAssets.sharhehalRulesAsset,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 7),
+
+            /// `Eighth row`
+            ResponsiveRowColumn(
+              layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                  ? ResponsiveRowColumnType.COLUMN
+                  : ResponsiveRowColumnType.ROW,
+              rowSpacing: 7,
+              columnSpacing: 7,
+              children: <ResponsiveRowColumnItem>[
+                ResponsiveRowColumnItem(
+                  rowFit: FlexFit.tight,
+                  child: ClickableImageCustomWidget(
+                    imagePath: PngAssets.sherRulesAsset,
+                  ),
+                ),
+                ResponsiveRowColumnItem(
+                  rowFit: FlexFit.tight,
+                  child: ClickableImageCustomWidget(
+                    imagePath: PngAssets.tarahiRulesAsset,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 7),
           ],
         ),
       ),

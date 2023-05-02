@@ -7,19 +7,22 @@ class DownloadApkSideWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        launchUrl(
-          Uri.parse(
-            'https://festival-kh.ir/%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87_%D8%AC%D9%87%D8%A7%D8%AF%DA%AF%D8%B1%D8%A7%D9%86_%D8%AE%D8%B1%D8%A7%D8%B3%D8%A7%D9%86_%D8%B1%D8%B6%D9%88%DB%8C.apk',
-          ),
-          mode: LaunchMode.inAppWebView,
-        );
-      },
-      child: Image.asset(
-        PngAssets.downloadApkAsset,
-        width: double.infinity,
-        fit: BoxFit.fill,
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () {
+          launchUrl(
+            Uri.parse(
+              'https://festival-kh.ir/%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87_%D8%AC%D9%87%D8%A7%D8%AF%DA%AF%D8%B1%D8%A7%D9%86_%D8%AE%D8%B1%D8%A7%D8%B3%D8%A7%D9%86_%D8%B1%D8%B6%D9%88%DB%8C.apk',
+            ),
+            mode: LaunchMode.inAppWebView,
+          );
+        },
+        child: Image.asset(
+          PngAssets.downloadApkAsset,
+          width: double.infinity,
+          fit: BoxFit.fill,
+        ),
       ),
     );
   }

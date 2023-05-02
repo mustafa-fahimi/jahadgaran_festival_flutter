@@ -25,6 +25,17 @@ class PngAssets {
   static String get sazmanTabliqatAsset => 'organizations/sazman_tabliqat'.png;
   static String get formIllustrationAsset => 'form_illustration'.png;
   static String get downloadApkAsset => 'download_apk'.png;
+  static String get festivalCoverAsset => 'festival_cover'.png;
+  static String get dastanRulesAsset => 'rules/dastan_rules'.png;
+  static String get khoshnevisiRulesAsset => 'rules/khoshnevisi_rules'.png;
+  static String get mostanadRulesAsset => 'rules/mostanad_rules'.png;
+  static String get motionRulesAsset => 'rules/motion_rules'.png;
+  static String get namahangRulesAsset => 'rules/namahang_rules'.png;
+  static String get publicRulesAsset => 'rules/public_rules'.png;
+  static String get sharhehalRulesAsset => 'rules/sharhehal_rules'.png;
+  static String get sherRulesAsset => 'rules/sher_rules'.png;
+  static String get tarahiRulesAsset => 'rules/tarahi_rules'.png;
+  static String get rubikaChannelAsset => 'rubika_channel'.png;
 }
 
 extension on String {

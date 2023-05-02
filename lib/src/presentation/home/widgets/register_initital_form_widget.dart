@@ -36,6 +36,11 @@ class RegisterInititalFormWidget extends HookWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
+          context.l10n.login_limit_description,
+          style: subtitle1Bold.copyWith(color: kInfoColor),
+        ),
+        const SizedBox(height: 15),
+        Text(
           context.l10n.register_type_hint,
           style: subtitle2,
         ),

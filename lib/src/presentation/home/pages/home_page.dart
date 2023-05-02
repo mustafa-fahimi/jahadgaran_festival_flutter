@@ -13,6 +13,7 @@ import 'package:jahadgaran_festival/src/presentation/home/widgets/side/download_
 import 'package:jahadgaran_festival/src/presentation/home/widgets/side/f_a_q_slider_side_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/side/important_dates_side_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/side/organizers_side_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/side/register_rubika_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/side/register_side_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/side/until_festival_side_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/side/website_link_side_widget.dart';
@@ -132,6 +133,11 @@ class _RightSectionWidget extends StatelessWidget {
           ),
           const SizedBox(height: 10),
         ],
+        ContainerWithTitleCustomWidget(
+          title: context.l10n.rubika_channel,
+          content: const RegisterRubikaWidget(),
+        ),
+        const SizedBox(height: 10),
         ContainerWithTitleCustomWidget(
           title: context.l10n.until_event,
           content: const UntilFestivalSideWidget(),
