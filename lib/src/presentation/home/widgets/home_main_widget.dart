@@ -14,17 +14,17 @@ class HomeMainWidget extends StatelessWidget {
       children: [
         ContainerWithTitleCustomWidget(
           title: context.l10n.festival_gallery,
-          content: const BannerWidget(),
+          child: const BannerWidget(),
         ),
         const SizedBox(height: 10),
         ContainerWithTitleCustomWidget(
           title: context.l10n.event_information,
-          content: const FestivalInformationWidget(),
+          child: const FestivalInformationWidget(),
         ),
         const SizedBox(height: 10),
         ContainerWithTitleCustomWidget(
           title: context.l10n.news,
-          content: NewsWidget(),
+          child: NewsWidget(),
         ),
       ],
     );

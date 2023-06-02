@@ -123,38 +123,20 @@ class _RightSectionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: <Widget>[
-        ContainerWithTitleCustomWidget(
-          title: context.l10n.register_and_send,
-          content: const RegisterSideWidget(),
-        ),
-        const SizedBox(height: 10),
+      children: const <Widget>[
+        RegisterSideWidget(),
+        SizedBox(height: 10),
         if (kIsWeb) ...[
-          ContainerWithTitleCustomWidget(
-            title: context.l10n.download_application,
-            content: const DownloadApkSideWidget(),
-          ),
-          const SizedBox(height: 10),
+          DownloadApkSideWidget(),
+          SizedBox(height: 10),
         ],
-        ContainerWithTitleCustomWidget(
-          title: context.l10n.rubika_channel,
-          content: const RegisterRubikaWidget(),
-        ),
-        const SizedBox(height: 10),
-        ContainerWithTitleCustomWidget(
-          title: context.l10n.until_event,
-          content: const UntilFestivalSideWidget(),
-        ),
-        const SizedBox(height: 10),
-        ContainerWithTitleCustomWidget(
-          title: context.l10n.important_dates,
-          content: const ImportantDatesSideWidget(),
-        ),
-        const SizedBox(height: 10),
-        ContainerWithTitleCustomWidget(
-          title: context.l10n.frequently_asked_questions,
-          content: const FAQSliderSideWidget(),
-        ),
+        RegisterRubikaWidget(),
+        SizedBox(height: 10),
+        UntilFestivalSideWidget(),
+        SizedBox(height: 10),
+        ImportantDatesSideWidget(),
+        SizedBox(height: 10),
+        FAQSliderSideWidget(),
       ],
     );
   }
@@ -182,7 +164,7 @@ class _LeftSectionWidget extends StatelessWidget {
       children: [
         ContainerWithTitleCustomWidget(
           title: context.l10n.organizers,
-          content: const OrganizersSideWidget(),
+          child: const OrganizersSideWidget(),
         ),
         const SizedBox(height: 20),
         WebsiteLinkSideWidget(

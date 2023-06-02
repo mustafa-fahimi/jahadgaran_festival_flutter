@@ -12,7 +12,7 @@ class MediaWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ContainerWithTitleCustomWidget(
       title: context.l10n.media,
-      content: Padding(
+      child: Padding(
         padding: const EdgeInsets.all(7),
         child: Column(
           children: [

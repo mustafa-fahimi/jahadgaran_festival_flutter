@@ -4,13 +4,14 @@ import 'package:jahadgaran_festival/src/core/core.dart';
 
 class ContainerWithTitleCustomWidget extends StatelessWidget {
   const ContainerWithTitleCustomWidget({
-    required this.title, Key? key,
-    this.content,
+    required this.title,
+    Key? key,
+    this.child,
     this.bgColor,
   }) : super(key: key);
 
   final String title;
-  final Widget? content;
+  final Widget? child;
   final Color? bgColor; //hi
 
   @override
@@ -26,7 +27,7 @@ class ContainerWithTitleCustomWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             _TitleWidget(title: title),
-            if (content != null) content!,
+            if (child != null) child!,
           ],
         ),
       ),
@@ -36,7 +37,8 @@ class ContainerWithTitleCustomWidget extends StatelessWidget {
 
 class _TitleWidget extends StatelessWidget {
   const _TitleWidget({
-    required this.title, Key? key,
+    required this.title,
+    Key? key,
   }) : super(key: key);
 
   final String title;

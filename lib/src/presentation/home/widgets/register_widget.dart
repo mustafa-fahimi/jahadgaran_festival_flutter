@@ -110,7 +110,7 @@ class RegisterWidget extends HookWidget {
     return ContainerWithTitleCustomWidget(
       title: context.l10n.register_and_send,
       bgColor: Colors.white,
-      content: Padding(
+      child: Padding(
         padding: const EdgeInsets.all(10),
         child: Form(
           key: formKey,

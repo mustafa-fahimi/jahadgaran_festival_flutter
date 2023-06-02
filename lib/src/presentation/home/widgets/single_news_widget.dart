@@ -6,7 +6,8 @@ import 'package:jahadgaran_festival/src/presentation/home/models/news_model.dart
 
 class SingleNewsWidget extends StatelessWidget {
   const SingleNewsWidget({
-    required this.news, Key? key,
+    required this.news,
+    Key? key,
   }) : super(key: key);
 
   final NewsModel news;
@@ -15,7 +16,7 @@ class SingleNewsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ContainerWithTitleCustomWidget(
       title: news.newsTitle,
-      content: SelectionArea(
+      child: SelectionArea(
         child: Padding(
           padding: const EdgeInsets.only(
             top: 16,

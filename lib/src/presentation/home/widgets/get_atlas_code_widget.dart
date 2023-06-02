@@ -30,7 +30,7 @@ class GetAtlasCodeWidget extends HookWidget {
 
     return ContainerWithTitleCustomWidget(
       title: context.l10n.atlas_code_inquiry,
-      content: Padding(
+      child: Padding(
         padding: const EdgeInsets.all(10),
         child: Form(
           key: formKey,

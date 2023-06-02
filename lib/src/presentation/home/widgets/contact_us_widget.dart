@@ -23,7 +23,7 @@ class ContactUsWidget extends HookWidget {
 
     return ContainerWithTitleCustomWidget(
       title: context.l10n.contacts_us,
-      content: Padding(
+      child: Padding(
         padding: const EdgeInsets.all(15),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
