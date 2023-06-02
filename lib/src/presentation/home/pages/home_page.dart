@@ -162,10 +162,10 @@ class _LeftSectionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const AdminPanelLinkSideWidget(),
-        const SizedBox(height: 15),
         const OrganizersSideWidget(),
         const SizedBox(height: 20),
+        const AdminPanelLinkSideWidget(),
+        const SizedBox(height: 15),
         WebsiteLinkSideWidget(
           title: context.l10n.website_supreme_leader,
           url: 'https://farsi.khamenei.ir/',

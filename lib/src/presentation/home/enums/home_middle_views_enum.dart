@@ -46,7 +46,7 @@ extension HomeMiddleViewsEx on HomeMiddleViews {
       case HomeMiddleViews.singleNews:
         return SingleNewsWidget(news: news!);
       case HomeMiddleViews.adminPanel:
-        return AdminPanelWidget();
+        return const AdminPanelWidget();
     }
   }
 }

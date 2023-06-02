@@ -15,3 +15,4 @@ analyzer:
   errors:
     todo: ignore
     fixme: ignore
+    must_be_immutable: ignore

@@ -16,6 +16,7 @@ dependencies:
   crypto: ^3.0.3
   cupertino_icons: ^1.0.5
   dartz: ^0.10.1
+  data_table_2: ^2.5.0
   database_service:
     path: ../../packages/database_service
   dio: ^5.1.2

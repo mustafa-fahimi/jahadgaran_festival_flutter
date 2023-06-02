@@ -148,5 +148,6 @@
     "ebrahim_hadi_quchan":"ابراهیم هادی قوچان",
     "admin_panel":"پنل ادمین",
     "enter_token_description":"توکن را وارد نمایید",
-    "token":"توکن"
+    "token":"توکن",
+    "wrong_token":"توکن صحیح نمی باشد"
 }
