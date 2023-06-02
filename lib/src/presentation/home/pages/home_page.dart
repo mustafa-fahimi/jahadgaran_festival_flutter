@@ -4,12 +4,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 import 'package:jahadgaran_festival/src/injection/injectable.dart';
-import 'package:jahadgaran_festival/src/presentation/core/components/container_with_title_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/page_decorator.dart';
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/home_middle_views_enum.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/designed_by_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/menu_bar_custom_widget.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/side/admin_panel_link_side_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/side/download_apk_side_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/side/f_a_q_slider_side_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/side/important_dates_side_widget.dart';
@@ -162,10 +162,9 @@ class _LeftSectionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ContainerWithTitleCustomWidget(
-          title: context.l10n.organizers,
-          child: const OrganizersSideWidget(),
-        ),
+        const AdminPanelLinkSideWidget(),
+        const SizedBox(height: 15),
+        const OrganizersSideWidget(),
         const SizedBox(height: 20),
         WebsiteLinkSideWidget(
           title: context.l10n.website_supreme_leader,

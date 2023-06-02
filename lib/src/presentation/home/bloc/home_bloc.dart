@@ -58,13 +58,16 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   FutureOr<void> _onChangeMiddleView(
     _ChangeMiddleView event,
     Emitter<HomeState> emit,
-  ) async =>
+  ) async {
+    if (state.currentMiddleView != event.view) {
       emit(
         _Idle(
           currentMiddleView: event.view,
           selectedNews: event.news,
         ),
       );
+    }
+  }
 
   FutureOr<void> _onChangeFormState(
     _ChangeFormState event,

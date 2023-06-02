@@ -145,5 +145,8 @@
     "rubika_channel":"کانال روبیکا",
     "designed_by_description":"طراحی و پیاده سازی توسط گروه جهادی",
     "shahid":"شهید",
-    "ebrahim_hadi_quchan":"ابراهیم هادی قوچان"
+    "ebrahim_hadi_quchan":"ابراهیم هادی قوچان",
+    "admin_panel":"پنل ادمین",
+    "enter_token_description":"توکن را وارد نمایید",
+    "token":"توکن"
 }

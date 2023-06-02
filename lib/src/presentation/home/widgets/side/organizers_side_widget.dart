@@ -1,35 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
+import 'package:jahadgaran_festival/src/presentation/core/components/container_with_title_custom_widget.dart';
 
 class OrganizersSideWidget extends StatelessWidget {
   const OrganizersSideWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ColoredBox(
-      color: const Color(0xff173084),
-      child: Padding(
-        padding: const EdgeInsets.all(2),
-        child: Column(
-          children: [
-            _PictureRowWidget(
-              photoAddress1: PngAssets.basijSazandegiAsset,
-              photoAddress2: PngAssets.harkathayeJahadiAsset,
-              photoAddress3: PngAssets.edareErshadAsset,
-            ),
-            const SizedBox(height: 2),
-            _PictureRowWidget(
-              photoAddress1: PngAssets.majmaJahadgaranAsset,
-              photoAddress2: PngAssets.helaleAhmarAsset,
-              photoAddress3: PngAssets.astanGhodsAsset,
-            ),
-            const SizedBox(height: 2),
-            _PictureRowWidget(
-              photoAddress1: PngAssets.sazmanTabliqatAsset,
-              photoAddress2: PngAssets.komiteEmdadAsset,
-              photoAddress3: PngAssets.jahadgaranKarafarinAsset,
-            ),
-          ],
+    return ContainerWithTitleCustomWidget(
+      title: context.l10n.organizers,
+      child: ColoredBox(
+        color: const Color(0xff173084),
+        child: Padding(
+          padding: const EdgeInsets.all(2),
+          child: Column(
+            children: [
+              _PictureRowWidget(
+                photoAddress1: PngAssets.basijSazandegiAsset,
+                photoAddress2: PngAssets.harkathayeJahadiAsset,
+                photoAddress3: PngAssets.edareErshadAsset,
+              ),
+              const SizedBox(height: 2),
+              _PictureRowWidget(
+                photoAddress1: PngAssets.majmaJahadgaranAsset,
+                photoAddress2: PngAssets.helaleAhmarAsset,
+                photoAddress3: PngAssets.astanGhodsAsset,
+              ),
+              const SizedBox(height: 2),
+              _PictureRowWidget(
+                photoAddress1: PngAssets.sazmanTabliqatAsset,
+                photoAddress2: PngAssets.komiteEmdadAsset,
+                photoAddress3: PngAssets.jahadgaranKarafarinAsset,
+              ),
+            ],
+          ),
         ),
       ),
     );

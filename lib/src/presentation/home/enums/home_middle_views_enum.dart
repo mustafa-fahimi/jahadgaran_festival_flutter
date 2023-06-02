@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jahadgaran_festival/src/presentation/home/models/news_model.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/admin_panel_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/all_f_a_q_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/contact_us_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/widgets/festival_information_widget.dart';
@@ -20,6 +21,7 @@ enum HomeMiddleViews {
   register,
   faq,
   singleNews,
+  adminPanel
 }
 
 extension HomeMiddleViewsEx on HomeMiddleViews {
@@ -43,6 +45,8 @@ extension HomeMiddleViewsEx on HomeMiddleViews {
         return const AllFAQWidget();
       case HomeMiddleViews.singleNews:
         return SingleNewsWidget(news: news!);
+      case HomeMiddleViews.adminPanel:
+        return AdminPanelWidget();
     }
   }
 }
