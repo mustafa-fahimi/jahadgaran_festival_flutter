@@ -5,9 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class WebsiteLinkSideWidget extends StatelessWidget {
   const WebsiteLinkSideWidget({
-    Key? key,
-    required this.title,
-    required this.url,
+    required this.title, required this.url, Key? key,
   }) : super(key: key);
 
   final String title;

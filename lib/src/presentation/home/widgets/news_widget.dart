@@ -70,8 +70,8 @@ class NewsWidget extends StatelessWidget {
 
 class _NewsListViewItemWidget extends StatelessWidget {
   const _NewsListViewItemWidget({
-    Key? key,
     required this.news,
+    Key? key,
   }) : super(key: key);
 
   final NewsModel news;
@@ -114,9 +114,10 @@ class _NewsListViewItemWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
-                        ? context.deviceWidthFactor(0.39)
-                        : context.deviceWidthFactor(0.43),
+                    width:
+                        ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
+                            ? context.deviceWidthFactor(0.39)
+                            : context.deviceWidthFactor(0.43),
                     child: Text(
                       news.newsTitle,
                       style: heading5Bold,
@@ -126,9 +127,10 @@ class _NewsListViewItemWidget extends StatelessWidget {
                   ),
                   const SizedBox(height: 6),
                   SizedBox(
-                    width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
-                        ? context.deviceWidthFactor(0.39)
-                        : context.deviceWidthFactor(0.43),
+                    width:
+                        ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
+                            ? context.deviceWidthFactor(0.39)
+                            : context.deviceWidthFactor(0.43),
                     child: Text(
                       news.newsDescription,
                       style: subtitle2,

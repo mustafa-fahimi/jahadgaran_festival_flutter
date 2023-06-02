@@ -42,8 +42,7 @@ class ImportantDatesSideWidget extends StatelessWidget {
 
 class _ColoredDateWidget extends StatelessWidget {
   const _ColoredDateWidget({
-    Key? key,
-    required this.text,
+    required this.text, Key? key,
   }) : super(key: key);
 
   final String text;

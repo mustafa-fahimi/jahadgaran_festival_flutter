@@ -14,13 +14,13 @@ import 'package:responsive_framework/responsive_framework.dart';
 
 class RegisterInititalFormWidget extends HookWidget {
   const RegisterInititalFormWidget({
-    Key? key,
     required this.formKey,
     required this.nationalCodeController,
     required this.phoneNumberController,
     required this.nationalCodeFocusNode,
     required this.phoneNumberFocusNode,
     required this.selectedRegisterType,
+    Key? key,
   }) : super(key: key);
 
   final GlobalKey<FormState> formKey;
@@ -128,7 +128,7 @@ class RegisterInititalFormWidget extends HookWidget {
           btnText: context.l10n.check_information,
           height: 40,
           isLoading: context.watch<HomeBloc>().state.isLoading,
-          width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+          width: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
               ? double.infinity
               : 200,
           color: context.theme.colorScheme.primary,

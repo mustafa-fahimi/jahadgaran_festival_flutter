@@ -3,8 +3,7 @@ import 'package:universal_html/html.dart';
 
 class ClickableImageCustomWidget extends StatelessWidget {
   const ClickableImageCustomWidget({
-    Key? key,
-    required this.imagePath,
+    required this.imagePath, Key? key,
     this.height = 300,
   }) : super(key: key);
 

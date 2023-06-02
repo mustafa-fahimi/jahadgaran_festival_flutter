@@ -21,7 +21,6 @@ import 'package:responsive_framework/responsive_framework.dart';
 
 class GroupSubmitWorkFormWidget extends StatelessWidget {
   const GroupSubmitWorkFormWidget({
-    Key? key,
     required this.nationalCode,
     required this.formKey,
     required this.groupNameController,
@@ -46,6 +45,7 @@ class GroupSubmitWorkFormWidget extends StatelessWidget {
     required this.selectedFile,
     required this.selectedHasLicense,
     required this.selectedInstitution,
+    Key? key,
   }) : super(key: key);
 
   final String nationalCode;
@@ -108,7 +108,7 @@ class GroupSubmitWorkFormWidget extends StatelessWidget {
             const SizedBox(height: 10),
             ElevatedButtonCustomWidget(
               height: 40,
-              width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+              width: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
                   ? double.infinity
                   : 200,
               color: context.theme.colorScheme.primary,
@@ -372,7 +372,7 @@ class GroupSubmitWorkFormWidget extends StatelessWidget {
               onTap: _onTapSelectFile,
               btnText: context.l10n.choose_file,
               height: 40,
-              width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+              width: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
                   ? 150
                   : 200,
               buttonColor: context.theme.colorScheme.primary,
@@ -412,7 +412,7 @@ class GroupSubmitWorkFormWidget extends StatelessWidget {
                 btnText: context.l10n.submit_information,
                 height: 40,
                 isLoading: state.isLoadingSubmitWork,
-                width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                width: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
                     ? double.infinity
                     : 200,
                 color: context.theme.colorScheme.primary,

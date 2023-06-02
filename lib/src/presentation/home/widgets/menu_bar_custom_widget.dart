@@ -58,9 +58,7 @@ class _GradientDividerWidget extends StatelessWidget {
 
 class _HeaderItem extends StatelessWidget {
   const _HeaderItem({
-    Key? key,
-    required this.headerMenu,
-    required this.isHome,
+    required this.headerMenu, required this.isHome, Key? key,
   }) : super(key: key);
 
   final HeaderMenu headerMenu;

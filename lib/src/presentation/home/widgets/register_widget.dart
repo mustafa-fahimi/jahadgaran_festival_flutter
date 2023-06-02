@@ -224,7 +224,7 @@ class RegisterWidget extends HookWidget {
                                 ),
                 ),
               ),
-              if (ResponsiveWrapper.of(context).isLargerThan(TABLET)) ...[
+              if (ResponsiveBreakpoints.of(context).largerThan(TABLET)) ...[
                 const SizedBox(width: 15),
                 Expanded(
                   flex: 2,

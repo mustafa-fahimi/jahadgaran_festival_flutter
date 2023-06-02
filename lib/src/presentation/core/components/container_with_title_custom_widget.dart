@@ -4,8 +4,7 @@ import 'package:jahadgaran_festival/src/core/core.dart';
 
 class ContainerWithTitleCustomWidget extends StatelessWidget {
   const ContainerWithTitleCustomWidget({
-    Key? key,
-    required this.title,
+    required this.title, Key? key,
     this.content,
     this.bgColor,
   }) : super(key: key);
@@ -37,8 +36,7 @@ class ContainerWithTitleCustomWidget extends StatelessWidget {
 
 class _TitleWidget extends StatelessWidget {
   const _TitleWidget({
-    Key? key,
-    required this.title,
+    required this.title, Key? key,
   }) : super(key: key);
 
   final String title;

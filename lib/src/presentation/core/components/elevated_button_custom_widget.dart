@@ -4,8 +4,7 @@ import 'package:jahadgaran_festival/src/core/core.dart';
 
 class ElevatedButtonCustomWidget extends StatelessWidget {
   const ElevatedButtonCustomWidget({
-    super.key,
-    required this.btnText,
+    required this.btnText, super.key,
     this.onTap,
     this.isLoading = false,
     this.color,

@@ -19,7 +19,6 @@ import 'package:responsive_framework/responsive_framework.dart';
 
 class JahadiGroupSubmitWorkFormWidget extends StatelessWidget {
   const JahadiGroupSubmitWorkFormWidget({
-    Key? key,
     required this.formKey,
     required this.nationalCode,
     required this.verifyCodeController,
@@ -28,6 +27,7 @@ class JahadiGroupSubmitWorkFormWidget extends StatelessWidget {
     required this.descriptionFocusNode,
     required this.selectedAttachmentTypes,
     required this.selectedFile,
+    Key? key,
   }) : super(key: key);
 
   final GlobalKey<FormState> formKey;
@@ -49,7 +49,7 @@ class JahadiGroupSubmitWorkFormWidget extends StatelessWidget {
             const SizedBox(height: 10),
             ElevatedButtonCustomWidget(
               height: 40,
-              width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+              width: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
                   ? double.infinity
                   : 200,
               color: context.theme.colorScheme.primary,
@@ -182,7 +182,7 @@ class JahadiGroupSubmitWorkFormWidget extends StatelessWidget {
               onTap: _onTapSelectFile,
               btnText: context.l10n.choose_file,
               height: 40,
-              width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+              width: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
                   ? 150
                   : 200,
               buttonColor: context.theme.colorScheme.primary,
@@ -222,7 +222,7 @@ class JahadiGroupSubmitWorkFormWidget extends StatelessWidget {
                 btnText: context.l10n.submit_information,
                 height: 40,
                 isLoading: state.isLoadingSubmitWork,
-                width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                width: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
                     ? double.infinity
                     : 200,
                 color: context.theme.colorScheme.primary,

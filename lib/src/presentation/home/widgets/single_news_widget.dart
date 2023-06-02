@@ -6,8 +6,7 @@ import 'package:jahadgaran_festival/src/presentation/home/models/news_model.dart
 
 class SingleNewsWidget extends StatelessWidget {
   const SingleNewsWidget({
-    Key? key,
-    required this.news,
+    required this.news, Key? key,
   }) : super(key: key);
 
   final NewsModel news;

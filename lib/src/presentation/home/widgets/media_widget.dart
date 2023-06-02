@@ -18,7 +18,7 @@ class MediaWidget extends StatelessWidget {
           children: [
             /// `First row`
             ResponsiveRowColumn(
-              layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+              layout: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
                   ? ResponsiveRowColumnType.COLUMN
                   : ResponsiveRowColumnType.ROW,
               rowSpacing: 7,
@@ -42,7 +42,7 @@ class MediaWidget extends StatelessWidget {
 
             /// `Second row`
             ResponsiveRowColumn(
-              layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+              layout: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
                   ? ResponsiveRowColumnType.COLUMN
                   : ResponsiveRowColumnType.ROW,
               rowSpacing: 7,
@@ -66,7 +66,7 @@ class MediaWidget extends StatelessWidget {
 
             /// `Third row`
             ResponsiveRowColumn(
-              layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+              layout: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
                   ? ResponsiveRowColumnType.COLUMN
                   : ResponsiveRowColumnType.ROW,
               rowSpacing: 7,
@@ -90,7 +90,7 @@ class MediaWidget extends StatelessWidget {
 
             /// `Fourth row`
             ResponsiveRowColumn(
-              layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+              layout: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
                   ? ResponsiveRowColumnType.COLUMN
                   : ResponsiveRowColumnType.ROW,
               rowSpacing: 7,
@@ -114,7 +114,7 @@ class MediaWidget extends StatelessWidget {
 
             /// `Fifth row`
             ResponsiveRowColumn(
-              layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+              layout: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
                   ? ResponsiveRowColumnType.COLUMN
                   : ResponsiveRowColumnType.ROW,
               rowSpacing: 7,
@@ -138,7 +138,7 @@ class MediaWidget extends StatelessWidget {
 
             /// `Sixth row`
             ResponsiveRowColumn(
-              layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+              layout: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
                   ? ResponsiveRowColumnType.COLUMN
                   : ResponsiveRowColumnType.ROW,
               rowSpacing: 7,
@@ -162,7 +162,7 @@ class MediaWidget extends StatelessWidget {
 
             /// `Seventh row`
             ResponsiveRowColumn(
-              layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+              layout: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
                   ? ResponsiveRowColumnType.COLUMN
                   : ResponsiveRowColumnType.ROW,
               rowSpacing: 7,
@@ -186,7 +186,7 @@ class MediaWidget extends StatelessWidget {
 
             /// `Eighth row`
             ResponsiveRowColumn(
-              layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+              layout: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
                   ? ResponsiveRowColumnType.COLUMN
                   : ResponsiveRowColumnType.ROW,
               rowSpacing: 7,

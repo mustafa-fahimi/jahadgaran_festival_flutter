@@ -75,7 +75,7 @@ class _HomeBody extends StatelessWidget {
                 const MenuBarCustomWidget(),
                 const SizedBox(height: 15),
                 ResponsiveRowColumn(
-                  layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                  layout: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
                       ? ResponsiveRowColumnType.COLUMN
                       : ResponsiveRowColumnType.ROW,
                   rowMainAxisAlignment: MainAxisAlignment.center,
@@ -88,14 +88,14 @@ class _HomeBody extends StatelessWidget {
                     ResponsiveRowColumnItem(
                       rowFlex: 3,
                       child:
-                          ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                          ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
                               ? const _MiddleSectionWidget()
                               : const _RightSectionWidget(),
                     ),
                     ResponsiveRowColumnItem(
                       rowFlex: 9,
                       child:
-                          ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                          ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
                               ? const _RightSectionWidget()
                               : const _MiddleSectionWidget(),
                     ),

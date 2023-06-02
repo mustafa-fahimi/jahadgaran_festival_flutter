@@ -7,14 +7,14 @@ class GroupResponse {
   GroupResponse({
     required this.id,
     required this.groupName,
-    this.establishedYear,
-    this.groupLicenseNumber,
     required this.groupInstitution,
     required this.groupCity,
     required this.groupSupervisorFname,
     required this.groupSupervisorLname,
     required this.groupSupervisorNationalCode,
     required this.phoneNumber,
+    this.establishedYear,
+    this.groupLicenseNumber,
   });
 
   factory GroupResponse.fromJson(Map<String, dynamic> json) =>

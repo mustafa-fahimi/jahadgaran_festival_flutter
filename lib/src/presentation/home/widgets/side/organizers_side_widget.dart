@@ -38,10 +38,10 @@ class OrganizersSideWidget extends StatelessWidget {
 
 class _PictureRowWidget extends StatelessWidget {
   const _PictureRowWidget({
-    Key? key,
     required this.photoAddress1,
     required this.photoAddress2,
     required this.photoAddress3,
+    Key? key,
   }) : super(key: key);
 
   final String photoAddress1;

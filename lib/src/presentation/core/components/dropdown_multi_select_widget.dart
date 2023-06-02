@@ -5,13 +5,12 @@ import 'package:jahadgaran_festival/src/core/core.dart';
 
 class DropdownMultiSelectWidget extends StatefulWidget {
   const DropdownMultiSelectWidget({
-    Key? key,
+    required this.onSelectedItemsChange, Key? key,
     this.height,
     this.dropdownItems = const <String>[],
     this.hintText,
     this.iconWidget,
     this.buttonColor,
-    required this.onSelectedItemsChange,
   }) : super(key: key);
 
   final double? height;

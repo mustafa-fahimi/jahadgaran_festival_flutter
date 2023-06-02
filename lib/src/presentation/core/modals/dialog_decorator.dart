@@ -5,8 +5,7 @@ import 'package:jahadgaran_festival/src/presentation/core/components/elevated_bu
 
 class DialogDecorator extends StatelessWidget {
   const DialogDecorator({
-    super.key,
-    required this.child,
+    required this.child, super.key,
     this.onTapConfirm,
   });
 

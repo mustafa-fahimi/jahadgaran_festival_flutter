@@ -6,9 +6,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
-import 'package:jahadgaran_festival/app_bloc_observer.dart';
 import 'package:jahadgaran_festival/src/injection/injectable.dart';
 import 'package:jahadgaran_festival/src/injection/module_injection/main_modules_injection.dart';
+import 'package:talker_bloc_logger/talker_bloc_logger.dart';
 
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   FlutterError.onError = (details) {
@@ -16,17 +16,14 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   };
 
   await _startupSetup();
-  Bloc.observer = AppBlocObserver();
+  await _initializeInjection();
+  Bloc.observer = getIt.get<TalkerBlocObserver>();
 
-  await runZonedGuarded(
-    () async => runApp(await builder()),
-    (error, stackTrace) => log(error.toString(), stackTrace: stackTrace),
-  );
+  runApp(await builder());
 }
 
 Future<void> _startupSetup() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await _initializeInjection();
 
   /// If the OS is `not web`
   if (!kIsWeb) {

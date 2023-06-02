@@ -6,8 +6,7 @@ import 'package:jahadgaran_festival/src/presentation/core/components/outlined_bu
 
 class BottomSheetDecorator extends StatelessWidget {
   const BottomSheetDecorator({
-    super.key,
-    required this.child,
+    required this.child, super.key,
     this.hasSecondaryButton = false,
     this.secondaryBtnText,
     this.onTapConfirm,

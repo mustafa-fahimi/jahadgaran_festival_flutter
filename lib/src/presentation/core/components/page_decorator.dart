@@ -4,9 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class PageDecorator<T extends StateStreamableSource<Object?>>
     extends StatelessWidget {
   const PageDecorator({
-    super.key,
+    required this.body, super.key,
     this.title,
-    required this.body,
     this.appBar,
     this.floatingActionButton,
     this.bottomNavigationBar,

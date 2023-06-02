@@ -17,7 +17,7 @@ class DesignedByWidget extends StatelessWidget {
             text: '${context.l10n.designed_by_description}  ',
             style: heading5Bold.copyWith(color: Colors.white70),
             children: [
-              if (ResponsiveWrapper.of(context).isSmallerThan(DESKTOP))
+              if (ResponsiveBreakpoints.of(context).smallerThan(DESKTOP))
                 const TextSpan(text: '\n'),
               TextSpan(
                 text: '${context.l10n.shahid} ',

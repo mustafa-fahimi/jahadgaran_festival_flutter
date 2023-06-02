@@ -3,9 +3,8 @@ import 'package:jahadgaran_festival/src/core/core.dart';
 
 class PopupMenuCustomWidget extends StatelessWidget {
   const PopupMenuCustomWidget({
-    super.key,
+    required this.menuTexts, super.key,
     this.buttonColor,
-    required this.menuTexts,
     this.menuIcons,
     this.menuOnTaps,
   })  : assert(

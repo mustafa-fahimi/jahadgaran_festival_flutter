@@ -46,7 +46,7 @@ class GetAtlasCodeWidget extends HookWidget {
 
               /// `National Code text field`
               SizedBox(
-                width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                width: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
                     ? double.infinity
                     : context.deviceWidthFactor(0.25),
                 child: OutlinedTextFieldCustomWidget(
@@ -65,7 +65,7 @@ class GetAtlasCodeWidget extends HookWidget {
                 height: 40,
                 isLoading:
                     context.watch<HomeBloc>().state.isLoadingGetAtlasCode,
-                width: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                width: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
                     ? double.infinity
                     : context.deviceWidthFactor(0.1),
                 color: context.theme.colorScheme.primary,

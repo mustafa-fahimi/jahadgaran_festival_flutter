@@ -4,8 +4,7 @@ import 'package:jahadgaran_festival/src/core/core.dart';
 
 class OutlinedButtonCustomWidget extends StatelessWidget {
   const OutlinedButtonCustomWidget({
-    super.key,
-    required this.btnText,
+    required this.btnText, super.key,
     this.width,
     this.height,
     this.iconWidget,
