@@ -14,6 +14,7 @@ class JahadiWorkEndpoints with _$JahadiWorkEndpoints {
       _IndividualSubmittedWork;
   const factory JahadiWorkEndpoints.groupSubmittedWork() = _GroupSubmittedWork;
   const factory JahadiWorkEndpoints.getAtlasCode() = _GetAtlasCode;
+  const factory JahadiWorkEndpoints.submittedWorks() = _SubmittedWorks;
 }
 
 extension JahadiWorkEndpointsEx on JahadiWorkEndpoints {
@@ -25,5 +26,6 @@ extension JahadiWorkEndpointsEx on JahadiWorkEndpoints {
         individualSubmittedWork: () => 'individualSubmittedWork',
         groupSubmittedWork: () => 'groupSubmittedWork',
         getAtlasCode: () => 'atlasCode',
+        submittedWorks: () => 'submittedWorks',
       );
 }

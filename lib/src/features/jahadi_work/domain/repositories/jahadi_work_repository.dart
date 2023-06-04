@@ -5,6 +5,7 @@ import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/group
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/individual_response.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/jahadi_group_response.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/register_params.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/submitted_work.dart';
 
 abstract class JahadiWorkRepository {
   Future<Either<JahadiWorkFailure, JahadiGroupResponse>> registerJahadiGroup({
@@ -34,4 +35,6 @@ abstract class JahadiWorkRepository {
   Future<Either<JahadiWorkFailure, String>> getAtlasCode({
     required String groupSupervisorNationalCode,
   });
+
+  Future<Either<JahadiWorkFailure, List<SubmittedWork>>> getSubmittedWorks();
 }

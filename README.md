@@ -23,9 +23,9 @@ $ flutter run --flavor production --target lib/main_production.dart
 ## Useful Commands
 
 ```sh
-$ flutter pub run build_runner build --delete-conflicting-outputs
-$ flutter pub run flutter_launcher_icons
-$ flutter pub run change_app_package_name:main com.new.package.name
+$ dart run build_runner build --delete-conflicting-outputs
+$ dart run flutter_launcher_icons
+$ dart run change_app_package_name:main com.new.package.name
 $ flutter run --flavor production -t lib/main_production.dart --release
 ```
 
