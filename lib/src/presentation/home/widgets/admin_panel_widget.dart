@@ -130,8 +130,41 @@ class _SubmittedWorksTableWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        Text(
+          context.l10n.jahadi_group_in_atlas,
+          style: heading5Bold,
+        ),
+        const SizedBox(height: 10),
+        const _JahadiGroupsTableWidget(),
+        const SizedBox(height: 30),
+        Text(
+          context.l10n.individual,
+          style: heading5Bold,
+        ),
+        const SizedBox(height: 10),
+        const _IndividualsTableWidget(),
+        const SizedBox(height: 30),
+        Text(
+          context.l10n.group,
+          style: heading5Bold,
+        ),
+        const SizedBox(height: 10),
+        const _GroupsTableWidget(),
+      ],
+    );
+  }
+}
+
+class _JahadiGroupsTableWidget extends StatelessWidget {
+  const _JahadiGroupsTableWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     return SizedBox(
-      height: context.deviceHeightFactor(0.7),
+      height: context.deviceHeightFactor(0.5),
       child: Directionality(
         textDirection: TextDirection.ltr,
         child: BlocBuilder<HomeBloc, HomeState>(
@@ -330,6 +363,360 @@ class _SubmittedWorksTableWidget extends StatelessWidget {
                     DataCell(
                       SelectableText(
                         jahadiGroupsSubmittedWorks[index].description ?? '',
+                        style: subtitle2,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class _IndividualsTableWidget extends StatelessWidget {
+  const _IndividualsTableWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: context.deviceHeightFactor(0.5),
+      child: Directionality(
+        textDirection: TextDirection.ltr,
+        child: BlocBuilder<HomeBloc, HomeState>(
+          builder: (context, state) {
+            final individualsSubmittedWorks = <SubmittedWork>[];
+            for (final submittedWork in state.submittedWorks) {
+              if (submittedWork.individuals != null) {
+                individualsSubmittedWorks.add(submittedWork);
+              }
+            }
+            return DataTable2(
+              columnSpacing: 12,
+              horizontalMargin: 8,
+              border: TableBorder.all(),
+              minWidth: 4000,
+              headingRowColor: MaterialStateProperty.all(
+                Colors.lightBlue.shade600,
+              ),
+              columns: [
+                DataColumn2(
+                  label: Text(
+                    context.l10n.fname,
+                    style: subtitle1,
+                    textAlign: TextAlign.center,
+                  ),
+                  fixedWidth: 200,
+                ),
+                DataColumn2(
+                  label: Text(
+                    context.l10n.lname,
+                    style: subtitle1,
+                  ),
+                  fixedWidth: 180,
+                ),
+                DataColumn2(
+                  label: Text(
+                    context.l10n.city,
+                    style: subtitle1,
+                  ),
+                  fixedWidth: 150,
+                ),
+                DataColumn2(
+                  label: Text(
+                    context.l10n.phone_number,
+                    style: subtitle1,
+                  ),
+                  fixedWidth: 120,
+                ),
+                DataColumn2(
+                  label: Text(
+                    context.l10n.attachment_type,
+                    style: subtitle1,
+                  ),
+                  fixedWidth: 150,
+                ),
+                DataColumn2(
+                  label: Text(
+                    context.l10n.attached_file,
+                    style: subtitle1,
+                  ),
+                  fixedWidth: 250,
+                ),
+                DataColumn2(
+                  label: Text(
+                    context.l10n.file_description,
+                    style: subtitle1,
+                  ),
+                  fixedWidth: 200,
+                ),
+              ],
+              rows: List<DataRow2>.generate(
+                individualsSubmittedWorks.length,
+                (index) => DataRow2(
+                  cells: [
+                    DataCell(
+                      Text(
+                        individualsSubmittedWorks[index].individuals!.fname,
+                        style: subtitle2,
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        individualsSubmittedWorks[index].individuals!.lname,
+                        style: subtitle2,
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        individualsSubmittedWorks[index].individuals!.city,
+                        style: subtitle2,
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        individualsSubmittedWorks[index]
+                            .individuals!
+                            .phoneNumber,
+                        style: subtitle2,
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        individualsSubmittedWorks[index].attachmentType,
+                        style: subtitle2,
+                      ),
+                    ),
+                    DataCell(
+                      MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: GestureDetector(
+                          onTap: () => launchUrlString(
+                            'https://festival-kh.ir/laravel_public/api/download/${individualsSubmittedWorks[index].filePath}',
+                          ),
+                          child: Text(
+                            individualsSubmittedWorks[index].filePath,
+                            style: subtitle2.copyWith(
+                              color: kInfoColor,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    DataCell(
+                      SelectableText(
+                        individualsSubmittedWorks[index].description ?? '',
+                        style: subtitle2,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class _GroupsTableWidget extends StatelessWidget {
+  const _GroupsTableWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: context.deviceHeightFactor(0.5),
+      child: Directionality(
+        textDirection: TextDirection.ltr,
+        child: BlocBuilder<HomeBloc, HomeState>(
+          builder: (context, state) {
+            final groupsSubmittedWorks = <SubmittedWork>[];
+            for (final submittedWork in state.submittedWorks) {
+              if (submittedWork.groups != null) {
+                groupsSubmittedWorks.add(submittedWork);
+              }
+            }
+            return DataTable2(
+              columnSpacing: 12,
+              horizontalMargin: 8,
+              border: TableBorder.all(),
+              minWidth: 4000,
+              headingRowColor: MaterialStateProperty.all(
+                Colors.lightBlue.shade600,
+              ),
+              columns: [
+                DataColumn2(
+                  label: Text(
+                    context.l10n.group_name,
+                    style: subtitle1,
+                    textAlign: TextAlign.center,
+                  ),
+                  fixedWidth: 200,
+                ),
+                DataColumn2(
+                  label: Text(
+                    context.l10n.established_year,
+                    style: subtitle1,
+                  ),
+                  fixedWidth: 180,
+                ),
+                DataColumn2(
+                  label: Text(
+                    context.l10n.group_license_number,
+                    style: subtitle1,
+                  ),
+                  fixedWidth: 150,
+                ),
+                DataColumn2(
+                  label: Text(
+                    context.l10n.group_institution,
+                    style: subtitle1,
+                  ),
+                  fixedWidth: 120,
+                ),
+                DataColumn2(
+                  label: Text(
+                    context.l10n.city,
+                    style: subtitle1,
+                  ),
+                  fixedWidth: 120,
+                ),
+                DataColumn2(
+                  label: Text(
+                    context.l10n.group_supervisor_fname,
+                    style: subtitle1,
+                  ),
+                  fixedWidth: 200,
+                ),
+                DataColumn2(
+                  label: Text(
+                    context.l10n.group_supervisor_lname,
+                    style: subtitle1,
+                  ),
+                  fixedWidth: 150,
+                ),
+                DataColumn2(
+                  label: Text(
+                    context.l10n.registered_phone,
+                    style: subtitle1,
+                  ),
+                  fixedWidth: 150,
+                ),
+                DataColumn2(
+                  label: Text(
+                    context.l10n.attachment_type,
+                    style: subtitle1,
+                  ),
+                  fixedWidth: 150,
+                ),
+                DataColumn2(
+                  label: Text(
+                    context.l10n.attached_file,
+                    style: subtitle1,
+                  ),
+                  fixedWidth: 250,
+                ),
+                DataColumn2(
+                  label: Text(
+                    context.l10n.file_description,
+                    style: subtitle1,
+                  ),
+                  fixedWidth: 200,
+                ),
+              ],
+              rows: List<DataRow2>.generate(
+                groupsSubmittedWorks.length,
+                (index) => DataRow2(
+                  cells: [
+                    DataCell(
+                      Text(
+                        groupsSubmittedWorks[index].groups!.groupName,
+                        style: subtitle2,
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        groupsSubmittedWorks[index]
+                            .groups!
+                            .establishedYear
+                            .toString(),
+                        style: subtitle2,
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        groupsSubmittedWorks[index]
+                                .groups!
+                                .groupLicenseNumber ??
+                            '',
+                        style: subtitle2,
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        groupsSubmittedWorks[index].groups!.groupInstitution,
+                        style: subtitle2,
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        groupsSubmittedWorks[index].groups!.groupCity,
+                        style: subtitle2,
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        groupsSubmittedWorks[index]
+                            .groups!
+                            .groupSupervisorFname,
+                        style: subtitle2,
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        groupsSubmittedWorks[index]
+                            .groups!
+                            .groupSupervisorLname,
+                        style: subtitle2,
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        groupsSubmittedWorks[index].groups!.phoneNumber,
+                        style: subtitle2,
+                      ),
+                    ),
+                    DataCell(
+                      Text(
+                        groupsSubmittedWorks[index].attachmentType,
+                        style: subtitle2,
+                      ),
+                    ),
+                    DataCell(
+                      MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: GestureDetector(
+                          onTap: () => launchUrlString(
+                            'https://festival-kh.ir/laravel_public/api/download/${groupsSubmittedWorks[index].filePath}',
+                          ),
+                          child: Text(
+                            groupsSubmittedWorks[index].filePath,
+                            style: subtitle2.copyWith(
+                              color: kInfoColor,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    DataCell(
+                      SelectableText(
+                        groupsSubmittedWorks[index].description ?? '',
                         style: subtitle2,
                       ),
                     ),
