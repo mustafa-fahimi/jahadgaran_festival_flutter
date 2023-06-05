@@ -8,8 +8,8 @@ part of 'base_response.dart';
 
 BaseResponse _$BaseResponseFromJson(Map<String, dynamic> json) => BaseResponse(
       status: json['status'] as String,
-      message: json['message'] as String,
       data: json['data'],
+      message: json['message'] as String?,
     );
 
 Map<String, dynamic> _$BaseResponseToJson(BaseResponse instance) =>

@@ -7,7 +7,7 @@ import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/group
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/individual_response.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/jahadi_group_response.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/register_params.dart';
-import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/submitted_work.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/submitted_works_response.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/repositories/jahadi_work_repository.dart';
 
 class JahadiWorkRepositoryImpl implements JahadiWorkRepository {
@@ -115,7 +115,7 @@ class JahadiWorkRepositoryImpl implements JahadiWorkRepository {
               JahadiWorkFailure.api(l),
             ),
             (r) async => right<JahadiWorkFailure, String>(
-              BaseResponse.fromJson(r).message,
+              BaseResponse.fromJson(r).message!,
             ),
           );
         },
@@ -152,17 +152,22 @@ class JahadiWorkRepositoryImpl implements JahadiWorkRepository {
       );
 
   @override
-  Future<Either<JahadiWorkFailure, List<SubmittedWork>>> getSubmittedWorks() =>
-      _remoteDS.getSubmittedWorks().then(
-        (response) async {
-          return response.fold(
-            (l) async => left<JahadiWorkFailure, List<SubmittedWork>>(
-              JahadiWorkFailure.api(l),
-            ),
-            (r) async => right<JahadiWorkFailure, List<SubmittedWork>>(
-              BaseResponse.fromJson(r).data as List<SubmittedWork>,
-            ),
+  Future<Either<JahadiWorkFailure, SubmittedWorksResponse>>
+      getSubmittedWorks() => _remoteDS.getSubmittedWorks().then(
+            (response) async {
+              return response.fold(
+                (l) async => left<JahadiWorkFailure, SubmittedWorksResponse>(
+                  JahadiWorkFailure.api(l),
+                ),
+                (r) async => right<JahadiWorkFailure, SubmittedWorksResponse>(
+                  SubmittedWorksResponse.fromJson(
+                    {
+                      'submittedWorks':
+                          BaseResponse.fromJson(r).data as List<dynamic>,
+                    },
+                  ),
+                ),
+              );
+            },
           );
-        },
-      );
 }

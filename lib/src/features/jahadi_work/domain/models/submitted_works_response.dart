@@ -3,7 +3,19 @@ import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/indiv
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/jahadi_group_response.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'submitted_work.g.dart';
+part 'submitted_works_response.g.dart';
+
+@JsonSerializable(createToJson: false)
+class SubmittedWorksResponse {
+  SubmittedWorksResponse({
+    required this.submittedWorks,
+  });
+
+  factory SubmittedWorksResponse.fromJson(Map<String, dynamic> json) =>
+      _$SubmittedWorksResponseFromJson(json);
+
+  final List<SubmittedWork> submittedWorks;
+}
 
 @JsonSerializable(createToJson: false)
 class SubmittedWork {
@@ -31,9 +43,9 @@ class SubmittedWork {
   final String filePath;
 
   @JsonKey(name: 'jahadi_groups')
-  final JahadiGroupResponse jahadiGroups;
+  final JahadiGroupResponse? jahadiGroups;
 
-  final IndividualResponse individuals;
+  final IndividualResponse? individuals;
 
-  final GroupResponse groups;
+  final GroupResponse? groups;
 }

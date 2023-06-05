@@ -15,6 +15,7 @@ class JahadiGroupResponse {
     this.groupSupervisorFullname = '',
     this.groupSupervisorPhone = '',
     this.groupSupervisorNationalCode = '',
+    this.registeredPhoneNumber = '',
   });
 
   factory JahadiGroupResponse.fromJson(Map<String, dynamic> json) =>
@@ -48,4 +49,7 @@ class JahadiGroupResponse {
 
   @JsonKey(name: 'group_supervisor_national_code')
   final String groupSupervisorNationalCode;
+
+  @JsonKey(name: 'phone_number')
+  final String registeredPhoneNumber;
 }

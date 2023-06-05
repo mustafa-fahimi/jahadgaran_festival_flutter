@@ -21,4 +21,5 @@ JahadiGroupResponse _$JahadiGroupResponseFromJson(Map<String, dynamic> json) =>
       groupSupervisorPhone: json['group_supervisor_phone'] as String? ?? '',
       groupSupervisorNationalCode:
           json['group_supervisor_national_code'] as String? ?? '',
+      registeredPhoneNumber: json['phone_number'] as String? ?? '',
     );

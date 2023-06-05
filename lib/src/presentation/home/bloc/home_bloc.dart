@@ -11,7 +11,9 @@ import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/group
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/individual_response.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/jahadi_group_response.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/register_params.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/submitted_works_response.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/get_atlas_code_use_case.dart';
+import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/get_submitted_work_code_use_case.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/group_submitted_work_use_case.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/individual_submitted_work_use_case.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/use_cases/jahadi_group_submitted_work_use_case.dart';
@@ -35,6 +37,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     this.getAtlasCodeUseCase,
     this.individualSubmittedWorkUseCase,
     this.groupSubmittedWorkUseCase,
+    this.getSubmittedWorkUseCase,
   ) : super(const _Idle()) {
     on<_ChangeMiddleView>(_onChangeMiddleView);
     on<_ChangeFormState>(_onChangeFormState);
@@ -45,6 +48,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_IndividualSubmittedWork>(_onIndividualSubmittedWork);
     on<_GroupSubmittedWork>(_onGroupSubmittedWork);
     on<_GetAtlasCode>(_onGetAtlasCode);
+    on<_GetSubmittedWorks>(_onGetSubmittedWorks);
   }
 
   final RegisterJahadiGroupUseCase registerJahadiGroupUseCase;
@@ -54,6 +58,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final IndividualSubmittedWorkUseCase individualSubmittedWorkUseCase;
   final GroupSubmittedWorkUseCase groupSubmittedWorkUseCase;
   final GetAtlasCodeUseCase getAtlasCodeUseCase;
+  final GetSubmittedWorkUseCase getSubmittedWorkUseCase;
 
   FutureOr<void> _onChangeMiddleView(
     _ChangeMiddleView event,
@@ -316,6 +321,45 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           isLoadingGetAtlasCode: false,
           isGetAtlasCodeSuccessful: true,
           getAtlasCodeResult: r,
+        ),
+      ),
+    );
+  }
+
+  FutureOr<void> _onGetSubmittedWorks(
+    _GetSubmittedWorks event,
+    Emitter<HomeState> emit,
+  ) async {
+    emit(
+      state.copyWith(
+        isLoadingSubmitWork: false,
+        isLoading: false,
+        isLoadingGetAtlasCode: false,
+        isLoadingSubmittedWorks: true,
+        isSubmitWorkSuccessful: false,
+        isRegisterSuccessful: false,
+        isGetAtlasCodeSuccessful: false,
+        isGetSubmittedWorksSuccessful: false,
+        submitWorkFailMessage: '',
+        registerFailMessage: '',
+        getAtlasCodeFailMessage: '',
+        getAtlasCodeResult: '',
+        getSubmittedWorksFailMessage: '',
+      ),
+    );
+    final getSubmittedWorksResult = await getSubmittedWorkUseCase();
+    getSubmittedWorksResult.fold(
+      (l) => emit(
+        state.copyWith(
+          isLoadingSubmittedWorks: false,
+          getSubmittedWorksFailMessage: l.toMessage(),
+        ),
+      ),
+      (r) => emit(
+        state.copyWith(
+          isLoadingSubmittedWorks: false,
+          isGetSubmittedWorksSuccessful: true,
+          submittedWorks: r.submittedWorks,
         ),
       ),
     );

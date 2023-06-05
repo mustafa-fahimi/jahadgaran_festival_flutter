@@ -6,8 +6,8 @@ part 'base_response.g.dart';
 class BaseResponse {
   BaseResponse({
     required this.status,
-    required this.message,
     required this.data,
+    this.message,
   });
 
   factory BaseResponse.fromJson(Map<String, dynamic> json) =>
@@ -17,7 +17,7 @@ class BaseResponse {
 
   final String status;
 
-  final String message;
+  final String? message;
 
   final dynamic data;
 }

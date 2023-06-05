@@ -149,5 +149,9 @@
     "admin_panel":"پنل ادمین",
     "enter_token_description":"توکن را وارد نمایید",
     "token":"توکن",
-    "wrong_token":"توکن صحیح نمی باشد"
+    "wrong_token":"توکن صحیح نمی باشد",
+    "registered_phone":"شماره ثبت نام شده",
+    "attachment_type":"قالب اثر",
+    "attached_file":"فایل پیوست شده",
+    "file_description":"توضیحات فایل"
 }

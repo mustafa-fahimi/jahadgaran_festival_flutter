@@ -29,6 +29,7 @@ mixin _$HomeEvent {
     required TResult Function(FormData formData) jahadiGroupSubmittedWork,
     required TResult Function(FormData formData) individualSubmittedWork,
     required TResult Function(FormData formData) groupSubmittedWork,
+    required TResult Function() getSubmittedWorks,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +43,7 @@ mixin _$HomeEvent {
     TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult? Function(FormData formData)? individualSubmittedWork,
     TResult? Function(FormData formData)? groupSubmittedWork,
+    TResult? Function()? getSubmittedWorks,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +57,7 @@ mixin _$HomeEvent {
     TResult Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult Function(FormData formData)? individualSubmittedWork,
     TResult Function(FormData formData)? groupSubmittedWork,
+    TResult Function()? getSubmittedWorks,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -71,6 +74,7 @@ mixin _$HomeEvent {
     required TResult Function(_IndividualSubmittedWork value)
         individualSubmittedWork,
     required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
+    required TResult Function(_GetSubmittedWorks value) getSubmittedWorks,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -85,6 +89,7 @@ mixin _$HomeEvent {
         jahadiGroupSubmittedWork,
     TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult? Function(_GetSubmittedWorks value)? getSubmittedWorks,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -98,6 +103,7 @@ mixin _$HomeEvent {
     TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
     TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult Function(_GetSubmittedWorks value)? getSubmittedWorks,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -203,6 +209,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
     required TResult Function(FormData formData) jahadiGroupSubmittedWork,
     required TResult Function(FormData formData) individualSubmittedWork,
     required TResult Function(FormData formData) groupSubmittedWork,
+    required TResult Function() getSubmittedWorks,
   }) {
     return changeMiddleView(view, news);
   }
@@ -219,6 +226,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
     TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult? Function(FormData formData)? individualSubmittedWork,
     TResult? Function(FormData formData)? groupSubmittedWork,
+    TResult? Function()? getSubmittedWorks,
   }) {
     return changeMiddleView?.call(view, news);
   }
@@ -235,6 +243,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
     TResult Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult Function(FormData formData)? individualSubmittedWork,
     TResult Function(FormData formData)? groupSubmittedWork,
+    TResult Function()? getSubmittedWorks,
     required TResult orElse(),
   }) {
     if (changeMiddleView != null) {
@@ -257,6 +266,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
     required TResult Function(_IndividualSubmittedWork value)
         individualSubmittedWork,
     required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
+    required TResult Function(_GetSubmittedWorks value) getSubmittedWorks,
   }) {
     return changeMiddleView(this);
   }
@@ -274,6 +284,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
         jahadiGroupSubmittedWork,
     TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult? Function(_GetSubmittedWorks value)? getSubmittedWorks,
   }) {
     return changeMiddleView?.call(this);
   }
@@ -290,6 +301,7 @@ class _$_ChangeMiddleView implements _ChangeMiddleView {
     TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
     TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult Function(_GetSubmittedWorks value)? getSubmittedWorks,
     required TResult orElse(),
   }) {
     if (changeMiddleView != null) {
@@ -387,6 +399,7 @@ class _$_ChangeFormState implements _ChangeFormState {
     required TResult Function(FormData formData) jahadiGroupSubmittedWork,
     required TResult Function(FormData formData) individualSubmittedWork,
     required TResult Function(FormData formData) groupSubmittedWork,
+    required TResult Function() getSubmittedWorks,
   }) {
     return changeFormState(registerFormState);
   }
@@ -403,6 +416,7 @@ class _$_ChangeFormState implements _ChangeFormState {
     TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult? Function(FormData formData)? individualSubmittedWork,
     TResult? Function(FormData formData)? groupSubmittedWork,
+    TResult? Function()? getSubmittedWorks,
   }) {
     return changeFormState?.call(registerFormState);
   }
@@ -419,6 +433,7 @@ class _$_ChangeFormState implements _ChangeFormState {
     TResult Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult Function(FormData formData)? individualSubmittedWork,
     TResult Function(FormData formData)? groupSubmittedWork,
+    TResult Function()? getSubmittedWorks,
     required TResult orElse(),
   }) {
     if (changeFormState != null) {
@@ -441,6 +456,7 @@ class _$_ChangeFormState implements _ChangeFormState {
     required TResult Function(_IndividualSubmittedWork value)
         individualSubmittedWork,
     required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
+    required TResult Function(_GetSubmittedWorks value) getSubmittedWorks,
   }) {
     return changeFormState(this);
   }
@@ -458,6 +474,7 @@ class _$_ChangeFormState implements _ChangeFormState {
         jahadiGroupSubmittedWork,
     TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult? Function(_GetSubmittedWorks value)? getSubmittedWorks,
   }) {
     return changeFormState?.call(this);
   }
@@ -474,6 +491,7 @@ class _$_ChangeFormState implements _ChangeFormState {
     TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
     TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult Function(_GetSubmittedWorks value)? getSubmittedWorks,
     required TResult orElse(),
   }) {
     if (changeFormState != null) {
@@ -570,6 +588,7 @@ class _$_RegisterJahadiGroup implements _RegisterJahadiGroup {
     required TResult Function(FormData formData) jahadiGroupSubmittedWork,
     required TResult Function(FormData formData) individualSubmittedWork,
     required TResult Function(FormData formData) groupSubmittedWork,
+    required TResult Function() getSubmittedWorks,
   }) {
     return registerJahadiGroup(registerParams);
   }
@@ -586,6 +605,7 @@ class _$_RegisterJahadiGroup implements _RegisterJahadiGroup {
     TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult? Function(FormData formData)? individualSubmittedWork,
     TResult? Function(FormData formData)? groupSubmittedWork,
+    TResult? Function()? getSubmittedWorks,
   }) {
     return registerJahadiGroup?.call(registerParams);
   }
@@ -602,6 +622,7 @@ class _$_RegisterJahadiGroup implements _RegisterJahadiGroup {
     TResult Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult Function(FormData formData)? individualSubmittedWork,
     TResult Function(FormData formData)? groupSubmittedWork,
+    TResult Function()? getSubmittedWorks,
     required TResult orElse(),
   }) {
     if (registerJahadiGroup != null) {
@@ -624,6 +645,7 @@ class _$_RegisterJahadiGroup implements _RegisterJahadiGroup {
     required TResult Function(_IndividualSubmittedWork value)
         individualSubmittedWork,
     required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
+    required TResult Function(_GetSubmittedWorks value) getSubmittedWorks,
   }) {
     return registerJahadiGroup(this);
   }
@@ -641,6 +663,7 @@ class _$_RegisterJahadiGroup implements _RegisterJahadiGroup {
         jahadiGroupSubmittedWork,
     TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult? Function(_GetSubmittedWorks value)? getSubmittedWorks,
   }) {
     return registerJahadiGroup?.call(this);
   }
@@ -657,6 +680,7 @@ class _$_RegisterJahadiGroup implements _RegisterJahadiGroup {
     TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
     TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult Function(_GetSubmittedWorks value)? getSubmittedWorks,
     required TResult orElse(),
   }) {
     if (registerJahadiGroup != null) {
@@ -753,6 +777,7 @@ class _$_RegisterIndividual implements _RegisterIndividual {
     required TResult Function(FormData formData) jahadiGroupSubmittedWork,
     required TResult Function(FormData formData) individualSubmittedWork,
     required TResult Function(FormData formData) groupSubmittedWork,
+    required TResult Function() getSubmittedWorks,
   }) {
     return registerIndividual(registerParams);
   }
@@ -769,6 +794,7 @@ class _$_RegisterIndividual implements _RegisterIndividual {
     TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult? Function(FormData formData)? individualSubmittedWork,
     TResult? Function(FormData formData)? groupSubmittedWork,
+    TResult? Function()? getSubmittedWorks,
   }) {
     return registerIndividual?.call(registerParams);
   }
@@ -785,6 +811,7 @@ class _$_RegisterIndividual implements _RegisterIndividual {
     TResult Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult Function(FormData formData)? individualSubmittedWork,
     TResult Function(FormData formData)? groupSubmittedWork,
+    TResult Function()? getSubmittedWorks,
     required TResult orElse(),
   }) {
     if (registerIndividual != null) {
@@ -807,6 +834,7 @@ class _$_RegisterIndividual implements _RegisterIndividual {
     required TResult Function(_IndividualSubmittedWork value)
         individualSubmittedWork,
     required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
+    required TResult Function(_GetSubmittedWorks value) getSubmittedWorks,
   }) {
     return registerIndividual(this);
   }
@@ -824,6 +852,7 @@ class _$_RegisterIndividual implements _RegisterIndividual {
         jahadiGroupSubmittedWork,
     TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult? Function(_GetSubmittedWorks value)? getSubmittedWorks,
   }) {
     return registerIndividual?.call(this);
   }
@@ -840,6 +869,7 @@ class _$_RegisterIndividual implements _RegisterIndividual {
     TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
     TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult Function(_GetSubmittedWorks value)? getSubmittedWorks,
     required TResult orElse(),
   }) {
     if (registerIndividual != null) {
@@ -935,6 +965,7 @@ class _$_RegisterGroup implements _RegisterGroup {
     required TResult Function(FormData formData) jahadiGroupSubmittedWork,
     required TResult Function(FormData formData) individualSubmittedWork,
     required TResult Function(FormData formData) groupSubmittedWork,
+    required TResult Function() getSubmittedWorks,
   }) {
     return registerGroup(registerParams);
   }
@@ -951,6 +982,7 @@ class _$_RegisterGroup implements _RegisterGroup {
     TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult? Function(FormData formData)? individualSubmittedWork,
     TResult? Function(FormData formData)? groupSubmittedWork,
+    TResult? Function()? getSubmittedWorks,
   }) {
     return registerGroup?.call(registerParams);
   }
@@ -967,6 +999,7 @@ class _$_RegisterGroup implements _RegisterGroup {
     TResult Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult Function(FormData formData)? individualSubmittedWork,
     TResult Function(FormData formData)? groupSubmittedWork,
+    TResult Function()? getSubmittedWorks,
     required TResult orElse(),
   }) {
     if (registerGroup != null) {
@@ -989,6 +1022,7 @@ class _$_RegisterGroup implements _RegisterGroup {
     required TResult Function(_IndividualSubmittedWork value)
         individualSubmittedWork,
     required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
+    required TResult Function(_GetSubmittedWorks value) getSubmittedWorks,
   }) {
     return registerGroup(this);
   }
@@ -1006,6 +1040,7 @@ class _$_RegisterGroup implements _RegisterGroup {
         jahadiGroupSubmittedWork,
     TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult? Function(_GetSubmittedWorks value)? getSubmittedWorks,
   }) {
     return registerGroup?.call(this);
   }
@@ -1022,6 +1057,7 @@ class _$_RegisterGroup implements _RegisterGroup {
     TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
     TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult Function(_GetSubmittedWorks value)? getSubmittedWorks,
     required TResult orElse(),
   }) {
     if (registerGroup != null) {
@@ -1119,6 +1155,7 @@ class _$_GetAtlasCode implements _GetAtlasCode {
     required TResult Function(FormData formData) jahadiGroupSubmittedWork,
     required TResult Function(FormData formData) individualSubmittedWork,
     required TResult Function(FormData formData) groupSubmittedWork,
+    required TResult Function() getSubmittedWorks,
   }) {
     return getAtlasCode(groupSupervisorNationalCode);
   }
@@ -1135,6 +1172,7 @@ class _$_GetAtlasCode implements _GetAtlasCode {
     TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult? Function(FormData formData)? individualSubmittedWork,
     TResult? Function(FormData formData)? groupSubmittedWork,
+    TResult? Function()? getSubmittedWorks,
   }) {
     return getAtlasCode?.call(groupSupervisorNationalCode);
   }
@@ -1151,6 +1189,7 @@ class _$_GetAtlasCode implements _GetAtlasCode {
     TResult Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult Function(FormData formData)? individualSubmittedWork,
     TResult Function(FormData formData)? groupSubmittedWork,
+    TResult Function()? getSubmittedWorks,
     required TResult orElse(),
   }) {
     if (getAtlasCode != null) {
@@ -1173,6 +1212,7 @@ class _$_GetAtlasCode implements _GetAtlasCode {
     required TResult Function(_IndividualSubmittedWork value)
         individualSubmittedWork,
     required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
+    required TResult Function(_GetSubmittedWorks value) getSubmittedWorks,
   }) {
     return getAtlasCode(this);
   }
@@ -1190,6 +1230,7 @@ class _$_GetAtlasCode implements _GetAtlasCode {
         jahadiGroupSubmittedWork,
     TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult? Function(_GetSubmittedWorks value)? getSubmittedWorks,
   }) {
     return getAtlasCode?.call(this);
   }
@@ -1206,6 +1247,7 @@ class _$_GetAtlasCode implements _GetAtlasCode {
     TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
     TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult Function(_GetSubmittedWorks value)? getSubmittedWorks,
     required TResult orElse(),
   }) {
     if (getAtlasCode != null) {
@@ -1303,6 +1345,7 @@ class _$_JahadiGroupSubmittedWork implements _JahadiGroupSubmittedWork {
     required TResult Function(FormData formData) jahadiGroupSubmittedWork,
     required TResult Function(FormData formData) individualSubmittedWork,
     required TResult Function(FormData formData) groupSubmittedWork,
+    required TResult Function() getSubmittedWorks,
   }) {
     return jahadiGroupSubmittedWork(formData);
   }
@@ -1319,6 +1362,7 @@ class _$_JahadiGroupSubmittedWork implements _JahadiGroupSubmittedWork {
     TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult? Function(FormData formData)? individualSubmittedWork,
     TResult? Function(FormData formData)? groupSubmittedWork,
+    TResult? Function()? getSubmittedWorks,
   }) {
     return jahadiGroupSubmittedWork?.call(formData);
   }
@@ -1335,6 +1379,7 @@ class _$_JahadiGroupSubmittedWork implements _JahadiGroupSubmittedWork {
     TResult Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult Function(FormData formData)? individualSubmittedWork,
     TResult Function(FormData formData)? groupSubmittedWork,
+    TResult Function()? getSubmittedWorks,
     required TResult orElse(),
   }) {
     if (jahadiGroupSubmittedWork != null) {
@@ -1357,6 +1402,7 @@ class _$_JahadiGroupSubmittedWork implements _JahadiGroupSubmittedWork {
     required TResult Function(_IndividualSubmittedWork value)
         individualSubmittedWork,
     required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
+    required TResult Function(_GetSubmittedWorks value) getSubmittedWorks,
   }) {
     return jahadiGroupSubmittedWork(this);
   }
@@ -1374,6 +1420,7 @@ class _$_JahadiGroupSubmittedWork implements _JahadiGroupSubmittedWork {
         jahadiGroupSubmittedWork,
     TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult? Function(_GetSubmittedWorks value)? getSubmittedWorks,
   }) {
     return jahadiGroupSubmittedWork?.call(this);
   }
@@ -1390,6 +1437,7 @@ class _$_JahadiGroupSubmittedWork implements _JahadiGroupSubmittedWork {
     TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
     TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult Function(_GetSubmittedWorks value)? getSubmittedWorks,
     required TResult orElse(),
   }) {
     if (jahadiGroupSubmittedWork != null) {
@@ -1487,6 +1535,7 @@ class _$_IndividualSubmittedWork implements _IndividualSubmittedWork {
     required TResult Function(FormData formData) jahadiGroupSubmittedWork,
     required TResult Function(FormData formData) individualSubmittedWork,
     required TResult Function(FormData formData) groupSubmittedWork,
+    required TResult Function() getSubmittedWorks,
   }) {
     return individualSubmittedWork(formData);
   }
@@ -1503,6 +1552,7 @@ class _$_IndividualSubmittedWork implements _IndividualSubmittedWork {
     TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult? Function(FormData formData)? individualSubmittedWork,
     TResult? Function(FormData formData)? groupSubmittedWork,
+    TResult? Function()? getSubmittedWorks,
   }) {
     return individualSubmittedWork?.call(formData);
   }
@@ -1519,6 +1569,7 @@ class _$_IndividualSubmittedWork implements _IndividualSubmittedWork {
     TResult Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult Function(FormData formData)? individualSubmittedWork,
     TResult Function(FormData formData)? groupSubmittedWork,
+    TResult Function()? getSubmittedWorks,
     required TResult orElse(),
   }) {
     if (individualSubmittedWork != null) {
@@ -1541,6 +1592,7 @@ class _$_IndividualSubmittedWork implements _IndividualSubmittedWork {
     required TResult Function(_IndividualSubmittedWork value)
         individualSubmittedWork,
     required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
+    required TResult Function(_GetSubmittedWorks value) getSubmittedWorks,
   }) {
     return individualSubmittedWork(this);
   }
@@ -1558,6 +1610,7 @@ class _$_IndividualSubmittedWork implements _IndividualSubmittedWork {
         jahadiGroupSubmittedWork,
     TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult? Function(_GetSubmittedWorks value)? getSubmittedWorks,
   }) {
     return individualSubmittedWork?.call(this);
   }
@@ -1574,6 +1627,7 @@ class _$_IndividualSubmittedWork implements _IndividualSubmittedWork {
     TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
     TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult Function(_GetSubmittedWorks value)? getSubmittedWorks,
     required TResult orElse(),
   }) {
     if (individualSubmittedWork != null) {
@@ -1670,6 +1724,7 @@ class _$_GroupSubmittedWork implements _GroupSubmittedWork {
     required TResult Function(FormData formData) jahadiGroupSubmittedWork,
     required TResult Function(FormData formData) individualSubmittedWork,
     required TResult Function(FormData formData) groupSubmittedWork,
+    required TResult Function() getSubmittedWorks,
   }) {
     return groupSubmittedWork(formData);
   }
@@ -1686,6 +1741,7 @@ class _$_GroupSubmittedWork implements _GroupSubmittedWork {
     TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult? Function(FormData formData)? individualSubmittedWork,
     TResult? Function(FormData formData)? groupSubmittedWork,
+    TResult? Function()? getSubmittedWorks,
   }) {
     return groupSubmittedWork?.call(formData);
   }
@@ -1702,6 +1758,7 @@ class _$_GroupSubmittedWork implements _GroupSubmittedWork {
     TResult Function(FormData formData)? jahadiGroupSubmittedWork,
     TResult Function(FormData formData)? individualSubmittedWork,
     TResult Function(FormData formData)? groupSubmittedWork,
+    TResult Function()? getSubmittedWorks,
     required TResult orElse(),
   }) {
     if (groupSubmittedWork != null) {
@@ -1724,6 +1781,7 @@ class _$_GroupSubmittedWork implements _GroupSubmittedWork {
     required TResult Function(_IndividualSubmittedWork value)
         individualSubmittedWork,
     required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
+    required TResult Function(_GetSubmittedWorks value) getSubmittedWorks,
   }) {
     return groupSubmittedWork(this);
   }
@@ -1741,6 +1799,7 @@ class _$_GroupSubmittedWork implements _GroupSubmittedWork {
         jahadiGroupSubmittedWork,
     TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult? Function(_GetSubmittedWorks value)? getSubmittedWorks,
   }) {
     return groupSubmittedWork?.call(this);
   }
@@ -1757,6 +1816,7 @@ class _$_GroupSubmittedWork implements _GroupSubmittedWork {
     TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
     TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
     TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult Function(_GetSubmittedWorks value)? getSubmittedWorks,
     required TResult orElse(),
   }) {
     if (groupSubmittedWork != null) {
@@ -1777,22 +1837,181 @@ abstract class _GroupSubmittedWork implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$_GetSubmittedWorksCopyWith<$Res> {
+  factory _$$_GetSubmittedWorksCopyWith(_$_GetSubmittedWorks value,
+          $Res Function(_$_GetSubmittedWorks) then) =
+      __$$_GetSubmittedWorksCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_GetSubmittedWorksCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$_GetSubmittedWorks>
+    implements _$$_GetSubmittedWorksCopyWith<$Res> {
+  __$$_GetSubmittedWorksCopyWithImpl(
+      _$_GetSubmittedWorks _value, $Res Function(_$_GetSubmittedWorks) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_GetSubmittedWorks implements _GetSubmittedWorks {
+  const _$_GetSubmittedWorks();
+
+  @override
+  String toString() {
+    return 'HomeEvent.getSubmittedWorks()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_GetSubmittedWorks);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(HomeMiddleViews view, NewsModel? news)
+        changeMiddleView,
+    required TResult Function(RegisterType registerFormState) changeFormState,
+    required TResult Function(RegisterParams registerParams)
+        registerJahadiGroup,
+    required TResult Function(RegisterParams registerParams) registerIndividual,
+    required TResult Function(RegisterParams registerParams) registerGroup,
+    required TResult Function(String groupSupervisorNationalCode) getAtlasCode,
+    required TResult Function(FormData formData) jahadiGroupSubmittedWork,
+    required TResult Function(FormData formData) individualSubmittedWork,
+    required TResult Function(FormData formData) groupSubmittedWork,
+    required TResult Function() getSubmittedWorks,
+  }) {
+    return getSubmittedWorks();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult? Function(RegisterType registerFormState)? changeFormState,
+    TResult? Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult? Function(RegisterParams registerParams)? registerIndividual,
+    TResult? Function(RegisterParams registerParams)? registerGroup,
+    TResult? Function(String groupSupervisorNationalCode)? getAtlasCode,
+    TResult? Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult? Function(FormData formData)? individualSubmittedWork,
+    TResult? Function(FormData formData)? groupSubmittedWork,
+    TResult? Function()? getSubmittedWorks,
+  }) {
+    return getSubmittedWorks?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(HomeMiddleViews view, NewsModel? news)? changeMiddleView,
+    TResult Function(RegisterType registerFormState)? changeFormState,
+    TResult Function(RegisterParams registerParams)? registerJahadiGroup,
+    TResult Function(RegisterParams registerParams)? registerIndividual,
+    TResult Function(RegisterParams registerParams)? registerGroup,
+    TResult Function(String groupSupervisorNationalCode)? getAtlasCode,
+    TResult Function(FormData formData)? jahadiGroupSubmittedWork,
+    TResult Function(FormData formData)? individualSubmittedWork,
+    TResult Function(FormData formData)? groupSubmittedWork,
+    TResult Function()? getSubmittedWorks,
+    required TResult orElse(),
+  }) {
+    if (getSubmittedWorks != null) {
+      return getSubmittedWorks();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChangeMiddleView value) changeMiddleView,
+    required TResult Function(_ChangeFormState value) changeFormState,
+    required TResult Function(_RegisterJahadiGroup value) registerJahadiGroup,
+    required TResult Function(_RegisterIndividual value) registerIndividual,
+    required TResult Function(_RegisterGroup value) registerGroup,
+    required TResult Function(_GetAtlasCode value) getAtlasCode,
+    required TResult Function(_JahadiGroupSubmittedWork value)
+        jahadiGroupSubmittedWork,
+    required TResult Function(_IndividualSubmittedWork value)
+        individualSubmittedWork,
+    required TResult Function(_GroupSubmittedWork value) groupSubmittedWork,
+    required TResult Function(_GetSubmittedWorks value) getSubmittedWorks,
+  }) {
+    return getSubmittedWorks(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult? Function(_ChangeFormState value)? changeFormState,
+    TResult? Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult? Function(_RegisterIndividual value)? registerIndividual,
+    TResult? Function(_RegisterGroup value)? registerGroup,
+    TResult? Function(_GetAtlasCode value)? getAtlasCode,
+    TResult? Function(_JahadiGroupSubmittedWork value)?
+        jahadiGroupSubmittedWork,
+    TResult? Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult? Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult? Function(_GetSubmittedWorks value)? getSubmittedWorks,
+  }) {
+    return getSubmittedWorks?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChangeMiddleView value)? changeMiddleView,
+    TResult Function(_ChangeFormState value)? changeFormState,
+    TResult Function(_RegisterJahadiGroup value)? registerJahadiGroup,
+    TResult Function(_RegisterIndividual value)? registerIndividual,
+    TResult Function(_RegisterGroup value)? registerGroup,
+    TResult Function(_GetAtlasCode value)? getAtlasCode,
+    TResult Function(_JahadiGroupSubmittedWork value)? jahadiGroupSubmittedWork,
+    TResult Function(_IndividualSubmittedWork value)? individualSubmittedWork,
+    TResult Function(_GroupSubmittedWork value)? groupSubmittedWork,
+    TResult Function(_GetSubmittedWorks value)? getSubmittedWorks,
+    required TResult orElse(),
+  }) {
+    if (getSubmittedWorks != null) {
+      return getSubmittedWorks(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetSubmittedWorks implements HomeEvent {
+  const factory _GetSubmittedWorks() = _$_GetSubmittedWorks;
+}
+
+/// @nodoc
 mixin _$HomeState {
   RegisterType get registerFormState => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isLoadingSubmitWork => throw _privateConstructorUsedError;
   bool get isLoadingGetAtlasCode => throw _privateConstructorUsedError;
+  bool get isLoadingSubmittedWorks => throw _privateConstructorUsedError;
   bool get isRegisterSuccessful => throw _privateConstructorUsedError;
   bool get isSubmitWorkSuccessful => throw _privateConstructorUsedError;
   bool get isGetAtlasCodeSuccessful => throw _privateConstructorUsedError;
+  bool get isGetSubmittedWorksSuccessful => throw _privateConstructorUsedError;
   String get registerFailMessage => throw _privateConstructorUsedError;
   String get submitWorkFailMessage => throw _privateConstructorUsedError;
   String get getAtlasCodeFailMessage => throw _privateConstructorUsedError;
+  String get getSubmittedWorksFailMessage => throw _privateConstructorUsedError;
   JahadiGroupResponse get jahadiGroupData => throw _privateConstructorUsedError;
   IndividualResponse? get individualData => throw _privateConstructorUsedError;
   GroupResponse? get groupData => throw _privateConstructorUsedError;
   String get getAtlasCodeResult => throw _privateConstructorUsedError;
   HomeMiddleViews get currentMiddleView => throw _privateConstructorUsedError;
+  List<SubmittedWork> get submittedWorks => throw _privateConstructorUsedError;
   NewsModel? get selectedNews => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -1801,17 +2020,21 @@ mixin _$HomeState {
             bool isLoading,
             bool isLoadingSubmitWork,
             bool isLoadingGetAtlasCode,
+            bool isLoadingSubmittedWorks,
             bool isRegisterSuccessful,
             bool isSubmitWorkSuccessful,
             bool isGetAtlasCodeSuccessful,
+            bool isGetSubmittedWorksSuccessful,
             String registerFailMessage,
             String submitWorkFailMessage,
             String getAtlasCodeFailMessage,
+            String getSubmittedWorksFailMessage,
             JahadiGroupResponse jahadiGroupData,
             IndividualResponse? individualData,
             GroupResponse? groupData,
             String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
+            List<SubmittedWork> submittedWorks,
             NewsModel? selectedNews)
         idle,
   }) =>
@@ -1823,17 +2046,21 @@ mixin _$HomeState {
             bool isLoading,
             bool isLoadingSubmitWork,
             bool isLoadingGetAtlasCode,
+            bool isLoadingSubmittedWorks,
             bool isRegisterSuccessful,
             bool isSubmitWorkSuccessful,
             bool isGetAtlasCodeSuccessful,
+            bool isGetSubmittedWorksSuccessful,
             String registerFailMessage,
             String submitWorkFailMessage,
             String getAtlasCodeFailMessage,
+            String getSubmittedWorksFailMessage,
             JahadiGroupResponse jahadiGroupData,
             IndividualResponse? individualData,
             GroupResponse? groupData,
             String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
+            List<SubmittedWork> submittedWorks,
             NewsModel? selectedNews)?
         idle,
   }) =>
@@ -1845,17 +2072,21 @@ mixin _$HomeState {
             bool isLoading,
             bool isLoadingSubmitWork,
             bool isLoadingGetAtlasCode,
+            bool isLoadingSubmittedWorks,
             bool isRegisterSuccessful,
             bool isSubmitWorkSuccessful,
             bool isGetAtlasCodeSuccessful,
+            bool isGetSubmittedWorksSuccessful,
             String registerFailMessage,
             String submitWorkFailMessage,
             String getAtlasCodeFailMessage,
+            String getSubmittedWorksFailMessage,
             JahadiGroupResponse jahadiGroupData,
             IndividualResponse? individualData,
             GroupResponse? groupData,
             String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
+            List<SubmittedWork> submittedWorks,
             NewsModel? selectedNews)?
         idle,
     required TResult orElse(),
@@ -1893,17 +2124,21 @@ abstract class $HomeStateCopyWith<$Res> {
       bool isLoading,
       bool isLoadingSubmitWork,
       bool isLoadingGetAtlasCode,
+      bool isLoadingSubmittedWorks,
       bool isRegisterSuccessful,
       bool isSubmitWorkSuccessful,
       bool isGetAtlasCodeSuccessful,
+      bool isGetSubmittedWorksSuccessful,
       String registerFailMessage,
       String submitWorkFailMessage,
       String getAtlasCodeFailMessage,
+      String getSubmittedWorksFailMessage,
       JahadiGroupResponse jahadiGroupData,
       IndividualResponse? individualData,
       GroupResponse? groupData,
       String getAtlasCodeResult,
       HomeMiddleViews currentMiddleView,
+      List<SubmittedWork> submittedWorks,
       NewsModel? selectedNews});
 }
 
@@ -1924,17 +2159,21 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? isLoading = null,
     Object? isLoadingSubmitWork = null,
     Object? isLoadingGetAtlasCode = null,
+    Object? isLoadingSubmittedWorks = null,
     Object? isRegisterSuccessful = null,
     Object? isSubmitWorkSuccessful = null,
     Object? isGetAtlasCodeSuccessful = null,
+    Object? isGetSubmittedWorksSuccessful = null,
     Object? registerFailMessage = null,
     Object? submitWorkFailMessage = null,
     Object? getAtlasCodeFailMessage = null,
+    Object? getSubmittedWorksFailMessage = null,
     Object? jahadiGroupData = null,
     Object? individualData = freezed,
     Object? groupData = freezed,
     Object? getAtlasCodeResult = null,
     Object? currentMiddleView = null,
+    Object? submittedWorks = null,
     Object? selectedNews = freezed,
   }) {
     return _then(_value.copyWith(
@@ -1954,6 +2193,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.isLoadingGetAtlasCode
           : isLoadingGetAtlasCode // ignore: cast_nullable_to_non_nullable
               as bool,
+      isLoadingSubmittedWorks: null == isLoadingSubmittedWorks
+          ? _value.isLoadingSubmittedWorks
+          : isLoadingSubmittedWorks // ignore: cast_nullable_to_non_nullable
+              as bool,
       isRegisterSuccessful: null == isRegisterSuccessful
           ? _value.isRegisterSuccessful
           : isRegisterSuccessful // ignore: cast_nullable_to_non_nullable
@@ -1966,6 +2209,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.isGetAtlasCodeSuccessful
           : isGetAtlasCodeSuccessful // ignore: cast_nullable_to_non_nullable
               as bool,
+      isGetSubmittedWorksSuccessful: null == isGetSubmittedWorksSuccessful
+          ? _value.isGetSubmittedWorksSuccessful
+          : isGetSubmittedWorksSuccessful // ignore: cast_nullable_to_non_nullable
+              as bool,
       registerFailMessage: null == registerFailMessage
           ? _value.registerFailMessage
           : registerFailMessage // ignore: cast_nullable_to_non_nullable
@@ -1977,6 +2224,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
       getAtlasCodeFailMessage: null == getAtlasCodeFailMessage
           ? _value.getAtlasCodeFailMessage
           : getAtlasCodeFailMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      getSubmittedWorksFailMessage: null == getSubmittedWorksFailMessage
+          ? _value.getSubmittedWorksFailMessage
+          : getSubmittedWorksFailMessage // ignore: cast_nullable_to_non_nullable
               as String,
       jahadiGroupData: null == jahadiGroupData
           ? _value.jahadiGroupData
@@ -1998,6 +2249,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.currentMiddleView
           : currentMiddleView // ignore: cast_nullable_to_non_nullable
               as HomeMiddleViews,
+      submittedWorks: null == submittedWorks
+          ? _value.submittedWorks
+          : submittedWorks // ignore: cast_nullable_to_non_nullable
+              as List<SubmittedWork>,
       selectedNews: freezed == selectedNews
           ? _value.selectedNews
           : selectedNews // ignore: cast_nullable_to_non_nullable
@@ -2017,17 +2272,21 @@ abstract class _$$_IdleCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
       bool isLoading,
       bool isLoadingSubmitWork,
       bool isLoadingGetAtlasCode,
+      bool isLoadingSubmittedWorks,
       bool isRegisterSuccessful,
       bool isSubmitWorkSuccessful,
       bool isGetAtlasCodeSuccessful,
+      bool isGetSubmittedWorksSuccessful,
       String registerFailMessage,
       String submitWorkFailMessage,
       String getAtlasCodeFailMessage,
+      String getSubmittedWorksFailMessage,
       JahadiGroupResponse jahadiGroupData,
       IndividualResponse? individualData,
       GroupResponse? groupData,
       String getAtlasCodeResult,
       HomeMiddleViews currentMiddleView,
+      List<SubmittedWork> submittedWorks,
       NewsModel? selectedNews});
 }
 
@@ -2044,17 +2303,21 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
     Object? isLoading = null,
     Object? isLoadingSubmitWork = null,
     Object? isLoadingGetAtlasCode = null,
+    Object? isLoadingSubmittedWorks = null,
     Object? isRegisterSuccessful = null,
     Object? isSubmitWorkSuccessful = null,
     Object? isGetAtlasCodeSuccessful = null,
+    Object? isGetSubmittedWorksSuccessful = null,
     Object? registerFailMessage = null,
     Object? submitWorkFailMessage = null,
     Object? getAtlasCodeFailMessage = null,
+    Object? getSubmittedWorksFailMessage = null,
     Object? jahadiGroupData = null,
     Object? individualData = freezed,
     Object? groupData = freezed,
     Object? getAtlasCodeResult = null,
     Object? currentMiddleView = null,
+    Object? submittedWorks = null,
     Object? selectedNews = freezed,
   }) {
     return _then(_$_Idle(
@@ -2074,6 +2337,10 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
           ? _value.isLoadingGetAtlasCode
           : isLoadingGetAtlasCode // ignore: cast_nullable_to_non_nullable
               as bool,
+      isLoadingSubmittedWorks: null == isLoadingSubmittedWorks
+          ? _value.isLoadingSubmittedWorks
+          : isLoadingSubmittedWorks // ignore: cast_nullable_to_non_nullable
+              as bool,
       isRegisterSuccessful: null == isRegisterSuccessful
           ? _value.isRegisterSuccessful
           : isRegisterSuccessful // ignore: cast_nullable_to_non_nullable
@@ -2086,6 +2353,10 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
           ? _value.isGetAtlasCodeSuccessful
           : isGetAtlasCodeSuccessful // ignore: cast_nullable_to_non_nullable
               as bool,
+      isGetSubmittedWorksSuccessful: null == isGetSubmittedWorksSuccessful
+          ? _value.isGetSubmittedWorksSuccessful
+          : isGetSubmittedWorksSuccessful // ignore: cast_nullable_to_non_nullable
+              as bool,
       registerFailMessage: null == registerFailMessage
           ? _value.registerFailMessage
           : registerFailMessage // ignore: cast_nullable_to_non_nullable
@@ -2097,6 +2368,10 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
       getAtlasCodeFailMessage: null == getAtlasCodeFailMessage
           ? _value.getAtlasCodeFailMessage
           : getAtlasCodeFailMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+      getSubmittedWorksFailMessage: null == getSubmittedWorksFailMessage
+          ? _value.getSubmittedWorksFailMessage
+          : getSubmittedWorksFailMessage // ignore: cast_nullable_to_non_nullable
               as String,
       jahadiGroupData: null == jahadiGroupData
           ? _value.jahadiGroupData
@@ -2118,6 +2393,10 @@ class __$$_IdleCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$_Idle>
           ? _value.currentMiddleView
           : currentMiddleView // ignore: cast_nullable_to_non_nullable
               as HomeMiddleViews,
+      submittedWorks: null == submittedWorks
+          ? _value._submittedWorks
+          : submittedWorks // ignore: cast_nullable_to_non_nullable
+              as List<SubmittedWork>,
       selectedNews: freezed == selectedNews
           ? _value.selectedNews
           : selectedNews // ignore: cast_nullable_to_non_nullable
@@ -2134,18 +2413,23 @@ class _$_Idle implements _Idle {
       this.isLoading = false,
       this.isLoadingSubmitWork = false,
       this.isLoadingGetAtlasCode = false,
+      this.isLoadingSubmittedWorks = false,
       this.isRegisterSuccessful = false,
       this.isSubmitWorkSuccessful = false,
       this.isGetAtlasCodeSuccessful = false,
+      this.isGetSubmittedWorksSuccessful = false,
       this.registerFailMessage = '',
       this.submitWorkFailMessage = '',
       this.getAtlasCodeFailMessage = '',
+      this.getSubmittedWorksFailMessage = '',
       this.jahadiGroupData = const JahadiGroupResponse(),
       this.individualData = null,
       this.groupData = null,
       this.getAtlasCodeResult = '',
       this.currentMiddleView = HomeMiddleViews.home,
-      this.selectedNews});
+      final List<SubmittedWork> submittedWorks = const [],
+      this.selectedNews})
+      : _submittedWorks = submittedWorks;
 
   @override
   @JsonKey()
@@ -2161,6 +2445,9 @@ class _$_Idle implements _Idle {
   final bool isLoadingGetAtlasCode;
   @override
   @JsonKey()
+  final bool isLoadingSubmittedWorks;
+  @override
+  @JsonKey()
   final bool isRegisterSuccessful;
   @override
   @JsonKey()
@@ -2170,6 +2457,9 @@ class _$_Idle implements _Idle {
   final bool isGetAtlasCodeSuccessful;
   @override
   @JsonKey()
+  final bool isGetSubmittedWorksSuccessful;
+  @override
+  @JsonKey()
   final String registerFailMessage;
   @override
   @JsonKey()
@@ -2177,6 +2467,9 @@ class _$_Idle implements _Idle {
   @override
   @JsonKey()
   final String getAtlasCodeFailMessage;
+  @override
+  @JsonKey()
+  final String getSubmittedWorksFailMessage;
   @override
   @JsonKey()
   final JahadiGroupResponse jahadiGroupData;
@@ -2192,12 +2485,21 @@ class _$_Idle implements _Idle {
   @override
   @JsonKey()
   final HomeMiddleViews currentMiddleView;
+  final List<SubmittedWork> _submittedWorks;
+  @override
+  @JsonKey()
+  List<SubmittedWork> get submittedWorks {
+    if (_submittedWorks is EqualUnmodifiableListView) return _submittedWorks;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_submittedWorks);
+  }
+
   @override
   final NewsModel? selectedNews;
 
   @override
   String toString() {
-    return 'HomeState.idle(registerFormState: $registerFormState, isLoading: $isLoading, isLoadingSubmitWork: $isLoadingSubmitWork, isLoadingGetAtlasCode: $isLoadingGetAtlasCode, isRegisterSuccessful: $isRegisterSuccessful, isSubmitWorkSuccessful: $isSubmitWorkSuccessful, isGetAtlasCodeSuccessful: $isGetAtlasCodeSuccessful, registerFailMessage: $registerFailMessage, submitWorkFailMessage: $submitWorkFailMessage, getAtlasCodeFailMessage: $getAtlasCodeFailMessage, jahadiGroupData: $jahadiGroupData, individualData: $individualData, groupData: $groupData, getAtlasCodeResult: $getAtlasCodeResult, currentMiddleView: $currentMiddleView, selectedNews: $selectedNews)';
+    return 'HomeState.idle(registerFormState: $registerFormState, isLoading: $isLoading, isLoadingSubmitWork: $isLoadingSubmitWork, isLoadingGetAtlasCode: $isLoadingGetAtlasCode, isLoadingSubmittedWorks: $isLoadingSubmittedWorks, isRegisterSuccessful: $isRegisterSuccessful, isSubmitWorkSuccessful: $isSubmitWorkSuccessful, isGetAtlasCodeSuccessful: $isGetAtlasCodeSuccessful, isGetSubmittedWorksSuccessful: $isGetSubmittedWorksSuccessful, registerFailMessage: $registerFailMessage, submitWorkFailMessage: $submitWorkFailMessage, getAtlasCodeFailMessage: $getAtlasCodeFailMessage, getSubmittedWorksFailMessage: $getSubmittedWorksFailMessage, jahadiGroupData: $jahadiGroupData, individualData: $individualData, groupData: $groupData, getAtlasCodeResult: $getAtlasCodeResult, currentMiddleView: $currentMiddleView, submittedWorks: $submittedWorks, selectedNews: $selectedNews)';
   }
 
   @override
@@ -2213,20 +2515,27 @@ class _$_Idle implements _Idle {
                 other.isLoadingSubmitWork == isLoadingSubmitWork) &&
             (identical(other.isLoadingGetAtlasCode, isLoadingGetAtlasCode) ||
                 other.isLoadingGetAtlasCode == isLoadingGetAtlasCode) &&
+            (identical(other.isLoadingSubmittedWorks, isLoadingSubmittedWorks) ||
+                other.isLoadingSubmittedWorks == isLoadingSubmittedWorks) &&
             (identical(other.isRegisterSuccessful, isRegisterSuccessful) ||
                 other.isRegisterSuccessful == isRegisterSuccessful) &&
             (identical(other.isSubmitWorkSuccessful, isSubmitWorkSuccessful) ||
                 other.isSubmitWorkSuccessful == isSubmitWorkSuccessful) &&
-            (identical(
-                    other.isGetAtlasCodeSuccessful, isGetAtlasCodeSuccessful) ||
+            (identical(other.isGetAtlasCodeSuccessful, isGetAtlasCodeSuccessful) ||
                 other.isGetAtlasCodeSuccessful == isGetAtlasCodeSuccessful) &&
+            (identical(other.isGetSubmittedWorksSuccessful,
+                    isGetSubmittedWorksSuccessful) ||
+                other.isGetSubmittedWorksSuccessful ==
+                    isGetSubmittedWorksSuccessful) &&
             (identical(other.registerFailMessage, registerFailMessage) ||
                 other.registerFailMessage == registerFailMessage) &&
             (identical(other.submitWorkFailMessage, submitWorkFailMessage) ||
                 other.submitWorkFailMessage == submitWorkFailMessage) &&
-            (identical(
-                    other.getAtlasCodeFailMessage, getAtlasCodeFailMessage) ||
+            (identical(other.getAtlasCodeFailMessage, getAtlasCodeFailMessage) ||
                 other.getAtlasCodeFailMessage == getAtlasCodeFailMessage) &&
+            (identical(other.getSubmittedWorksFailMessage, getSubmittedWorksFailMessage) ||
+                other.getSubmittedWorksFailMessage ==
+                    getSubmittedWorksFailMessage) &&
             (identical(other.jahadiGroupData, jahadiGroupData) ||
                 other.jahadiGroupData == jahadiGroupData) &&
             (identical(other.individualData, individualData) ||
@@ -2237,29 +2546,36 @@ class _$_Idle implements _Idle {
                 other.getAtlasCodeResult == getAtlasCodeResult) &&
             (identical(other.currentMiddleView, currentMiddleView) ||
                 other.currentMiddleView == currentMiddleView) &&
+            const DeepCollectionEquality()
+                .equals(other._submittedWorks, _submittedWorks) &&
             (identical(other.selectedNews, selectedNews) ||
                 other.selectedNews == selectedNews));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      registerFormState,
-      isLoading,
-      isLoadingSubmitWork,
-      isLoadingGetAtlasCode,
-      isRegisterSuccessful,
-      isSubmitWorkSuccessful,
-      isGetAtlasCodeSuccessful,
-      registerFailMessage,
-      submitWorkFailMessage,
-      getAtlasCodeFailMessage,
-      jahadiGroupData,
-      individualData,
-      groupData,
-      getAtlasCodeResult,
-      currentMiddleView,
-      selectedNews);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        registerFormState,
+        isLoading,
+        isLoadingSubmitWork,
+        isLoadingGetAtlasCode,
+        isLoadingSubmittedWorks,
+        isRegisterSuccessful,
+        isSubmitWorkSuccessful,
+        isGetAtlasCodeSuccessful,
+        isGetSubmittedWorksSuccessful,
+        registerFailMessage,
+        submitWorkFailMessage,
+        getAtlasCodeFailMessage,
+        getSubmittedWorksFailMessage,
+        jahadiGroupData,
+        individualData,
+        groupData,
+        getAtlasCodeResult,
+        currentMiddleView,
+        const DeepCollectionEquality().hash(_submittedWorks),
+        selectedNews
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -2275,17 +2591,21 @@ class _$_Idle implements _Idle {
             bool isLoading,
             bool isLoadingSubmitWork,
             bool isLoadingGetAtlasCode,
+            bool isLoadingSubmittedWorks,
             bool isRegisterSuccessful,
             bool isSubmitWorkSuccessful,
             bool isGetAtlasCodeSuccessful,
+            bool isGetSubmittedWorksSuccessful,
             String registerFailMessage,
             String submitWorkFailMessage,
             String getAtlasCodeFailMessage,
+            String getSubmittedWorksFailMessage,
             JahadiGroupResponse jahadiGroupData,
             IndividualResponse? individualData,
             GroupResponse? groupData,
             String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
+            List<SubmittedWork> submittedWorks,
             NewsModel? selectedNews)
         idle,
   }) {
@@ -2294,17 +2614,21 @@ class _$_Idle implements _Idle {
         isLoading,
         isLoadingSubmitWork,
         isLoadingGetAtlasCode,
+        isLoadingSubmittedWorks,
         isRegisterSuccessful,
         isSubmitWorkSuccessful,
         isGetAtlasCodeSuccessful,
+        isGetSubmittedWorksSuccessful,
         registerFailMessage,
         submitWorkFailMessage,
         getAtlasCodeFailMessage,
+        getSubmittedWorksFailMessage,
         jahadiGroupData,
         individualData,
         groupData,
         getAtlasCodeResult,
         currentMiddleView,
+        submittedWorks,
         selectedNews);
   }
 
@@ -2316,17 +2640,21 @@ class _$_Idle implements _Idle {
             bool isLoading,
             bool isLoadingSubmitWork,
             bool isLoadingGetAtlasCode,
+            bool isLoadingSubmittedWorks,
             bool isRegisterSuccessful,
             bool isSubmitWorkSuccessful,
             bool isGetAtlasCodeSuccessful,
+            bool isGetSubmittedWorksSuccessful,
             String registerFailMessage,
             String submitWorkFailMessage,
             String getAtlasCodeFailMessage,
+            String getSubmittedWorksFailMessage,
             JahadiGroupResponse jahadiGroupData,
             IndividualResponse? individualData,
             GroupResponse? groupData,
             String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
+            List<SubmittedWork> submittedWorks,
             NewsModel? selectedNews)?
         idle,
   }) {
@@ -2335,17 +2663,21 @@ class _$_Idle implements _Idle {
         isLoading,
         isLoadingSubmitWork,
         isLoadingGetAtlasCode,
+        isLoadingSubmittedWorks,
         isRegisterSuccessful,
         isSubmitWorkSuccessful,
         isGetAtlasCodeSuccessful,
+        isGetSubmittedWorksSuccessful,
         registerFailMessage,
         submitWorkFailMessage,
         getAtlasCodeFailMessage,
+        getSubmittedWorksFailMessage,
         jahadiGroupData,
         individualData,
         groupData,
         getAtlasCodeResult,
         currentMiddleView,
+        submittedWorks,
         selectedNews);
   }
 
@@ -2357,17 +2689,21 @@ class _$_Idle implements _Idle {
             bool isLoading,
             bool isLoadingSubmitWork,
             bool isLoadingGetAtlasCode,
+            bool isLoadingSubmittedWorks,
             bool isRegisterSuccessful,
             bool isSubmitWorkSuccessful,
             bool isGetAtlasCodeSuccessful,
+            bool isGetSubmittedWorksSuccessful,
             String registerFailMessage,
             String submitWorkFailMessage,
             String getAtlasCodeFailMessage,
+            String getSubmittedWorksFailMessage,
             JahadiGroupResponse jahadiGroupData,
             IndividualResponse? individualData,
             GroupResponse? groupData,
             String getAtlasCodeResult,
             HomeMiddleViews currentMiddleView,
+            List<SubmittedWork> submittedWorks,
             NewsModel? selectedNews)?
         idle,
     required TResult orElse(),
@@ -2378,17 +2714,21 @@ class _$_Idle implements _Idle {
           isLoading,
           isLoadingSubmitWork,
           isLoadingGetAtlasCode,
+          isLoadingSubmittedWorks,
           isRegisterSuccessful,
           isSubmitWorkSuccessful,
           isGetAtlasCodeSuccessful,
+          isGetSubmittedWorksSuccessful,
           registerFailMessage,
           submitWorkFailMessage,
           getAtlasCodeFailMessage,
+          getSubmittedWorksFailMessage,
           jahadiGroupData,
           individualData,
           groupData,
           getAtlasCodeResult,
           currentMiddleView,
+          submittedWorks,
           selectedNews);
     }
     return orElse();
@@ -2429,17 +2769,21 @@ abstract class _Idle implements HomeState {
       final bool isLoading,
       final bool isLoadingSubmitWork,
       final bool isLoadingGetAtlasCode,
+      final bool isLoadingSubmittedWorks,
       final bool isRegisterSuccessful,
       final bool isSubmitWorkSuccessful,
       final bool isGetAtlasCodeSuccessful,
+      final bool isGetSubmittedWorksSuccessful,
       final String registerFailMessage,
       final String submitWorkFailMessage,
       final String getAtlasCodeFailMessage,
+      final String getSubmittedWorksFailMessage,
       final JahadiGroupResponse jahadiGroupData,
       final IndividualResponse? individualData,
       final GroupResponse? groupData,
       final String getAtlasCodeResult,
       final HomeMiddleViews currentMiddleView,
+      final List<SubmittedWork> submittedWorks,
       final NewsModel? selectedNews}) = _$_Idle;
 
   @override
@@ -2451,17 +2795,23 @@ abstract class _Idle implements HomeState {
   @override
   bool get isLoadingGetAtlasCode;
   @override
+  bool get isLoadingSubmittedWorks;
+  @override
   bool get isRegisterSuccessful;
   @override
   bool get isSubmitWorkSuccessful;
   @override
   bool get isGetAtlasCodeSuccessful;
   @override
+  bool get isGetSubmittedWorksSuccessful;
+  @override
   String get registerFailMessage;
   @override
   String get submitWorkFailMessage;
   @override
   String get getAtlasCodeFailMessage;
+  @override
+  String get getSubmittedWorksFailMessage;
   @override
   JahadiGroupResponse get jahadiGroupData;
   @override
@@ -2472,6 +2822,8 @@ abstract class _Idle implements HomeState {
   String get getAtlasCodeResult;
   @override
   HomeMiddleViews get currentMiddleView;
+  @override
+  List<SubmittedWork> get submittedWorks;
   @override
   NewsModel? get selectedNews;
   @override

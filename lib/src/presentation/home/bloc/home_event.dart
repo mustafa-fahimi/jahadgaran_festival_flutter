@@ -38,4 +38,6 @@ class HomeEvent with _$HomeEvent {
   const factory HomeEvent.groupSubmittedWork({
     required FormData formData,
   }) = _GroupSubmittedWork;
+
+  const factory HomeEvent.getSubmittedWorks() = _GetSubmittedWorks;
 }

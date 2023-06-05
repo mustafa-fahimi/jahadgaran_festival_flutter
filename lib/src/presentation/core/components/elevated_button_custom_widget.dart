@@ -38,9 +38,12 @@ class ElevatedButtonCustomWidget extends StatelessWidget {
           ),
           child: FittedBox(
             child: isLoading
-                ? const CircularProgressIndicator(
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                  )
+                ? const Padding(
+                  padding: EdgeInsets.all(8),
+                  child: CircularProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                    ),
+                )
                 : Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
