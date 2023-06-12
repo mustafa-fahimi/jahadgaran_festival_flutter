@@ -138,7 +138,36 @@ class JahadiGroupSubmitWorkFormWidget extends StatelessWidget {
               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
               maxLength: 5,
             ),
-            const SizedBox(height: 25),
+            const SizedBox(height: 20),
+            Text(
+              context.l10n.choose_attachment_file,
+              style: subtitle2,
+            ),
+            const SizedBox(height: 8),
+            OutlinedButtonCustomWidget(
+              onTap: _onTapSelectFile,
+              btnText: context.l10n.choose_file,
+              height: 40,
+              width: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
+                  ? 150
+                  : 200,
+              buttonColor: context.theme.colorScheme.primary,
+            ),
+            const SizedBox(height: 15),
+            if (selectedFile.value != null)
+              RichText(
+                text: TextSpan(
+                  text: '${context.l10n.chosen_file_name}:\n',
+                  style: subtitle1,
+                  children: [
+                    TextSpan(
+                      text: selectedFile.value?.name,
+                      style: heading6.copyWith(color: kSuccessColor),
+                    ),
+                  ],
+                ),
+              ),
+            const SizedBox(height: 20),
             Text(
               context.l10n.choose_attachment_type,
               style: subtitle2,
@@ -172,35 +201,6 @@ class JahadiGroupSubmitWorkFormWidget extends StatelessWidget {
               minLines: 4,
               maxLines: 4,
             ),
-            const SizedBox(height: 20),
-            Text(
-              context.l10n.choose_attachment_file,
-              style: subtitle2,
-            ),
-            const SizedBox(height: 8),
-            OutlinedButtonCustomWidget(
-              onTap: _onTapSelectFile,
-              btnText: context.l10n.choose_file,
-              height: 40,
-              width: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
-                  ? 150
-                  : 200,
-              buttonColor: context.theme.colorScheme.primary,
-            ),
-            const SizedBox(height: 15),
-            if (selectedFile.value != null)
-              RichText(
-                text: TextSpan(
-                  text: '${context.l10n.chosen_file_name}:\n',
-                  style: subtitle1,
-                  children: [
-                    TextSpan(
-                      text: selectedFile.value?.name,
-                      style: heading6.copyWith(color: kSuccessColor),
-                    ),
-                  ],
-                ),
-              ),
             const SizedBox(height: 40),
             BlocConsumer<HomeBloc, HomeState>(
               listener: (context, state) {
