@@ -5,7 +5,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:jahadgaran_festival/src/features/core/failures/api_failure.dart';
 
-extension FlApiFutureToDomain<T> on Future<Either<DioError, Response<T>>> {
+extension FlApiFutureToDomain<T> on Future<Either<DioException, Response<T>>> {
   Future<Either<ApiFailure, T?>> get toDomain => then(
         (res) => res.fold(
           (dioError) => left<ApiFailure, T>(dioError.toDomain),
@@ -21,9 +21,9 @@ extension FlApiFutureToDomain<T> on Future<Either<DioError, Response<T>>> {
       );
 }
 
-extension DioErrorEx on DioError {
+extension DioErrorEx on DioException {
   ApiFailure get toDomain {
-    if (type == DioErrorType.badResponse) {
+    if (type == DioExceptionType.badResponse) {
       switch (response?.statusCode) {
         case null:
           return const ApiFailure.crossOrigin('{"message": ["cross_origin"]}');
@@ -43,7 +43,7 @@ extension DioErrorEx on DioError {
         default:
           return ApiFailure.fetchData(response!.data);
       }
-    } else if (type == DioErrorType.unknown) {
+    } else if (type == DioExceptionType.unknown) {
       if (error is SocketException) {
         return const ApiFailure.socket();
       } else if (error is TimeoutException) {
@@ -55,11 +55,11 @@ extension DioErrorEx on DioError {
       } else {
         return const ApiFailure.unKnown();
       }
-    } else if (type == DioErrorType.cancel) {
+    } else if (type == DioExceptionType.cancel) {
       return const ApiFailure.cancel();
-    } else if (type == DioErrorType.receiveTimeout ||
-        type == DioErrorType.connectionTimeout ||
-        type == DioErrorType.sendTimeout) {
+    } else if (type == DioExceptionType.receiveTimeout ||
+        type == DioExceptionType.connectionTimeout ||
+        type == DioExceptionType.sendTimeout) {
       return const ApiFailure.timeout('{"message": ["timeout"]}');
     } else {
       return const ApiFailure.unKnown();
