@@ -139,14 +139,22 @@ class _SubmittedWorksTableWidget extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         const _JahadiGroupsTableWidget(),
-        const SizedBox(height: 30),
+        const Divider(
+          height: 60,
+          thickness: 2,
+          color: Colors.blueGrey,
+        ),
         Text(
           context.l10n.individual,
           style: heading5Bold,
         ),
         const SizedBox(height: 10),
         const _IndividualsTableWidget(),
-        const SizedBox(height: 30),
+        const Divider(
+          height: 60,
+          thickness: 2,
+          color: Colors.blueGrey,
+        ),
         Text(
           context.l10n.group,
           style: heading5Bold,
@@ -169,6 +177,8 @@ class _JahadiGroupsTableWidget extends StatelessWidget {
         textDirection: TextDirection.ltr,
         child: BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {
+            const fixedWidth = 165.0;
+            final columnsStyle = subtitle1Bold.copyWith(color: Colors.white);
             final jahadiGroupsSubmittedWorks = <SubmittedWork>[];
             final individualsSubmittedWorks = <SubmittedWork>[];
             final groupsSubmittedWorks = <SubmittedWork>[];
@@ -181,192 +191,110 @@ class _JahadiGroupsTableWidget extends StatelessWidget {
                 groupsSubmittedWorks.add(submittedWork);
               }
             }
-            return DataTable2(
-              columnSpacing: 12,
-              horizontalMargin: 8,
-              border: TableBorder.all(),
-              minWidth: 4000,
-              headingRowColor: MaterialStateProperty.all(
-                Colors.lightBlue.shade600,
+            return Card(
+              elevation: 8,
+              margin: EdgeInsets.zero,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(kDefaultBorderRadius),
               ),
-              columns: [
-                DataColumn2(
-                  label: Text(
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: DataTable2(
+                  columnSpacing: 8,
+                  horizontalMargin: 8,
+                  border: TableBorder.all(color: Colors.black87, width: 3),
+                  minWidth: 5000,
+                  headingRowColor: MaterialStateProperty.all(
+                    Colors.blue,
+                  ),
+                  columns: <String>[
                     context.l10n.group_name,
-                    style: subtitle1,
-                    textAlign: TextAlign.center,
-                  ),
-                  fixedWidth: 200,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.jahadi_group_registration_code,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 180,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.group_nature,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 150,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.state,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 120,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.city,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 120,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.group_supervisor_fname,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 200,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.supervisor_phone,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 150,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.registered_phone,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 150,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.attachment_type,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 150,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.attached_file,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 250,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.file_description,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 200,
-                ),
-              ],
-              rows: List<DataRow2>.generate(
-                jahadiGroupsSubmittedWorks.length,
-                (index) => DataRow2(
-                  cells: [
-                    DataCell(
-                      Text(
-                        jahadiGroupsSubmittedWorks[index]
-                            .jahadiGroups!
-                            .groupName,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
-                        jahadiGroupsSubmittedWorks[index]
-                            .jahadiGroups!
-                            .groupRegisterationNumber,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
-                        jahadiGroupsSubmittedWorks[index]
-                            .jahadiGroups!
-                            .groupNature,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
-                        jahadiGroupsSubmittedWorks[index]
-                            .jahadiGroups!
-                            .groupState,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
-                        jahadiGroupsSubmittedWorks[index]
-                            .jahadiGroups!
-                            .groupCity,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
-                        jahadiGroupsSubmittedWorks[index]
-                            .jahadiGroups!
-                            .groupSupervisorFullname,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
-                        jahadiGroupsSubmittedWorks[index]
-                            .jahadiGroups!
-                            .groupSupervisorPhone,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
-                        jahadiGroupsSubmittedWorks[index]
-                            .jahadiGroups!
-                            .registeredPhoneNumber,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
-                        jahadiGroupsSubmittedWorks[index].attachmentType,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      MouseRegion(
-                        cursor: SystemMouseCursors.click,
-                        child: GestureDetector(
-                          onTap: () => launchUrlString(
-                            'https://festival-kh.ir/laravel_public/api/download/${jahadiGroupsSubmittedWorks[index].filePath}',
+                  ]
+                      .map(
+                        (text) => DataColumn2(
+                          label: Center(
+                            child: Text(text, style: columnsStyle),
                           ),
-                          child: Text(
-                            jahadiGroupsSubmittedWorks[index].filePath,
-                            style: subtitle2.copyWith(
-                              color: kInfoColor,
-                              decoration: TextDecoration.underline,
+                          fixedWidth: fixedWidth,
+                        ),
+                      )
+                      .toList(),
+                  rows: List<DataRow2>.generate(
+                    jahadiGroupsSubmittedWorks.length,
+                    (index) => DataRow2(
+                      cells: [
+                        ...[
+                          jahadiGroupsSubmittedWorks[index]
+                              .jahadiGroups!
+                              .groupName,
+                          jahadiGroupsSubmittedWorks[index]
+                              .jahadiGroups!
+                              .groupRegisterationNumber,
+                          jahadiGroupsSubmittedWorks[index]
+                              .jahadiGroups!
+                              .groupNature,
+                          jahadiGroupsSubmittedWorks[index]
+                              .jahadiGroups!
+                              .groupState,
+                          jahadiGroupsSubmittedWorks[index]
+                              .jahadiGroups!
+                              .groupCity,
+                          jahadiGroupsSubmittedWorks[index]
+                              .jahadiGroups!
+                              .groupSupervisorFullname,
+                          jahadiGroupsSubmittedWorks[index]
+                              .jahadiGroups!
+                              .groupSupervisorPhone,
+                          jahadiGroupsSubmittedWorks[index]
+                              .jahadiGroups!
+                              .registeredPhoneNumber,
+                          jahadiGroupsSubmittedWorks[index].attachmentType,
+                        ].map(
+                          (text) => DataCell(
+                            Center(
+                              child: Text(
+                                text,
+                                style: subtitle1,
+                              ),
                             ),
                           ),
                         ),
-                      ),
+                        DataCell(
+                          MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            child: GestureDetector(
+                              onTap: () => launchUrlString(
+                                'https://festival-kh.ir/laravel_public/api/download/${jahadiGroupsSubmittedWorks[index].filePath}',
+                              ),
+                              child: Text(
+                                jahadiGroupsSubmittedWorks[index].filePath,
+                                style: subtitle2.copyWith(
+                                  color: kInfoColor,
+                                  decoration: TextDecoration.underline,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        DataCell(
+                          SelectableText(
+                            jahadiGroupsSubmittedWorks[index].description ?? '',
+                            style: subtitle2,
+                          ),
+                        ),
+                      ],
                     ),
-                    DataCell(
-                      SelectableText(
-                        jahadiGroupsSubmittedWorks[index].description ?? '',
-                        style: subtitle2,
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
             );
