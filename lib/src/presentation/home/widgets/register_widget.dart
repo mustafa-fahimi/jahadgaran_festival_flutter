@@ -33,7 +33,7 @@ class RegisterWidget extends HookWidget {
   late TextEditingController descriptionController;
   late FocusNode verifyCodeFocusNode;
   late FocusNode descriptionFocusNode;
-  late ValueNotifier<List<String>> selectedAttachmentTypes;
+  late ValueNotifier<String?> selectedAttachmentType;
   late ValueNotifier<PlatformFile?> selectedFile;
 
   /// Individual submit work form variables
@@ -76,7 +76,7 @@ class RegisterWidget extends HookWidget {
     descriptionController = useTextEditingController();
     verifyCodeFocusNode = useFocusNode();
     descriptionFocusNode = useFocusNode();
-    selectedAttachmentTypes = useState<List<String>>([]);
+    selectedAttachmentType = useState<String?>(null);
     selectedFile = useState<PlatformFile?>(null);
 
     /// Individual submit work form variables
@@ -164,7 +164,7 @@ class RegisterWidget extends HookWidget {
                               descriptionController: descriptionController,
                               verifyCodeFocusNode: verifyCodeFocusNode,
                               descriptionFocusNode: descriptionFocusNode,
-                              selectedAttachmentTypes: selectedAttachmentTypes,
+                              selectedAttachmentType: selectedAttachmentType,
                               selectedFile: selectedFile,
                             )
                           : registerFormState == RegisterType.individual
@@ -181,8 +181,8 @@ class RegisterWidget extends HookWidget {
                                   cityFocusNode: cityFocusNode,
                                   verifyCodeFocusNode: verifyCodeFocusNode,
                                   descriptionFocusNode: descriptionFocusNode,
-                                  selectedAttachmentTypes:
-                                      selectedAttachmentTypes,
+                                  selectedAttachmentType:
+                                      selectedAttachmentType,
                                   selectedFile: selectedFile,
                                 )
                               : GroupSubmitWorkFormWidget(
@@ -192,8 +192,8 @@ class RegisterWidget extends HookWidget {
                                   descriptionController: descriptionController,
                                   verifyCodeFocusNode: verifyCodeFocusNode,
                                   descriptionFocusNode: descriptionFocusNode,
-                                  selectedAttachmentTypes:
-                                      selectedAttachmentTypes,
+                                  selectedAttachmentType:
+                                      selectedAttachmentType,
                                   selectedFile: selectedFile,
                                   groupNameController: groupNameController,
                                   establishedYearController:

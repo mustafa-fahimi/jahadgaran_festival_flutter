@@ -9,12 +9,12 @@ import 'package:jahadgaran_festival/src/config/config.dart';
 import 'package:jahadgaran_festival/src/core/core.dart';
 import 'package:jahadgaran_festival/src/features/core/enums/register_type_enum.dart';
 import 'package:jahadgaran_festival/src/features/jahadi_work/domain/models/individual_submitted_work_params.dart';
-import 'package:jahadgaran_festival/src/presentation/core/components/dropdown_multi_select_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/elevated_button_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/outlined_button_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/core/components/outlined_text_field_custom_widget.dart';
 import 'package:jahadgaran_festival/src/presentation/home/bloc/home_bloc.dart';
 import 'package:jahadgaran_festival/src/presentation/home/enums/attachment_type_enum.dart';
+import 'package:jahadgaran_festival/src/presentation/home/widgets/submitted_work_forms/attachment_type_dropdown_widget.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class IndividualSubmitWorkFormWidget extends StatelessWidget {
@@ -31,7 +31,7 @@ class IndividualSubmitWorkFormWidget extends StatelessWidget {
     required this.lnameFocusNode,
     required this.cityFocusNode,
     required this.descriptionFocusNode,
-    required this.selectedAttachmentTypes,
+    required this.selectedAttachmentType,
     required this.selectedFile,
     Key? key,
   }) : super(key: key);
@@ -48,7 +48,7 @@ class IndividualSubmitWorkFormWidget extends StatelessWidget {
   final FocusNode cityFocusNode;
   final FocusNode verifyCodeFocusNode;
   final FocusNode descriptionFocusNode;
-  final ValueNotifier<List<String>> selectedAttachmentTypes;
+  final ValueNotifier<String?> selectedAttachmentType;
   final ValueNotifier<PlatformFile?> selectedFile;
 
   @override
@@ -174,20 +174,12 @@ class IndividualSubmitWorkFormWidget extends StatelessWidget {
               style: subtitle2,
             ),
             const SizedBox(height: 8),
-            DropdownMultiSelectWidget(
-              onSelectedItemsChange: (value) {
-                selectedAttachmentTypes.value.clear();
-                selectedAttachmentTypes.value.addAll(value);
-              },
+            AttachmentTypeDropdownWidget(
               dropdownItems: List.generate(
                 AttachmentType.values.length,
                 (index) => AttachmentType.values[index].getTitle(context),
               ),
-            ),
-            const SizedBox(height: 15),
-            Text(
-              context.l10n.choose_multi_attachment_type_description,
-              style: subtitle1Bold.copyWith(color: Colors.pink),
+              selectedAttachmentType: selectedAttachmentType,
             ),
             const SizedBox(height: 15),
             Text(
@@ -198,9 +190,9 @@ class IndividualSubmitWorkFormWidget extends StatelessWidget {
             OutlinedTextFieldCustomWidget(
               controller: descriptionController,
               focusNode: descriptionFocusNode,
-              hintText: context.l10n.description_hint,
-              minLines: 4,
-              maxLines: 4,
+              hintText: context.l10n.description,
+              minLines: 3,
+              maxLines: 3,
             ),
             const SizedBox(height: 40),
             BlocConsumer<HomeBloc, HomeState>(
@@ -253,7 +245,8 @@ class IndividualSubmitWorkFormWidget extends StatelessWidget {
     /// If we have validation error then do nothing and return
     if (!formKey.currentState!.validate()) return;
 
-    if (selectedAttachmentTypes.value.isEmpty) {
+    if (selectedAttachmentType.value == null ||
+        selectedAttachmentType.value!.isEmpty) {
       AppHelper().displayToast(
         context,
         message: context.l10n.must_choose_attachment_type,
@@ -291,7 +284,7 @@ class IndividualSubmitWorkFormWidget extends StatelessWidget {
         lname: lnameController.text,
         city: cityController.text,
         verifyCode: verifyCodeController.text,
-        attachmentType: selectedAttachmentTypes.value.join(', '),
+        attachmentType: selectedAttachmentType.value!,
         description: descriptionController.text,
       ).toJson()
         ..addAll({'file': file}),
