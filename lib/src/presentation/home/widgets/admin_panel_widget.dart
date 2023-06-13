@@ -172,7 +172,7 @@ class _JahadiGroupsTableWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: context.deviceHeightFactor(0.5),
+      height: context.deviceHeightFactor(0.7),
       child: Directionality(
         textDirection: TextDirection.ltr,
         child: BlocBuilder<HomeBloc, HomeState>(
@@ -202,6 +202,8 @@ class _JahadiGroupsTableWidget extends StatelessWidget {
                 child: DataTable2(
                   columnSpacing: 8,
                   horizontalMargin: 8,
+                  isHorizontalScrollBarVisible: true,
+                  isVerticalScrollBarVisible: true,
                   border: TableBorder.all(color: Colors.black87, width: 3),
                   minWidth: 5000,
                   headingRowColor: MaterialStateProperty.all(
@@ -233,66 +235,67 @@ class _JahadiGroupsTableWidget extends StatelessWidget {
                     jahadiGroupsSubmittedWorks.length,
                     (index) => DataRow2(
                       cells: [
-                        ...[
-                          jahadiGroupsSubmittedWorks[index]
-                              .jahadiGroups!
-                              .groupName,
-                          jahadiGroupsSubmittedWorks[index]
-                              .jahadiGroups!
-                              .groupRegisterationNumber,
-                          jahadiGroupsSubmittedWorks[index]
-                              .jahadiGroups!
-                              .groupNature,
-                          jahadiGroupsSubmittedWorks[index]
-                              .jahadiGroups!
-                              .groupState,
-                          jahadiGroupsSubmittedWorks[index]
-                              .jahadiGroups!
-                              .groupCity,
-                          jahadiGroupsSubmittedWorks[index]
-                              .jahadiGroups!
-                              .groupSupervisorFullname,
-                          jahadiGroupsSubmittedWorks[index]
-                              .jahadiGroups!
-                              .groupSupervisorPhone,
-                          jahadiGroupsSubmittedWorks[index]
-                              .jahadiGroups!
-                              .registeredPhoneNumber,
-                          jahadiGroupsSubmittedWorks[index].attachmentType,
-                        ].map(
-                          (text) => DataCell(
+                        jahadiGroupsSubmittedWorks[index]
+                            .jahadiGroups!
+                            .groupName,
+                        jahadiGroupsSubmittedWorks[index]
+                            .jahadiGroups!
+                            .groupRegisterationNumber,
+                        jahadiGroupsSubmittedWorks[index]
+                            .jahadiGroups!
+                            .groupNature,
+                        jahadiGroupsSubmittedWorks[index]
+                            .jahadiGroups!
+                            .groupState,
+                        jahadiGroupsSubmittedWorks[index]
+                            .jahadiGroups!
+                            .groupCity,
+                        jahadiGroupsSubmittedWorks[index]
+                            .jahadiGroups!
+                            .groupSupervisorFullname,
+                        jahadiGroupsSubmittedWorks[index]
+                            .jahadiGroups!
+                            .groupSupervisorPhone,
+                        jahadiGroupsSubmittedWorks[index]
+                            .jahadiGroups!
+                            .registeredPhoneNumber,
+                        jahadiGroupsSubmittedWorks[index].attachmentType,
+                        jahadiGroupsSubmittedWorks[index].filePath,
+                        jahadiGroupsSubmittedWorks[index].description ?? '-',
+                      ].map(
+                        (text) {
+                          if (text ==
+                              jahadiGroupsSubmittedWorks[index].filePath) {
+                            return DataCell(
+                              MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: GestureDetector(
+                                  onTap: () => launchUrlString(
+                                    'https://festival-kh.ir/laravel_public/api/download/${jahadiGroupsSubmittedWorks[index].filePath}',
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      text,
+                                      style: subtitle1.copyWith(
+                                        color: kInfoColor,
+                                        decoration: TextDecoration.underline,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            );
+                          }
+                          return DataCell(
                             Center(
                               child: Text(
                                 text,
                                 style: subtitle1,
                               ),
                             ),
-                          ),
-                        ),
-                        DataCell(
-                          MouseRegion(
-                            cursor: SystemMouseCursors.click,
-                            child: GestureDetector(
-                              onTap: () => launchUrlString(
-                                'https://festival-kh.ir/laravel_public/api/download/${jahadiGroupsSubmittedWorks[index].filePath}',
-                              ),
-                              child: Text(
-                                jahadiGroupsSubmittedWorks[index].filePath,
-                                style: subtitle2.copyWith(
-                                  color: kInfoColor,
-                                  decoration: TextDecoration.underline,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        DataCell(
-                          SelectableText(
-                            jahadiGroupsSubmittedWorks[index].description ?? '',
-                            style: subtitle2,
-                          ),
-                        ),
-                      ],
+                          );
+                        },
+                      ).toList(),
                     ),
                   ),
                 ),
@@ -311,137 +314,104 @@ class _IndividualsTableWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: context.deviceHeightFactor(0.5),
+      height: context.deviceHeightFactor(0.6),
       child: Directionality(
         textDirection: TextDirection.ltr,
         child: BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {
+            const fixedWidth = 165.0;
+            final columnsStyle = subtitle1Bold.copyWith(color: Colors.white);
             final individualsSubmittedWorks = <SubmittedWork>[];
             for (final submittedWork in state.submittedWorks) {
               if (submittedWork.individuals != null) {
                 individualsSubmittedWorks.add(submittedWork);
               }
             }
-            return DataTable2(
-              columnSpacing: 12,
-              horizontalMargin: 8,
-              border: TableBorder.all(),
-              minWidth: 4000,
-              headingRowColor: MaterialStateProperty.all(
-                Colors.lightBlue.shade600,
+            return Card(
+              elevation: 8,
+              margin: EdgeInsets.zero,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(kDefaultBorderRadius),
               ),
-              columns: [
-                DataColumn2(
-                  label: Text(
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: DataTable2(
+                  columnSpacing: 8,
+                  horizontalMargin: 8,
+                  isHorizontalScrollBarVisible: true,
+                  isVerticalScrollBarVisible: true,
+                  border: TableBorder.all(color: Colors.black87, width: 3),
+                  minWidth: 5000,
+                  headingRowColor: MaterialStateProperty.all(
+                    Colors.green,
+                  ),
+                  columns: [
                     context.l10n.fname,
-                    style: subtitle1,
-                    textAlign: TextAlign.center,
-                  ),
-                  fixedWidth: 200,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.lname,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 180,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.city,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 150,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.phone_number,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 120,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.attachment_type,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 150,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.attached_file,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 250,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.file_description,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 200,
-                ),
-              ],
-              rows: List<DataRow2>.generate(
-                individualsSubmittedWorks.length,
-                (index) => DataRow2(
-                  cells: [
-                    DataCell(
-                      Text(
+                  ]
+                      .map(
+                        (text) => DataColumn2(
+                          label: Center(
+                            child: Text(text, style: columnsStyle),
+                          ),
+                          fixedWidth: fixedWidth,
+                        ),
+                      )
+                      .toList(),
+                  rows: List<DataRow2>.generate(
+                    individualsSubmittedWorks.length,
+                    (index) => DataRow2(
+                      cells: [
                         individualsSubmittedWorks[index].individuals!.fname,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
                         individualsSubmittedWorks[index].individuals!.lname,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
                         individualsSubmittedWorks[index].individuals!.city,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
                         individualsSubmittedWorks[index]
                             .individuals!
                             .phoneNumber,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
                         individualsSubmittedWorks[index].attachmentType,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      MouseRegion(
-                        cursor: SystemMouseCursors.click,
-                        child: GestureDetector(
-                          onTap: () => launchUrlString(
-                            'https://festival-kh.ir/laravel_public/api/download/${individualsSubmittedWorks[index].filePath}',
-                          ),
-                          child: Text(
-                            individualsSubmittedWorks[index].filePath,
-                            style: subtitle2.copyWith(
-                              color: kInfoColor,
-                              decoration: TextDecoration.underline,
+                        individualsSubmittedWorks[index].filePath,
+                        individualsSubmittedWorks[index].description ?? '-',
+                      ].map(
+                        (text) {
+                          if (text ==
+                              individualsSubmittedWorks[index].filePath) {
+                            return DataCell(
+                              MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: GestureDetector(
+                                  onTap: () => launchUrlString(
+                                    'https://festival-kh.ir/laravel_public/api/download/${individualsSubmittedWorks[index].filePath}',
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      text,
+                                      style: subtitle1.copyWith(
+                                        color: kInfoColor,
+                                        decoration: TextDecoration.underline,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            );
+                          }
+                          return DataCell(
+                            Center(
+                              child: Text(
+                                text,
+                                style: subtitle1,
+                              ),
                             ),
-                          ),
-                        ),
-                      ),
+                          );
+                        },
+                      ).toList(),
                     ),
-                    DataCell(
-                      SelectableText(
-                        individualsSubmittedWorks[index].description ?? '',
-                        style: subtitle2,
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
             );
@@ -458,197 +428,119 @@ class _GroupsTableWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: context.deviceHeightFactor(0.5),
+      height: context.deviceHeightFactor(0.6),
       child: Directionality(
         textDirection: TextDirection.ltr,
         child: BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {
+            const fixedWidth = 165.0;
+            final columnsStyle = subtitle1Bold.copyWith(color: Colors.white);
             final groupsSubmittedWorks = <SubmittedWork>[];
             for (final submittedWork in state.submittedWorks) {
               if (submittedWork.groups != null) {
                 groupsSubmittedWorks.add(submittedWork);
               }
             }
-            return DataTable2(
-              columnSpacing: 12,
-              horizontalMargin: 8,
-              border: TableBorder.all(),
-              minWidth: 4000,
-              headingRowColor: MaterialStateProperty.all(
-                Colors.lightBlue.shade600,
+            return Card(
+              elevation: 8,
+              margin: EdgeInsets.zero,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(kDefaultBorderRadius),
               ),
-              columns: [
-                DataColumn2(
-                  label: Text(
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: DataTable2(
+                  columnSpacing: 8,
+                  horizontalMargin: 8,
+                  isHorizontalScrollBarVisible: true,
+                  isVerticalScrollBarVisible: true,
+                  border: TableBorder.all(color: Colors.black87, width: 3),
+                  minWidth: 5000,
+                  headingRowColor: MaterialStateProperty.all(
+                    Colors.orange,
+                  ),
+                  columns: [
                     context.l10n.group_name,
-                    style: subtitle1,
-                    textAlign: TextAlign.center,
-                  ),
-                  fixedWidth: 200,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.established_year,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 180,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.group_license_number,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 150,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.group_institution,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 120,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.city,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 120,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.group_supervisor_fname,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 200,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.group_supervisor_lname,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 150,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.registered_phone,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 150,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.attachment_type,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 150,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.attached_file,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 250,
-                ),
-                DataColumn2(
-                  label: Text(
                     context.l10n.file_description,
-                    style: subtitle1,
-                  ),
-                  fixedWidth: 200,
-                ),
-              ],
-              rows: List<DataRow2>.generate(
-                groupsSubmittedWorks.length,
-                (index) => DataRow2(
-                  cells: [
-                    DataCell(
-                      Text(
+                  ]
+                      .map(
+                        (text) => DataColumn2(
+                          label: Center(
+                            child: Text(text, style: columnsStyle),
+                          ),
+                          fixedWidth: fixedWidth,
+                        ),
+                      )
+                      .toList(),
+                  rows: List<DataRow2>.generate(
+                    groupsSubmittedWorks.length,
+                    (index) => DataRow2(
+                      cells: [
                         groupsSubmittedWorks[index].groups!.groupName,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
                         groupsSubmittedWorks[index]
                             .groups!
                             .establishedYear
                             .toString(),
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
                         groupsSubmittedWorks[index]
                                 .groups!
                                 .groupLicenseNumber ??
-                            '',
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
+                            '-',
                         groupsSubmittedWorks[index].groups!.groupInstitution,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
                         groupsSubmittedWorks[index].groups!.groupCity,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
                         groupsSubmittedWorks[index]
                             .groups!
                             .groupSupervisorFname,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
                         groupsSubmittedWorks[index]
                             .groups!
                             .groupSupervisorLname,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
                         groupsSubmittedWorks[index].groups!.phoneNumber,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      Text(
                         groupsSubmittedWorks[index].attachmentType,
-                        style: subtitle2,
-                      ),
-                    ),
-                    DataCell(
-                      MouseRegion(
-                        cursor: SystemMouseCursors.click,
-                        child: GestureDetector(
-                          onTap: () => launchUrlString(
-                            'https://festival-kh.ir/laravel_public/api/download/${groupsSubmittedWorks[index].filePath}',
-                          ),
-                          child: Text(
-                            groupsSubmittedWorks[index].filePath,
-                            style: subtitle2.copyWith(
-                              color: kInfoColor,
-                              decoration: TextDecoration.underline,
+                        groupsSubmittedWorks[index].filePath,
+                        groupsSubmittedWorks[index].description ?? '-',
+                      ].map(
+                        (text) {
+                          if (text == groupsSubmittedWorks[index].filePath) {
+                            return DataCell(
+                              MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: GestureDetector(
+                                  onTap: () => launchUrlString(
+                                    'https://festival-kh.ir/laravel_public/api/download/${groupsSubmittedWorks[index].filePath}',
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      text,
+                                      style: subtitle1.copyWith(
+                                        color: kInfoColor,
+                                        decoration: TextDecoration.underline,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            );
+                          }
+                          return DataCell(
+                            Center(
+                              child: Text(
+                                text,
+                                style: subtitle1,
+                              ),
                             ),
-                          ),
-                        ),
-                      ),
+                          );
+                        },
+                      ).toList(),
                     ),
-                    DataCell(
-                      SelectableText(
-                        groupsSubmittedWorks[index].description ?? '',
-                        style: subtitle2,
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
             );
